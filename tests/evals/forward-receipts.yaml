@@ -1,0 +1,2204 @@
+evidence_version: 2
+receipts:
+- schema_version: 1
+  id: compare-forward-2026-09-08
+  status: passed
+  mode: compare
+  source_brief:
+    locator: examples/fictional-pantry-product/brief-compare.yaml
+    sha256: 85f2cfdcf41c7e4fe5f981e5f28a9e7443a9b895f50f511c94cbd5d2efa84eb8
+  requested_artifact_ids:
+  - compare-direction-a
+  - compare-direction-b
+  contract_snapshot:
+    snapshot_level: full
+    normalized_contract:
+      mode: compare
+      processing_policy:
+        authorization:
+          authority: current-user
+          basis: The current user approved this exact fictional forward run, external image processing, derivative creation,
+            retained public evidence, and GitHub publication.
+          confirmed_at_utc: '2026-09-08T10:30:00Z'
+        default_permissions:
+          confidentiality: public
+          inspect_allowed: true
+          external_processing_allowed: true
+          derivative_allowed: true
+          redistribution_allowed: true
+          publication_allowed: true
+          attribution_status: not-required
+          attribution_text: null
+          attribution_fulfilled: not-applicable
+        field_overrides: []
+      product:
+        category: fictional pantry drink mix
+        product_name: PPV Fixture Citrus Pantry Mix
+        variants:
+        - name: Lemon Ginger
+          sku: lemon-ginger
+          color: yellow
+        - name: Berry Oat
+          sku: berry-oat
+          color: red
+        verified_facts:
+        - id: fictional-product-fact
+          value: Fictional dry pantry mix for testing only.
+          source_id: null
+          permissions:
+            confidentiality: public
+            inspect_allowed: true
+            external_processing_allowed: true
+            derivative_allowed: true
+            redistribution_allowed: true
+            publication_allowed: true
+            attribution_status: not-required
+            attribution_text: null
+            attribution_fulfilled: not-applicable
+        prohibited_claims:
+        - health benefit
+        - certification
+        - environmental benefit
+      sources:
+      - id: fictional-brief
+        locator: brief-compare.yaml
+        permissions:
+          confidentiality: public
+          inspect_allowed: true
+          external_processing_allowed: true
+          derivative_allowed: true
+          redistribution_allowed: true
+          publication_allowed: true
+          attribution_status: not-required
+          attribution_text: null
+          attribution_fulfilled: not-applicable
+      exact_copy:
+        readable_copy_required: true
+        required:
+        - PPV FIXTURE
+        - CITRUS PANTRY MIX
+        - LEMON GINGER
+        - BERRY OAT
+        - 240 g
+        forbidden: []
+        permissions:
+          confidentiality: public
+          inspect_allowed: true
+          external_processing_allowed: true
+          derivative_allowed: true
+          redistribution_allowed: true
+          publication_allowed: true
+          attribution_status: not-required
+          attribution_text: null
+          attribution_fulfilled: not-applicable
+      package:
+        form: stand-up pantry pouch
+        geometry: front-facing gusset pouch with resealable top
+        material: fictional matte paper laminate
+        opening_action: tear notch and resealable zipper
+      assets:
+      - id: corner-marker-reference
+        locator: assets/角标.png
+        role: non-latin-filename-check
+        provenance: Programmatically generated geometric marker for tests.
+        license_or_terms: Apache-2.0 repository fixture
+        permissions:
+          confidentiality: public
+          inspect_allowed: true
+          external_processing_allowed: true
+          derivative_allowed: true
+          redistribution_allowed: true
+          publication_allowed: true
+          attribution_status: not-required
+          attribution_text: null
+          attribution_fulfilled: not-applicable
+      constraints:
+        frozen: &id001
+        - package form and camera
+        - exact copy
+        - variant count and order
+        open:
+        - illustration language
+        - typography treatment
+      product_baseline:
+        id: fictional-pantry-baseline-v1
+        product_facts:
+        - id: product-name
+          value: PPV Fixture Citrus Pantry Mix
+          source_id: fictional-brief
+        package_snapshot:
+          form: stand-up pantry pouch
+          geometry: front-facing gusset pouch with resealable top
+        exact_copy_snapshot:
+          required:
+          - PPV FIXTURE
+          - CITRUS PANTRY MIX
+          - LEMON GINGER
+          - BERRY OAT
+          - 240 g
+        sku_order:
+        - lemon-ginger
+        - berry-oat
+        object_count: 2
+        camera_baseline:
+          view: front
+          crop: full pouch with margin
+        channel_snapshot:
+          deliverable: ecommerce comparison board
+        exclusions:
+        - claims
+        - certifications
+        - real brands
+      comparison_directions:
+      - id: quiet-pantry
+        name: Quiet Pantry
+        objective: Make the fictional pantry format feel calm and ingredient-led.
+        visual_definition:
+          palette: warm paper with restrained yellow and red accents
+          illustration: small geometric citrus and berry forms
+          typography: compact serif display with plain sans labels
+        target_values:
+          thumbnail_recognition: clear
+          decoration: restrained
+        reference_roles:
+        - source_or_asset_id: corner-marker-reference
+          role: geometry-only calibration
+          permitted_elements:
+          - corner markers
+          prohibited_elements:
+          - branding
+          - copy
+          - claims
+        changed_fields:
+        - visual_system
+        - illustration_language
+        frozen_fields:
+        - package
+        - exact_copy
+        - sku_order
+        - camera
+        exclusions:
+        - photographic food
+        - real logos
+      - id: bright-counter
+        name: Bright Counter
+        objective: Increase shelf-block recognition while keeping the same pouch facts.
+        visual_definition:
+          palette: white field with high-contrast variant blocks
+          illustration: large flat pantry ingredient shapes
+          typography: rounded heavy sans with wide tracking
+        target_values:
+          thumbnail_recognition: strong
+          decoration: moderate
+        reference_roles:
+        - source_or_asset_id: corner-marker-reference
+          role: geometry-only calibration
+          permitted_elements:
+          - corner markers
+          prohibited_elements:
+          - branding
+          - copy
+          - claims
+        changed_fields:
+        - visual_system
+        - color_block_scale
+        frozen_fields:
+        - package
+        - exact_copy
+        - sku_order
+        - camera
+        exclusions:
+        - photographic food
+        - real logos
+      channel:
+        deliverable: ecommerce comparison board
+        aspect_ratio: '4:3'
+        review_profiles:
+        - name: contain-thumbnail
+          fit: contain
+          longest_edge: 320
+      output:
+        delivery: relative-path
+        root: examples/fictional-pantry-product/generated
+        overwrite: false
+        retention_policy: preserve
+        permissions:
+          confidentiality: public
+          inspect_allowed: true
+          external_processing_allowed: true
+          derivative_allowed: true
+          redistribution_allowed: true
+          publication_allowed: true
+          attribution_status: not-required
+          attribution_text: null
+          attribution_fulfilled: not-applicable
+      requested_artifacts:
+      - id: compare-direction-a
+        kind: packaging-direction
+        status: requested
+      - id: compare-direction-b
+        kind: packaging-direction
+        status: requested
+      qa_plan:
+        required_gate_ids:
+        - artifact-type
+        - object-count
+        - package-geometry
+        - exact-copy
+        - invented-claims
+        - direction-comparability
+        - reference-role
+        - channel-fit
+        - artifact-integrity
+        review_profiles:
+        - full-resolution
+        - contain-thumbnail
+        independent_review_required: true
+        sha256: a7c9b47d2d6609de80f106cd0903f12720b9542b0b28d1283da5e685931715ed
+      generation_budget:
+        paid_calls_allowed: unknown
+        maximum_total_calls: 3
+    resolved_permissions:
+    - subject_type: field
+      subject_id_or_path: /mode
+      permissions:
+        confidentiality: public
+        inspect_allowed: true
+        external_processing_allowed: true
+        derivative_allowed: true
+        redistribution_allowed: true
+        publication_allowed: true
+        attribution_status: not-required
+        attribution_text: null
+        attribution_fulfilled: not-applicable
+      resolution_source: run-default
+      authorization_source: current-user
+    - subject_type: field
+      subject_id_or_path: /product
+      permissions:
+        confidentiality: public
+        inspect_allowed: true
+        external_processing_allowed: true
+        derivative_allowed: true
+        redistribution_allowed: true
+        publication_allowed: true
+        attribution_status: not-required
+        attribution_text: null
+        attribution_fulfilled: not-applicable
+      resolution_source: run-default
+      authorization_source: current-user
+    - subject_type: field
+      subject_id_or_path: /package
+      permissions:
+        confidentiality: public
+        inspect_allowed: true
+        external_processing_allowed: true
+        derivative_allowed: true
+        redistribution_allowed: true
+        publication_allowed: true
+        attribution_status: not-required
+        attribution_text: null
+        attribution_fulfilled: not-applicable
+      resolution_source: run-default
+      authorization_source: current-user
+    - subject_type: field
+      subject_id_or_path: /constraints
+      permissions:
+        confidentiality: public
+        inspect_allowed: true
+        external_processing_allowed: true
+        derivative_allowed: true
+        redistribution_allowed: true
+        publication_allowed: true
+        attribution_status: not-required
+        attribution_text: null
+        attribution_fulfilled: not-applicable
+      resolution_source: run-default
+      authorization_source: current-user
+    - subject_type: field
+      subject_id_or_path: /product_baseline
+      permissions:
+        confidentiality: public
+        inspect_allowed: true
+        external_processing_allowed: true
+        derivative_allowed: true
+        redistribution_allowed: true
+        publication_allowed: true
+        attribution_status: not-required
+        attribution_text: null
+        attribution_fulfilled: not-applicable
+      resolution_source: run-default
+      authorization_source: current-user
+    - subject_type: field
+      subject_id_or_path: /channel
+      permissions:
+        confidentiality: public
+        inspect_allowed: true
+        external_processing_allowed: true
+        derivative_allowed: true
+        redistribution_allowed: true
+        publication_allowed: true
+        attribution_status: not-required
+        attribution_text: null
+        attribution_fulfilled: not-applicable
+      resolution_source: run-default
+      authorization_source: current-user
+    - subject_type: field
+      subject_id_or_path: /requested_artifacts
+      permissions:
+        confidentiality: public
+        inspect_allowed: true
+        external_processing_allowed: true
+        derivative_allowed: true
+        redistribution_allowed: true
+        publication_allowed: true
+        attribution_status: not-required
+        attribution_text: null
+        attribution_fulfilled: not-applicable
+      resolution_source: run-default
+      authorization_source: current-user
+    - subject_type: field
+      subject_id_or_path: /qa_plan
+      permissions:
+        confidentiality: public
+        inspect_allowed: true
+        external_processing_allowed: true
+        derivative_allowed: true
+        redistribution_allowed: true
+        publication_allowed: true
+        attribution_status: not-required
+        attribution_text: null
+        attribution_fulfilled: not-applicable
+      resolution_source: run-default
+      authorization_source: current-user
+    - subject_type: field
+      subject_id_or_path: /generation_budget
+      permissions:
+        confidentiality: public
+        inspect_allowed: true
+        external_processing_allowed: true
+        derivative_allowed: true
+        redistribution_allowed: true
+        publication_allowed: true
+        attribution_status: not-required
+        attribution_text: null
+        attribution_fulfilled: not-applicable
+      resolution_source: run-default
+      authorization_source: current-user
+    - subject_type: field
+      subject_id_or_path: /comparison_directions
+      permissions:
+        confidentiality: public
+        inspect_allowed: true
+        external_processing_allowed: true
+        derivative_allowed: true
+        redistribution_allowed: true
+        publication_allowed: true
+        attribution_status: not-required
+        attribution_text: null
+        attribution_fulfilled: not-applicable
+      resolution_source: run-default
+      authorization_source: current-user
+    - subject_type: fact
+      subject_id_or_path: fictional-product-fact
+      permissions:
+        confidentiality: public
+        inspect_allowed: true
+        external_processing_allowed: true
+        derivative_allowed: true
+        redistribution_allowed: true
+        publication_allowed: true
+        attribution_status: not-required
+        attribution_text: null
+        attribution_fulfilled: not-applicable
+      resolution_source: object
+      authorization_source: current-user
+    - subject_type: source
+      subject_id_or_path: fictional-brief
+      permissions:
+        confidentiality: public
+        inspect_allowed: true
+        external_processing_allowed: true
+        derivative_allowed: true
+        redistribution_allowed: true
+        publication_allowed: true
+        attribution_status: not-required
+        attribution_text: null
+        attribution_fulfilled: not-applicable
+      resolution_source: object
+      authorization_source: current-user
+    - subject_type: copy
+      subject_id_or_path: /exact_copy
+      permissions:
+        confidentiality: public
+        inspect_allowed: true
+        external_processing_allowed: true
+        derivative_allowed: true
+        redistribution_allowed: true
+        publication_allowed: true
+        attribution_status: not-required
+        attribution_text: null
+        attribution_fulfilled: not-applicable
+      resolution_source: object
+      authorization_source: current-user
+    - subject_type: asset
+      subject_id_or_path: corner-marker-reference
+      permissions:
+        confidentiality: public
+        inspect_allowed: true
+        external_processing_allowed: true
+        derivative_allowed: true
+        redistribution_allowed: true
+        publication_allowed: true
+        attribution_status: not-required
+        attribution_text: null
+        attribution_fulfilled: not-applicable
+      resolution_source: object
+      authorization_source: current-user
+    - subject_type: output
+      subject_id_or_path: /output
+      permissions:
+        confidentiality: public
+        inspect_allowed: true
+        external_processing_allowed: true
+        derivative_allowed: true
+        redistribution_allowed: true
+        publication_allowed: true
+        attribution_status: not-required
+        attribution_text: null
+        attribution_fulfilled: not-applicable
+      resolution_source: object
+      authorization_source: current-user
+    sha256: 42773eadc6c34fef9adb71041213fb4bf190c8a7d522eb0e0be421e1722e3b56
+    hash_basis: canonical-runtime-contract-json
+    omissions: []
+  artifacts:
+  - id: compare-direction-a
+    locator: examples/fictional-pantry-product/generated/compare-direction-a.png
+    locator_type: relative_path
+    role: packaging-direction
+    status: passed
+    sha256: a2c1d38551febace8a1bfec48011e7e36528695e244ec892d2c4fa4ad3d4f4fb
+    blocking_reason: null
+  - id: compare-direction-b
+    locator: examples/fictional-pantry-product/generated/compare-direction-b.png
+    locator_type: relative_path
+    role: packaging-direction
+    status: passed
+    sha256: 066cc63a2d2aa54a1b02e67104bab5b1a1e677c16d96e5ec641213f176c74aae
+    blocking_reason: null
+  generation_receipt:
+    executor_id: codex-imagegen-operator-2026-09-08
+    capability_used: openai-hosted-image-generation
+    runtime:
+      client: Codex desktop
+      client_version: codex-cli 0.153.4
+      operating_system: macOS 26.5
+      architecture: arm64
+      tool_or_provider: OpenAI-hosted image generation tool
+      model_or_version: not exposed by host
+      exposed_parameters: {}
+      executed_at_utc: '2026-09-08T11:48:18Z'
+    fixture_revision: 85f2cfdcf41c7e4fe5f981e5f28a9e7443a9b895f50f511c94cbd5d2efa84eb8
+    input_asset_ids: []
+    unused_declared_asset_ids:
+    - corner-marker-reference
+    frozen_fields: *id001
+    changed_fields:
+    - visual system
+    - illustration language
+    - color block scale
+    attempts:
+    - attempt_id: compare-a-01
+      artifact_ids:
+      - compare-direction-a
+      outputs:
+      - locator: examples/fictional-pantry-product/generated/compare-direction-a.png
+        locator_type: relative_path
+        sha256: a2c1d38551febace8a1bfec48011e7e36528695e244ec892d2c4fa4ad3d4f4fb
+      failure_class: null
+      requested_changes:
+      - Create the Quiet Pantry direction from the frozen fictional baseline.
+      preserved_fields: *id001
+      outcome: passed
+      executed_at_utc: '2026-09-08T11:25:00Z'
+    - attempt_id: compare-b-01
+      artifact_ids:
+      - compare-direction-b
+      outputs:
+      - locator: examples/fictional-pantry-product/generated/attempts/compare/bright-counter-attempt-01.png
+        locator_type: relative_path
+        sha256: b6378bf8b59de2775fe3d88e2c3d26546585b84568099b97f78dfd503c0823ca
+      failure_class: direction-comparability
+      requested_changes:
+      - Create the Bright Counter direction from the same frozen fictional baseline.
+      preserved_fields:
+      - package form
+      - exact copy
+      - variant count and order
+      outcome: failed
+      executed_at_utc: '2026-09-08T11:26:00Z'
+    - attempt_id: compare-b-02
+      artifact_ids:
+      - compare-direction-b
+      outputs:
+      - locator: examples/fictional-pantry-product/generated/compare-direction-b.png
+        locator_type: relative_path
+        sha256: 066cc63a2d2aa54a1b02e67104bab5b1a1e677c16d96e5ec641213f176c74aae
+      failure_class: direction-comparability
+      requested_changes:
+      - Match the approved Quiet Pantry camera, pouch scale, baseline, crop, and outer margins without changing Bright Counter
+        graphics.
+      preserved_fields: *id001
+      outcome: passed
+      executed_at_utc: '2026-09-08T11:48:18Z'
+  qa:
+    plan_sha256: a7c9b47d2d6609de80f106cd0903f12720b9542b0b28d1283da5e685931715ed
+    reviewed_by: independent-agent
+    reviewer_id: independent-visual-qa-final
+    reviewed_at_utc: '2026-09-08T12:01:32Z'
+    gates:
+    - gate_id: artifact-type
+      level: required
+      requirement: The requested visual artifact type is present.
+      artifact_id: compare-direction-a
+      profile: full-resolution
+      status: pass
+      evidence: The requested packaging direction is complete and recognizable at full resolution.
+    - gate_id: object-count
+      level: required
+      requirement: The artifact contains exactly the requested number of complete package objects.
+      artifact_id: compare-direction-a
+      profile: full-resolution
+      status: pass
+      evidence: Exactly 2 complete front-facing pouch objects remain visible at full resolution.
+    - gate_id: package-geometry
+      level: required
+      requirement: The declared package form and closure cues remain intact.
+      artifact_id: compare-direction-a
+      profile: full-resolution
+      status: pass
+      evidence: The complete front-facing stand-up pouch silhouette and resealable top remain intact at full resolution.
+    - gate_id: exact-copy
+      level: required
+      requirement: Required readable copy is exact, or the declared no-readable-copy condition is preserved.
+      artifact_id: compare-direction-a
+      profile: full-resolution
+      status: pass
+      evidence: PPV FIXTURE, CITRUS PANTRY MIX, both declared variant names, and 240 g remain readable and unchanged at full
+        resolution.
+    - gate_id: invented-claims
+      level: required
+      requirement: No prohibited claim, certification, price, legal copy, or mark is introduced.
+      artifact_id: compare-direction-a
+      profile: full-resolution
+      status: pass
+      evidence: No health, certification, environmental, legal, price, or other unsupported claim is visible at full resolution.
+    - gate_id: direction-comparability
+      level: required
+      requirement: Compare directions retain the same product baseline, object order, camera, and usable crop.
+      artifact_id: compare-direction-a
+      profile: full-resolution
+      status: pass
+      evidence: Both directions show Lemon Ginger then Berry Oat as front-facing pouches on a matched 4:3 board; direction
+        A spans about y=117-968 and corrected direction B about y=115-965 at full resolution.
+    - gate_id: reference-role
+      level: required
+      requirement: Declared references stay within their permitted roles and no external identity leaks into the result.
+      artifact_id: compare-direction-a
+      profile: full-resolution
+      status: pass
+      evidence: Only owned fictional inputs were used and no undeclared brand identity or external claim appears at full resolution.
+    - gate_id: channel-fit
+      level: required
+      requirement: The artifact remains usable for its declared ecommerce or review channel.
+      artifact_id: compare-direction-a
+      profile: full-resolution
+      status: pass
+      evidence: The composition, margins, and hierarchy remain usable for comparison review at full resolution.
+    - gate_id: artifact-integrity
+      level: required
+      requirement: The artifact is inspectable, hashable, and fully represented in the review profile.
+      artifact_id: compare-direction-a
+      profile: full-resolution
+      status: pass
+      evidence: Independent inspection opened the 1448x1086 RGB PNG at full resolution; its SHA-256 matches the receipt and
+        no source canvas was cropped.
+    - gate_id: artifact-type
+      level: required
+      requirement: The requested visual artifact type is present.
+      artifact_id: compare-direction-a
+      profile: contain-thumbnail
+      status: pass
+      evidence: The requested packaging direction is complete and recognizable in the 320-pixel contain review.
+    - gate_id: object-count
+      level: required
+      requirement: The artifact contains exactly the requested number of complete package objects.
+      artifact_id: compare-direction-a
+      profile: contain-thumbnail
+      status: pass
+      evidence: Exactly 2 complete front-facing pouch objects remain visible in the 320-pixel contain review.
+    - gate_id: package-geometry
+      level: required
+      requirement: The declared package form and closure cues remain intact.
+      artifact_id: compare-direction-a
+      profile: contain-thumbnail
+      status: pass
+      evidence: The complete front-facing stand-up pouch silhouette and resealable top remain intact in the 320-pixel contain
+        review.
+    - gate_id: exact-copy
+      level: required
+      requirement: Key package-copy hierarchy remains recognizable; exact characters are verified at full resolution.
+      artifact_id: compare-direction-a
+      profile: contain-thumbnail
+      status: pass
+      evidence: The PPV FIXTURE and variant-name hierarchy remains identifiable in the 320-pixel contain review; per-character
+        exact-copy verification is bound to the full-resolution gate.
+    - gate_id: invented-claims
+      level: required
+      requirement: No prohibited claim, certification, price, legal copy, or mark is introduced.
+      artifact_id: compare-direction-a
+      profile: contain-thumbnail
+      status: pass
+      evidence: No health, certification, environmental, legal, price, or other unsupported claim is visible in the 320-pixel
+        contain review.
+    - gate_id: direction-comparability
+      level: required
+      requirement: Compare directions retain the same product baseline, object order, camera, and usable crop.
+      artifact_id: compare-direction-a
+      profile: contain-thumbnail
+      status: pass
+      evidence: Both directions show Lemon Ginger then Berry Oat as front-facing pouches on a matched 4:3 board; direction
+        A spans about y=117-968 and corrected direction B about y=115-965 in the 320-pixel contain review.
+    - gate_id: reference-role
+      level: required
+      requirement: Declared references stay within their permitted roles and no external identity leaks into the result.
+      artifact_id: compare-direction-a
+      profile: contain-thumbnail
+      status: pass
+      evidence: Only owned fictional inputs were used and no undeclared brand identity or external claim appears in the 320-pixel
+        contain review.
+    - gate_id: channel-fit
+      level: required
+      requirement: The artifact remains usable for its declared ecommerce or review channel.
+      artifact_id: compare-direction-a
+      profile: contain-thumbnail
+      status: pass
+      evidence: The composition, margins, and hierarchy remain usable for comparison review in the 320-pixel contain review.
+    - gate_id: artifact-integrity
+      level: required
+      requirement: The artifact is inspectable, hashable, and fully represented in the review profile.
+      artifact_id: compare-direction-a
+      profile: contain-thumbnail
+      status: pass
+      evidence: Independent inspection opened the 1448x1086 RGB PNG in the 320-pixel contain review; its SHA-256 matches the
+        receipt and no source canvas was cropped.
+    - gate_id: artifact-type
+      level: required
+      requirement: The requested visual artifact type is present.
+      artifact_id: compare-direction-b
+      profile: full-resolution
+      status: pass
+      evidence: The requested packaging direction is complete and recognizable at full resolution.
+    - gate_id: object-count
+      level: required
+      requirement: The artifact contains exactly the requested number of complete package objects.
+      artifact_id: compare-direction-b
+      profile: full-resolution
+      status: pass
+      evidence: Exactly 2 complete front-facing pouch objects remain visible at full resolution.
+    - gate_id: package-geometry
+      level: required
+      requirement: The declared package form and closure cues remain intact.
+      artifact_id: compare-direction-b
+      profile: full-resolution
+      status: pass
+      evidence: The complete front-facing stand-up pouch silhouette and resealable top remain intact at full resolution.
+    - gate_id: exact-copy
+      level: required
+      requirement: Required readable copy is exact, or the declared no-readable-copy condition is preserved.
+      artifact_id: compare-direction-b
+      profile: full-resolution
+      status: pass
+      evidence: PPV FIXTURE, CITRUS PANTRY MIX, both declared variant names, and 240 g remain readable and unchanged at full
+        resolution.
+    - gate_id: invented-claims
+      level: required
+      requirement: No prohibited claim, certification, price, legal copy, or mark is introduced.
+      artifact_id: compare-direction-b
+      profile: full-resolution
+      status: pass
+      evidence: No health, certification, environmental, legal, price, or other unsupported claim is visible at full resolution.
+    - gate_id: direction-comparability
+      level: required
+      requirement: Compare directions retain the same product baseline, object order, camera, and usable crop.
+      artifact_id: compare-direction-b
+      profile: full-resolution
+      status: pass
+      evidence: Both directions show Lemon Ginger then Berry Oat as front-facing pouches on a matched 4:3 board; direction
+        A spans about y=117-968 and corrected direction B about y=115-965 at full resolution.
+    - gate_id: reference-role
+      level: required
+      requirement: Declared references stay within their permitted roles and no external identity leaks into the result.
+      artifact_id: compare-direction-b
+      profile: full-resolution
+      status: pass
+      evidence: Only owned fictional inputs were used and no undeclared brand identity or external claim appears at full resolution.
+    - gate_id: channel-fit
+      level: required
+      requirement: The artifact remains usable for its declared ecommerce or review channel.
+      artifact_id: compare-direction-b
+      profile: full-resolution
+      status: pass
+      evidence: The composition, margins, and hierarchy remain usable for comparison review at full resolution.
+    - gate_id: artifact-integrity
+      level: required
+      requirement: The artifact is inspectable, hashable, and fully represented in the review profile.
+      artifact_id: compare-direction-b
+      profile: full-resolution
+      status: pass
+      evidence: Independent inspection opened the 1448x1086 RGB PNG at full resolution; its SHA-256 matches the receipt and
+        no source canvas was cropped.
+    - gate_id: artifact-type
+      level: required
+      requirement: The requested visual artifact type is present.
+      artifact_id: compare-direction-b
+      profile: contain-thumbnail
+      status: pass
+      evidence: The requested packaging direction is complete and recognizable in the 320-pixel contain review.
+    - gate_id: object-count
+      level: required
+      requirement: The artifact contains exactly the requested number of complete package objects.
+      artifact_id: compare-direction-b
+      profile: contain-thumbnail
+      status: pass
+      evidence: Exactly 2 complete front-facing pouch objects remain visible in the 320-pixel contain review.
+    - gate_id: package-geometry
+      level: required
+      requirement: The declared package form and closure cues remain intact.
+      artifact_id: compare-direction-b
+      profile: contain-thumbnail
+      status: pass
+      evidence: The complete front-facing stand-up pouch silhouette and resealable top remain intact in the 320-pixel contain
+        review.
+    - gate_id: exact-copy
+      level: required
+      requirement: Key package-copy hierarchy remains recognizable; exact characters are verified at full resolution.
+      artifact_id: compare-direction-b
+      profile: contain-thumbnail
+      status: pass
+      evidence: The PPV FIXTURE and variant-name hierarchy remains identifiable in the 320-pixel contain review; per-character
+        exact-copy verification is bound to the full-resolution gate.
+    - gate_id: invented-claims
+      level: required
+      requirement: No prohibited claim, certification, price, legal copy, or mark is introduced.
+      artifact_id: compare-direction-b
+      profile: contain-thumbnail
+      status: pass
+      evidence: No health, certification, environmental, legal, price, or other unsupported claim is visible in the 320-pixel
+        contain review.
+    - gate_id: direction-comparability
+      level: required
+      requirement: Compare directions retain the same product baseline, object order, camera, and usable crop.
+      artifact_id: compare-direction-b
+      profile: contain-thumbnail
+      status: pass
+      evidence: Both directions show Lemon Ginger then Berry Oat as front-facing pouches on a matched 4:3 board; direction
+        A spans about y=117-968 and corrected direction B about y=115-965 in the 320-pixel contain review.
+    - gate_id: reference-role
+      level: required
+      requirement: Declared references stay within their permitted roles and no external identity leaks into the result.
+      artifact_id: compare-direction-b
+      profile: contain-thumbnail
+      status: pass
+      evidence: Only owned fictional inputs were used and no undeclared brand identity or external claim appears in the 320-pixel
+        contain review.
+    - gate_id: channel-fit
+      level: required
+      requirement: The artifact remains usable for its declared ecommerce or review channel.
+      artifact_id: compare-direction-b
+      profile: contain-thumbnail
+      status: pass
+      evidence: The composition, margins, and hierarchy remain usable for comparison review in the 320-pixel contain review.
+    - gate_id: artifact-integrity
+      level: required
+      requirement: The artifact is inspectable, hashable, and fully represented in the review profile.
+      artifact_id: compare-direction-b
+      profile: contain-thumbnail
+      status: pass
+      evidence: Independent inspection opened the 1448x1086 RGB PNG in the 320-pixel contain review; its SHA-256 matches the
+        receipt and no source canvas was cropped.
+    required_failures: []
+    advisory_findings: []
+  remaining_work: []
+- schema_version: 1
+  id: refine-forward-2026-09-08
+  status: passed
+  mode: refine
+  source_brief:
+    locator: examples/fictional-pantry-product/brief-refine.yaml
+    sha256: 60955a4f18b613c427003194843a1c63ffa7a9a1f83089e8b6bdddadd4e07e0c
+  requested_artifact_ids:
+  - refined-package
+  contract_snapshot:
+    snapshot_level: full
+    normalized_contract:
+      mode: refine
+      processing_policy:
+        authorization:
+          authority: current-user
+          basis: The current user approved this exact fictional forward run, external image processing, derivative creation,
+            retained public evidence, and GitHub publication.
+          confirmed_at_utc: '2026-09-08T10:30:00Z'
+        default_permissions:
+          confidentiality: public
+          inspect_allowed: true
+          external_processing_allowed: true
+          derivative_allowed: true
+          redistribution_allowed: true
+          publication_allowed: true
+          attribution_status: not-required
+          attribution_text: null
+          attribution_fulfilled: not-applicable
+        field_overrides: []
+      product:
+        category: fictional pantry drink mix
+        product_name: PPV Fixture Citrus Pantry Mix
+        variants:
+        - name: Geometric Fixture
+          sku: fixture-pouch
+          color: multicolor
+        verified_facts:
+        - id: fictional-product-fact
+          value: Fictional dry pantry mix for testing only.
+          source_id: null
+          permissions:
+            confidentiality: public
+            inspect_allowed: true
+            external_processing_allowed: true
+            derivative_allowed: true
+            redistribution_allowed: true
+            publication_allowed: true
+            attribution_status: not-required
+            attribution_text: null
+            attribution_fulfilled: not-applicable
+        prohibited_claims:
+        - health benefit
+        - certification
+        - environmental benefit
+      sources:
+      - id: fictional-refine-brief
+        locator: brief-refine.yaml
+        permissions:
+          confidentiality: public
+          inspect_allowed: true
+          external_processing_allowed: true
+          derivative_allowed: true
+          redistribution_allowed: true
+          publication_allowed: true
+          attribution_status: not-required
+          attribution_text: null
+          attribution_fulfilled: not-applicable
+      exact_copy:
+        readable_copy_required: false
+        required: []
+        forbidden:
+        - readable words
+        - brand marks
+        - product claims
+        - certification marks
+        permissions:
+          confidentiality: public
+          inspect_allowed: true
+          external_processing_allowed: true
+          derivative_allowed: true
+          redistribution_allowed: true
+          publication_allowed: true
+          attribution_status: not-required
+          attribution_text: null
+          attribution_fulfilled: not-applicable
+      package:
+        form: geometric package fixture
+        geometry: front-facing rounded package silhouette with one top closure bar
+        material: abstract flat fixture; production material is unspecified
+        opening_action: abstract top closure cue; no production opening action is claimed
+      assets:
+      - id: refine-source
+        locator: assets/refine-source.png
+        role: approved-source-artifact
+        provenance: Programmatically generated geometric pouch with one documented spacing defect; see asset-provenance.yaml.
+        license_or_terms: Apache-2.0 repository fixture
+        permissions:
+          confidentiality: public
+          inspect_allowed: true
+          external_processing_allowed: true
+          derivative_allowed: true
+          redistribution_allowed: true
+          publication_allowed: true
+          attribution_status: not-required
+          attribution_text: null
+          attribution_fulfilled: not-applicable
+      - id: present-source
+        locator: assets/present-source.png
+        role: owned-corrected-spacing-reference
+        provenance: Programmatically generated companion fixture; only its title-bar-to-illustration spacing relationship
+          may guide the correction.
+        license_or_terms: Apache-2.0 repository fixture
+        permissions:
+          confidentiality: public
+          inspect_allowed: true
+          external_processing_allowed: true
+          derivative_allowed: true
+          redistribution_allowed: true
+          publication_allowed: true
+          attribution_status: not-required
+          attribution_text: null
+          attribution_fulfilled: not-applicable
+      constraints:
+        frozen: &id002
+        - package silhouette
+        - closure bar
+        - internal geometric mark set and order
+        - palette
+        - front view
+        - absence of readable copy
+        open:
+        - vertical spacing between title bar and framed illustration
+      product_baseline:
+        id: fictional-pantry-baseline-v1
+        product_facts:
+        - id: product-name
+          value: PPV Fixture Citrus Pantry Mix
+          source_id: fictional-refine-brief
+        package_snapshot:
+          form: geometric package fixture
+          geometry: front-facing rounded package silhouette with one top closure bar
+        exact_copy_snapshot:
+          readable_copy_required: false
+          required: []
+          forbidden:
+          - readable words
+          - brand marks
+          - product claims
+          - certification marks
+        sku_order:
+        - fixture-pouch
+        object_count: 1
+        camera_baseline:
+          view: front
+          crop: full pouch with margin
+        channel_snapshot:
+          deliverable: refined product visual
+        exclusions:
+        - claims
+        - certifications
+        - real brands
+      selection_lock:
+        id: refine-fixture-lock-v1
+        source_artifact_id: refine-source
+        source_artifact_sha256: bb9b5422aa980d7f67fbbff0f3e9b0cf51754ed80024c2b569ebd79c238a977b
+        source_scope: whole-artifact
+        source_object_ids:
+        - fixture-pouch
+        approved_by: current-user
+        approval_basis: The current user approved the inspected owned fixture hash and the mode-specific locked and reopened
+          fields for this forward run.
+        identity_snapshot:
+          package: same rounded silhouette
+          copy: none
+          palette: same
+          internal_marks: same set order and colors
+          calibration_corners: excluded from identity
+          view: front
+        locked_fields:
+        - package silhouette
+        - closure bar
+        - internal geometric mark set order and colors
+        - palette
+        - front view
+        - absence of readable copy
+        reopened_fields: &id003
+        - vertical spacing between title bar and framed illustration
+      correction:
+        failure_class: spacing
+        requested_change: Increase only the vertical gap between the dark title bar and the framed illustration.
+        prohibited_changes:
+        - readable copy
+        - package silhouette
+        - object count
+        - palette
+        - front view
+        - internal geometric mark set order or colors
+      channel:
+        deliverable: refined product visual
+        aspect_ratio: '4:5'
+        review_profiles:
+        - name: contain-thumbnail
+          fit: contain
+          longest_edge: 320
+      output:
+        delivery: relative-path
+        root: examples/fictional-pantry-product/generated
+        overwrite: false
+        retention_policy: preserve
+        permissions:
+          confidentiality: public
+          inspect_allowed: true
+          external_processing_allowed: true
+          derivative_allowed: true
+          redistribution_allowed: true
+          publication_allowed: true
+          attribution_status: not-required
+          attribution_text: null
+          attribution_fulfilled: not-applicable
+      requested_artifacts:
+      - id: refined-package
+        kind: corrected-package-visual
+        status: requested
+      qa_plan:
+        required_gate_ids:
+        - artifact-type
+        - object-count
+        - package-geometry
+        - exact-copy
+        - invented-claims
+        - selection-lock
+        - named-failure-correction
+        - reference-role
+        - channel-fit
+        - artifact-integrity
+        review_profiles:
+        - full-resolution
+        - contain-thumbnail
+        independent_review_required: true
+        sha256: fc493c4b89ac59f23d466d8438c5602668d5258c9310c311d8165384430717cd
+      generation_budget:
+        paid_calls_allowed: unknown
+        maximum_total_calls: 3
+    resolved_permissions:
+    - subject_type: field
+      subject_id_or_path: /mode
+      permissions:
+        confidentiality: public
+        inspect_allowed: true
+        external_processing_allowed: true
+        derivative_allowed: true
+        redistribution_allowed: true
+        publication_allowed: true
+        attribution_status: not-required
+        attribution_text: null
+        attribution_fulfilled: not-applicable
+      resolution_source: run-default
+      authorization_source: current-user
+    - subject_type: field
+      subject_id_or_path: /product
+      permissions:
+        confidentiality: public
+        inspect_allowed: true
+        external_processing_allowed: true
+        derivative_allowed: true
+        redistribution_allowed: true
+        publication_allowed: true
+        attribution_status: not-required
+        attribution_text: null
+        attribution_fulfilled: not-applicable
+      resolution_source: run-default
+      authorization_source: current-user
+    - subject_type: field
+      subject_id_or_path: /package
+      permissions:
+        confidentiality: public
+        inspect_allowed: true
+        external_processing_allowed: true
+        derivative_allowed: true
+        redistribution_allowed: true
+        publication_allowed: true
+        attribution_status: not-required
+        attribution_text: null
+        attribution_fulfilled: not-applicable
+      resolution_source: run-default
+      authorization_source: current-user
+    - subject_type: field
+      subject_id_or_path: /constraints
+      permissions:
+        confidentiality: public
+        inspect_allowed: true
+        external_processing_allowed: true
+        derivative_allowed: true
+        redistribution_allowed: true
+        publication_allowed: true
+        attribution_status: not-required
+        attribution_text: null
+        attribution_fulfilled: not-applicable
+      resolution_source: run-default
+      authorization_source: current-user
+    - subject_type: field
+      subject_id_or_path: /product_baseline
+      permissions:
+        confidentiality: public
+        inspect_allowed: true
+        external_processing_allowed: true
+        derivative_allowed: true
+        redistribution_allowed: true
+        publication_allowed: true
+        attribution_status: not-required
+        attribution_text: null
+        attribution_fulfilled: not-applicable
+      resolution_source: run-default
+      authorization_source: current-user
+    - subject_type: field
+      subject_id_or_path: /channel
+      permissions:
+        confidentiality: public
+        inspect_allowed: true
+        external_processing_allowed: true
+        derivative_allowed: true
+        redistribution_allowed: true
+        publication_allowed: true
+        attribution_status: not-required
+        attribution_text: null
+        attribution_fulfilled: not-applicable
+      resolution_source: run-default
+      authorization_source: current-user
+    - subject_type: field
+      subject_id_or_path: /requested_artifacts
+      permissions:
+        confidentiality: public
+        inspect_allowed: true
+        external_processing_allowed: true
+        derivative_allowed: true
+        redistribution_allowed: true
+        publication_allowed: true
+        attribution_status: not-required
+        attribution_text: null
+        attribution_fulfilled: not-applicable
+      resolution_source: run-default
+      authorization_source: current-user
+    - subject_type: field
+      subject_id_or_path: /qa_plan
+      permissions:
+        confidentiality: public
+        inspect_allowed: true
+        external_processing_allowed: true
+        derivative_allowed: true
+        redistribution_allowed: true
+        publication_allowed: true
+        attribution_status: not-required
+        attribution_text: null
+        attribution_fulfilled: not-applicable
+      resolution_source: run-default
+      authorization_source: current-user
+    - subject_type: field
+      subject_id_or_path: /generation_budget
+      permissions:
+        confidentiality: public
+        inspect_allowed: true
+        external_processing_allowed: true
+        derivative_allowed: true
+        redistribution_allowed: true
+        publication_allowed: true
+        attribution_status: not-required
+        attribution_text: null
+        attribution_fulfilled: not-applicable
+      resolution_source: run-default
+      authorization_source: current-user
+    - subject_type: field
+      subject_id_or_path: /selection_lock
+      permissions:
+        confidentiality: public
+        inspect_allowed: true
+        external_processing_allowed: true
+        derivative_allowed: true
+        redistribution_allowed: true
+        publication_allowed: true
+        attribution_status: not-required
+        attribution_text: null
+        attribution_fulfilled: not-applicable
+      resolution_source: run-default
+      authorization_source: current-user
+    - subject_type: field
+      subject_id_or_path: /correction
+      permissions:
+        confidentiality: public
+        inspect_allowed: true
+        external_processing_allowed: true
+        derivative_allowed: true
+        redistribution_allowed: true
+        publication_allowed: true
+        attribution_status: not-required
+        attribution_text: null
+        attribution_fulfilled: not-applicable
+      resolution_source: run-default
+      authorization_source: current-user
+    - subject_type: fact
+      subject_id_or_path: fictional-product-fact
+      permissions:
+        confidentiality: public
+        inspect_allowed: true
+        external_processing_allowed: true
+        derivative_allowed: true
+        redistribution_allowed: true
+        publication_allowed: true
+        attribution_status: not-required
+        attribution_text: null
+        attribution_fulfilled: not-applicable
+      resolution_source: object
+      authorization_source: current-user
+    - subject_type: source
+      subject_id_or_path: fictional-refine-brief
+      permissions:
+        confidentiality: public
+        inspect_allowed: true
+        external_processing_allowed: true
+        derivative_allowed: true
+        redistribution_allowed: true
+        publication_allowed: true
+        attribution_status: not-required
+        attribution_text: null
+        attribution_fulfilled: not-applicable
+      resolution_source: object
+      authorization_source: current-user
+    - subject_type: copy
+      subject_id_or_path: /exact_copy
+      permissions:
+        confidentiality: public
+        inspect_allowed: true
+        external_processing_allowed: true
+        derivative_allowed: true
+        redistribution_allowed: true
+        publication_allowed: true
+        attribution_status: not-required
+        attribution_text: null
+        attribution_fulfilled: not-applicable
+      resolution_source: object
+      authorization_source: current-user
+    - subject_type: asset
+      subject_id_or_path: refine-source
+      permissions:
+        confidentiality: public
+        inspect_allowed: true
+        external_processing_allowed: true
+        derivative_allowed: true
+        redistribution_allowed: true
+        publication_allowed: true
+        attribution_status: not-required
+        attribution_text: null
+        attribution_fulfilled: not-applicable
+      resolution_source: object
+      authorization_source: current-user
+    - subject_type: asset
+      subject_id_or_path: present-source
+      permissions:
+        confidentiality: public
+        inspect_allowed: true
+        external_processing_allowed: true
+        derivative_allowed: true
+        redistribution_allowed: true
+        publication_allowed: true
+        attribution_status: not-required
+        attribution_text: null
+        attribution_fulfilled: not-applicable
+      resolution_source: object
+      authorization_source: current-user
+    - subject_type: output
+      subject_id_or_path: /output
+      permissions:
+        confidentiality: public
+        inspect_allowed: true
+        external_processing_allowed: true
+        derivative_allowed: true
+        redistribution_allowed: true
+        publication_allowed: true
+        attribution_status: not-required
+        attribution_text: null
+        attribution_fulfilled: not-applicable
+      resolution_source: object
+      authorization_source: current-user
+    sha256: b4824cb60f04de4319637bb4efbee1f92350aad9deb2c76a96fa69f3c7d1c399
+    hash_basis: canonical-runtime-contract-json
+    omissions: []
+  artifacts:
+  - id: refined-package
+    locator: examples/fictional-pantry-product/generated/refined-package.png
+    locator_type: relative_path
+    role: corrected-package-visual
+    status: passed
+    sha256: b2dce882f3c948b91ee8e0dca490a85727e8874e9bad305bfde742ead65cb059
+    blocking_reason: null
+  generation_receipt:
+    executor_id: codex-imagegen-operator-2026-09-08
+    capability_used: openai-hosted-image-editing
+    runtime:
+      client: Codex desktop
+      client_version: codex-cli 0.153.4
+      operating_system: macOS 26.5
+      architecture: arm64
+      tool_or_provider: OpenAI-hosted image generation tool
+      model_or_version: not exposed by host
+      exposed_parameters: {}
+      executed_at_utc: '2026-09-08T11:23:17Z'
+    fixture_revision: 60955a4f18b613c427003194843a1c63ffa7a9a1f83089e8b6bdddadd4e07e0c
+    input_asset_ids:
+    - refine-source
+    - present-source
+    unused_declared_asset_ids: []
+    frozen_fields: *id002
+    changed_fields: *id003
+    attempts:
+    - attempt_id: refine-01
+      artifact_ids:
+      - refined-package
+      outputs:
+      - locator: examples/fictional-pantry-product/generated/attempts/refine/attempt-01.png
+        locator_type: relative_path
+        sha256: 64f7cc3b35c0e60acb8c8010555ae8e524cd5cfd825612d2639500c7f2998e20
+      failure_class: selection-lock-drift
+      requested_changes:
+      - Increase the title-bar-to-illustration spacing only.
+      preserved_fields:
+      - internal geometric mark set and order
+      - palette
+      - front view
+      - absence of readable copy
+      outcome: failed
+      executed_at_utc: '2026-09-08T11:22:15Z'
+    - attempt_id: refine-02
+      artifact_ids:
+      - refined-package
+      outputs:
+      - locator: examples/fictional-pantry-product/generated/refined-package.png
+        locator_type: relative_path
+        sha256: b2dce882f3c948b91ee8e0dca490a85727e8874e9bad305bfde742ead65cb059
+      failure_class: spacing
+      requested_changes:
+      - Increase the title-bar-to-illustration spacing while preserving the approved geometric identity.
+      preserved_fields: *id002
+      outcome: passed
+      executed_at_utc: '2026-09-08T11:23:17Z'
+  qa:
+    plan_sha256: fc493c4b89ac59f23d466d8438c5602668d5258c9310c311d8165384430717cd
+    reviewed_by: independent-agent
+    reviewer_id: independent-visual-qa-final
+    reviewed_at_utc: '2026-09-08T12:01:32Z'
+    gates:
+    - gate_id: artifact-type
+      level: required
+      requirement: The requested visual artifact type is present.
+      artifact_id: refined-package
+      profile: full-resolution
+      status: pass
+      evidence: The requested corrected geometric package visual is complete and recognizable at full resolution.
+    - gate_id: object-count
+      level: required
+      requirement: The artifact contains exactly the requested number of complete package objects.
+      artifact_id: refined-package
+      profile: full-resolution
+      status: pass
+      evidence: Exactly 1 complete front-facing pouch object remain visible at full resolution.
+    - gate_id: package-geometry
+      level: required
+      requirement: The declared package form and closure cues remain intact.
+      artifact_id: refined-package
+      profile: full-resolution
+      status: pass
+      evidence: The complete rounded package silhouette and single top closure bar remain intact at full resolution.
+    - gate_id: exact-copy
+      level: required
+      requirement: Required readable copy is exact, or the declared no-readable-copy condition is preserved.
+      artifact_id: refined-package
+      profile: full-resolution
+      status: pass
+      evidence: The owned source declares no readable package copy; the artifact adds no readable words, logos, claims, or
+        marks at full resolution.
+    - gate_id: invented-claims
+      level: required
+      requirement: No prohibited claim, certification, price, legal copy, or mark is introduced.
+      artifact_id: refined-package
+      profile: full-resolution
+      status: pass
+      evidence: No health, certification, environmental, legal, price, or other unsupported claim is visible at full resolution.
+    - gate_id: selection-lock
+      level: required
+      requirement: The runtime-approved SelectionLock remains intact outside explicitly reopened fields.
+      artifact_id: refined-package
+      profile: full-resolution
+      status: pass
+      evidence: The refine-source silhouette, closure bar, internal mark set, order, colors, front view, and no-readable-copy
+        identity remain stable after source-normalized comparison at full resolution.
+    - gate_id: named-failure-correction
+      level: required
+      requirement: The named failure is corrected without an unrelated package redesign.
+      artifact_id: refined-package
+      profile: full-resolution
+      status: pass
+      evidence: After source normalization, the title-bar-to-frame gap increases from about 74 to 107 pixels while other locked
+        element bounds differ by only about 0-1 pixel from resampling at full resolution.
+    - gate_id: reference-role
+      level: required
+      requirement: Declared references stay within their permitted roles and no external identity leaks into the result.
+      artifact_id: refined-package
+      profile: full-resolution
+      status: pass
+      evidence: Only owned fictional inputs were used and no undeclared brand identity or external claim appears at full resolution.
+    - gate_id: channel-fit
+      level: required
+      requirement: The artifact remains usable for its declared ecommerce or review channel.
+      artifact_id: refined-package
+      profile: full-resolution
+      status: pass
+      evidence: The composition, margins, and hierarchy remain usable for focused correction review at full resolution.
+    - gate_id: artifact-integrity
+      level: required
+      requirement: The artifact is inspectable, hashable, and fully represented in the review profile.
+      artifact_id: refined-package
+      profile: full-resolution
+      status: pass
+      evidence: Independent inspection opened the 1122x1402 RGB PNG at full resolution; its SHA-256 matches the receipt and
+        no source canvas was cropped.
+    - gate_id: artifact-type
+      level: required
+      requirement: The requested visual artifact type is present.
+      artifact_id: refined-package
+      profile: contain-thumbnail
+      status: pass
+      evidence: The requested corrected geometric package visual is complete and recognizable in the 320-pixel contain review.
+    - gate_id: object-count
+      level: required
+      requirement: The artifact contains exactly the requested number of complete package objects.
+      artifact_id: refined-package
+      profile: contain-thumbnail
+      status: pass
+      evidence: Exactly 1 complete front-facing pouch object remain visible in the 320-pixel contain review.
+    - gate_id: package-geometry
+      level: required
+      requirement: The declared package form and closure cues remain intact.
+      artifact_id: refined-package
+      profile: contain-thumbnail
+      status: pass
+      evidence: The complete rounded package silhouette and single top closure bar remain intact in the 320-pixel contain
+        review.
+    - gate_id: exact-copy
+      level: required
+      requirement: Key package-copy hierarchy remains recognizable; exact characters are verified at full resolution.
+      artifact_id: refined-package
+      profile: contain-thumbnail
+      status: pass
+      evidence: The owned source declares no readable package copy; the artifact adds no readable words, logos, claims, or
+        marks in the 320-pixel contain review.
+    - gate_id: invented-claims
+      level: required
+      requirement: No prohibited claim, certification, price, legal copy, or mark is introduced.
+      artifact_id: refined-package
+      profile: contain-thumbnail
+      status: pass
+      evidence: No health, certification, environmental, legal, price, or other unsupported claim is visible in the 320-pixel
+        contain review.
+    - gate_id: selection-lock
+      level: required
+      requirement: The runtime-approved SelectionLock remains intact outside explicitly reopened fields.
+      artifact_id: refined-package
+      profile: contain-thumbnail
+      status: pass
+      evidence: The refine-source silhouette, closure bar, internal mark set, order, colors, front view, and no-readable-copy
+        identity remain stable after source-normalized comparison in the 320-pixel contain review.
+    - gate_id: named-failure-correction
+      level: required
+      requirement: The named failure is corrected without an unrelated package redesign.
+      artifact_id: refined-package
+      profile: contain-thumbnail
+      status: pass
+      evidence: After source normalization, the title-bar-to-frame gap increases from about 74 to 107 pixels while other locked
+        element bounds differ by only about 0-1 pixel from resampling in the 320-pixel contain review.
+    - gate_id: reference-role
+      level: required
+      requirement: Declared references stay within their permitted roles and no external identity leaks into the result.
+      artifact_id: refined-package
+      profile: contain-thumbnail
+      status: pass
+      evidence: Only owned fictional inputs were used and no undeclared brand identity or external claim appears in the 320-pixel
+        contain review.
+    - gate_id: channel-fit
+      level: required
+      requirement: The artifact remains usable for its declared ecommerce or review channel.
+      artifact_id: refined-package
+      profile: contain-thumbnail
+      status: pass
+      evidence: The composition, margins, and hierarchy remain usable for focused correction review in the 320-pixel contain
+        review.
+    - gate_id: artifact-integrity
+      level: required
+      requirement: The artifact is inspectable, hashable, and fully represented in the review profile.
+      artifact_id: refined-package
+      profile: contain-thumbnail
+      status: pass
+      evidence: Independent inspection opened the 1122x1402 RGB PNG in the 320-pixel contain review; its SHA-256 matches the
+        receipt and no source canvas was cropped.
+    required_failures: []
+    advisory_findings:
+    - The generative editor re-rendered the fixture at a larger pixel size; QA evaluates the declared semantic lock and does
+      not claim pixel identity.
+  remaining_work: []
+- schema_version: 1
+  id: present-forward-2026-09-08
+  status: passed
+  mode: present
+  source_brief:
+    locator: examples/fictional-pantry-product/brief-present.yaml
+    sha256: a70ddb71a15737c529f5d7376623275f2b91773519dafd9190813e119691ce2c
+  requested_artifact_ids:
+  - ecommerce-packshot
+  contract_snapshot:
+    snapshot_level: full
+    normalized_contract:
+      mode: present
+      processing_policy:
+        authorization:
+          authority: current-user
+          basis: The current user approved this exact fictional forward run, external image processing, derivative creation,
+            retained public evidence, and GitHub publication.
+          confirmed_at_utc: '2026-09-08T10:30:00Z'
+        default_permissions:
+          confidentiality: public
+          inspect_allowed: true
+          external_processing_allowed: true
+          derivative_allowed: true
+          redistribution_allowed: true
+          publication_allowed: true
+          attribution_status: not-required
+          attribution_text: null
+          attribution_fulfilled: not-applicable
+        field_overrides: []
+      product:
+        category: fictional pantry drink mix
+        product_name: PPV Fixture Citrus Pantry Mix
+        variants:
+        - name: Geometric Fixture
+          sku: fixture-pouch
+          color: multicolor
+        verified_facts:
+        - id: fictional-product-fact
+          value: Fictional dry pantry mix for testing only.
+          source_id: null
+          permissions:
+            confidentiality: public
+            inspect_allowed: true
+            external_processing_allowed: true
+            derivative_allowed: true
+            redistribution_allowed: true
+            publication_allowed: true
+            attribution_status: not-required
+            attribution_text: null
+            attribution_fulfilled: not-applicable
+        prohibited_claims:
+        - health benefit
+        - certification
+        - environmental benefit
+      sources:
+      - id: fictional-present-brief
+        locator: brief-present.yaml
+        permissions:
+          confidentiality: public
+          inspect_allowed: true
+          external_processing_allowed: true
+          derivative_allowed: true
+          redistribution_allowed: true
+          publication_allowed: true
+          attribution_status: not-required
+          attribution_text: null
+          attribution_fulfilled: not-applicable
+      exact_copy:
+        readable_copy_required: false
+        required: []
+        forbidden:
+        - readable words
+        - brand marks
+        - product claims
+        - certification marks
+        permissions:
+          confidentiality: public
+          inspect_allowed: true
+          external_processing_allowed: true
+          derivative_allowed: true
+          redistribution_allowed: true
+          publication_allowed: true
+          attribution_status: not-required
+          attribution_text: null
+          attribution_fulfilled: not-applicable
+      package:
+        form: geometric package fixture
+        geometry: front-facing rounded package silhouette with one top closure bar
+        material: approved flat fixture identity; neutral surface rendering may change with lighting
+        opening_action: abstract top closure cue; no production opening action is claimed
+      assets:
+      - id: present-source
+        locator: assets/present-source.png
+        role: approved-package-artifact
+        provenance: Programmatically generated geometric pouch approved for neutral presentation; see asset-provenance.yaml.
+        license_or_terms: Apache-2.0 repository fixture
+        permissions:
+          confidentiality: public
+          inspect_allowed: true
+          external_processing_allowed: true
+          derivative_allowed: true
+          redistribution_allowed: true
+          publication_allowed: true
+          attribution_status: not-required
+          attribution_text: null
+          attribution_fulfilled: not-applicable
+      constraints:
+        frozen: &id004
+        - package silhouette
+        - closure bar
+        - internal geometric mark set order and colors
+        - palette
+        - absence of readable copy
+        - approved identity
+        open:
+        - camera
+        - crop
+        - background
+        - lighting
+        - neutral staging
+      product_baseline:
+        id: fictional-pantry-baseline-v1
+        product_facts:
+        - id: product-name
+          value: PPV Fixture Citrus Pantry Mix
+          source_id: fictional-present-brief
+        package_snapshot:
+          form: geometric package fixture
+          geometry: front-facing rounded package silhouette with one top closure bar
+        exact_copy_snapshot:
+          readable_copy_required: false
+          required: []
+          forbidden:
+          - readable words
+          - brand marks
+          - product claims
+          - certification marks
+        sku_order:
+        - fixture-pouch
+        object_count: 1
+        camera_baseline:
+          view: front
+          crop: full pouch with margin
+        channel_snapshot:
+          deliverable: neutral ecommerce hero
+        exclusions:
+        - claims
+        - certifications
+        - real brands
+      selection_lock:
+        id: present-fixture-lock-v1
+        source_artifact_id: present-source
+        source_artifact_sha256: 13ff82e7e7251e39daa112e0f16e73853be6afd3d7e10e23f0a2a238da3a4c2f
+        source_scope: named-objects
+        source_object_ids:
+        - fixture-pouch
+        approved_by: current-user
+        approval_basis: The current user approved the inspected owned fixture hash and the mode-specific locked and reopened
+          fields for this forward run.
+        identity_snapshot:
+          selected_package: fixture-pouch
+          copy: none
+          palette: same
+          internal_marks: same set order and colors
+          calibration_corners: excluded from identity
+        locked_fields:
+        - package silhouette
+        - closure bar
+        - internal geometric mark set order and colors
+        - palette
+        - absence of readable copy
+        reopened_fields: []
+      presentation:
+        selected_skus:
+        - fixture-pouch
+        target_object_count: 1
+        permitted_changes: &id005
+        - camera
+        - crop
+        - background
+        - lighting
+        - neutral staging
+        prohibited_changes:
+        - package silhouette
+        - closure bar
+        - readable copy
+        - internal geometric mark set order or colors
+        - palette
+      channel:
+        deliverable: neutral ecommerce hero
+        aspect_ratio: '4:3'
+        review_profiles:
+        - name: contain-thumbnail
+          fit: contain
+          longest_edge: 320
+      output:
+        delivery: relative-path
+        root: examples/fictional-pantry-product/generated
+        overwrite: false
+        retention_policy: preserve
+        permissions:
+          confidentiality: public
+          inspect_allowed: true
+          external_processing_allowed: true
+          derivative_allowed: true
+          redistribution_allowed: true
+          publication_allowed: true
+          attribution_status: not-required
+          attribution_text: null
+          attribution_fulfilled: not-applicable
+      requested_artifacts:
+      - id: ecommerce-packshot
+        kind: ecommerce-packshot
+        status: requested
+      qa_plan:
+        required_gate_ids:
+        - artifact-type
+        - object-count
+        - package-geometry
+        - exact-copy
+        - invented-claims
+        - selection-lock
+        - presentation-lock
+        - reference-role
+        - channel-fit
+        - artifact-integrity
+        review_profiles:
+        - full-resolution
+        - contain-thumbnail
+        independent_review_required: true
+        sha256: 8c8698a07eb1ae195dfd863a35fae6ca85beab932c9d87f2b9ec675672ed3db5
+      generation_budget:
+        paid_calls_allowed: unknown
+        maximum_total_calls: 3
+    resolved_permissions:
+    - subject_type: field
+      subject_id_or_path: /mode
+      permissions:
+        confidentiality: public
+        inspect_allowed: true
+        external_processing_allowed: true
+        derivative_allowed: true
+        redistribution_allowed: true
+        publication_allowed: true
+        attribution_status: not-required
+        attribution_text: null
+        attribution_fulfilled: not-applicable
+      resolution_source: run-default
+      authorization_source: current-user
+    - subject_type: field
+      subject_id_or_path: /product
+      permissions:
+        confidentiality: public
+        inspect_allowed: true
+        external_processing_allowed: true
+        derivative_allowed: true
+        redistribution_allowed: true
+        publication_allowed: true
+        attribution_status: not-required
+        attribution_text: null
+        attribution_fulfilled: not-applicable
+      resolution_source: run-default
+      authorization_source: current-user
+    - subject_type: field
+      subject_id_or_path: /package
+      permissions:
+        confidentiality: public
+        inspect_allowed: true
+        external_processing_allowed: true
+        derivative_allowed: true
+        redistribution_allowed: true
+        publication_allowed: true
+        attribution_status: not-required
+        attribution_text: null
+        attribution_fulfilled: not-applicable
+      resolution_source: run-default
+      authorization_source: current-user
+    - subject_type: field
+      subject_id_or_path: /constraints
+      permissions:
+        confidentiality: public
+        inspect_allowed: true
+        external_processing_allowed: true
+        derivative_allowed: true
+        redistribution_allowed: true
+        publication_allowed: true
+        attribution_status: not-required
+        attribution_text: null
+        attribution_fulfilled: not-applicable
+      resolution_source: run-default
+      authorization_source: current-user
+    - subject_type: field
+      subject_id_or_path: /product_baseline
+      permissions:
+        confidentiality: public
+        inspect_allowed: true
+        external_processing_allowed: true
+        derivative_allowed: true
+        redistribution_allowed: true
+        publication_allowed: true
+        attribution_status: not-required
+        attribution_text: null
+        attribution_fulfilled: not-applicable
+      resolution_source: run-default
+      authorization_source: current-user
+    - subject_type: field
+      subject_id_or_path: /channel
+      permissions:
+        confidentiality: public
+        inspect_allowed: true
+        external_processing_allowed: true
+        derivative_allowed: true
+        redistribution_allowed: true
+        publication_allowed: true
+        attribution_status: not-required
+        attribution_text: null
+        attribution_fulfilled: not-applicable
+      resolution_source: run-default
+      authorization_source: current-user
+    - subject_type: field
+      subject_id_or_path: /requested_artifacts
+      permissions:
+        confidentiality: public
+        inspect_allowed: true
+        external_processing_allowed: true
+        derivative_allowed: true
+        redistribution_allowed: true
+        publication_allowed: true
+        attribution_status: not-required
+        attribution_text: null
+        attribution_fulfilled: not-applicable
+      resolution_source: run-default
+      authorization_source: current-user
+    - subject_type: field
+      subject_id_or_path: /qa_plan
+      permissions:
+        confidentiality: public
+        inspect_allowed: true
+        external_processing_allowed: true
+        derivative_allowed: true
+        redistribution_allowed: true
+        publication_allowed: true
+        attribution_status: not-required
+        attribution_text: null
+        attribution_fulfilled: not-applicable
+      resolution_source: run-default
+      authorization_source: current-user
+    - subject_type: field
+      subject_id_or_path: /generation_budget
+      permissions:
+        confidentiality: public
+        inspect_allowed: true
+        external_processing_allowed: true
+        derivative_allowed: true
+        redistribution_allowed: true
+        publication_allowed: true
+        attribution_status: not-required
+        attribution_text: null
+        attribution_fulfilled: not-applicable
+      resolution_source: run-default
+      authorization_source: current-user
+    - subject_type: field
+      subject_id_or_path: /selection_lock
+      permissions:
+        confidentiality: public
+        inspect_allowed: true
+        external_processing_allowed: true
+        derivative_allowed: true
+        redistribution_allowed: true
+        publication_allowed: true
+        attribution_status: not-required
+        attribution_text: null
+        attribution_fulfilled: not-applicable
+      resolution_source: run-default
+      authorization_source: current-user
+    - subject_type: field
+      subject_id_or_path: /presentation
+      permissions:
+        confidentiality: public
+        inspect_allowed: true
+        external_processing_allowed: true
+        derivative_allowed: true
+        redistribution_allowed: true
+        publication_allowed: true
+        attribution_status: not-required
+        attribution_text: null
+        attribution_fulfilled: not-applicable
+      resolution_source: run-default
+      authorization_source: current-user
+    - subject_type: fact
+      subject_id_or_path: fictional-product-fact
+      permissions:
+        confidentiality: public
+        inspect_allowed: true
+        external_processing_allowed: true
+        derivative_allowed: true
+        redistribution_allowed: true
+        publication_allowed: true
+        attribution_status: not-required
+        attribution_text: null
+        attribution_fulfilled: not-applicable
+      resolution_source: object
+      authorization_source: current-user
+    - subject_type: source
+      subject_id_or_path: fictional-present-brief
+      permissions:
+        confidentiality: public
+        inspect_allowed: true
+        external_processing_allowed: true
+        derivative_allowed: true
+        redistribution_allowed: true
+        publication_allowed: true
+        attribution_status: not-required
+        attribution_text: null
+        attribution_fulfilled: not-applicable
+      resolution_source: object
+      authorization_source: current-user
+    - subject_type: copy
+      subject_id_or_path: /exact_copy
+      permissions:
+        confidentiality: public
+        inspect_allowed: true
+        external_processing_allowed: true
+        derivative_allowed: true
+        redistribution_allowed: true
+        publication_allowed: true
+        attribution_status: not-required
+        attribution_text: null
+        attribution_fulfilled: not-applicable
+      resolution_source: object
+      authorization_source: current-user
+    - subject_type: asset
+      subject_id_or_path: present-source
+      permissions:
+        confidentiality: public
+        inspect_allowed: true
+        external_processing_allowed: true
+        derivative_allowed: true
+        redistribution_allowed: true
+        publication_allowed: true
+        attribution_status: not-required
+        attribution_text: null
+        attribution_fulfilled: not-applicable
+      resolution_source: object
+      authorization_source: current-user
+    - subject_type: output
+      subject_id_or_path: /output
+      permissions:
+        confidentiality: public
+        inspect_allowed: true
+        external_processing_allowed: true
+        derivative_allowed: true
+        redistribution_allowed: true
+        publication_allowed: true
+        attribution_status: not-required
+        attribution_text: null
+        attribution_fulfilled: not-applicable
+      resolution_source: object
+      authorization_source: current-user
+    sha256: 58bf3ef8a2ae3c6126ebc24fabb10e339e6d9b6ce8d0e0b95b40f9e42a8e1be2
+    hash_basis: canonical-runtime-contract-json
+    omissions: []
+  artifacts:
+  - id: ecommerce-packshot
+    locator: examples/fictional-pantry-product/generated/ecommerce-packshot.png
+    locator_type: relative_path
+    role: ecommerce-packshot
+    status: passed
+    sha256: 0458444242f134aaf4865366f0e69e9170edaed7fb9c43e665eb064b52d6da3d
+    blocking_reason: null
+  generation_receipt:
+    executor_id: codex-imagegen-operator-2026-09-08
+    capability_used: openai-hosted-image-editing
+    runtime:
+      client: Codex desktop
+      client_version: codex-cli 0.153.4
+      operating_system: macOS 26.5
+      architecture: arm64
+      tool_or_provider: OpenAI-hosted image generation tool
+      model_or_version: not exposed by host
+      exposed_parameters: {}
+      executed_at_utc: '2026-09-08T11:22:15Z'
+    fixture_revision: a70ddb71a15737c529f5d7376623275f2b91773519dafd9190813e119691ce2c
+    input_asset_ids:
+    - present-source
+    unused_declared_asset_ids: []
+    frozen_fields: *id004
+    changed_fields: *id005
+    attempts:
+    - attempt_id: present-01
+      artifact_ids:
+      - ecommerce-packshot
+      outputs:
+      - locator: examples/fictional-pantry-product/generated/ecommerce-packshot.png
+        locator_type: relative_path
+        sha256: 0458444242f134aaf4865366f0e69e9170edaed7fb9c43e665eb064b52d6da3d
+      failure_class: null
+      requested_changes:
+      - Place the approved fixture pouch in a neutral ecommerce studio presentation.
+      preserved_fields: *id004
+      outcome: passed
+      executed_at_utc: '2026-09-08T11:22:15Z'
+  qa:
+    plan_sha256: 8c8698a07eb1ae195dfd863a35fae6ca85beab932c9d87f2b9ec675672ed3db5
+    reviewed_by: independent-agent
+    reviewer_id: independent-visual-qa-final
+    reviewed_at_utc: '2026-09-08T12:01:32Z'
+    gates:
+    - gate_id: artifact-type
+      level: required
+      requirement: The requested visual artifact type is present.
+      artifact_id: ecommerce-packshot
+      profile: full-resolution
+      status: pass
+      evidence: The requested neutral ecommerce packshot is complete and recognizable at full resolution.
+    - gate_id: object-count
+      level: required
+      requirement: The artifact contains exactly the requested number of complete package objects.
+      artifact_id: ecommerce-packshot
+      profile: full-resolution
+      status: pass
+      evidence: Exactly 1 complete front-facing pouch object remain visible at full resolution.
+    - gate_id: package-geometry
+      level: required
+      requirement: The declared package form and closure cues remain intact.
+      artifact_id: ecommerce-packshot
+      profile: full-resolution
+      status: pass
+      evidence: The complete rounded package silhouette and single top closure bar remain intact at full resolution.
+    - gate_id: exact-copy
+      level: required
+      requirement: Required readable copy is exact, or the declared no-readable-copy condition is preserved.
+      artifact_id: ecommerce-packshot
+      profile: full-resolution
+      status: pass
+      evidence: The owned source declares no readable package copy; the artifact adds no readable words, logos, claims, or
+        marks at full resolution.
+    - gate_id: invented-claims
+      level: required
+      requirement: No prohibited claim, certification, price, legal copy, or mark is introduced.
+      artifact_id: ecommerce-packshot
+      profile: full-resolution
+      status: pass
+      evidence: No health, certification, environmental, legal, price, or other unsupported claim is visible at full resolution.
+    - gate_id: selection-lock
+      level: required
+      requirement: The runtime-approved SelectionLock remains intact outside explicitly reopened fields.
+      artifact_id: ecommerce-packshot
+      profile: full-resolution
+      status: pass
+      evidence: The present-source silhouette, closure bar, internal mark set, order, colors, and no-readable-copy identity
+        remain recognizable at full resolution; canvas calibration corners are outside the named-object lock.
+    - gate_id: presentation-lock
+      level: required
+      requirement: Changes remain limited to permitted presentation fields.
+      artifact_id: ecommerce-packshot
+      profile: full-resolution
+      status: pass
+      evidence: Only camera, crop, neutral background, lighting, and studio staging changed; the approved package graphics
+        remain intact at full resolution.
+    - gate_id: reference-role
+      level: required
+      requirement: Declared references stay within their permitted roles and no external identity leaks into the result.
+      artifact_id: ecommerce-packshot
+      profile: full-resolution
+      status: pass
+      evidence: Only owned fictional inputs were used and no undeclared brand identity or external claim appears at full resolution.
+    - gate_id: channel-fit
+      level: required
+      requirement: The artifact remains usable for its declared ecommerce or review channel.
+      artifact_id: ecommerce-packshot
+      profile: full-resolution
+      status: pass
+      evidence: The composition, margins, and hierarchy remain usable for neutral ecommerce presentation at full resolution.
+    - gate_id: artifact-integrity
+      level: required
+      requirement: The artifact is inspectable, hashable, and fully represented in the review profile.
+      artifact_id: ecommerce-packshot
+      profile: full-resolution
+      status: pass
+      evidence: Independent inspection opened the 1448x1086 RGB PNG at full resolution; its SHA-256 matches the receipt and
+        no source canvas was cropped.
+    - gate_id: artifact-type
+      level: required
+      requirement: The requested visual artifact type is present.
+      artifact_id: ecommerce-packshot
+      profile: contain-thumbnail
+      status: pass
+      evidence: The requested neutral ecommerce packshot is complete and recognizable in the 320-pixel contain review.
+    - gate_id: object-count
+      level: required
+      requirement: The artifact contains exactly the requested number of complete package objects.
+      artifact_id: ecommerce-packshot
+      profile: contain-thumbnail
+      status: pass
+      evidence: Exactly 1 complete front-facing pouch object remain visible in the 320-pixel contain review.
+    - gate_id: package-geometry
+      level: required
+      requirement: The declared package form and closure cues remain intact.
+      artifact_id: ecommerce-packshot
+      profile: contain-thumbnail
+      status: pass
+      evidence: The complete rounded package silhouette and single top closure bar remain intact in the 320-pixel contain
+        review.
+    - gate_id: exact-copy
+      level: required
+      requirement: Key package-copy hierarchy remains recognizable; exact characters are verified at full resolution.
+      artifact_id: ecommerce-packshot
+      profile: contain-thumbnail
+      status: pass
+      evidence: The owned source declares no readable package copy; the artifact adds no readable words, logos, claims, or
+        marks in the 320-pixel contain review.
+    - gate_id: invented-claims
+      level: required
+      requirement: No prohibited claim, certification, price, legal copy, or mark is introduced.
+      artifact_id: ecommerce-packshot
+      profile: contain-thumbnail
+      status: pass
+      evidence: No health, certification, environmental, legal, price, or other unsupported claim is visible in the 320-pixel
+        contain review.
+    - gate_id: selection-lock
+      level: required
+      requirement: The runtime-approved SelectionLock remains intact outside explicitly reopened fields.
+      artifact_id: ecommerce-packshot
+      profile: contain-thumbnail
+      status: pass
+      evidence: The present-source silhouette, closure bar, internal mark set, order, colors, and no-readable-copy identity
+        remain recognizable in the 320-pixel contain review; canvas calibration corners are outside the named-object lock.
+    - gate_id: presentation-lock
+      level: required
+      requirement: Changes remain limited to permitted presentation fields.
+      artifact_id: ecommerce-packshot
+      profile: contain-thumbnail
+      status: pass
+      evidence: Only camera, crop, neutral background, lighting, and studio staging changed; the approved package graphics
+        remain intact in the 320-pixel contain review.
+    - gate_id: reference-role
+      level: required
+      requirement: Declared references stay within their permitted roles and no external identity leaks into the result.
+      artifact_id: ecommerce-packshot
+      profile: contain-thumbnail
+      status: pass
+      evidence: Only owned fictional inputs were used and no undeclared brand identity or external claim appears in the 320-pixel
+        contain review.
+    - gate_id: channel-fit
+      level: required
+      requirement: The artifact remains usable for its declared ecommerce or review channel.
+      artifact_id: ecommerce-packshot
+      profile: contain-thumbnail
+      status: pass
+      evidence: The composition, margins, and hierarchy remain usable for neutral ecommerce presentation in the 320-pixel
+        contain review.
+    - gate_id: artifact-integrity
+      level: required
+      requirement: The artifact is inspectable, hashable, and fully represented in the review profile.
+      artifact_id: ecommerce-packshot
+      profile: contain-thumbnail
+      status: pass
+      evidence: Independent inspection opened the 1448x1086 RGB PNG in the 320-pixel contain review; its SHA-256 matches the
+        receipt and no source canvas was cropped.
+    required_failures: []
+    advisory_findings: []
+  remaining_work: []

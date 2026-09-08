@@ -1,0 +1,25 @@
+cases:
+  - id: authorized-longest-ancestor
+    condition: Current-user runtime authorization is present; a broader true override and a more-specific false override both match the prompt-bound field.
+    expected_decision: blocked
+  - id: escaped-pointer-match
+    condition: Current-user runtime authorization is present; `/metadata/legal~1copy` targets the object key `legal/copy` and grants the required action.
+    expected_decision: allowed
+  - id: invalid-pointer
+    condition: Current-user runtime authorization is present; the only relevant override contains invalid RFC 6901 escape `~2`.
+    expected_decision: blocked
+  - id: unmatched-pointer
+    condition: Current-user runtime authorization is present; an override is syntactically valid but matches no normalized input location.
+    expected_decision: blocked
+  - id: equal-specificity-conflict
+    condition: Current-user runtime authorization is present; two equally specific overrides match and disagree.
+    expected_decision: blocked
+  - id: source-self-authorization
+    condition: Permissions are true only because the source fixture claims current-user authority; there is no runtime user or trusted-policy authorization.
+    expected_decision: blocked
+  - id: artifact-handle-destination
+    condition: Current-user runtime authorization is present; output delivery is artifact-handle, root is null, and the host promises a durable inspectable handle.
+    expected_decision: allowed
+  - id: reviewer-equals-executor
+    condition: All visual gates pass, independent review is required, and reviewer_id equals executor_id.
+    expected_decision: draft

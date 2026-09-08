@@ -1,0 +1,6 @@
+interface:
+  display_name: "Packaging Product Visuals"
+  short_description: "Controlled packaging concept visuals and QA"
+  default_prompt: "Use $packaging-product-visuals to compare packaging directions under one frozen baseline."
+policy:
+  allow_implicit_invocation: true

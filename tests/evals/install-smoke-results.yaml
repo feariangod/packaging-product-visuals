@@ -1,0 +1,215 @@
+schema_version: 1
+executed_on: '2026-09-08'
+runtime:
+  client: codex-cli
+  client_version: 0.153.4
+  model: gpt-5.6-luna
+  reasoning_effort: low
+  sandbox: read-only
+  ephemeral: true
+  operating_system:
+    name: macOS
+    version: '26.5'
+    build: 25F71
+    architecture: arm64
+scenario:
+  explicit_skill_invocation: $packaging-product-visuals
+  requested_artifact: one rendered packaging concept image
+  required_reference: references/contracts.md
+  intentionally_unavailable_capability: image generation or editing
+  expected_status: blocked
+method:
+  accepted_fresh_session_count: 5
+  standalone_session_count: 4
+  plugin_session_count: 1
+  home_isolated_per_session: true
+  codex_home_isolated_per_session: true
+  cwd_isolated_per_session: true
+  credentials: copied only into each isolated runtime and omitted from evidence
+  event_hash_basis: raw codex exec JSONL bytes retained outside the repository
+  install_tree_hash_basis: SHA-256 over sorted relative file paths followed by file bytes
+  public_candidate_file_count: 7
+  public_candidate_source: git ls-files --cached --others --exclude-standard
+  source_skill_tree_sha256: 9ea3637629dc53712670a5dd5ab09c9084e69794649ea8a2241116d1318207f0
+plugin_installation:
+  marketplace_name: ppv-install-smoke
+  marketplace_source: isolated local filesystem marketplace
+  distribution: skills-only plugin
+  distribution_contents:
+    - .codex-plugin/plugin.json
+    - skills/packaging-product-visuals/
+    - LICENSE
+  marketplace_add_exit_code: 0
+  plugin_add_exit_code: 0
+  plugin_list_exit_code: 0
+  plugin_id: packaging-product-visuals@ppv-install-smoke
+  plugin_version: 0.1.0
+  installed: true
+  enabled: true
+  remote_catalog_required: false
+  cache_audit:
+    installed_file_count: 9
+    installed_skill_file_count: 7
+    pyc_file_count: 0
+    unexpected_files: []
+    installed_files:
+      - .codex-plugin/plugin.json
+      - LICENSE
+      - skills/packaging-product-visuals/SKILL.md
+      - skills/packaging-product-visuals/agents/openai.yaml
+      - skills/packaging-product-visuals/references/contracts.md
+      - skills/packaging-product-visuals/references/packaging-qa.md
+      - skills/packaging-product-visuals/references/rights-and-privacy.md
+      - skills/packaging-product-visuals/references/workflow.md
+      - skills/packaging-product-visuals/scripts/prepare_review_pack.py
+results:
+  - id: explicit-codex-home-skills
+    distribution: standalone
+    environment:
+      home: isolated temporary home
+      codex_home: explicitly set to an isolated temporary Codex home
+      install_relative_path: $CODEX_HOME/skills/packaging-product-visuals
+      cwd: isolated empty project outside the install tree
+      ignore_user_config: true
+    exit_code: 0
+    event_stream_sha256: 63c52fdf407261c298d0bfdd35fe553b2d45906927403df6f8e49b6402d046ad
+    load_trace:
+      event_type: item.completed
+      item_type: command_execution
+      skill_file: $CODEX_HOME/skills/packaging-product-visuals/SKILL.md
+      skill_read_exit_code: 0
+      reference_file: $CODEX_HOME/skills/packaging-product-visuals/references/contracts.md
+      reference_read_exit_code: 0
+    outcome:
+      skill_discovered: true
+      skill_loaded: true
+      relative_reference_resolved: true
+      capability_gap_reported: image_generation_unavailable
+      status: blocked
+      artifact_invented: false
+      files_written: false
+    install_tree_sha256_before: 9ea3637629dc53712670a5dd5ab09c9084e69794649ea8a2241116d1318207f0
+    install_tree_sha256_after: 9ea3637629dc53712670a5dd5ab09c9084e69794649ea8a2241116d1318207f0
+  - id: default-codex-home-skills
+    distribution: standalone
+    environment:
+      home: isolated temporary home
+      codex_home: unset and derived from the isolated home
+      install_relative_path: $HOME/.codex/skills/packaging-product-visuals
+      cwd: isolated empty project outside the install tree
+      ignore_user_config: true
+    exit_code: 0
+    event_stream_sha256: 8e5a9fb0b70460cf73c8f08e6a08afda5362aee0506470375912fde9831fd683
+    load_trace:
+      event_type: item.completed
+      item_type: command_execution
+      skill_file: $HOME/.codex/skills/packaging-product-visuals/SKILL.md
+      skill_read_exit_code: 0
+      reference_file: $HOME/.codex/skills/packaging-product-visuals/references/contracts.md
+      reference_read_exit_code: 0
+    outcome:
+      skill_discovered: true
+      skill_loaded: true
+      relative_reference_resolved: true
+      capability_gap_reported: image_generation_unavailable
+      status: blocked
+      artifact_invented: false
+      files_written: false
+    install_tree_sha256_before: 9ea3637629dc53712670a5dd5ab09c9084e69794649ea8a2241116d1318207f0
+    install_tree_sha256_after: 9ea3637629dc53712670a5dd5ab09c9084e69794649ea8a2241116d1318207f0
+  - id: user-agents-skills
+    distribution: standalone
+    environment:
+      home: isolated temporary home
+      codex_home: unset and derived from the isolated home
+      install_relative_path: $HOME/.agents/skills/packaging-product-visuals
+      cwd: isolated empty project outside the install tree
+      ignore_user_config: true
+    exit_code: 0
+    event_stream_sha256: 59636455f9b0a2b1b58eb7514359eb9e1828252d5792000be9d632d4809f5e27
+    load_trace:
+      event_type: item.completed
+      item_type: command_execution
+      skill_file: $HOME/.agents/skills/packaging-product-visuals/SKILL.md
+      skill_read_exit_code: 0
+      reference_file: $HOME/.agents/skills/packaging-product-visuals/references/contracts.md
+      reference_read_exit_code: 0
+    outcome:
+      skill_discovered: true
+      skill_loaded: true
+      relative_reference_resolved: true
+      capability_gap_reported: image_generation_unavailable
+      status: blocked
+      artifact_invented: false
+      files_written: false
+    install_tree_sha256_before: 9ea3637629dc53712670a5dd5ab09c9084e69794649ea8a2241116d1318207f0
+    install_tree_sha256_after: 9ea3637629dc53712670a5dd5ab09c9084e69794649ea8a2241116d1318207f0
+  - id: project-agents-skills
+    distribution: standalone
+    environment:
+      home: isolated temporary home
+      codex_home: unset and derived from the isolated home
+      install_relative_path: <project>/.agents/skills/packaging-product-visuals
+      cwd: isolated project root containing only the project-local install
+      ignore_user_config: true
+    exit_code: 0
+    event_stream_sha256: c1e3404b5851028014ef87d1df766ab2c4f89c1a57a65be3357d0f4b46d3e4a9
+    load_trace:
+      event_type: item.completed
+      item_type: command_execution
+      skill_file: <project>/.agents/skills/packaging-product-visuals/SKILL.md
+      skill_read_exit_code: 0
+      reference_file: <project>/.agents/skills/packaging-product-visuals/references/contracts.md
+      reference_read_exit_code: 0
+    outcome:
+      skill_discovered: true
+      skill_loaded: true
+      relative_reference_resolved: true
+      capability_gap_reported: image_generation_unavailable
+      status: blocked
+      artifact_invented: false
+      files_written: false
+    install_tree_sha256_before: 9ea3637629dc53712670a5dd5ab09c9084e69794649ea8a2241116d1318207f0
+    install_tree_sha256_after: 9ea3637629dc53712670a5dd5ab09c9084e69794649ea8a2241116d1318207f0
+  - id: local-marketplace-plugin
+    distribution: skills-only-plugin
+    environment:
+      home: isolated temporary home
+      codex_home: explicitly set to the isolated plugin-install Codex home
+      install_relative_path: $CODEX_HOME/plugins/cache/ppv-install-smoke/packaging-product-visuals/0.1.0/skills/packaging-product-visuals
+      cwd: isolated empty project outside the marketplace and install cache
+      ignore_user_config: false
+      ignore_user_config_reason: plugin enablement is the isolated config written by the local marketplace and plugin install commands
+      config_provenance: generated only by codex plugin marketplace add and codex plugin add
+    exit_code: 0
+    event_stream_sha256: 8b56d749ea070e45b2fe8c087912d2140392039755323e706b15baea4074d4f9
+    discovered_skill_id: packaging-product-visuals:packaging-product-visuals
+    load_trace:
+      event_type: item.completed
+      item_type: command_execution
+      initial_path_probe_exit_code: 1
+      initial_path_probe_note: omitted the plugin-name cache segment; no file was read or written
+      skill_file: $CODEX_HOME/plugins/cache/ppv-install-smoke/packaging-product-visuals/0.1.0/skills/packaging-product-visuals/SKILL.md
+      skill_read_exit_code: 0
+      reference_file: $CODEX_HOME/plugins/cache/ppv-install-smoke/packaging-product-visuals/0.1.0/skills/packaging-product-visuals/references/contracts.md
+      reference_read_exit_code: 0
+    outcome:
+      skill_discovered: true
+      skill_loaded: true
+      relative_reference_resolved: true
+      capability_gap_reported: image_generation_unavailable
+      status: blocked
+      artifact_invented: false
+      files_written: false
+    install_tree_sha256_before: 9ea3637629dc53712670a5dd5ab09c9084e69794649ea8a2241116d1318207f0
+    install_tree_sha256_after: 9ea3637629dc53712670a5dd5ab09c9084e69794649ea8a2241116d1318207f0
+acceptance:
+  result: passed
+  accepted_sessions: 5
+  skill_discovery_successes: 5
+  skill_load_successes: 5
+  relative_reference_successes: 5
+  honest_capability_blocks: 5
+  invented_artifacts: 0
+  install_tree_mutations: 0
+  session_exit_failures: 0

@@ -1,0 +1,8 @@
+.venv/
+__pycache__/
+.pytest_cache/
+.superpowers/
+.worktrees/
+dist/
+*.egg-info/
+tests/evals/local-output/

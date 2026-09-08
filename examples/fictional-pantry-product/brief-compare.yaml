@@ -1,0 +1,195 @@
+mode: compare
+processing_policy:
+  authorization:
+    authority: none
+    basis: null
+    confirmed_at_utc: null
+  default_permissions:
+    confidentiality: public
+    inspect_allowed: true
+    external_processing_allowed: true
+    derivative_allowed: true
+    redistribution_allowed: true
+    publication_allowed: true
+    attribution_status: not-required
+    attribution_text: null
+    attribution_fulfilled: not-applicable
+  field_overrides: []
+product:
+  category: fictional pantry drink mix
+  product_name: PPV Fixture Citrus Pantry Mix
+  variants:
+    - name: Lemon Ginger
+      sku: lemon-ginger
+      color: yellow
+    - name: Berry Oat
+      sku: berry-oat
+      color: red
+  verified_facts:
+    - id: fictional-product-fact
+      value: Fictional dry pantry mix for testing only.
+      source_id: null
+      permissions:
+        confidentiality: public
+        inspect_allowed: true
+        external_processing_allowed: true
+        derivative_allowed: true
+        redistribution_allowed: true
+        publication_allowed: true
+        attribution_status: not-required
+        attribution_text: null
+        attribution_fulfilled: not-applicable
+  prohibited_claims:
+    - health benefit
+    - certification
+    - environmental benefit
+sources:
+  - id: fictional-brief
+    locator: brief-compare.yaml
+    permissions:
+      confidentiality: public
+      inspect_allowed: true
+      external_processing_allowed: true
+      derivative_allowed: true
+      redistribution_allowed: true
+      publication_allowed: true
+      attribution_status: not-required
+      attribution_text: null
+      attribution_fulfilled: not-applicable
+exact_copy:
+  readable_copy_required: true
+  required:
+    - PPV FIXTURE
+    - CITRUS PANTRY MIX
+    - LEMON GINGER
+    - BERRY OAT
+    - 240 g
+  forbidden: []
+  permissions:
+    confidentiality: public
+    inspect_allowed: true
+    external_processing_allowed: true
+    derivative_allowed: true
+    redistribution_allowed: true
+    publication_allowed: true
+    attribution_status: not-required
+    attribution_text: null
+    attribution_fulfilled: not-applicable
+package:
+  form: stand-up pantry pouch
+  geometry: front-facing gusset pouch with resealable top
+  material: fictional matte paper laminate
+  opening_action: tear notch and resealable zipper
+assets:
+  - id: corner-marker-reference
+    locator: assets/角标.png
+    role: non-latin-filename-check
+    provenance: Programmatically generated geometric marker for tests.
+    license_or_terms: Apache-2.0 repository fixture
+    permissions:
+      confidentiality: public
+      inspect_allowed: true
+      external_processing_allowed: true
+      derivative_allowed: true
+      redistribution_allowed: true
+      publication_allowed: true
+      attribution_status: not-required
+      attribution_text: null
+      attribution_fulfilled: not-applicable
+constraints:
+  frozen:
+    - package form and camera
+    - exact copy
+    - variant count and order
+  open:
+    - illustration language
+    - typography treatment
+product_baseline:
+  id: fictional-pantry-baseline-v1
+  product_facts:
+    - id: product-name
+      value: PPV Fixture Citrus Pantry Mix
+      source_id: fictional-brief
+  package_snapshot:
+    form: stand-up pantry pouch
+    geometry: front-facing gusset pouch with resealable top
+  exact_copy_snapshot:
+    required: [PPV FIXTURE, CITRUS PANTRY MIX, LEMON GINGER, BERRY OAT, 240 g]
+  sku_order: [lemon-ginger, berry-oat]
+  object_count: 2
+  camera_baseline:
+    view: front
+    crop: full pouch with margin
+  channel_snapshot:
+    deliverable: ecommerce comparison board
+  exclusions: [claims, certifications, real brands]
+comparison_directions:
+  - id: quiet-pantry
+    name: Quiet Pantry
+    objective: Make the fictional pantry format feel calm and ingredient-led.
+    visual_definition:
+      palette: warm paper with restrained yellow and red accents
+      illustration: small geometric citrus and berry forms
+      typography: compact serif display with plain sans labels
+    target_values: {thumbnail_recognition: clear, decoration: restrained}
+    reference_roles:
+      - source_or_asset_id: corner-marker-reference
+        role: geometry-only calibration
+        permitted_elements: [corner markers]
+        prohibited_elements: [branding, copy, claims]
+    changed_fields: [visual_system, illustration_language]
+    frozen_fields: [package, exact_copy, sku_order, camera]
+    exclusions: [photographic food, real logos]
+  - id: bright-counter
+    name: Bright Counter
+    objective: Increase shelf-block recognition while keeping the same pouch facts.
+    visual_definition:
+      palette: white field with high-contrast variant blocks
+      illustration: large flat pantry ingredient shapes
+      typography: rounded heavy sans with wide tracking
+    target_values: {thumbnail_recognition: strong, decoration: moderate}
+    reference_roles:
+      - source_or_asset_id: corner-marker-reference
+        role: geometry-only calibration
+        permitted_elements: [corner markers]
+        prohibited_elements: [branding, copy, claims]
+    changed_fields: [visual_system, color_block_scale]
+    frozen_fields: [package, exact_copy, sku_order, camera]
+    exclusions: [photographic food, real logos]
+channel:
+  deliverable: ecommerce comparison board
+  aspect_ratio: "4:3"
+  review_profiles:
+    - name: contain-thumbnail
+      fit: contain
+      longest_edge: 320
+output:
+  delivery: relative-path
+  root: examples/fictional-pantry-product/generated
+  overwrite: false
+  retention_policy: preserve
+  permissions:
+    confidentiality: public
+    inspect_allowed: true
+    external_processing_allowed: true
+    derivative_allowed: true
+    redistribution_allowed: true
+    publication_allowed: true
+    attribution_status: not-required
+    attribution_text: null
+    attribution_fulfilled: not-applicable
+requested_artifacts:
+  - id: compare-direction-a
+    kind: packaging-direction
+    status: requested
+  - id: compare-direction-b
+    kind: packaging-direction
+    status: requested
+qa_plan:
+  required_gate_ids: [artifact-type, object-count, package-geometry, exact-copy, invented-claims, direction-comparability, reference-role, channel-fit, artifact-integrity]
+  review_profiles: [full-resolution, contain-thumbnail]
+  independent_review_required: true
+  sha256: a7c9b47d2d6609de80f106cd0903f12720b9542b0b28d1283da5e685931715ed
+generation_budget:
+  paid_calls_allowed: unknown
+  maximum_total_calls: 3

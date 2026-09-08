@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["scope", "mode", "selected_skill", "reason"],
+  "properties": {
+    "scope": {
+      "enum": ["in-scope", "out-of-scope"]
+    },
+    "mode": {
+      "type": ["string", "null"],
+      "enum": ["compare", "refine", "present", null]
+    },
+    "selected_skill": {
+      "type": ["string", "null"]
+    },
+    "reason": {
+      "type": "string",
+      "minLength": 1
+    }
+  }
+}

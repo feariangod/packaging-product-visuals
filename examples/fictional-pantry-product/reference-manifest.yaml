@@ -1,0 +1,46 @@
+references:
+  - id: geometric-calibration
+    locator: assets/角标.png
+    role: owned-fixture-calibration
+    permitted_elements: [corner markers, flat geometry]
+    prohibited_elements: [brand identity, product claims, private content]
+    permissions:
+      confidentiality: public
+      inspect_allowed: true
+      external_processing_allowed: true
+      derivative_allowed: true
+      redistribution_allowed: true
+      publication_allowed: true
+      attribution_status: not-required
+      attribution_text: null
+      attribution_fulfilled: not-applicable
+  - id: refine-source-artifact
+    locator: assets/refine-source.png
+    role: approved fictional source
+    permitted_elements: [pouch silhouette, documented spacing defect]
+    prohibited_elements: [new claims, new copy, identity changes]
+    permissions:
+      confidentiality: public
+      inspect_allowed: true
+      external_processing_allowed: true
+      derivative_allowed: true
+      redistribution_allowed: true
+      publication_allowed: true
+      attribution_status: not-required
+      attribution_text: null
+      attribution_fulfilled: not-applicable
+  - id: refine-corrected-spacing-reference
+    locator: assets/present-source.png
+    role: owned corrected-spacing reference
+    permitted_elements: [title-bar-to-illustration spacing relationship]
+    prohibited_elements: [package identity changes, new copy, claims, exact pixel substitution]
+    permissions:
+      confidentiality: public
+      inspect_allowed: true
+      external_processing_allowed: true
+      derivative_allowed: true
+      redistribution_allowed: true
+      publication_allowed: true
+      attribution_status: not-required
+      attribution_text: null
+      attribution_fulfilled: not-applicable

@@ -1,0 +1,34 @@
+{
+  "name": "packaging-product-visuals",
+  "version": "0.1.0",
+  "description": "Develop and review controlled packaging-led product visuals.",
+  "author": {
+    "name": "feariangod"
+  },
+  "license": "Apache-2.0",
+  "keywords": [
+    "packaging",
+    "product-visuals",
+    "image-generation",
+    "visual-qa"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Packaging Product Visuals",
+    "shortDescription": "Controlled packaging concept visuals and QA",
+    "longDescription": "Compare, refine, and present packaging-led product concept visuals while preserving approved product facts and visual identity.",
+    "developerName": "feariangod",
+    "category": "Design",
+    "capabilities": [
+      "Packaging image workflow orchestration",
+      "Permission-aware artifact handling",
+      "Packaging visual QA contracts",
+      "Local review-pack preparation"
+    ],
+    "defaultPrompt": [
+      "Use $packaging-product-visuals to compare packaging directions under one frozen baseline.",
+      "Use $packaging-product-visuals to refine this package without changing its locked identity.",
+      "Use $packaging-product-visuals to create a neutral packshot from this approved package."
+    ]
+  }
+}

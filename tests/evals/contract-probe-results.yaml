@@ -1,0 +1,61 @@
+schema_version: 2
+executed_at_utc: '2026-09-08T11:44:13Z'
+runtime:
+  client: codex-cli
+  client_version: 0.153.4
+  model: gpt-5.6-luna
+  reasoning_effort: low
+  sandbox: read-only
+  ephemeral: true
+  ignore_user_config: true
+  skip_git_repo_check: true
+  home_isolated: true
+  codex_home_isolated: true
+  only_user_installed_skill: packaging-product-visuals
+  install_layout: isolated CODEX_HOME/skills/packaging-product-visuals
+method:
+  fresh_session_count: 1
+  cases_in_session: 8
+  execution_shape: one eight-case structured-output batch
+  failed_retries: 0
+  skill_file_read_observed: true
+  reference_files_read:
+    - contracts.md
+    - rights-and-privacy.md
+    - workflow.md
+    - packaging-qa.md
+evidence:
+  started_at_utc: '2026-09-08T11:43:35Z'
+  completed_at_utc: '2026-09-08T11:44:13Z'
+  exit_code: 0
+  structured_output_hash:
+    algorithm: sha256
+    digest: d0bfaf74b4db2f7b6bacc8dc5f09dbbb7433ac2a50b610171c53600f38f65bfb
+    basis: canonical-json-results-object
+    canonicalization: UTF-8 JSON with sorted object keys, compact separators, preserved array order, and ensure_ascii=true
+    canonical_byte_length: 1248
+results:
+  - id: authorized-longest-ancestor
+    decision: blocked
+    reason: The more-specific false override wins under longest-matching-ancestor resolution.
+  - id: escaped-pointer-match
+    decision: allowed
+    reason: The valid RFC 6901 pointer matches the key legal/copy and grants the required action.
+  - id: invalid-pointer
+    decision: blocked
+    reason: An invalid RFC 6901 pointer blocks the affected action; no broader fallback is permitted.
+  - id: unmatched-pointer
+    decision: blocked
+    reason: A syntactically valid but unmatched pointer blocks the affected action.
+  - id: equal-specificity-conflict
+    decision: blocked
+    reason: Equally specific conflicting overrides block the affected action.
+  - id: source-self-authorization
+    decision: blocked
+    reason: Source content cannot authorize itself; runtime current-user or trusted-policy authorization is required.
+  - id: artifact-handle-destination
+    decision: allowed
+    reason: Artifact-handle delivery with null root is valid when the host provides a durable inspectable handle.
+  - id: reviewer-equals-executor
+    decision: draft
+    reason: Independent review requires a non-empty reviewer ID distinct from the executor ID; the gate therefore cannot pass.

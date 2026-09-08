@@ -1,0 +1,548 @@
+schema_version: 2
+executed_at_utc: '2026-09-08T11:25:00Z'
+runtime:
+  client: codex-cli
+  client_version: 0.153.4
+  model: gpt-5.6-luna
+  reasoning_effort: low
+  sandbox: read-only
+  ephemeral: true
+  ignore_user_config: true
+  skip_git_repo_check: true
+  home_isolated_per_run: true
+  codex_home_isolated_per_run: true
+  only_user_installed_skill: packaging-product-visuals
+  install_layout: isolated CODEX_HOME/skills/packaging-product-visuals
+method:
+  fresh_session_count: 36
+  trials_per_case: 3
+  positive_case_count: 3
+  negative_case_count: 9
+  evaluation_target: one user-installed candidate skill
+  underlying_request_explicit_skill_requested: false
+  candidate_name_omitted_from_underlying_request: true
+  general_purpose_and_builtin_skills_excluded: true
+  failed_retries: 0
+  total_duration_seconds: 158
+calibration:
+  discarded_session_count: 36
+  discarded_total_duration_seconds: 183
+  discarded_misroutes: 3
+  reason: The initial evaluator asked about any installed skill, but Codex CLI also exposes built-in system
+    skills outside CODEX_HOME. The accepted matrix restricts routing to the single user-installed candidate,
+    which is the subject of this evaluation.
+preflight:
+  restricted_network_failures: 1
+  escalated_retry_succeeded: true
+acceptance:
+  positive_runs: 9
+  positive_hits: 9
+  negative_runs: 27
+  negative_null_routes: 27
+  high_risk_misroutes: 0
+  positive_cases_with_observed_skill_load: 3
+  runs_with_observed_skill_load: 36
+results:
+- case_id: compare-positive
+  trial: 1
+  scope: in-scope
+  mode: compare
+  selected_skill: packaging-product-visuals
+  reason: The request explicitly compares two visual systems for the same package while keeping copy and
+    geometry fixed, matching the skill's compare mode and frozen-baseline requirement.
+  skill_file_read_observed: true
+  client: codex-cli 0.153.4
+  model: gpt-5.6-luna
+  reasoning_effort: low
+  explicit_skill_requested: false
+  successful_attempt: 1
+  duration_seconds: 16
+- case_id: compare-positive
+  trial: 2
+  scope: in-scope
+  mode: compare
+  selected_skill: packaging-product-visuals
+  reason: "The request is to compare two visual systems for the same pouch while freezing copy and package\
+    \ geometry, which matches the skill\u2019s controlled packaging comparison mode."
+  skill_file_read_observed: true
+  client: codex-cli 0.153.4
+  model: gpt-5.6-luna
+  reasoning_effort: low
+  explicit_skill_requested: false
+  successful_attempt: 1
+  duration_seconds: 17
+- case_id: compare-positive
+  trial: 3
+  scope: in-scope
+  mode: compare
+  selected_skill: packaging-product-visuals
+  reason: "The request explicitly asks to compare two visual systems for the same package while keeping\
+    \ copy and geometry fixed, matching the skill\u2019s compare mode."
+  skill_file_read_observed: true
+  client: codex-cli 0.153.4
+  model: gpt-5.6-luna
+  reasoning_effort: low
+  explicit_skill_requested: false
+  successful_attempt: 1
+  duration_seconds: 17
+- case_id: refine-positive
+  trial: 1
+  scope: in-scope
+  mode: refine
+  selected_skill: packaging-product-visuals
+  reason: The request is to correct one documented defect in an approved packaging image while preserving
+    its identity, which matches the skill's refine mode.
+  skill_file_read_observed: true
+  client: codex-cli 0.153.4
+  model: gpt-5.6-luna
+  reasoning_effort: low
+  explicit_skill_requested: false
+  successful_attempt: 1
+  duration_seconds: 18
+- case_id: refine-positive
+  trial: 2
+  scope: in-scope
+  mode: refine
+  selected_skill: packaging-product-visuals
+  reason: The request is to correct one documented spacing defect in a single approved pouch image while
+    preserving its identity, which matches the skill's refine mode.
+  skill_file_read_observed: true
+  client: codex-cli 0.153.4
+  model: gpt-5.6-luna
+  reasoning_effort: low
+  explicit_skill_requested: false
+  successful_attempt: 1
+  duration_seconds: 16
+- case_id: refine-positive
+  trial: 3
+  scope: in-scope
+  mode: refine
+  selected_skill: packaging-product-visuals
+  reason: The request is to refine an approved packaging image by correcting one documented failure class
+    while preserving its approved identity.
+  skill_file_read_observed: true
+  client: codex-cli 0.153.4
+  model: gpt-5.6-luna
+  reasoning_effort: low
+  explicit_skill_requested: false
+  successful_attempt: 1
+  duration_seconds: 19
+- case_id: present-positive
+  trial: 1
+  scope: in-scope
+  mode: present
+  selected_skill: packaging-product-visuals
+  reason: "The request is explicitly for a neutral ecommerce packshot while preserving an approved package\
+    \ identity, which matches the skill\u2019s present mode."
+  skill_file_read_observed: true
+  client: codex-cli 0.153.4
+  model: gpt-5.6-luna
+  reasoning_effort: low
+  explicit_skill_requested: false
+  successful_attempt: 1
+  duration_seconds: 15
+- case_id: present-positive
+  trial: 2
+  scope: in-scope
+  mode: present
+  selected_skill: packaging-product-visuals
+  reason: The request is for a neutral ecommerce packshot of an approved pouch while preserving its identity,
+    which matches the skill's present mode.
+  skill_file_read_observed: true
+  client: codex-cli 0.153.4
+  model: gpt-5.6-luna
+  reasoning_effort: low
+  explicit_skill_requested: false
+  successful_attempt: 1
+  duration_seconds: 18
+- case_id: present-positive
+  trial: 3
+  scope: in-scope
+  mode: present
+  selected_skill: packaging-product-visuals
+  reason: The request is to present an approved pouch as a neutral ecommerce packshot while preserving
+    its identity, which directly matches the skill's present mode.
+  skill_file_read_observed: true
+  client: codex-cli 0.153.4
+  model: gpt-5.6-luna
+  reasoning_effort: low
+  explicit_skill_requested: false
+  successful_attempt: 1
+  duration_seconds: 15
+- case_id: reference-research-negative
+  trial: 1
+  scope: out-of-scope
+  mode: null
+  selected_skill: null
+  reason: The candidate skill is limited to controlled packaging product visuals (compare, refine, or
+    present). The request is research-only and explicitly excludes creating a product visual.
+  skill_file_read_observed: true
+  client: codex-cli 0.153.4
+  model: gpt-5.6-luna
+  reasoning_effort: low
+  explicit_skill_requested: false
+  successful_attempt: 1
+  duration_seconds: 18
+- case_id: reference-research-negative
+  trial: 2
+  scope: out-of-scope
+  mode: null
+  selected_skill: null
+  reason: The candidate skill is for controlled packaging visual concepts; it explicitly excludes research-only
+    requests, and the user does not want a product visual created.
+  skill_file_read_observed: true
+  client: codex-cli 0.153.4
+  model: gpt-5.6-luna
+  reasoning_effort: low
+  explicit_skill_requested: false
+  successful_attempt: 1
+  duration_seconds: 16
+- case_id: reference-research-negative
+  trial: 3
+  scope: out-of-scope
+  mode: null
+  selected_skill: null
+  reason: The candidate skill is for comparing, refining, or presenting packaging product visuals; it
+    explicitly excludes research-only work, and the request asks for packaging reference research without
+    creating a visual.
+  skill_file_read_observed: true
+  client: codex-cli 0.153.4
+  model: gpt-5.6-luna
+  reasoning_effort: low
+  explicit_skill_requested: false
+  successful_attempt: 1
+  duration_seconds: 17
+- case_id: prompt-only-negative
+  trial: 1
+  scope: out-of-scope
+  mode: null
+  selected_skill: null
+  reason: The candidate skill explicitly routes prompt-only work elsewhere and only supports compare,
+    refine, and present modes for controlled packaging visual workflows.
+  skill_file_read_observed: true
+  client: codex-cli 0.153.4
+  model: gpt-5.6-luna
+  reasoning_effort: low
+  explicit_skill_requested: false
+  successful_attempt: 1
+  duration_seconds: 15
+- case_id: prompt-only-negative
+  trial: 2
+  scope: out-of-scope
+  mode: null
+  selected_skill: null
+  reason: The candidate skill explicitly excludes prompt-only work.
+  skill_file_read_observed: true
+  client: codex-cli 0.153.4
+  model: gpt-5.6-luna
+  reasoning_effort: low
+  explicit_skill_requested: false
+  successful_attempt: 1
+  duration_seconds: 16
+- case_id: prompt-only-negative
+  trial: 3
+  scope: out-of-scope
+  mode: null
+  selected_skill: null
+  reason: The candidate skill explicitly routes prompt-only requests elsewhere, while the user asks only
+    for an image-generation prompt without running or reviewing a packaging workflow.
+  skill_file_read_observed: true
+  client: codex-cli 0.153.4
+  model: gpt-5.6-luna
+  reasoning_effort: low
+  explicit_skill_requested: false
+  successful_attempt: 1
+  duration_seconds: 16
+- case_id: generic-photography-negative
+  trial: 1
+  scope: out-of-scope
+  mode: null
+  selected_skill: null
+  reason: The request is generic product photography of an unpackaged ceramic mug, which the candidate
+    skill explicitly excludes.
+  skill_file_read_observed: true
+  client: codex-cli 0.153.4
+  model: gpt-5.6-luna
+  reasoning_effort: low
+  explicit_skill_requested: false
+  successful_attempt: 1
+  duration_seconds: 17
+- case_id: generic-photography-negative
+  trial: 2
+  scope: out-of-scope
+  mode: null
+  selected_skill: null
+  reason: The candidate skill explicitly excludes generic product photography, and this request is for
+    an unpackaged ceramic mug lifestyle photograph.
+  skill_file_read_observed: true
+  client: codex-cli 0.153.4
+  model: gpt-5.6-luna
+  reasoning_effort: low
+  explicit_skill_requested: false
+  successful_attempt: 1
+  duration_seconds: 20
+- case_id: generic-photography-negative
+  trial: 3
+  scope: out-of-scope
+  mode: null
+  selected_skill: null
+  reason: The candidate skill excludes generic product photography and is intended for packaging-led visual
+    concepts; an unpackaged ceramic mug on a lifestyle table does not fit.
+  skill_file_read_observed: true
+  client: codex-cli 0.153.4
+  model: gpt-5.6-luna
+  reasoning_effort: low
+  explicit_skill_requested: false
+  successful_attempt: 1
+  duration_seconds: 17
+- case_id: logo-negative
+  trial: 1
+  scope: out-of-scope
+  mode: null
+  selected_skill: null
+  reason: The candidate skill is limited to controlled packaging product visuals and explicitly excludes
+    logo and identity work.
+  skill_file_read_observed: true
+  client: codex-cli 0.153.4
+  model: gpt-5.6-luna
+  reasoning_effort: low
+  explicit_skill_requested: false
+  successful_attempt: 1
+  duration_seconds: 17
+- case_id: logo-negative
+  trial: 2
+  scope: out-of-scope
+  mode: null
+  selected_skill: null
+  reason: The candidate skill is for controlled packaging product visuals, while the request is for logo
+    and brand identity design.
+  skill_file_read_observed: true
+  client: codex-cli 0.153.4
+  model: gpt-5.6-luna
+  reasoning_effort: low
+  explicit_skill_requested: false
+  successful_attempt: 1
+  duration_seconds: 16
+- case_id: logo-negative
+  trial: 3
+  scope: out-of-scope
+  mode: null
+  selected_skill: null
+  reason: The candidate skill is limited to packaging product visuals and explicitly routes logo and identity
+    work elsewhere.
+  skill_file_read_observed: true
+  client: codex-cli 0.153.4
+  model: gpt-5.6-luna
+  reasoning_effort: low
+  explicit_skill_requested: false
+  successful_attempt: 1
+  duration_seconds: 17
+- case_id: print-ready-negative
+  trial: 1
+  scope: out-of-scope
+  mode: null
+  selected_skill: null
+  reason: The candidate skill explicitly excludes print-ready dielines and manufacturing validation.
+  skill_file_read_observed: true
+  client: codex-cli 0.153.4
+  model: gpt-5.6-luna
+  reasoning_effort: low
+  explicit_skill_requested: false
+  successful_attempt: 1
+  duration_seconds: 18
+- case_id: print-ready-negative
+  trial: 2
+  scope: out-of-scope
+  mode: null
+  selected_skill: null
+  reason: The candidate skill explicitly excludes print-ready dielines, production bleed, and manufacturing
+    tolerances.
+  skill_file_read_observed: true
+  client: codex-cli 0.153.4
+  model: gpt-5.6-luna
+  reasoning_effort: low
+  explicit_skill_requested: false
+  successful_attempt: 1
+  duration_seconds: 15
+- case_id: print-ready-negative
+  trial: 3
+  scope: out-of-scope
+  mode: null
+  selected_skill: null
+  reason: The candidate skill explicitly excludes print-ready dielines, prepress, and manufacturing validation.
+  skill_file_read_observed: true
+  client: codex-cli 0.153.4
+  model: gpt-5.6-luna
+  reasoning_effort: low
+  explicit_skill_requested: false
+  successful_attempt: 1
+  duration_seconds: 15
+- case_id: campaign-negative
+  trial: 1
+  scope: out-of-scope
+  mode: null
+  selected_skill: null
+  reason: The candidate skill excludes campaign art, generic product photography, and copy work; this
+    request is for a paid social campaign with lifestyle photography and influencer copy.
+  skill_file_read_observed: true
+  client: codex-cli 0.153.4
+  model: gpt-5.6-luna
+  reasoning_effort: low
+  explicit_skill_requested: false
+  successful_attempt: 1
+  duration_seconds: 16
+- case_id: campaign-negative
+  trial: 2
+  scope: out-of-scope
+  mode: null
+  selected_skill: null
+  reason: The candidate skill explicitly excludes campaign art, generic photography, and campaign copy;
+    this request is for a paid social campaign with lifestyle photography and influencer copy.
+  skill_file_read_observed: true
+  client: codex-cli 0.153.4
+  model: gpt-5.6-luna
+  reasoning_effort: low
+  explicit_skill_requested: false
+  successful_attempt: 1
+  duration_seconds: 17
+- case_id: campaign-negative
+  trial: 3
+  scope: out-of-scope
+  mode: null
+  selected_skill: null
+  reason: The candidate skill is limited to packaging-led product visuals and explicitly excludes campaign
+    art and generic lifestyle photography.
+  skill_file_read_observed: true
+  client: codex-cli 0.153.4
+  model: gpt-5.6-luna
+  reasoning_effort: low
+  explicit_skill_requested: false
+  successful_attempt: 1
+  duration_seconds: 17
+- case_id: manufacturing-negative
+  trial: 1
+  scope: out-of-scope
+  mode: null
+  selected_skill: null
+  reason: The request concerns manufacturing validation of barrier film, filling temperature, zipper sealing,
+    and transport performance, which the candidate skill explicitly excludes.
+  skill_file_read_observed: true
+  client: codex-cli 0.153.4
+  model: gpt-5.6-luna
+  reasoning_effort: low
+  explicit_skill_requested: false
+  successful_attempt: 1
+  duration_seconds: 17
+- case_id: manufacturing-negative
+  trial: 2
+  scope: out-of-scope
+  mode: null
+  selected_skill: null
+  reason: The request is for manufacturing validation, which the candidate skill explicitly excludes.
+  skill_file_read_observed: true
+  client: codex-cli 0.153.4
+  model: gpt-5.6-luna
+  reasoning_effort: low
+  explicit_skill_requested: false
+  successful_attempt: 1
+  duration_seconds: 15
+- case_id: manufacturing-negative
+  trial: 3
+  scope: out-of-scope
+  mode: null
+  selected_skill: null
+  reason: The request is for manufacturing validation of barrier film, filling temperature, zipper sealing,
+    and transport performance. The candidate skill explicitly excludes manufacturing validation and only
+    supports visual packaging concept comparison, refinement, or presentation.
+  skill_file_read_observed: true
+  client: codex-cli 0.153.4
+  model: gpt-5.6-luna
+  reasoning_effort: low
+  explicit_skill_requested: false
+  successful_attempt: 1
+  duration_seconds: 16
+- case_id: competitor-copy-negative
+  trial: 1
+  scope: out-of-scope
+  mode: null
+  selected_skill: null
+  reason: "The request is to exactly copy a competitor\u2019s distinctive packaging and trade dress, which\
+    \ is legal/rights-sensitive work excluded by the candidate skill."
+  skill_file_read_observed: true
+  client: codex-cli 0.153.4
+  model: gpt-5.6-luna
+  reasoning_effort: low
+  explicit_skill_requested: false
+  successful_attempt: 1
+  duration_seconds: 16
+- case_id: competitor-copy-negative
+  trial: 2
+  scope: out-of-scope
+  mode: null
+  selected_skill: null
+  reason: "The request is for exact copying of a competitor\u2019s logo, layout, colors, and trade dress,\
+    \ which falls outside this skill\u2019s controlled packaging-concept scope and requires rights/legal\
+    \ handling."
+  skill_file_read_observed: true
+  client: codex-cli 0.153.4
+  model: gpt-5.6-luna
+  reasoning_effort: low
+  explicit_skill_requested: false
+  successful_attempt: 1
+  duration_seconds: 23
+- case_id: competitor-copy-negative
+  trial: 3
+  scope: out-of-scope
+  mode: null
+  selected_skill: null
+  reason: "The candidate skill does not support copying a competitor\u2019s distinctive packaging, logo,\
+    \ layout, or trade dress exactly."
+  skill_file_read_observed: true
+  client: codex-cli 0.153.4
+  model: gpt-5.6-luna
+  reasoning_effort: low
+  explicit_skill_requested: false
+  successful_attempt: 1
+  duration_seconds: 16
+- case_id: ambiguous-negative
+  trial: 1
+  scope: out-of-scope
+  mode: null
+  selected_skill: null
+  reason: The request is generic and does not specify a packaging-led concept, controlled refinement,
+    or neutral ecommerce packshot; this candidate explicitly excludes generic product photography.
+  skill_file_read_observed: true
+  client: codex-cli 0.153.4
+  model: gpt-5.6-luna
+  reasoning_effort: low
+  explicit_skill_requested: false
+  successful_attempt: 1
+  duration_seconds: 18
+- case_id: ambiguous-negative
+  trial: 2
+  scope: out-of-scope
+  mode: null
+  selected_skill: null
+  reason: The request is for a generic product image and does not specify packaging-led concept comparison,
+    refinement, or neutral ecommerce presentation.
+  skill_file_read_observed: true
+  client: codex-cli 0.153.4
+  model: gpt-5.6-luna
+  reasoning_effort: low
+  explicit_skill_requested: false
+  successful_attempt: 1
+  duration_seconds: 18
+- case_id: ambiguous-negative
+  trial: 3
+  scope: out-of-scope
+  mode: null
+  selected_skill: null
+  reason: The request is for a generic product image and does not specify packaging-led concepts or neutral
+    ecommerce packshots, which this candidate skill requires.
+  skill_file_read_observed: true
+  client: codex-cli 0.153.4
+  model: gpt-5.6-luna
+  reasoning_effort: low
+  explicit_skill_requested: false
+  successful_attempt: 1
+  duration_seconds: 16

@@ -1,0 +1,181 @@
+assets:
+  - id: refine-source
+    locator: assets/refine-source.png
+    created_by: repository fixture generator using Pillow
+    source_material: self-created geometric shapes only
+    visible_trademarks: none
+    embedded_private_data: false
+    redistribution: allowed under Apache-2.0 repository terms
+    attribution_status: not-required
+    attribution_text: null
+    attribution_fulfilled: not-applicable
+    expected_dimensions: [640, 800]
+    expected_mode: RGB
+    sha256: bb9b5422aa980d7f67fbbff0f3e9b0cf51754ed80024c2b569ebd79c238a977b
+    documented_issue: title-to-illustration spacing is intentionally too tight
+  - id: present-source
+    locator: assets/present-source.png
+    created_by: repository fixture generator using Pillow
+    source_material: self-created geometric shapes only
+    visible_trademarks: none
+    embedded_private_data: false
+    redistribution: allowed under Apache-2.0 repository terms
+    attribution_status: not-required
+    attribution_text: null
+    attribution_fulfilled: not-applicable
+    expected_dimensions: [640, 800]
+    expected_mode: RGB
+    sha256: 13ff82e7e7251e39daa112e0f16e73853be6afd3d7e10e23f0a2a238da3a4c2f
+    documented_issue: none
+  - id: corner-marker-reference
+    locator: assets/角标.png
+    created_by: repository fixture generator using Pillow
+    source_material: self-created four-corner calibration marker
+    visible_trademarks: none
+    embedded_private_data: false
+    redistribution: allowed under Apache-2.0 repository terms
+    attribution_status: not-required
+    attribution_text: null
+    attribution_fulfilled: not-applicable
+    expected_dimensions: [64, 64]
+    expected_mode: RGB
+    sha256: 6a79bf17421afa24407eda8b2bdfe8d9af2009fa763444f17cce363c42685ba0
+    documented_issue: none
+  - id: compare-direction-a
+    locator: generated/compare-direction-a.png
+    created_by: Codex desktop with image_gen.imagegen
+    source_material: self-authored public fictional prompt; no third-party reference asset
+    visible_trademarks: none
+    embedded_private_data: false
+    redistribution: maintainer licenses any rights held in the output under Apache-2.0; see ASSET_LICENSES.md
+    attribution_status: not-required
+    attribution_text: null
+    attribution_fulfilled: not-applicable
+    expected_dimensions: [1448, 1086]
+    expected_mode: RGB
+    sha256: a2c1d38551febace8a1bfec48011e7e36528695e244ec892d2c4fa4ad3d4f4fb
+    forward_run_id: compare-forward-2026-09-08
+    attempt_id: compare-a-01
+    attempt_outcome: passed
+    runtime_client: codex-cli 0.153.4 on macOS 26.5 arm64
+    tool_or_provider: OpenAI-hosted image generation tool
+    model_or_version: not exposed by the host
+    executed_at_utc: "2026-09-08T11:25:00Z"
+    documented_issue: none
+  - id: compare-direction-b-attempt-01
+    locator: generated/attempts/compare/bright-counter-attempt-01.png
+    created_by: Codex desktop with image_gen.imagegen
+    source_material: self-authored public fictional prompt; no third-party reference asset
+    visible_trademarks: none
+    embedded_private_data: false
+    redistribution: maintainer licenses any rights held in the output under Apache-2.0; see ASSET_LICENSES.md
+    attribution_status: not-required
+    attribution_text: null
+    attribution_fulfilled: not-applicable
+    expected_dimensions: [1448, 1086]
+    expected_mode: RGB
+    sha256: b6378bf8b59de2775fe3d88e2c3d26546585b84568099b97f78dfd503c0823ca
+    forward_run_id: compare-forward-2026-09-08
+    attempt_id: compare-b-01
+    attempt_outcome: failed
+    runtime_client: codex-cli 0.153.4 on macOS 26.5 arm64
+    tool_or_provider: OpenAI-hosted image generation tool
+    model_or_version: not exposed by the host
+    executed_at_utc: "2026-09-08T11:26:00Z"
+    documented_issue: rejected because pouch scale and outer margins did not match direction A closely enough
+  - id: compare-direction-b
+    locator: generated/compare-direction-b.png
+    created_by: Codex desktop with image_gen.imagegen
+    source_material: compare-direction-b-attempt-01.png corrected against owned compare-direction-a.png for camera and scale only
+    source_asset_id: compare-direction-b-attempt-01
+    source_sha256: b6378bf8b59de2775fe3d88e2c3d26546585b84568099b97f78dfd503c0823ca
+    reference_asset_id: compare-direction-a
+    reference_sha256: a2c1d38551febace8a1bfec48011e7e36528695e244ec892d2c4fa4ad3d4f4fb
+    visible_trademarks: none
+    embedded_private_data: false
+    redistribution: maintainer licenses any rights held in the output under Apache-2.0; see ASSET_LICENSES.md
+    attribution_status: not-required
+    attribution_text: null
+    attribution_fulfilled: not-applicable
+    expected_dimensions: [1448, 1086]
+    expected_mode: RGB
+    sha256: 066cc63a2d2aa54a1b02e67104bab5b1a1e677c16d96e5ec641213f176c74aae
+    forward_run_id: compare-forward-2026-09-08
+    attempt_id: compare-b-02
+    attempt_outcome: passed
+    runtime_client: codex-cli 0.153.4 on macOS 26.5 arm64
+    tool_or_provider: OpenAI-hosted image generation tool
+    model_or_version: not exposed by the host
+    executed_at_utc: "2026-09-08T11:48:18Z"
+    documented_issue: none
+  - id: refined-package-attempt-01
+    locator: generated/attempts/refine/attempt-01.png
+    created_by: Codex desktop with image_gen.imagegen
+    source_material: refine-source.png with only title-bar-to-illustration spacing reopened
+    source_asset_id: refine-source
+    source_sha256: bb9b5422aa980d7f67fbbff0f3e9b0cf51754ed80024c2b569ebd79c238a977b
+    visible_trademarks: none
+    embedded_private_data: false
+    redistribution: maintainer licenses any rights held in the output under Apache-2.0; see ASSET_LICENSES.md
+    attribution_status: not-required
+    attribution_text: null
+    attribution_fulfilled: not-applicable
+    expected_dimensions: [1122, 1402]
+    expected_mode: RGB
+    sha256: 64f7cc3b35c0e60acb8c8010555ae8e524cd5cfd825612d2639500c7f2998e20
+    forward_run_id: refine-forward-2026-09-08
+    attempt_id: refine-01
+    attempt_outcome: failed
+    runtime_client: codex-cli 0.153.4 on macOS 26.5 arm64
+    tool_or_provider: OpenAI-hosted image generation tool
+    model_or_version: not exposed by the host
+    executed_at_utc: "2026-09-08T11:22:15Z"
+    documented_issue: rejected because the first edit introduced selection-lock drift
+  - id: refined-package
+    locator: generated/refined-package.png
+    created_by: Codex desktop with image_gen.imagegen
+    source_material: refine-source.png plus present-source.png as the owned corrected-spacing reference
+    source_asset_id: refine-source
+    source_sha256: bb9b5422aa980d7f67fbbff0f3e9b0cf51754ed80024c2b569ebd79c238a977b
+    reference_asset_id: present-source
+    reference_sha256: 13ff82e7e7251e39daa112e0f16e73853be6afd3d7e10e23f0a2a238da3a4c2f
+    visible_trademarks: none
+    embedded_private_data: false
+    redistribution: maintainer licenses any rights held in the output under Apache-2.0; see ASSET_LICENSES.md
+    attribution_status: not-required
+    attribution_text: null
+    attribution_fulfilled: not-applicable
+    expected_dimensions: [1122, 1402]
+    expected_mode: RGB
+    sha256: b2dce882f3c948b91ee8e0dca490a85727e8874e9bad305bfde742ead65cb059
+    forward_run_id: refine-forward-2026-09-08
+    attempt_id: refine-02
+    attempt_outcome: passed
+    runtime_client: codex-cli 0.153.4 on macOS 26.5 arm64
+    tool_or_provider: OpenAI-hosted image generation tool
+    model_or_version: not exposed by the host
+    executed_at_utc: "2026-09-08T11:23:17Z"
+    documented_issue: independent QA status is recorded in tests/evals/forward-results.md
+  - id: ecommerce-packshot
+    locator: generated/ecommerce-packshot.png
+    created_by: Codex desktop with image_gen.imagegen
+    source_material: present-source.png with only camera, crop, background, lighting, and neutral staging open
+    source_asset_id: present-source
+    source_sha256: 13ff82e7e7251e39daa112e0f16e73853be6afd3d7e10e23f0a2a238da3a4c2f
+    visible_trademarks: none
+    embedded_private_data: false
+    redistribution: maintainer licenses any rights held in the output under Apache-2.0; see ASSET_LICENSES.md
+    attribution_status: not-required
+    attribution_text: null
+    attribution_fulfilled: not-applicable
+    expected_dimensions: [1448, 1086]
+    expected_mode: RGB
+    sha256: 0458444242f134aaf4865366f0e69e9170edaed7fb9c43e665eb064b52d6da3d
+    forward_run_id: present-forward-2026-09-08
+    attempt_id: present-01
+    attempt_outcome: passed
+    runtime_client: codex-cli 0.153.4 on macOS 26.5 arm64
+    tool_or_provider: OpenAI-hosted image generation tool
+    model_or_version: not exposed by the host
+    executed_at_utc: "2026-09-08T11:22:15Z"
+    documented_issue: none

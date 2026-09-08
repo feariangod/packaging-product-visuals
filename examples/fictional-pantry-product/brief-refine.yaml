@@ -1,0 +1,159 @@
+mode: refine
+processing_policy:
+  authorization:
+    authority: none
+    basis: null
+    confirmed_at_utc: null
+  default_permissions:
+    confidentiality: public
+    inspect_allowed: true
+    external_processing_allowed: true
+    derivative_allowed: true
+    redistribution_allowed: true
+    publication_allowed: true
+    attribution_status: not-required
+    attribution_text: null
+    attribution_fulfilled: not-applicable
+  field_overrides: []
+product:
+  category: fictional pantry drink mix
+  product_name: PPV Fixture Citrus Pantry Mix
+  variants:
+    - name: Geometric Fixture
+      sku: fixture-pouch
+      color: multicolor
+  verified_facts:
+    - id: fictional-product-fact
+      value: Fictional dry pantry mix for testing only.
+      source_id: null
+      permissions:
+        confidentiality: public
+        inspect_allowed: true
+        external_processing_allowed: true
+        derivative_allowed: true
+        redistribution_allowed: true
+        publication_allowed: true
+        attribution_status: not-required
+        attribution_text: null
+        attribution_fulfilled: not-applicable
+  prohibited_claims: [health benefit, certification, environmental benefit]
+sources:
+  - id: fictional-refine-brief
+    locator: brief-refine.yaml
+    permissions:
+      confidentiality: public
+      inspect_allowed: true
+      external_processing_allowed: true
+      derivative_allowed: true
+      redistribution_allowed: true
+      publication_allowed: true
+      attribution_status: not-required
+      attribution_text: null
+      attribution_fulfilled: not-applicable
+exact_copy:
+  readable_copy_required: false
+  required: []
+  forbidden: [readable words, brand marks, product claims, certification marks]
+  permissions:
+    confidentiality: public
+    inspect_allowed: true
+    external_processing_allowed: true
+    derivative_allowed: true
+    redistribution_allowed: true
+    publication_allowed: true
+    attribution_status: not-required
+    attribution_text: null
+    attribution_fulfilled: not-applicable
+package:
+  form: geometric package fixture
+  geometry: front-facing rounded package silhouette with one top closure bar
+  material: abstract flat fixture; production material is unspecified
+  opening_action: abstract top closure cue; no production opening action is claimed
+assets:
+  - id: refine-source
+    locator: assets/refine-source.png
+    role: approved-source-artifact
+    provenance: Programmatically generated geometric pouch with one documented spacing defect; see asset-provenance.yaml.
+    license_or_terms: Apache-2.0 repository fixture
+    permissions:
+      confidentiality: public
+      inspect_allowed: true
+      external_processing_allowed: true
+      derivative_allowed: true
+      redistribution_allowed: true
+      publication_allowed: true
+      attribution_status: not-required
+      attribution_text: null
+      attribution_fulfilled: not-applicable
+  - id: present-source
+    locator: assets/present-source.png
+    role: owned-corrected-spacing-reference
+    provenance: Programmatically generated companion fixture; only its title-bar-to-illustration spacing relationship may guide the correction.
+    license_or_terms: Apache-2.0 repository fixture
+    permissions:
+      confidentiality: public
+      inspect_allowed: true
+      external_processing_allowed: true
+      derivative_allowed: true
+      redistribution_allowed: true
+      publication_allowed: true
+      attribution_status: not-required
+      attribution_text: null
+      attribution_fulfilled: not-applicable
+constraints:
+  frozen: [package silhouette, closure bar, internal geometric mark set and order, palette, front view, absence of readable copy]
+  open: [vertical spacing between title bar and framed illustration]
+product_baseline:
+  id: fictional-pantry-baseline-v1
+  product_facts: [{id: product-name, value: PPV Fixture Citrus Pantry Mix, source_id: fictional-refine-brief}]
+  package_snapshot: {form: geometric package fixture, geometry: front-facing rounded package silhouette with one top closure bar}
+  exact_copy_snapshot: {readable_copy_required: false, required: [], forbidden: [readable words, brand marks, product claims, certification marks]}
+  sku_order: [fixture-pouch]
+  object_count: 1
+  camera_baseline: {view: front, crop: full pouch with margin}
+  channel_snapshot: {deliverable: refined product visual}
+  exclusions: [claims, certifications, real brands]
+selection_lock:
+  id: refine-fixture-lock-v1
+  source_artifact_id: refine-source
+  source_artifact_sha256: bb9b5422aa980d7f67fbbff0f3e9b0cf51754ed80024c2b569ebd79c238a977b
+  source_scope: whole-artifact
+  source_object_ids: [fixture-pouch]
+  approved_by: null
+  approval_basis: null
+  identity_snapshot: {package: same rounded silhouette, copy: none, palette: same, internal_marks: same set order and colors, calibration_corners: excluded from identity, view: front}
+  locked_fields: [package silhouette, closure bar, internal geometric mark set order and colors, palette, front view, absence of readable copy]
+  reopened_fields: [vertical spacing between title bar and framed illustration]
+correction:
+  failure_class: spacing
+  requested_change: Increase only the vertical gap between the dark title bar and the framed illustration.
+  prohibited_changes: [readable copy, package silhouette, object count, palette, front view, internal geometric mark set order or colors]
+channel:
+  deliverable: refined product visual
+  aspect_ratio: "4:5"
+  review_profiles: [{name: contain-thumbnail, fit: contain, longest_edge: 320}]
+output:
+  delivery: relative-path
+  root: examples/fictional-pantry-product/generated
+  overwrite: false
+  retention_policy: preserve
+  permissions:
+    confidentiality: public
+    inspect_allowed: true
+    external_processing_allowed: true
+    derivative_allowed: true
+    redistribution_allowed: true
+    publication_allowed: true
+    attribution_status: not-required
+    attribution_text: null
+    attribution_fulfilled: not-applicable
+requested_artifacts:
+  - id: refined-package
+    kind: corrected-package-visual
+    status: requested
+qa_plan:
+  required_gate_ids: [artifact-type, object-count, package-geometry, exact-copy, invented-claims, selection-lock, named-failure-correction, reference-role, channel-fit, artifact-integrity]
+  review_profiles: [full-resolution, contain-thumbnail]
+  independent_review_required: true
+  sha256: fc493c4b89ac59f23d466d8438c5602668d5258c9310c311d8165384430717cd
+generation_budget: {paid_calls_allowed: unknown, maximum_total_calls: 3}

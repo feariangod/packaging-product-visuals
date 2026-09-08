@@ -1,0 +1,145 @@
+mode: present
+processing_policy:
+  authorization:
+    authority: none
+    basis: null
+    confirmed_at_utc: null
+  default_permissions:
+    confidentiality: public
+    inspect_allowed: true
+    external_processing_allowed: true
+    derivative_allowed: true
+    redistribution_allowed: true
+    publication_allowed: true
+    attribution_status: not-required
+    attribution_text: null
+    attribution_fulfilled: not-applicable
+  field_overrides: []
+product:
+  category: fictional pantry drink mix
+  product_name: PPV Fixture Citrus Pantry Mix
+  variants:
+    - name: Geometric Fixture
+      sku: fixture-pouch
+      color: multicolor
+  verified_facts:
+    - id: fictional-product-fact
+      value: Fictional dry pantry mix for testing only.
+      source_id: null
+      permissions:
+        confidentiality: public
+        inspect_allowed: true
+        external_processing_allowed: true
+        derivative_allowed: true
+        redistribution_allowed: true
+        publication_allowed: true
+        attribution_status: not-required
+        attribution_text: null
+        attribution_fulfilled: not-applicable
+  prohibited_claims: [health benefit, certification, environmental benefit]
+sources:
+  - id: fictional-present-brief
+    locator: brief-present.yaml
+    permissions:
+      confidentiality: public
+      inspect_allowed: true
+      external_processing_allowed: true
+      derivative_allowed: true
+      redistribution_allowed: true
+      publication_allowed: true
+      attribution_status: not-required
+      attribution_text: null
+      attribution_fulfilled: not-applicable
+exact_copy:
+  readable_copy_required: false
+  required: []
+  forbidden: [readable words, brand marks, product claims, certification marks]
+  permissions:
+    confidentiality: public
+    inspect_allowed: true
+    external_processing_allowed: true
+    derivative_allowed: true
+    redistribution_allowed: true
+    publication_allowed: true
+    attribution_status: not-required
+    attribution_text: null
+    attribution_fulfilled: not-applicable
+package:
+  form: geometric package fixture
+  geometry: front-facing rounded package silhouette with one top closure bar
+  material: approved flat fixture identity; neutral surface rendering may change with lighting
+  opening_action: abstract top closure cue; no production opening action is claimed
+assets:
+  - id: present-source
+    locator: assets/present-source.png
+    role: approved-package-artifact
+    provenance: Programmatically generated geometric pouch approved for neutral presentation; see asset-provenance.yaml.
+    license_or_terms: Apache-2.0 repository fixture
+    permissions:
+      confidentiality: public
+      inspect_allowed: true
+      external_processing_allowed: true
+      derivative_allowed: true
+      redistribution_allowed: true
+      publication_allowed: true
+      attribution_status: not-required
+      attribution_text: null
+      attribution_fulfilled: not-applicable
+constraints:
+  frozen: [package silhouette, closure bar, internal geometric mark set order and colors, palette, absence of readable copy, approved identity]
+  open: [camera, crop, background, lighting, neutral staging]
+product_baseline:
+  id: fictional-pantry-baseline-v1
+  product_facts: [{id: product-name, value: PPV Fixture Citrus Pantry Mix, source_id: fictional-present-brief}]
+  package_snapshot: {form: geometric package fixture, geometry: front-facing rounded package silhouette with one top closure bar}
+  exact_copy_snapshot: {readable_copy_required: false, required: [], forbidden: [readable words, brand marks, product claims, certification marks]}
+  sku_order: [fixture-pouch]
+  object_count: 1
+  camera_baseline: {view: front, crop: full pouch with margin}
+  channel_snapshot: {deliverable: neutral ecommerce hero}
+  exclusions: [claims, certifications, real brands]
+selection_lock:
+  id: present-fixture-lock-v1
+  source_artifact_id: present-source
+  source_artifact_sha256: 13ff82e7e7251e39daa112e0f16e73853be6afd3d7e10e23f0a2a238da3a4c2f
+  source_scope: named-objects
+  source_object_ids: [fixture-pouch]
+  approved_by: null
+  approval_basis: null
+  identity_snapshot: {selected_package: fixture-pouch, copy: none, palette: same, internal_marks: same set order and colors, calibration_corners: excluded from identity}
+  locked_fields: [package silhouette, closure bar, internal geometric mark set order and colors, palette, absence of readable copy]
+  reopened_fields: []
+presentation:
+  selected_skus: [fixture-pouch]
+  target_object_count: 1
+  permitted_changes: [camera, crop, background, lighting, neutral staging]
+  prohibited_changes: [package silhouette, closure bar, readable copy, internal geometric mark set order or colors, palette]
+channel:
+  deliverable: neutral ecommerce hero
+  aspect_ratio: "4:3"
+  review_profiles: [{name: contain-thumbnail, fit: contain, longest_edge: 320}]
+output:
+  delivery: relative-path
+  root: examples/fictional-pantry-product/generated
+  overwrite: false
+  retention_policy: preserve
+  permissions:
+    confidentiality: public
+    inspect_allowed: true
+    external_processing_allowed: true
+    derivative_allowed: true
+    redistribution_allowed: true
+    publication_allowed: true
+    attribution_status: not-required
+    attribution_text: null
+    attribution_fulfilled: not-applicable
+requested_artifacts:
+  - id: ecommerce-packshot
+    kind: ecommerce-packshot
+    status: requested
+qa_plan:
+  required_gate_ids: [artifact-type, object-count, package-geometry, exact-copy, invented-claims, selection-lock, presentation-lock, reference-role, channel-fit, artifact-integrity]
+  review_profiles: [full-resolution, contain-thumbnail]
+  independent_review_required: true
+  sha256: 8c8698a07eb1ae195dfd863a35fae6ca85beab932c9d87f2b9ec675672ed3db5
+generation_budget: {paid_calls_allowed: unknown, maximum_total_calls: 3}
