@@ -76,15 +76,17 @@ Every field, source, fact, copy item, lock, and asset sent to an external servic
 
 These records describe specific older runs. They remain useful for tracing decisions and regressions, but do not validate the current source or new categories. Keep original receipts unchanged. / 以下记录对应特定历史运行，可用于追溯决定和回归问题，不能证明当前源码或新品类已验证。原始记录保持不变。
 
+The featured [CORNER NOTE case](../examples/corner-note/README.md) now shows the home fragrance workflow through one Rain Cedar hero. Quiet Pantry remains below as a regression fixture, not the featured case. / 首页现展示[隅调香薰案例](../examples/corner-note/README.zh-CN.md)，进度到一张雨杉首图。下列 Quiet Pantry 资料继续用于历史追溯与回归检查，不再作为首页案例。
+
 | Date / 日期 | Evidence / 证据 | Scope / 范围 |
 | --- | --- | --- |
 | 2026-09-09 | [Quiet Pantry workflow](../examples/fictional-pantry-product/full-workflow.yaml), [QA result](../examples/fictional-pantry-product/qa-result-v0.2-2026-09-09.yaml), [runtime receipt](../examples/fictional-pantry-product/runtime-receipt-v0.2-2026-09-09.yaml) | Seven selected ecommerce roles; concept-stage visual review. / 选定的七种电商图，概念阶段画面检查。 |
 | 2026-09-09 | [Installation smoke](../tests/evals/install-smoke-results.yaml) | Five isolated, read-only Codex sessions for four standalone layouts and one local plugin. / 五个隔离、只读 Codex 会话，覆盖四种独立安装位置和一个本地插件。 |
 | 2026-09-09 | [Fresh-agent report](../tests/evals/full-workflow-results.md), [machine-readable results](../tests/evals/full-workflow-results.yaml) | Three read-only routing probes; no image generation or file writes. / 三个只读流程判断测试，没有生图或写文件。 |
 
-Quiet Pantry used two authorized external image calls for backgrounds without text or packages; package placement and composition used local transforms. Its independent reviewer opened seven full-resolution images and seven thumbnails and recorded 188/188 required QA rows passed, with 0 P1 and 0 P2 findings. Product, research, option, and decision records were created on 2026-09-09 to describe boards generated on 2026-09-08. This is not chronological evidence of every stage or real consumer research.
+Quiet Pantry used two authorized external image calls for backgrounds without text or packages; package placement and composition used local transforms. Its independent reviewer opened seven full-resolution images and seven thumbnails and recorded 188/188 required QA rows passed, with 0 P1 and 0 P2 findings. Product, research, option, and decision records were added retrospectively on 2026-09-09 to describe boards generated on 2026-09-08. They are not real market research or chronological evidence of every stage. The [offline review page](../examples/fictional-pantry-product/review/v0.2/2026-09-09/index.html) and [delivery manifest](../examples/fictional-pantry-product/delivery-manifest.yaml) retain that seven-role test set; seven images are not a default requirement.
 
-Quiet Pantry 使用两次已授权的外部图像调用生成不含文字与包装的背景，包装放置和最终合成使用本地变换。独立审阅者打开七张大图和七张缩略图，记录 188/188 条必需检查通过，P1 和 P2 均为 0。产品、调研、选项和决定记录在 2026-09-09 创建，用来描述 2026-09-08 已生成的方向图，因此不证明所有阶段按顺序执行，也不是真实消费者调研。
+Quiet Pantry 使用两次已授权的外部图像调用生成不含文字与包装的背景，包装放置和最终合成使用本地变换。独立审阅者打开七张大图和七张缩略图，记录 188/188 条必需检查通过，P1 和 P2 均为 0。产品、调研、选项和决定记录是 2026-09-09 事后补充的，用来描述 2026-09-08 已生成的方向图，因此不证明所有阶段按顺序执行，也不是真实市场调研。[离线审阅页面](../examples/fictional-pantry-product/review/v0.2/2026-09-09/index.html)和[交付清单](../examples/fictional-pantry-product/delivery-manifest.yaml)保留了这组七类测试图片；七张图不是默认要求。
 
 The installation smoke recorded 5/5 results. `codex app-server` discovered and enabled each installation through `skills/list` with `forceReload: true`; the installed tree independently verified the bytes of `references/contracts.md`. Structured responses reported explicit invocation, missing image-generation capability, no invented artifact, and no file write. The event streams contained no agent file-read command, so they do not prove an observed direct reference read. The run did not test public or remote marketplaces.
 

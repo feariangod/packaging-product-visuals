@@ -48,15 +48,13 @@ Keep the selected artwork for later images. Image generation can create a scene,
 
 ## Public example
 
-Quiet Pantry is a fictional, non-commercial food and beverage packaging example with owned assets. Its dated forward run on 2026-09-09 starts at selection and continues through ecommerce delivery. Earlier product and research records were added retrospectively to describe direction boards made on 2026-09-08. They are not real market research or proof that the full workflow ran in order.
+**CORNER NOTE / 隅调** is a fictional home fragrance brand. This case follows a ceramic scent tile set from product definition and packaging research through design selection, a typography revision, and its first Rain Cedar ecommerce hero.
 
-| Catalog | Campaign |
-| --- | --- |
-| ![Quiet Pantry catalog image](examples/fictional-pantry-product/generated/v0.2/2026-09-09/gallery-catalog-2026-09-09.png) | ![Quiet Pantry campaign image](examples/fictional-pantry-product/generated/v0.2/2026-09-09/gallery-campaign-2026-09-09.png) |
+<img src="examples/corner-note/assets/rain-cedar-hero.png" alt="CORNER NOTE Rain Cedar: the selected green carton, ceramic scent tile and base, and 10 ml fragrance oil" width="640">
 
-This case used all seven supported ecommerce roles to exercise review coverage. Seven images are not a default requirement. The [offline bilingual review page](examples/fictional-pantry-product/review/v0.2/2026-09-09/index.html) shows the images and their recorded review state. The [workflow](examples/fictional-pantry-product/full-workflow.yaml), [delivery manifest](examples/fictional-pantry-product/delivery-manifest.yaml), [QA result](examples/fictional-pantry-product/qa-result-v0.2-2026-09-09.yaml), and [runtime receipt](examples/fictional-pantry-product/runtime-receipt-v0.2-2026-09-09.yaml) preserve the historical evidence.
+The [case study](examples/corner-note/README.md) shows the product and package decisions, three type systems compared on the same package, and the selected **B: Sensory Serif** design. Chinese lettering uses ZCOOL XiaoWei; Latin lettering uses Fraunces. [Asset provenance and publication scope](examples/corner-note/provenance.json) identify the four unchanged images included here.
 
-This example does not establish consumer preference, conversion, or approval for production or a platform. Other categories and environments need their own documented runs. Historical test scope and limitations are listed in the [maintenance guide](docs/maintaining.md#historical-evidence).
+Only the Rain Cedar hero is complete; the full ecommerce gallery and Paper Amber hero are not. The 240-pixel preview is a thumbnail of that same image. This is concept work, not consumer validation, manufacturing approval, or Taobao/Tmall listing approval. The older Quiet Pantry example remains as [historical test evidence](docs/maintaining.md#historical-evidence).
 
 ## Installation
 

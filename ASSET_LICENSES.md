@@ -1,6 +1,33 @@
 # Asset Licenses
 
-The public assets in this repository are fictional and contain no intended real brand, private project material, customer information, retained source EXIF, or third-party reference image. `PPV FIXTURE` is an explicit non-commercial sample label.
+The public examples in this repository are fictional. The published images contain no intended real brand, customer information, retained source EXIF, or third-party reference image. CORNER NOTE contains selected outputs from a previously private fictional exercise, shared under the separate authorization below; its working archive remains private. `PPV FIXTURE` is the explicit non-commercial sample label used in the older Quiet Pantry fixtures.
+
+## CORNER NOTE
+
+The maintainer authorized replacing the featured fictional example with the selected home fragrance case on 2026-09-12. The [case-specific publication record](examples/corner-note/provenance.json) binds this instruction to four exact PNG hashes and the sanitized bilingual summary. All four files are unchanged copies of the selected outputs. This authorization does not publish font binaries, editable artwork, private records, raw prompts, failed attempts, third-party reference images, or future assets. The original generation and selection records still retain their historical `publication_allowed: false` values.
+
+| Asset | Creation and provenance | Rights and limits |
+| --- | --- | --- |
+| `examples/corner-note/assets/typography-comparison.png` | Local real-font rendering of three type systems across two fictional scent package fronts, plus explanatory labels | Any rights held by the maintainer in the artwork are licensed under Apache-2.0; font terms remain separate |
+| `examples/corner-note/assets/selected-packaging-b.png` | Local rendering of the selected B Sensory Serif artwork for Rain Cedar and Paper Amber | Same artwork license; a front-artwork comparison, not a production file |
+| `examples/corner-note/assets/rain-cedar-hero.png` | Owned generated scene and corrected carton surface, with real-font artwork composed locally | Any rights held by the maintainer are licensed under Apache-2.0; model version was not exposed |
+| `examples/corner-note/assets/rain-cedar-hero-thumb-240.png` | Existing local 240-pixel thumbnail of the selected hero | Same source rights; not a second generated image |
+
+The inspected license files identify all seven font families used in the published boards as SIL Open Font License 1.1. The first five families are used in package artwork; the last two are used for board labels. The repository distributes raster artwork, not font software. Font sources and their licenses are:
+
+| Font | Source and license | Use in this case |
+| --- | --- | --- |
+| Zhuque Fangsong | [TrionesType, v0.212](https://github.com/TrionesType/zhuque/releases/tag/v0.212), OFL-1.1 | A: Chinese and Latin package lettering |
+| ZCOOL XiaoWei | [Google Fonts](https://github.com/google/fonts/tree/main/ofl/zcoolxiaowei), OFL-1.1 | B: Chinese package lettering; selected design |
+| Fraunces | [Google Fonts](https://github.com/google/fonts/tree/main/ofl/fraunces), OFL-1.1 | B: Latin package lettering; selected design |
+| Ma Shan Zheng | [Google Fonts](https://github.com/google/fonts/tree/main/ofl/mashanzheng), OFL-1.1 | C: Chinese package lettering |
+| Instrument Serif | [Google Fonts](https://github.com/google/fonts/tree/main/ofl/instrumentserif), OFL-1.1 | C: Latin package lettering |
+| Noto Sans SC | [Google Fonts](https://github.com/google/fonts/tree/main/ofl/notosanssc), OFL-1.1 | Board labels |
+| Barlow Condensed | [Google Fonts](https://github.com/google/fonts/tree/main/ofl/barlowcondensed), OFL-1.1 | Board labels, regular and semibold |
+
+This inventory is not a warranty of copyrightability, exclusivity, trademark clearance, product performance, or suitability for manufacturing. Reference-product links in the case study identify historical research sources; their images are not bundled or licensed by this repository.
+
+## Quiet Pantry historical fixtures
 
 The geometric fixtures and v0.2 transform masks were created locally with Pillow. The v0.1 examples and two v0.2 background plates used OpenAI's hosted image-generation tool with self-authored fictional prompts or repository-owned generated sources. The seven v0.2 gallery images and their thumbnails were composed or resized locally from those owned inputs. Under the [OpenAI Terms of Use](https://openai.com/policies/terms-of-use/) accessed on 2026-09-08, as between the user and OpenAI the user owns output to the extent permitted by applicable law, while output may not be unique. The maintainer licenses whatever rights they hold in these outputs under Apache-2.0; this is not a warranty of copyrightability, exclusivity, trademark clearance, or absence of incidental similarity.
 
@@ -36,4 +63,4 @@ The 2026-09-09 generation records did not authorize GitHub publication. For the 
 | `examples/fictional-pantry-product/review/v0.2/2026-09-09/thumbnails/gallery-campaign-2026-09-09.png` | Deterministic contain thumbnail created by `prepare_review_pack.py` from the campaign gallery image | Inherits the source gallery image's publication gate | Not required | No crop, model call, or new third-party material |
 | `examples/fictional-pantry-product/review/v0.2/2026-09-09/thumbnails/gallery-channel-variant-2026-09-09.png` | Deterministic contain thumbnail created by `prepare_review_pack.py` from the channel-variant gallery image | Inherits the source gallery image's publication gate | Not required | No crop, model call, or new third-party material |
 
-No third-party assets are required to run the tests. If a future fixture includes third-party material, it must be listed here with its license, source, attribution text, allowed derivative use, redistribution status, and a review of visible trademarks and private data before it is committed.
+No font download or third-party reference image is required to run the tests. Any future third-party material must be listed here with its license, source, attribution text, allowed derivative use, redistribution status, and a review of visible trademarks and private data before it is committed.

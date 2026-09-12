@@ -1,5 +1,11 @@
 # Changelog
 
+## Unreleased
+
+- Replaced the featured Quiet Pantry example with CORNER NOTE, a fictional ceramic scent tile set. Added an English and Chinese case study covering product and packaging decisions, three typography alternatives, the selected Sensory Serif design, and one Rain Cedar ecommerce hero.
+- Included four unchanged, specifically authorized PNGs with asset hashes and font-source notes. The full gallery remains incomplete. Private working records and font files are not included; Quiet Pantry remains a historical test fixture.
+- This documentation update does not change the installable Skill or the existing v0.2.0 tag and release archives.
+
 ## 0.2.0 - 2026-09-12
 
 ### Added

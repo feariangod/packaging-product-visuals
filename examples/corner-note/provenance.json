@@ -1,0 +1,90 @@
+{
+  "case_id": "corner-note-sensory-serif",
+  "record_kind": "curated-public-case-summary-not-a-runtime-receipt",
+  "work_dates": "2026-09-10/2026-09-12",
+  "product": {
+    "brand": "CORNER NOTE / 隅调",
+    "fictional": true,
+    "category": "flameless-ceramic-scent-tile-set",
+    "oil_volume_ml": 10,
+    "scents": ["rain-cedar", "paper-amber"],
+    "carton_comparison_mm": {"height": 120, "width": 95, "depth": 46},
+    "dimensions_are_production_specifications": false
+  },
+  "decisions": {
+    "package_construction": "option-a-compact-folding-carton",
+    "initial_visual_direction": "direction-02-scent-index",
+    "final_typography": "b-sensory-serif",
+    "selected_fonts": ["ZCOOL XiaoWei", "Fraunces"]
+  },
+  "delivery": {
+    "completed_hero_skus": ["rain-cedar"],
+    "ecommerce_gallery_complete": false,
+    "production_validation": "unverified",
+    "consumer_preference_validation": "unverified",
+    "platform_listing_approval": "unverified"
+  },
+  "historical_hero_review": {
+    "reviewer": "generating-agent",
+    "checks_per_profile": 17,
+    "profiles": ["full-resolution", "thumbnail-240"],
+    "pass_count": 34,
+    "independent_review": false
+  },
+  "fonts": [
+    "Zhuque Fangsong",
+    "ZCOOL XiaoWei",
+    "Fraunces",
+    "Ma Shan Zheng",
+    "Instrument Serif",
+    "Noto Sans SC",
+    "Barlow Condensed"
+  ],
+  "assets": [
+    {
+      "path": "assets/typography-comparison.png",
+      "sha256": "32eb80ef4dae8fb84ae162405ee5fe1a748f26923a92845677ea9ca333db1a5f",
+      "dimensions_px": [2400, 1200],
+      "kind": "typography-comparison",
+      "provenance": "Local real-font rendering of three type systems across two fictional scent packages; includes board annotations."
+    },
+    {
+      "path": "assets/selected-packaging-b.png",
+      "sha256": "06dece7d22027f6c388ccc1b559184dbd8916a611ec736226c8c3d0bb081d646",
+      "dimensions_px": [1400, 1000],
+      "kind": "selected-typography-board",
+      "provenance": "Local real-font rendering of selected B Sensory Serif on both scent package fronts; includes board annotations."
+    },
+    {
+      "path": "assets/rain-cedar-hero.png",
+      "sha256": "b64bf6a60977f3c9287318cf0cdf9de78e44140a00182bf979ce50f69a520a35",
+      "dimensions_px": [1280, 1280],
+      "kind": "ecommerce-hero",
+      "provenance": "Owned generated product scene and corrected carton surface with locally composed real-font packaging artwork. Exact model version was not exposed."
+    },
+    {
+      "path": "assets/rain-cedar-hero-thumb-240.png",
+      "sha256": "09e031b6cf9f60dfeb0d33766054b44a32da4e8b5ca941f6c5b6266c7f008d08",
+      "dimensions_px": [240, 240],
+      "kind": "thumbnail",
+      "derived_from": "assets/rain-cedar-hero.png",
+      "provenance": "Existing local thumbnail of the selected hero, not an additional generated deliverable."
+    }
+  ],
+  "publication": {
+    "authority": "current-user",
+    "date": "2026-09-12",
+    "destination": "https://github.com/feariangod/packaging-product-visuals",
+    "branch": "main",
+    "instruction_summary": "Replace the public fictional example with the selected home fragrance case in the existing GitHub project.",
+    "scope": "Only the four unchanged PNGs listed above and a sanitized bilingual case summary, with links and license notes in repository documentation.",
+    "selected_asset_publication": true,
+    "historical_generation_publication_allowed": false,
+    "original_records_modified": false,
+    "new_generation_authorized": false,
+    "font_binary_publication": false,
+    "private_record_publication": false,
+    "future_asset_publication": false,
+    "rights_note": "Records the separate current-user publication instruction, not a self-issued generation grant, a change to historical permissions, or a legal ownership determination."
+  }
+}

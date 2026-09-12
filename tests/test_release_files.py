@@ -232,9 +232,9 @@ def test_readme_states_supported_scope_and_honest_boundaries():
         "passed",
         "concept",
         "production",
-        "food and beverage",
+        "home fragrance",
         "unverified",
-        "quiet pantry",
+        "corner note",
         "fictional",
     ]
     lowered = readme.lower()
@@ -248,7 +248,7 @@ def test_readme_states_supported_scope_and_honest_boundaries():
 
 def test_chinese_readme_covers_the_same_release_boundaries():
     readme = (REPO_ROOT / "README.zh-CN.md").read_text(encoding="utf-8")
-    for phrase in ("blocked", "draft", "passed", "食品", "投产", "授权", "本地"):
+    for phrase in ("blocked", "draft", "passed", "香薰", "投产", "授权", "本地"):
         assert phrase.lower() in readme.lower()
     assert "marketplace 安装已提供" not in readme
     assert "## 三种模式" not in readme
@@ -266,10 +266,10 @@ def test_bilingual_readmes_share_the_v02_information_architecture_and_contracts(
     assert "docs/maintaining.md" in english and "docs/maintaining.md" in chinese
     assert "[简体中文](README.zh-CN.md)" in english
     assert "[English](README.md)" in chinese
-    assert "examples/fictional-pantry-product/full-workflow.yaml" in english
-    assert "examples/fictional-pantry-product/delivery-manifest.yaml" in english
-    assert "examples/fictional-pantry-product/full-workflow.yaml" in chinese
-    assert "examples/fictional-pantry-product/delivery-manifest.yaml" in chinese
+    assert "examples/corner-note/README.md" in english
+    assert "examples/corner-note/provenance.json" in english
+    assert "examples/corner-note/README.zh-CN.md" in chinese
+    assert "examples/corner-note/provenance.json" in chinese
     assert "Version `0.2.0`" in english
     assert "`0.2.0`" in chinese
     assert "legacy" in maintenance.lower() and "`catalog` draft" in maintenance
@@ -359,10 +359,8 @@ def test_legacy_present_rule_is_exact_and_rejects_continue_or_expand_mutation():
     assert not _legacy_present_rule_is_valid(mutated_english, mutated_chinese)
 
 
-def test_public_example_binds_completed_role_gallery_and_independent_qa():
+def test_historical_pantry_example_preserves_completed_gallery_and_independent_qa():
     example_root = REPO_ROOT / "examples" / "fictional-pantry-product"
-    english = (REPO_ROOT / "README.md").read_text(encoding="utf-8")
-    chinese = (REPO_ROOT / "README.zh-CN.md").read_text(encoding="utf-8")
     workflow = yaml.safe_load((example_root / "full-workflow.yaml").read_text(encoding="utf-8"))
     manifest = yaml.safe_load((example_root / "delivery-manifest.yaml").read_text(encoding="utf-8"))
     generation = yaml.safe_load(
@@ -376,21 +374,18 @@ def test_public_example_binds_completed_role_gallery_and_independent_qa():
     )
     contracts = workflow["contracts"]
 
-    english_example = _section(english, "Public example")
-    chinese_example = _section(chinese, "公开虚构示例")
-    assert "retrospectively" in english_example and "not real market research" in english_example
-    assert "not a default requirement" in english_example
-    assert "事后补充" in chinese_example and "不是真实市场调研" in chinese_example
-    assert "不是默认要求" in chinese_example
     historical = _section((REPO_ROOT / "docs/maintaining.md").read_text(encoding="utf-8"), "Historical evidence")
+    assert "retrospectively" in historical and "not real market research" in historical
+    assert "not a default requirement" in historical
+    assert "事后补充" in historical and "不是真实市场调研" in historical
+    assert "不是默认要求" in historical
     assert "188/188" in historical and "2026-09-09" in historical
     for locator in (
         "qa-result-v0.2-2026-09-09.yaml",
         "runtime-receipt-v0.2-2026-09-09.yaml",
         "review/v0.2/2026-09-09/index.html",
     ):
-        assert locator in english_example
-        assert locator in chinese_example
+        assert locator in historical
 
     for name in ("selection_lock", "ecommerce_asset_plan"):
         assert contracts[name]["status"] == "passed"

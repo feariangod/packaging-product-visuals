@@ -48,15 +48,13 @@ Skill 本身不包含图像模型或搜索服务。它使用当前助手可调�
 
 ## 公开虚构示例
 
-Quiet Pantry 是一个虚构、非商业的食品和饮料包装示例，使用自有素材。2026-09-09 的实际运行从选择方案开始，继续到电商图交付。产品和调研等前期记录是事后补充的，用来描述 2026-09-08 已生成的方向图；它们不是真实市场调研，也不能证明完整流程按顺序执行过。
+**隅调 / CORNER NOTE** 是一个虚构香薰品牌。这个案例从无火陶瓷扩香牌套装的产品设定、包装调研开始，经过方案选择和字体调整，做到雨杉款的第一张电商首图。
 
-| 商品展示图 | 活动图 |
-| --- | --- |
-| ![Quiet Pantry 商品展示图](examples/fictional-pantry-product/generated/v0.2/2026-09-09/gallery-catalog-2026-09-09.png) | ![Quiet Pantry 活动图](examples/fictional-pantry-product/generated/v0.2/2026-09-09/gallery-campaign-2026-09-09.png) |
+<img src="examples/corner-note/assets/rain-cedar-hero.png" alt="隅调雨杉首图：选中的绿色纸盒、陶瓷扩香牌与底座、10 ml 香氛油" width="640">
 
-这个案例为扩大检查覆盖面，使用了全部七种电商图类型；七张图不是默认要求。[双语离线审阅页面](examples/fictional-pantry-product/review/v0.2/2026-09-09/index.html)展示了图片及当时记录的检查状态。[工作流](examples/fictional-pantry-product/full-workflow.yaml)、[交付清单](examples/fictional-pantry-product/delivery-manifest.yaml)、[检查结果](examples/fictional-pantry-product/qa-result-v0.2-2026-09-09.yaml)和[运行记录](examples/fictional-pantry-product/runtime-receipt-v0.2-2026-09-09.yaml)保留了历史证据。
+[案例说明](examples/corner-note/README.zh-CN.md)展示了产品与包装的决定、同一包装上的三组字体比较，以及最终选中的 **B「感官衬线」**：中文使用站酷小薇，英文使用 Fraunces。[素材来源与公开范围](examples/corner-note/provenance.json)列出了本次原样公开的四张图片。
 
-该示例不证明消费者偏好、转化效果，也不代表投产或平台批准。其他品类和运行环境需要分别实测。[维护说明](docs/maintaining.md#historical-evidence)列出了历史测试的范围与限制。
+目前只完成雨杉首图，完整电商图组和纸暖首图尚未完成；240 像素预览是同一张首图的缩略图。案例不代表消费者验证、投产批准或淘宝／天猫上架审核通过。原 Quiet Pantry 食品案例保留为[历史测试资料](docs/maintaining.md#historical-evidence)。
 
 ## 安装
 
