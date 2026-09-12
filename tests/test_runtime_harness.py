@@ -1372,6 +1372,7 @@ class Task6HarnessTests(unittest.TestCase):
                 harness._remove_codex_runtime_temp_symlinks(session, str(runtime))
             self.assertTrue(unexpected.is_symlink())
 
+    @unittest.skipUnless(harness.os.name == "posix", "private marketplace fixture requires POSIX permission semantics")
     def test_local_marketplace_entry_uses_a_local_path_source(self):
         candidate = harness.discover_candidate(REPO_ROOT)
         with tempfile.TemporaryDirectory() as tmp:
@@ -1713,6 +1714,7 @@ class Task6HarnessTests(unittest.TestCase):
             with self.assertRaisesRegex(harness.HarnessError, "argv"):
                 _verify_probe_manifest(manifest_path)
 
+    @unittest.skipUnless(harness.os.name == "posix", "private CLI receipt fixture requires POSIX permission semantics")
     def test_private_plugin_cli_receipt_retains_the_exact_argv(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
