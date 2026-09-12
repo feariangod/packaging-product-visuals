@@ -22,6 +22,7 @@
 - Separated direction-choice checks from final polish while retaining critical copy, geometry, identity, permission, and comparison requirements. Deferred finish work belongs to the selected direction, not every rejected alternative.
 - Added a local editable-artwork bundle helper and surface-specific reuse guidance. Bundle integrity is separate from visual review, font rendering, redistribution permission, and production validation.
 - Clarified continuation within an existing authorization, visible-instance counting, and shared source records. Simplified the English and Chinese entrypoints while retaining links to dated evidence.
+- Removed the migration tests' dependency on full Git history by retaining the original v0.1.0 helper with a fixed hash. Corrected Windows gallery finalization and test filenames, and made the private runtime harness explicitly POSIX-only without weakening credential checks.
 
 The earlier test, installation, and visual-review counts describe their recorded runs. They do not certify this update. The maintainer's separate authorization for this release is recorded in [the publication record](docs/releases/v0.2.0-publication.json); original generation and audit records remain unchanged.
 

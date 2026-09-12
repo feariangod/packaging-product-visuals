@@ -27,6 +27,8 @@ This environment runs tests and local tools; it does not install the Skill. Add 
 
 CI is configured for Ubuntu with Python 3.10 and 3.14, plus macOS and Windows with Python 3.14. Do not compare encoded PNG/JPEG bytes across systems. Check dimensions, mode, orientation, semantic markers, decoded hashes where pinned, canonical text, path ordering, and exit codes instead.
 
+The credential-bearing runtime harness requires POSIX permissions. Windows runs the offline and contract tests plus explicit unsupported-platform rejection tests; POSIX-only private-runtime fixtures are reported as skipped. Live Codex evidence remains limited to the recorded macOS runs. See [maintenance notes](docs/maintaining.md).
+
 Use available official validators as supplemental checks:
 
 ```bash
@@ -74,6 +76,8 @@ git diff --check
 此环境用于测试和本地工具，不用于安装 Skill。为改动的行为和有意义的失败情况补充测试。文档测试应检查事实、链接和中英一致性，不应强制某一句固定措辞。
 
 CI 配置覆盖 Ubuntu 的 Python 3.10、3.14，以及 macOS 和 Windows 的 Python 3.14。不要跨系统比较 PNG/JPEG 编码后的文件字节；应检查尺寸、模式、方向、可识别内容、明确固定的解码后校验值、标准化文字、路径顺序和退出码。
+
+需要凭据的运行探针依赖 POSIX 权限。Windows 执行离线工具、数据规则和不支持平台的提前拒绝测试，POSIX 私有运行样例会明确报告为跳过。真实 Codex 会话证据仍限于已记录的 macOS 运行。详见[维护说明](docs/maintaining.md)。
 
 可用时，用官方验证工具补充检查：
 

@@ -5,6 +5,7 @@ import tempfile
 import unittest
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
+from types import SimpleNamespace
 from unittest import mock
 
 import importlib.util
@@ -150,6 +151,8 @@ def _write_skill_discovery_artifacts(
 
 
 def _write_valid_probe_manifest(run_root: Path) -> Path:
+    if harness.os.name != "posix":
+        raise unittest.SkipTest("private runtime fixtures require POSIX permission semantics")
     auth_source = run_root.parent / "auth-source.json"
     auth_source.write_text('{"token":"abcdefghijklmnop"}', encoding="utf-8")
     auth_source.chmod(0o600)
@@ -343,6 +346,8 @@ def _write_valid_probe_manifest(run_root: Path) -> Path:
 
 
 def _write_valid_install_manifest(run_root: Path) -> Path:
+    if harness.os.name != "posix":
+        raise unittest.SkipTest("private runtime fixtures require POSIX permission semantics")
     auth_source = run_root.parent / "auth-source.json"
     auth_source.write_text('{"token":"abcdefghijklmnop"}', encoding="utf-8")
     auth_source.chmod(0o600)
@@ -769,6 +774,30 @@ def _rewrite_json(path: Path, value: object) -> None:
 
 
 class Task6HarnessTests(unittest.TestCase):
+    def test_private_runtime_rejects_non_posix_before_io_or_process_execution(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            actions = (
+                lambda: harness._validated_auth_source(root / "repo", root / "auth.json"),
+                lambda: harness._copy_auth(root / "auth.json", root / "home"),
+                lambda: harness._write_bytes(root / "private" / "raw.json", b"{}", private=True),
+                lambda: harness._preflight(root / "repo", root / "audit", root / "auth.json", "codex"),
+                lambda: harness.verify_private_run_manifest(root / "manifest.json", root / "repo"),
+            )
+            for index, action in enumerate(actions):
+                with (
+                    self.subTest(entrypoint=index),
+                    mock.patch.object(harness, "os", SimpleNamespace(name="nt")),
+                    mock.patch.object(harness, "_resolved", side_effect=AssertionError("filesystem probe")),
+                    mock.patch.object(harness, "_run_capture", side_effect=AssertionError("process execution")),
+                    mock.patch.object(harness.shutil, "copyfile", side_effect=AssertionError("credential copy")),
+                    mock.patch.object(Path, "mkdir", side_effect=AssertionError("directory creation")),
+                    mock.patch.object(Path, "read_text", side_effect=AssertionError("file read")),
+                    self.assertRaisesRegex(harness.HarnessError, "requires POSIX"),
+                ):
+                    action()
+            self.assertEqual(list(root.iterdir()), [])
+
     def test_tree_digest_matches_release_evidence_algorithm(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
@@ -1293,6 +1322,7 @@ class Task6HarnessTests(unittest.TestCase):
         self.assertFalse(outcome["agent_file_reads_observed"])
         self.assertFalse(outcome["files_written"])
 
+    @unittest.skipUnless(harness.os.name == "posix", "Codex runtime fixture uses a POSIX shell executable")
     def test_codex_runtime_temp_symlink_cleanup_is_narrow_and_auditable(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
@@ -1323,6 +1353,7 @@ class Task6HarnessTests(unittest.TestCase):
                 {"1.2.3"},
             )
 
+    @unittest.skipUnless(harness.os.name == "posix", "Codex runtime fixture uses POSIX symlinks")
     def test_codex_runtime_temp_symlink_cleanup_rejects_unexpected_links(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
@@ -1471,6 +1502,7 @@ class Task6HarnessTests(unittest.TestCase):
             self.assertEqual(exit_code, 0)
             self.assertEqual(real_run.call_args.kwargs["candidate"], candidate)
 
+    @unittest.skipUnless(harness.os.name == "posix", "private session fixtures require POSIX permission semantics")
     def test_session_wrappers_remove_credentials_after_pre_execution_errors(self):
         candidate = harness.discover_candidate(REPO_ROOT)
         scenario = harness.load_scenarios(REPO_ROOT)[0]

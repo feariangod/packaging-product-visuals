@@ -107,3 +107,9 @@ The [review helper](../skills/packaging-product-visuals/scripts/prepare_review_p
 The CI declaration covers Ubuntu with Python 3.10 and 3.14, plus macOS and Windows with Python 3.14. A configured job is not evidence that it ran for a given revision. Supplemental checks include `skills-ref validate`, Codex `quick_validate.py`, and the Codex plugin validator when available. Report missing tools and remaining checks. Live generation requires an authorized run and direct image review; it is not a CI pixel-golden test.
 
 CI 声明覆盖 Ubuntu 的 Python 3.10、3.14，以及 macOS 和 Windows 的 Python 3.14。配置了任务不等于某个代码版本已经实际运行过。可用时补充执行 `skills-ref validate`、Codex `quick_validate.py` 和 Codex 插件验证工具；缺少工具和未完成检查都需要说明。实际生图需要授权运行并直接查看图片，不属于 CI 固定像素对照测试。
+
+The credential-bearing [runtime harness](../tests/evals/runtime_harness.py) requires POSIX file permissions and runtime commands. On other systems it rejects private validation, credential copying, and private writes before accessing those files. Windows CI skips the POSIX-only runtime fixtures and still runs the offline helpers, contract tests, and rejection checks. This does not establish live Codex support on Windows; the historical live evidence above remains macOS-only.
+
+需要凭据的[运行探针](../tests/evals/runtime_harness.py)依赖 POSIX 文件权限和系统命令。在其他系统上，它会在访问文件前拒绝私有记录验证、凭据复制和私有文件写入。Windows CI 明确跳过这类 POSIX 运行样例，继续执行离线工具、数据规则和提前拒绝测试。这不能证明 Windows 上的真实 Codex 会话已验证；上述历史实际运行证据仍只覆盖 macOS。
+
+Migration tests use the hash-checked [original v0.1.0 helper snapshot](../tests/fixtures/v0.1.0/README.md), so they do not need full Git history or a network fetch. / 迁移测试使用有校验值保护的 [v0.1.0 原始工具快照](../tests/fixtures/v0.1.0/README.md)，不需要完整 Git 历史或联网获取旧版。

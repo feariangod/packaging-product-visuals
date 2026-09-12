@@ -119,6 +119,11 @@ class HarnessError(RuntimeError):
     """A validation or execution failure that must produce a nonzero exit."""
 
 
+def _require_private_runtime_support() -> None:
+    if os.name != "posix":
+        raise HarnessError("private runtime harness requires POSIX permission semantics")
+
+
 def capture_local_execution_clock(sampled: datetime | None = None) -> dict[str, str]:
     observed = sampled or datetime.now().astimezone()
     if observed.tzinfo is None or observed.utcoffset() is None:
@@ -176,6 +181,8 @@ def require_safe_summary_path(
 
 
 def _write_bytes(path: Path, data: bytes, private: bool = False) -> None:
+    if private:
+        _require_private_runtime_support()
     if path.exists() or path.is_symlink():
         raise HarnessError(f"refusing to overwrite existing output: {path.name}")
     path.parent.mkdir(parents=True, exist_ok=True)
@@ -1595,6 +1602,7 @@ def _preflight(
     auth_source: Path,
     codex_bin: str,
 ) -> dict[str, Any]:
+    _require_private_runtime_support()
     repo = _resolved(repo_root)
     if not (repo / ".git").exists():
         git_probe = _run_capture(["git", "rev-parse", "--is-inside-work-tree"], cwd=repo)
@@ -1686,6 +1694,7 @@ def _copy_candidate(repo_root: Path, candidate: dict[str, Any], target: Path) ->
 
 
 def _copy_auth(auth_source: Path, codex_home: Path) -> Path:
+    _require_private_runtime_support()
     codex_home.mkdir(parents=True, exist_ok=True)
     destination = codex_home / AUTH_BASENAME
     shutil.copyfile(auth_source, destination)
@@ -1720,6 +1729,7 @@ def _validated_auth_source(
     repo_root: Path,
     auth_source: Path,
 ) -> tuple[Path, tuple[bytes, ...]]:
+    _require_private_runtime_support()
     repo = _resolved(repo_root)
     auth = _resolved(auth_source)
     if not auth.is_file() or auth.stat().st_size == 0:
@@ -3653,6 +3663,7 @@ def verify_private_run_manifest(
     auth_source: Path | None = None,
     codex_bin: str = "codex",
 ) -> dict[str, Any]:
+    _require_private_runtime_support()
     repo = _resolved(repo_root)
     executable = _resolve_codex_executable(codex_bin)
     manifest_file = _resolved(manifest_path)

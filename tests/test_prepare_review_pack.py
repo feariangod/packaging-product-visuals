@@ -12,7 +12,8 @@ from PIL import Image
 REPO_ROOT = Path(__file__).parents[1]
 SCRIPT = REPO_ROOT / "skills" / "packaging-product-visuals" / "scripts" / "prepare_review_pack.py"
 OWNER_MARKER_NAME = ".packaging-product-visuals-review-pack.json"
-V01_HELPER_COMMIT = "5d5fcaaa289da5bf6fbb09ec051a1d9d74c5adcb"
+V01_HELPER = REPO_ROOT / "tests" / "fixtures" / "v0.1.0" / "prepare_review_pack.py"
+V01_HELPER_SHA256 = "004d8515e981adb6d2eac651c23ff7051f50a26322cc8f6883ee99c273515d6b"
 
 
 def _run(*args, cwd=None):
@@ -25,21 +26,12 @@ def _run(*args, cwd=None):
 
 
 def _run_v01_helper(*args, cwd=None):
-    legacy_script = subprocess.run(
-        [
-            "git",
-            "show",
-            f"{V01_HELPER_COMMIT}:skills/packaging-product-visuals/scripts/prepare_review_pack.py",
-        ],
-        cwd=REPO_ROOT,
-        capture_output=True,
-        text=True,
-        check=True,
-    ).stdout
+    legacy_bytes = V01_HELPER.read_bytes()
+    assert hashlib.sha256(legacy_bytes).hexdigest() == V01_HELPER_SHA256
     return subprocess.run(
         [sys.executable, "-", *map(str, args)],
         cwd=cwd or REPO_ROOT,
-        input=legacy_script,
+        input=legacy_bytes.decode("utf-8"),
         capture_output=True,
         text=True,
     )
@@ -389,7 +381,7 @@ def test_review_page_is_offline_static_accessible_and_responsive(tmp_path):
 
 
 def test_review_spec_escapes_all_user_visible_html(tmp_path):
-    source = tmp_path / 'unsafe&".png'
+    source = tmp_path / "unsafe&'.png"
     _save_corners(source)
     spec_path = tmp_path / "review-spec.json"
     payload = _write_review_spec(spec_path, [source, source])
@@ -409,7 +401,7 @@ def test_review_spec_escapes_all_user_visible_html(tmp_path):
     assert '<script>alert("x")</script>' not in page
     assert "&lt;script&gt;alert(&quot;x&quot;)&lt;/script&gt;" in page
     assert "&lt;b&gt;不可信&lt;/b&gt;" in page
-    assert 'src="thumbnails/unsafe&amp;&quot;.png"' in page
+    assert 'src="thumbnails/unsafe&amp;&#x27;.png"' in page
 
 
 @pytest.mark.parametrize(

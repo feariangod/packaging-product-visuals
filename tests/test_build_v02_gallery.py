@@ -8,6 +8,7 @@ from pathlib import Path
 import shutil
 import subprocess
 import sys
+from types import SimpleNamespace
 
 from PIL import Image
 import pytest
@@ -1108,6 +1109,43 @@ def test_final_atomic_commit_never_replaces_a_racing_output_directory(tmp_path, 
     assert (output / "keep.txt").read_text(encoding="utf-8") == "racing output"
     assert {path.name for path in output.iterdir()} == {"keep.txt"}
     assert not list(output.parent.glob(".2026-09-09.staging-*"))
+
+
+@pytest.mark.parametrize("existing_kind", ["empty-directory", "nonempty-directory", "file"])
+def test_atomic_rename_preserves_every_existing_destination(tmp_path, existing_kind):
+    module = _load_module()
+    source = tmp_path / "staging"
+    source.mkdir()
+    (source / "new.txt").write_text("new", encoding="utf-8")
+    destination = tmp_path / "published"
+    if existing_kind == "file":
+        destination.write_text("keep", encoding="utf-8")
+    else:
+        destination.mkdir()
+        if existing_kind == "nonempty-directory":
+            (destination / "keep.txt").write_text("keep", encoding="utf-8")
+    before = _tree_digest(tmp_path)
+
+    with pytest.raises(module.ContractError, match="atomic final output already exists"):
+        module._atomic_rename_no_replace(source, destination)
+
+    assert _tree_digest(tmp_path) == before
+
+
+def test_windows_atomic_rename_uses_native_no_replace_without_loading_libc(tmp_path, monkeypatch):
+    module = _load_module()
+    calls = []
+    monkeypatch.setattr(module, "sys", SimpleNamespace(platform="win32"))
+    monkeypatch.setattr(module.os, "rename", lambda source, destination: calls.append((source, destination)))
+
+    def reject_libc(*args, **kwargs):
+        pytest.fail("Windows rename must not load a POSIX library")
+
+    monkeypatch.setattr(module.ctypes, "CDLL", reject_libc)
+    source, destination = tmp_path / "staging", tmp_path / "published"
+    module._atomic_rename_no_replace(source, destination)
+
+    assert calls == [(source, destination)]
 
 
 def module_sha256(path: Path) -> str:

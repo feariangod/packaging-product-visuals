@@ -1772,6 +1772,13 @@ def _remove_empty_directories(directories: list[Path]) -> None:
 
 
 def _atomic_rename_no_replace(source: Path, destination: Path) -> None:
+    if sys.platform == "win32":
+        # Windows rename rejects existing destinations, including empty directories.
+        try:
+            os.rename(source, destination)
+        except FileExistsError as error:
+            raise ContractError(f"atomic final output already exists: {destination}") from error
+        return
     source_bytes = os.fsencode(source)
     destination_bytes = os.fsencode(destination)
     libc = ctypes.CDLL(None, use_errno=True)
