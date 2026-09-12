@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Packaging Product Visuals Install Smoke Output",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "scenario_id",
+    "skill_invoked",
+    "status",
+    "capability_gap",
+    "artifact_invented",
+    "files_written",
+    "explanation"
+  ],
+  "properties": {
+    "scenario_id": {
+      "type": "string",
+      "enum": [
+        "install-smoke-image-unavailable"
+      ]
+    },
+    "skill_invoked": {
+      "type": "boolean",
+      "enum": [
+        true
+      ]
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "blocked"
+      ]
+    },
+    "capability_gap": {
+      "type": "string",
+      "enum": [
+        "image_generation_unavailable"
+      ]
+    },
+    "artifact_invented": {
+      "type": "boolean",
+      "enum": [
+        false
+      ]
+    },
+    "files_written": {
+      "type": "boolean",
+      "enum": [
+        false
+      ]
+    },
+    "explanation": {
+      "type": "string",
+      "minLength": 1
+    }
+  }
+}

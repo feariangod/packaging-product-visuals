@@ -34,12 +34,25 @@ def _candidate_text_files():
             continue
 
 
+def _private_identifier_sentinels():
+    return (
+        "Yi" + "shi",
+        chr(0x76CA) + chr(0x5F0F),
+        chr(0x76CA) + chr(0x6C0F),
+        "jin" + "tiao",
+    )
+
+
 def _suspicious_patterns():
     absolute_roots = ["/" + part for part in ("Users/", "Volumes/", "home/")]
     private_key_marker = "-" * 5 + "BEGIN " + ".*PRIVATE KEY" + "-" * 5
     placeholder_terms = ("to" + "do", "fix" + "me", "tb" + "d", "lorem" + " ipsum")
+    private_identifiers = [
+        rf"(?i){re.escape(value)}" for value in _private_identifier_sentinels()
+    ]
     return [
         *absolute_roots,
+        *private_identifiers,
         "/" + "private/var/",
         private_key_marker,
         r"(?:sk|ghp|xoxb)-[A-Za-z0-9_-]{12,}",
@@ -102,4 +115,15 @@ def test_hygiene_scanner_self_test_uses_only_tmp_path(tmp_path):
     sentinel = tmp_path / "sentinel.md"
     sentinel.write_text("/" + "Users/private-user and " + "TO" + "DO")
     assert _find_hygiene_issues(sentinel.read_text(encoding="utf-8"))
+    for value in _private_identifier_sentinels():
+        assert _find_hygiene_issues(value)
+    for value in ("/" + "Users/private-user", "/" + "Volumes/private-drive", "/" + "home/private-user"):
+        assert _find_hygiene_issues(value)
     assert not (REPO_ROOT / "sentinel.md").exists()
+
+
+def test_hygiene_candidate_scan_includes_unignored_public_plan():
+    relative_candidates = {
+        path.relative_to(REPO_ROOT) for path in _candidate_files()
+    }
+    assert Path("docs/superpowers/plans/2026-09-08-product-to-ecommerce-workflow.md") in relative_candidates

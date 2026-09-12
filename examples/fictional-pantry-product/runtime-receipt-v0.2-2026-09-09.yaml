@@ -1,0 +1,2680 @@
+schema_version: 2
+id: fictional-pantry-runtime-receipt-v02-2026-09-09
+project_state_id: fictional-pantry-project-state-v02
+stage_id: qa-delivery
+internal_operation: inspect
+status: passed
+source_brief:
+  locator: examples/fictional-pantry-product/full-workflow.yaml
+  sha256: 784e4895fbcebf285ffffb5f3c3b5b88a9960f20de811ab7874fc271e5148716
+input_contract_ids:
+- fictional-pantry-decision-lock-v02
+- fictional-pantry-selection-lock-v02
+- fictional-pantry-ecommerce-plan-v02
+- fictional-pantry-ecommerce-qa-plan-v02
+- fictional-pantry-generation-receipt-v02-2026-09-09
+output_contract_ids:
+- fictional-pantry-delivery-manifest-v02
+- fictional-pantry-image-qa-result-v02-2026-09-09
+stage_outputs:
+- contract_type: DeliveryManifest
+  contract_id: fictional-pantry-delivery-manifest-v02
+  status: passed
+  locator: examples/fictional-pantry-product/delivery-manifest.yaml
+  sha256: 66f4befefac668f1d7e3f702eddb5a5464bd9efa87079fa8a7b3a0ec24ddbc69
+  blocking_reason: null
+- contract_type: ImageQAResult
+  contract_id: fictional-pantry-image-qa-result-v02-2026-09-09
+  status: passed
+  locator: examples/fictional-pantry-product/qa-result-v0.2-2026-09-09.yaml
+  sha256: 752c9529a563b70788c5c3ef4b844f10528794e0a48b21c600116d5ca56761e2
+  blocking_reason: null
+- contract_type: BilingualReviewPack
+  contract_id: fictional-pantry-review-pack-v02-2026-09-09
+  status: passed
+  locator: examples/fictional-pantry-product/review/v0.2/2026-09-09/index.html
+  sha256: 9ddd02bbff281911322f52d6258ea9fa39d8ddd67db6b233a5e6e8e2bf9f631d
+  blocking_reason: null
+stage_checks:
+- check_id: exact-current-user-authorization
+  required: true
+  status: pass
+  evidence: The final build binds current-user authorization record public-fictional-v02-final-build-authorization-2026-09-09
+    and its source SHA-256.
+- check_id: transform-binding
+  required: true
+  status: pass
+  evidence: Authorized and current transform SHA-256 values match exactly.
+- check_id: call-budget
+  required: true
+  status: pass
+  evidence: Two external background-plate calls were used under the approved maximum of four.
+- check_id: artifact-completeness
+  required: true
+  status: pass
+  evidence: All seven requested roles have unique inspectable artifacts and verified SHA-256 values.
+- check_id: independent-qa
+  required: true
+  status: pass
+  evidence: Independent reviewer public_gallery_qa passed all 188 required rows with 0 P1 and 0 P2.
+- check_id: review-page
+  required: true
+  status: pass
+  evidence: The bilingual local review pack binds all seven source images and deterministic 320 px thumbnails.
+- check_id: privacy-and-relative-paths
+  required: true
+  status: pass
+  evidence: Public records contain no private product identifiers, private image bytes, credentials, or absolute local paths.
+- check_id: publication-boundary
+  required: true
+  status: pass
+  evidence: Every run record keeps publication authorization and publication performed set to false.
+requested_artifact_ids:
+- gallery-catalog
+- gallery-detail
+- gallery-usage
+- gallery-specification
+- gallery-context
+- gallery-campaign
+- gallery-channel-variant
+contract_snapshot:
+  snapshot_level: redacted
+  normalized_contract:
+    schema_version: 2
+    request_id: fictional-pantry-public-forward-v02-2026-09-09
+    processing_policy:
+      authorization:
+        authority: current-user
+        record_id: public-fictional-v02-final-build-authorization-2026-09-09
+        generation_authorized: true
+        publication_authorized: false
+        basis: Current user re-confirmed the QA-corrected transform, two text-free background plates, seven-role local build,
+          188-row QA scope, and four-call ceiling. GitHub publication remains outside this authorization.
+        confirmed_at_utc: '2026-09-09T08:47:30Z'
+        record_created_at_utc: '2026-09-09T08:55:19Z'
+      default_permissions:
+        confidentiality: public
+        inspect_allowed: true
+        external_processing_allowed: true
+        derivative_allowed: true
+        redistribution_allowed: true
+        publication_allowed: true
+        attribution_status: not-required
+        attribution_text: null
+        attribution_fulfilled: not-applicable
+      field_overrides:
+      - json_pointer: /output
+        permissions: &nonpublication_permissions
+          confidentiality: public
+          inspect_allowed: true
+          external_processing_allowed: true
+          derivative_allowed: true
+          redistribution_allowed: false
+          publication_allowed: false
+          attribution_status: not-required
+          attribution_text: null
+          attribution_fulfilled: not-applicable
+      - json_pointer: /publication
+        permissions: *nonpublication_permissions
+    approved_scope:
+      selection_lock_id: fictional-pantry-selection-lock-v02
+      ecommerce_asset_plan_id: fictional-pantry-ecommerce-plan-v02
+      selected_direction_id: quiet-pantry
+      selected_sku_ids:
+      - lemon-ginger
+      - berry-oat
+      required_roles:
+      - catalog
+      - detail
+      - usage
+      - specification
+      - context
+      - campaign
+      - channel-variant
+      source_artifact_id: compare-direction-a
+      source_artifact_sha256: a2c1d38551febace8a1bfec48011e7e36528695e244ec892d2c4fa4ad3d4f4fb
+      package_identity_sha256: 39d1ee7e7ea63ab815eadb9667ece008f3183db388350154d4a9f70ade1ab758
+    decision_lock_id: fictional-pantry-decision-lock-v02
+    selection_lock_id: fictional-pantry-selection-lock-v02
+    ecommerce_asset_plan_id: fictional-pantry-ecommerce-plan-v02
+    package_identity_sha256: 39d1ee7e7ea63ab815eadb9667ece008f3183db388350154d4a9f70ade1ab758
+    transform_binding:
+      locator: transforms/v0.2/2026-09-09/transform-spec-2026-09-09.json
+      sha256: 7c5d0f172780cb9b6479e936385f32868f3a4a2d2f8f33c5450c2c202c1883cc
+    generation_budget:
+      paid_calls_allowed: true
+      maximum_total_calls: 4
+      maximum_calls_per_background_plate: 2
+      deterministic_roles:
+      - catalog
+      - detail
+      - specification
+      - campaign
+      - channel-variant
+      external_background_plate_roles:
+      - usage
+      - context
+    output:
+      root: generated/v0.2/2026-09-09
+      overwrite: false
+      retention_policy: preserve
+      publication_authorized: false
+    publication:
+      authorized: false
+      performed: false
+      requires_new_current_user_confirmation: true
+    requested_artifact_ids:
+    - gallery-catalog
+    - gallery-detail
+    - gallery-usage
+    - gallery-specification
+    - gallery-context
+    - gallery-campaign
+    - gallery-channel-variant
+    qa_plan:
+      id: fictional-pantry-ecommerce-qa-plan-v02
+      required_gate_ids:
+      - artifact-type
+      - object-count
+      - package-geometry
+      - exact-copy
+      - invented-claims
+      - reference-role
+      - visual-hierarchy-identity
+      - product-anatomy
+      - channel-fit
+      - artifact-integrity
+      - selection-lock
+      - asset-role
+      - package-identity
+      cross_set_required_gate_ids:
+      - set-completeness
+      - cross-asset-package-identity
+      - cross-asset-sku-consistency
+      - cross-asset-claims-consistency
+      - sequence-role-coverage
+      - cross-asset-channel-fit
+      review_profiles:
+      - profile_id: full-resolution
+        profile_scope: full-resolution
+        required: true
+        definition:
+          fit: original
+      - profile_id: ecommerce-thumbnail
+        profile_scope: named-profile
+        required: true
+        definition:
+          fit: contain
+          longest_edge: 320
+      independent_review_required: true
+      expected_gate_rows: 188
+      sha256: d3c68a236664f4af66a046c278153d9b52138c6e916c7d3468799a35489e9460
+    artifacts:
+    - requested_artifact_id: gallery-catalog
+      artifact_id: gallery-catalog-2026-09-09
+      role: catalog
+      locator: examples/fictional-pantry-product/generated/v0.2/2026-09-09/gallery-catalog-2026-09-09.png
+      sha256: d890af034593b43fd1d5c10a51ee9f97f59d8de938ddf311bca5eaef17ab8d38
+    - requested_artifact_id: gallery-detail
+      artifact_id: gallery-detail-2026-09-09
+      role: detail
+      locator: examples/fictional-pantry-product/generated/v0.2/2026-09-09/gallery-detail-2026-09-09.png
+      sha256: 2e51f7bde4b48de152f03ac0a45eb80152c61f7cdb181c7d3cd9d6e566b14b85
+    - requested_artifact_id: gallery-usage
+      artifact_id: gallery-usage-2026-09-09
+      role: usage
+      locator: examples/fictional-pantry-product/generated/v0.2/2026-09-09/gallery-usage-2026-09-09.png
+      sha256: 541ee5629533a46101aed0d1f7b50489a3fed154987d38b84870736c0708b35b
+    - requested_artifact_id: gallery-specification
+      artifact_id: gallery-specification-2026-09-09
+      role: specification
+      locator: examples/fictional-pantry-product/generated/v0.2/2026-09-09/gallery-specification-2026-09-09.png
+      sha256: 786fc55979c1edadcd64c951aecf7c0aae952aa8fe6ecfbea6882981676bbba0
+    - requested_artifact_id: gallery-context
+      artifact_id: gallery-context-2026-09-09
+      role: context
+      locator: examples/fictional-pantry-product/generated/v0.2/2026-09-09/gallery-context-2026-09-09.png
+      sha256: 3e266572cbd975e07179ca4c0de06a40009ea84628e5cccc8e1a3dc345919058
+    - requested_artifact_id: gallery-campaign
+      artifact_id: gallery-campaign-2026-09-09
+      role: campaign
+      locator: examples/fictional-pantry-product/generated/v0.2/2026-09-09/gallery-campaign-2026-09-09.png
+      sha256: 6786a09bf0d245f64015299f07a4f0dbd0e011d2cb1cc2c61172dacdc42ba9f7
+    - requested_artifact_id: gallery-channel-variant
+      artifact_id: gallery-channel-variant-2026-09-09
+      role: channel-variant
+      locator: examples/fictional-pantry-product/generated/v0.2/2026-09-09/gallery-channel-variant-2026-09-09.png
+      sha256: 209a65915981963de95f68e077dffc36f198a9910be605c8d88e4ed411eba6bc
+  resolved_permissions:
+  - subject_type: field
+    subject_id_or_path: /approved_scope
+    permissions:
+      confidentiality: public
+      inspect_allowed: true
+      external_processing_allowed: true
+      derivative_allowed: true
+      redistribution_allowed: true
+      publication_allowed: true
+      attribution_status: not-required
+      attribution_text: null
+      attribution_fulfilled: not-applicable
+    resolution_source: run-default
+    authorization_source: current-user
+  - subject_type: field
+    subject_id_or_path: /generation_budget
+    permissions:
+      confidentiality: public
+      inspect_allowed: true
+      external_processing_allowed: true
+      derivative_allowed: true
+      redistribution_allowed: true
+      publication_allowed: true
+      attribution_status: not-required
+      attribution_text: null
+      attribution_fulfilled: not-applicable
+    resolution_source: run-default
+    authorization_source: current-user
+  - subject_type: field
+    subject_id_or_path: /qa_plan
+    permissions:
+      confidentiality: public
+      inspect_allowed: true
+      external_processing_allowed: true
+      derivative_allowed: true
+      redistribution_allowed: true
+      publication_allowed: true
+      attribution_status: not-required
+      attribution_text: null
+      attribution_fulfilled: not-applicable
+    resolution_source: run-default
+    authorization_source: current-user
+  - subject_type: field
+    subject_id_or_path: /output
+    permissions:
+      confidentiality: public
+      inspect_allowed: true
+      external_processing_allowed: true
+      derivative_allowed: true
+      redistribution_allowed: false
+      publication_allowed: false
+      attribution_status: not-required
+      attribution_text: null
+      attribution_fulfilled: not-applicable
+    resolution_source: field-override
+    authorization_source: current-user
+  - subject_type: field
+    subject_id_or_path: /publication
+    permissions:
+      confidentiality: public
+      inspect_allowed: true
+      external_processing_allowed: true
+      derivative_allowed: true
+      redistribution_allowed: false
+      publication_allowed: false
+      attribution_status: not-required
+      attribution_text: null
+      attribution_fulfilled: not-applicable
+    resolution_source: field-override
+    authorization_source: current-user
+  - subject_type: output
+    subject_id_or_path: /output
+    permissions:
+      confidentiality: public
+      inspect_allowed: true
+      external_processing_allowed: true
+      derivative_allowed: true
+      redistribution_allowed: false
+      publication_allowed: false
+      attribution_status: not-required
+      attribution_text: null
+      attribution_fulfilled: not-applicable
+    resolution_source: field-override
+    authorization_source: current-user
+  sha256: 053d1bce5a34211746642b07eb87312a1c1722fabd34c7d984bf2ee11f98c09d
+  hash_basis: canonical-runtime-contract-json
+  omissions:
+  - Full DecisionLock and SelectionLock bodies are omitted; their IDs and package-identity digest remain in the normalized contract.
+  - Source and asset permission objects are omitted; their authoritative values remain in the bound workflow, authorization, generation, and delivery records.
+artifacts:
+- requested_artifact_id: gallery-catalog
+  artifact_id: gallery-catalog-2026-09-09
+  locator: examples/fictional-pantry-product/generated/v0.2/2026-09-09/gallery-catalog-2026-09-09.png
+  locator_type: relative_path
+  role: catalog
+  status: passed
+  sha256: d890af034593b43fd1d5c10a51ee9f97f59d8de938ddf311bca5eaef17ab8d38
+  blocking_reason: null
+  expected_package_identity_sha256: 39d1ee7e7ea63ab815eadb9667ece008f3183db388350154d4a9f70ade1ab758
+- requested_artifact_id: gallery-detail
+  artifact_id: gallery-detail-2026-09-09
+  locator: examples/fictional-pantry-product/generated/v0.2/2026-09-09/gallery-detail-2026-09-09.png
+  locator_type: relative_path
+  role: detail
+  status: passed
+  sha256: 2e51f7bde4b48de152f03ac0a45eb80152c61f7cdb181c7d3cd9d6e566b14b85
+  blocking_reason: null
+  expected_package_identity_sha256: 39d1ee7e7ea63ab815eadb9667ece008f3183db388350154d4a9f70ade1ab758
+- requested_artifact_id: gallery-usage
+  artifact_id: gallery-usage-2026-09-09
+  locator: examples/fictional-pantry-product/generated/v0.2/2026-09-09/gallery-usage-2026-09-09.png
+  locator_type: relative_path
+  role: usage
+  status: passed
+  sha256: 541ee5629533a46101aed0d1f7b50489a3fed154987d38b84870736c0708b35b
+  blocking_reason: null
+  expected_package_identity_sha256: 39d1ee7e7ea63ab815eadb9667ece008f3183db388350154d4a9f70ade1ab758
+- requested_artifact_id: gallery-specification
+  artifact_id: gallery-specification-2026-09-09
+  locator: examples/fictional-pantry-product/generated/v0.2/2026-09-09/gallery-specification-2026-09-09.png
+  locator_type: relative_path
+  role: specification
+  status: passed
+  sha256: 786fc55979c1edadcd64c951aecf7c0aae952aa8fe6ecfbea6882981676bbba0
+  blocking_reason: null
+  expected_package_identity_sha256: 39d1ee7e7ea63ab815eadb9667ece008f3183db388350154d4a9f70ade1ab758
+- requested_artifact_id: gallery-context
+  artifact_id: gallery-context-2026-09-09
+  locator: examples/fictional-pantry-product/generated/v0.2/2026-09-09/gallery-context-2026-09-09.png
+  locator_type: relative_path
+  role: context
+  status: passed
+  sha256: 3e266572cbd975e07179ca4c0de06a40009ea84628e5cccc8e1a3dc345919058
+  blocking_reason: null
+  expected_package_identity_sha256: 39d1ee7e7ea63ab815eadb9667ece008f3183db388350154d4a9f70ade1ab758
+- requested_artifact_id: gallery-campaign
+  artifact_id: gallery-campaign-2026-09-09
+  locator: examples/fictional-pantry-product/generated/v0.2/2026-09-09/gallery-campaign-2026-09-09.png
+  locator_type: relative_path
+  role: campaign
+  status: passed
+  sha256: 6786a09bf0d245f64015299f07a4f0dbd0e011d2cb1cc2c61172dacdc42ba9f7
+  blocking_reason: null
+  expected_package_identity_sha256: 39d1ee7e7ea63ab815eadb9667ece008f3183db388350154d4a9f70ade1ab758
+- requested_artifact_id: gallery-channel-variant
+  artifact_id: gallery-channel-variant-2026-09-09
+  locator: examples/fictional-pantry-product/generated/v0.2/2026-09-09/gallery-channel-variant-2026-09-09.png
+  locator_type: relative_path
+  role: channel-variant
+  status: passed
+  sha256: 209a65915981963de95f68e077dffc36f198a9910be605c8d88e4ed411eba6bc
+  blocking_reason: null
+  expected_package_identity_sha256: 39d1ee7e7ea63ab815eadb9667ece008f3183db388350154d4a9f70ade1ab758
+generation_receipt:
+  schema_version: 2
+  id: fictional-pantry-generation-receipt-v02-2026-09-09
+  status: passed
+  executor_id: codex-root-public-gallery-generation
+  capability_used: openai-built-in-imagegen-background-plates-plus-local-deterministic-compositing
+  runtime:
+    client: Codex Desktop
+    client_version: null
+    tool_or_provider: OpenAI built-in image generation and local Python/Pillow compositor
+    model_or_version: built-in-imagegen-unspecified
+    exposed_parameters:
+      deterministic_builder: examples/fictional-pantry-product/build_v02_gallery.py
+      transform_spec_sha256: 7c5d0f172780cb9b6479e936385f32868f3a4a2d2f8f33c5450c2c202c1883cc
+      package_resize_filter: nearest
+      actual_external_calls: 2
+      maximum_total_calls: 4
+      maximum_calls_per_background_plate: 2
+      publication_authorized: false
+    executed_at_utc: '2026-09-09T08:58:27Z'
+  input_asset_ids:
+  - compare-direction-a
+  - lemon-ginger-mask
+  - berry-oat-mask
+  - gallery-usage-background-plate
+  - gallery-context-background-plate
+  frozen_fields:
+  - package form
+  - package geometry and closure
+  - PPV FIXTURE and CITRUS PANTRY MIX exact copy
+  - Lemon Ginger and Berry Oat variant identity
+  - 240 g quantity
+  - selected palette and ingredient illustrations
+  changed_fields:
+  - role-specific canvas dimensions and crop
+  - approved package placement
+  - approved text-free background plates for usage and context
+  - deterministic shadows, neutral fields, and campaign color panels
+  attempts:
+  - attempt_id: gallery-usage-background-attempt-01-2026-09-09
+    requested_artifact_ids:
+    - gallery-usage-background-plate
+    artifact_ids:
+    - gallery-usage-background-plate-2026-09-09
+    outputs:
+    - locator: examples/fictional-pantry-product/generated/v0.2/2026-09-09/attempts/gallery-usage/background-attempt-01-2026-09-09.png
+      locator_type: relative_path
+      sha256: 6b6001e6793e03c097ca4e861fc0fbb6000faccbe4f1cbef170df9c8cb63f2b0
+    failure_class: null
+    requested_changes:
+    - Generate one text-free
+    - package-free kitchen-counter plate with a clear product placement zone.
+    preserved_fields:
+    - No package image
+    - private path
+    - readable package copy
+    - or brand was sent to the image service.
+    outcome: passed
+    executed_at_utc: '2026-09-09T08:49:39Z'
+  - attempt_id: gallery-context-background-attempt-01-2026-09-09
+    requested_artifact_ids:
+    - gallery-context-background-plate
+    artifact_ids:
+    - gallery-context-background-plate-2026-09-09
+    outputs:
+    - locator: examples/fictional-pantry-product/generated/v0.2/2026-09-09/attempts/gallery-context/background-attempt-01-2026-09-09.png
+      locator_type: relative_path
+      sha256: 4a3007bcd227ffa0095d5553351958a9c0d4f926d375ada0694af4c9c97f29b8
+    failure_class: null
+    requested_changes:
+    - Generate one text-free
+    - package-free pantry-shelf plate with two clear product placement zones.
+    preserved_fields:
+    - No package image
+    - private path
+    - readable package copy
+    - or brand was sent to the image service.
+    outcome: passed
+    executed_at_utc: '2026-09-09T08:50:43Z'
+  - attempt_id: deterministic-gallery-build-01-2026-09-09
+    requested_artifact_ids:
+    - gallery-catalog
+    - gallery-detail
+    - gallery-usage
+    - gallery-specification
+    - gallery-context
+    - gallery-campaign
+    - gallery-channel-variant
+    artifact_ids:
+    - gallery-catalog-2026-09-09
+    - gallery-detail-2026-09-09
+    - gallery-usage-2026-09-09
+    - gallery-specification-2026-09-09
+    - gallery-context-2026-09-09
+    - gallery-campaign-2026-09-09
+    - gallery-channel-variant-2026-09-09
+    outputs:
+    - locator: examples/fictional-pantry-product/generated/v0.2/2026-09-09/gallery-catalog-2026-09-09.png
+      locator_type: relative_path
+      sha256: d890af034593b43fd1d5c10a51ee9f97f59d8de938ddf311bca5eaef17ab8d38
+    - locator: examples/fictional-pantry-product/generated/v0.2/2026-09-09/gallery-detail-2026-09-09.png
+      locator_type: relative_path
+      sha256: 2e51f7bde4b48de152f03ac0a45eb80152c61f7cdb181c7d3cd9d6e566b14b85
+    - locator: examples/fictional-pantry-product/generated/v0.2/2026-09-09/gallery-usage-2026-09-09.png
+      locator_type: relative_path
+      sha256: 541ee5629533a46101aed0d1f7b50489a3fed154987d38b84870736c0708b35b
+    - locator: examples/fictional-pantry-product/generated/v0.2/2026-09-09/gallery-specification-2026-09-09.png
+      locator_type: relative_path
+      sha256: 786fc55979c1edadcd64c951aecf7c0aae952aa8fe6ecfbea6882981676bbba0
+    - locator: examples/fictional-pantry-product/generated/v0.2/2026-09-09/gallery-context-2026-09-09.png
+      locator_type: relative_path
+      sha256: 3e266572cbd975e07179ca4c0de06a40009ea84628e5cccc8e1a3dc345919058
+    - locator: examples/fictional-pantry-product/generated/v0.2/2026-09-09/gallery-campaign-2026-09-09.png
+      locator_type: relative_path
+      sha256: 6786a09bf0d245f64015299f07a4f0dbd0e011d2cb1cc2c61172dacdc42ba9f7
+    - locator: examples/fictional-pantry-product/generated/v0.2/2026-09-09/gallery-channel-variant-2026-09-09.png
+      locator_type: relative_path
+      sha256: 209a65915981963de95f68e077dffc36f198a9910be605c8d88e4ed411eba6bc
+    failure_class: null
+    requested_changes:
+    - Build the seven approved ecommerce roles from the selected named-object package identity and two authorized background
+      plates.
+    preserved_fields:
+    - Package-face pixels
+    - exact copy
+    - variant identity
+    - and source-derived 240 g pixels.
+    outcome: passed
+    executed_at_utc: '2026-09-09T08:58:27Z'
+qa_plan:
+  id: fictional-pantry-ecommerce-qa-plan-v02
+  required_gate_ids:
+  - artifact-type
+  - object-count
+  - package-geometry
+  - exact-copy
+  - invented-claims
+  - reference-role
+  - visual-hierarchy-identity
+  - product-anatomy
+  - channel-fit
+  - artifact-integrity
+  - selection-lock
+  - asset-role
+  - package-identity
+  cross_set_required_gate_ids:
+  - set-completeness
+  - cross-asset-package-identity
+  - cross-asset-sku-consistency
+  - cross-asset-claims-consistency
+  - sequence-role-coverage
+  - cross-asset-channel-fit
+  review_profiles:
+  - profile_id: full-resolution
+    profile_scope: full-resolution
+    required: true
+    definition:
+      fit: original
+  - profile_id: ecommerce-thumbnail
+    profile_scope: named-profile
+    required: true
+    definition:
+      fit: contain
+      longest_edge: 320
+  independent_review_required: true
+  expected_gate_rows: 188
+  sha256: d3c68a236664f4af66a046c278153d9b52138c6e916c7d3468799a35489e9460
+qa:
+  schema_version: 2
+  id: fictional-pantry-image-qa-result-v02-2026-09-09
+  status: passed
+  plan_sha256: d3c68a236664f4af66a046c278153d9b52138c6e916c7d3468799a35489e9460
+  reviewed_by: independent-agent
+  reviewer_id: public_gallery_qa
+  reviewed_at_utc: '2026-09-09T09:40:38Z'
+  severity_summary:
+    p1: 0
+    p2: 0
+  review_evidence:
+    full_resolution_artifact_count: 7
+    thumbnail_artifact_count: 7
+    thumbnail_manifest_locator: examples/fictional-pantry-product/review/v0.2/2026-09-09/manifest.json
+    thumbnail_manifest_sha256: 7c19323cdf878741d0bc48f00de6dfcbaaacbb0c5457cd8796a67a9f5c4aacc3
+    background_plate_count: 2
+    actual_external_calls: 2
+    maximum_total_calls: 4
+    publication_authorized: false
+  gates:
+  - gate_id: artifact-type
+    scope: per-image
+    level: required
+    requirement: Deliver one inspectable raster image for the requested ecommerce role.
+    requested_artifact_id: gallery-catalog
+    artifact_id: gallery-catalog-2026-09-09
+    profile_scope: full-resolution
+    profile_id: full-resolution
+    status: pass
+    evidence: The independent reviewer opened the gallery-catalog-2026-09-09.png full-resolution RGB PNG. The file is readable
+      and has the expected raster format.
+  - gate_id: artifact-type
+    scope: per-image
+    level: required
+    requirement: Deliver one inspectable raster image for the requested ecommerce role.
+    requested_artifact_id: gallery-catalog
+    artifact_id: gallery-catalog-2026-09-09
+    profile_scope: named-profile
+    profile_id: ecommerce-thumbnail
+    status: pass
+    evidence: The independent reviewer opened the deterministic 320 px contain thumbnail (320x240). The file is readable and
+      has the expected raster format.
+  - gate_id: object-count
+    scope: per-image
+    level: required
+    requirement: Match the approved package and scene-object count in the AssetBrief.
+    requested_artifact_id: gallery-catalog
+    artifact_id: gallery-catalog-2026-09-09
+    profile_scope: full-resolution
+    profile_id: full-resolution
+    status: pass
+    evidence: The independent reviewer opened the gallery-catalog-2026-09-09.png full-resolution RGB PNG. Two complete sealed
+      pouches appear together at equal scale on the neutral catalog field.
+  - gate_id: object-count
+    scope: per-image
+    level: required
+    requirement: Match the approved package and scene-object count in the AssetBrief.
+    requested_artifact_id: gallery-catalog
+    artifact_id: gallery-catalog-2026-09-09
+    profile_scope: named-profile
+    profile_id: ecommerce-thumbnail
+    status: pass
+    evidence: The independent reviewer opened the deterministic 320 px contain thumbnail (320x240). Two complete sealed pouches
+      appear together at equal scale on the neutral catalog field.
+  - gate_id: package-geometry
+    scope: per-image
+    level: required
+    requirement: Preserve the selected pouch geometry, closure, silhouette, and proportions.
+    requested_artifact_id: gallery-catalog
+    artifact_id: gallery-catalog-2026-09-09
+    profile_scope: full-resolution
+    profile_id: full-resolution
+    status: pass
+    evidence: The independent reviewer opened the gallery-catalog-2026-09-09.png full-resolution RGB PNG. Pouch silhouette,
+      closure, perspective, and proportions remain consistent with the selected source.
+  - gate_id: package-geometry
+    scope: per-image
+    level: required
+    requirement: Preserve the selected pouch geometry, closure, silhouette, and proportions.
+    requested_artifact_id: gallery-catalog
+    artifact_id: gallery-catalog-2026-09-09
+    profile_scope: named-profile
+    profile_id: ecommerce-thumbnail
+    status: pass
+    evidence: The independent reviewer opened the deterministic 320 px contain thumbnail (320x240). Pouch silhouette, closure,
+      perspective, and proportions remain consistent with the selected source.
+  - gate_id: exact-copy
+    scope: per-image
+    level: required
+    requirement: Preserve all visible approved exact copy without adding or changing readable package text.
+    requested_artifact_id: gallery-catalog
+    artifact_id: gallery-catalog-2026-09-09
+    profile_scope: full-resolution
+    profile_id: full-resolution
+    status: pass
+    evidence: The independent reviewer opened the gallery-catalog-2026-09-09.png full-resolution RGB PNG. PPV FIXTURE, CITRUS
+      PANTRY MIX, the applicable variant name, and 240 g remain unchanged and readable where the approved crop permits.
+  - gate_id: exact-copy
+    scope: per-image
+    level: required
+    requirement: Preserve all visible approved exact copy without adding or changing readable package text.
+    requested_artifact_id: gallery-catalog
+    artifact_id: gallery-catalog-2026-09-09
+    profile_scope: named-profile
+    profile_id: ecommerce-thumbnail
+    status: pass
+    evidence: The independent reviewer opened the deterministic 320 px contain thumbnail (320x240). PPV FIXTURE, CITRUS PANTRY
+      MIX, the applicable variant name, and 240 g remain unchanged and readable where the approved crop permits.
+  - gate_id: invented-claims
+    scope: per-image
+    level: required
+    requirement: Add no unsupported benefit, certification, ingredient, legal, or performance claim.
+    requested_artifact_id: gallery-catalog
+    artifact_id: gallery-catalog-2026-09-09
+    profile_scope: full-resolution
+    profile_id: full-resolution
+    status: pass
+    evidence: The independent reviewer opened the gallery-catalog-2026-09-09.png full-resolution RGB PNG. No benefit, certification,
+      ingredient, legal, environmental, or performance claim was added.
+  - gate_id: invented-claims
+    scope: per-image
+    level: required
+    requirement: Add no unsupported benefit, certification, ingredient, legal, or performance claim.
+    requested_artifact_id: gallery-catalog
+    artifact_id: gallery-catalog-2026-09-09
+    profile_scope: named-profile
+    profile_id: ecommerce-thumbnail
+    status: pass
+    evidence: The independent reviewer opened the deterministic 320 px contain thumbnail (320x240). No benefit, certification,
+      ingredient, legal, environmental, or performance claim was added.
+  - gate_id: reference-role
+    scope: per-image
+    level: required
+    requirement: Use each source or supporting plate only for its approved reference role.
+    requested_artifact_id: gallery-catalog
+    artifact_id: gallery-catalog-2026-09-09
+    profile_scope: full-resolution
+    profile_id: full-resolution
+    status: pass
+    evidence: The independent reviewer opened the gallery-catalog-2026-09-09.png full-resolution RGB PNG. The selected package
+      source supplies identity, and deterministic layout operations supply only the approved crop, placement, background,
+      or inset.
+  - gate_id: reference-role
+    scope: per-image
+    level: required
+    requirement: Use each source or supporting plate only for its approved reference role.
+    requested_artifact_id: gallery-catalog
+    artifact_id: gallery-catalog-2026-09-09
+    profile_scope: named-profile
+    profile_id: ecommerce-thumbnail
+    status: pass
+    evidence: The independent reviewer opened the deterministic 320 px contain thumbnail (320x240). The selected package source
+      supplies identity, and deterministic layout operations supply only the approved crop, placement, background, or inset.
+  - gate_id: visual-hierarchy-identity
+    scope: per-image
+    level: required
+    requirement: Preserve the selected palette, illustration system, and package hierarchy.
+    requested_artifact_id: gallery-catalog
+    artifact_id: gallery-catalog-2026-09-09
+    profile_scope: full-resolution
+    profile_id: full-resolution
+    status: pass
+    evidence: The independent reviewer opened the gallery-catalog-2026-09-09.png full-resolution RGB PNG. The warm paper field,
+      variant accents, flat ingredient illustrations, and copy hierarchy remain recognizable.
+  - gate_id: visual-hierarchy-identity
+    scope: per-image
+    level: required
+    requirement: Preserve the selected palette, illustration system, and package hierarchy.
+    requested_artifact_id: gallery-catalog
+    artifact_id: gallery-catalog-2026-09-09
+    profile_scope: named-profile
+    profile_id: ecommerce-thumbnail
+    status: pass
+    evidence: The independent reviewer opened the deterministic 320 px contain thumbnail (320x240). The warm paper field,
+      variant accents, flat ingredient illustrations, and copy hierarchy remain recognizable.
+  - gate_id: product-anatomy
+    scope: per-image
+    level: required
+    requirement: Keep package state and scene anatomy physically coherent with the approved brief.
+    requested_artifact_id: gallery-catalog
+    artifact_id: gallery-catalog-2026-09-09
+    profile_scope: full-resolution
+    profile_id: full-resolution
+    status: pass
+    evidence: The independent reviewer opened the gallery-catalog-2026-09-09.png full-resolution RGB PNG. Two complete sealed
+      pouches appear together at equal scale on the neutral catalog field. The scene contains no impossible package state
+      or unsupported product behavior.
+  - gate_id: product-anatomy
+    scope: per-image
+    level: required
+    requirement: Keep package state and scene anatomy physically coherent with the approved brief.
+    requested_artifact_id: gallery-catalog
+    artifact_id: gallery-catalog-2026-09-09
+    profile_scope: named-profile
+    profile_id: ecommerce-thumbnail
+    status: pass
+    evidence: The independent reviewer opened the deterministic 320 px contain thumbnail (320x240). Two complete sealed pouches
+      appear together at equal scale on the neutral catalog field. The scene contains no impossible package state or unsupported
+      product behavior.
+  - gate_id: channel-fit
+    scope: per-image
+    level: required
+    requirement: Meet the approved dimensions, crop, safe areas, and thumbnail-readability target.
+    requested_artifact_id: gallery-catalog
+    artifact_id: gallery-catalog-2026-09-09
+    profile_scope: full-resolution
+    profile_id: full-resolution
+    status: pass
+    evidence: The independent reviewer opened the gallery-catalog-2026-09-09.png full-resolution RGB PNG. The approved crop
+      and safe areas hold, and the package remains identifiable at the required review size.
+  - gate_id: channel-fit
+    scope: per-image
+    level: required
+    requirement: Meet the approved dimensions, crop, safe areas, and thumbnail-readability target.
+    requested_artifact_id: gallery-catalog
+    artifact_id: gallery-catalog-2026-09-09
+    profile_scope: named-profile
+    profile_id: ecommerce-thumbnail
+    status: pass
+    evidence: The independent reviewer opened the deterministic 320 px contain thumbnail (320x240). The approved crop and
+      safe areas hold, and the package remains identifiable at the required review size.
+  - gate_id: artifact-integrity
+    scope: per-image
+    level: required
+    requirement: Show no material seam, halo, clipping, corruption, or unintended frame artifact.
+    requested_artifact_id: gallery-catalog
+    artifact_id: gallery-catalog-2026-09-09
+    profile_scope: full-resolution
+    profile_id: full-resolution
+    status: pass
+    evidence: The independent reviewer opened the gallery-catalog-2026-09-09.png full-resolution RGB PNG. No material seam,
+      halo, mask damage, unintended frame, clipping, or corrupt pixel region is visible.
+  - gate_id: artifact-integrity
+    scope: per-image
+    level: required
+    requirement: Show no material seam, halo, clipping, corruption, or unintended frame artifact.
+    requested_artifact_id: gallery-catalog
+    artifact_id: gallery-catalog-2026-09-09
+    profile_scope: named-profile
+    profile_id: ecommerce-thumbnail
+    status: pass
+    evidence: The independent reviewer opened the deterministic 320 px contain thumbnail (320x240). No material seam, halo,
+      mask damage, unintended frame, clipping, or corrupt pixel region is visible.
+  - gate_id: selection-lock
+    scope: per-image
+    level: required
+    requirement: Change only fields reopened by the approved AssetBrief and SelectionLock.
+    requested_artifact_id: gallery-catalog
+    artifact_id: gallery-catalog-2026-09-09
+    profile_scope: full-resolution
+    profile_id: full-resolution
+    status: pass
+    evidence: The independent reviewer opened the gallery-catalog-2026-09-09.png full-resolution RGB PNG. Only the approved
+      canvas, crop, placement, background, shadow, color-panel, or source-pixel inset fields changed.
+  - gate_id: selection-lock
+    scope: per-image
+    level: required
+    requirement: Change only fields reopened by the approved AssetBrief and SelectionLock.
+    requested_artifact_id: gallery-catalog
+    artifact_id: gallery-catalog-2026-09-09
+    profile_scope: named-profile
+    profile_id: ecommerce-thumbnail
+    status: pass
+    evidence: The independent reviewer opened the deterministic 320 px contain thumbnail (320x240). Only the approved canvas,
+      crop, placement, background, shadow, color-panel, or source-pixel inset fields changed.
+  - gate_id: asset-role
+    scope: per-image
+    level: required
+    requirement: Perform the named ecommerce role without substituting another role.
+    requested_artifact_id: gallery-catalog
+    artifact_id: gallery-catalog-2026-09-09
+    profile_scope: full-resolution
+    profile_id: full-resolution
+    status: pass
+    evidence: The independent reviewer opened the gallery-catalog-2026-09-09.png full-resolution RGB PNG. The image supports
+      two-SKU catalog identification.
+  - gate_id: asset-role
+    scope: per-image
+    level: required
+    requirement: Perform the named ecommerce role without substituting another role.
+    requested_artifact_id: gallery-catalog
+    artifact_id: gallery-catalog-2026-09-09
+    profile_scope: named-profile
+    profile_id: ecommerce-thumbnail
+    status: pass
+    evidence: The independent reviewer opened the deterministic 320 px contain thumbnail (320x240). The image supports two-SKU
+      catalog identification.
+  - gate_id: package-identity
+    scope: per-image
+    level: required
+    requirement: Retain the selected named-object package identity in rendered pixels.
+    requested_artifact_id: gallery-catalog
+    artifact_id: gallery-catalog-2026-09-09
+    profile_scope: full-resolution
+    profile_id: full-resolution
+    status: pass
+    evidence: The independent reviewer opened the gallery-catalog-2026-09-09.png full-resolution RGB PNG. Build-report package-face
+      checks retain matching source and output opaque-pixel digests for every visible pouch face.
+  - gate_id: package-identity
+    scope: per-image
+    level: required
+    requirement: Retain the selected named-object package identity in rendered pixels.
+    requested_artifact_id: gallery-catalog
+    artifact_id: gallery-catalog-2026-09-09
+    profile_scope: named-profile
+    profile_id: ecommerce-thumbnail
+    status: pass
+    evidence: The independent reviewer opened the deterministic 320 px contain thumbnail (320x240). Build-report package-face
+      checks retain matching source and output opaque-pixel digests for every visible pouch face.
+  - gate_id: artifact-type
+    scope: per-image
+    level: required
+    requirement: Deliver one inspectable raster image for the requested ecommerce role.
+    requested_artifact_id: gallery-detail
+    artifact_id: gallery-detail-2026-09-09
+    profile_scope: full-resolution
+    profile_id: full-resolution
+    status: pass
+    evidence: The independent reviewer opened the gallery-detail-2026-09-09.png full-resolution RGB PNG. The file is readable
+      and has the expected raster format.
+  - gate_id: artifact-type
+    scope: per-image
+    level: required
+    requirement: Deliver one inspectable raster image for the requested ecommerce role.
+    requested_artifact_id: gallery-detail
+    artifact_id: gallery-detail-2026-09-09
+    profile_scope: named-profile
+    profile_id: ecommerce-thumbnail
+    status: pass
+    evidence: The independent reviewer opened the deterministic 320 px contain thumbnail (256x320). The file is readable and
+      has the expected raster format.
+  - gate_id: object-count
+    scope: per-image
+    level: required
+    requirement: Match the approved package and scene-object count in the AssetBrief.
+    requested_artifact_id: gallery-detail
+    artifact_id: gallery-detail-2026-09-09
+    profile_scope: full-resolution
+    profile_id: full-resolution
+    status: pass
+    evidence: The independent reviewer opened the gallery-detail-2026-09-09.png full-resolution RGB PNG. One Lemon Ginger
+      pouch remains readable in a closer crop with its closure and front graphics visible.
+  - gate_id: object-count
+    scope: per-image
+    level: required
+    requirement: Match the approved package and scene-object count in the AssetBrief.
+    requested_artifact_id: gallery-detail
+    artifact_id: gallery-detail-2026-09-09
+    profile_scope: named-profile
+    profile_id: ecommerce-thumbnail
+    status: pass
+    evidence: The independent reviewer opened the deterministic 320 px contain thumbnail (256x320). One Lemon Ginger pouch
+      remains readable in a closer crop with its closure and front graphics visible.
+  - gate_id: package-geometry
+    scope: per-image
+    level: required
+    requirement: Preserve the selected pouch geometry, closure, silhouette, and proportions.
+    requested_artifact_id: gallery-detail
+    artifact_id: gallery-detail-2026-09-09
+    profile_scope: full-resolution
+    profile_id: full-resolution
+    status: pass
+    evidence: The independent reviewer opened the gallery-detail-2026-09-09.png full-resolution RGB PNG. Pouch silhouette,
+      closure, perspective, and proportions remain consistent with the selected source.
+  - gate_id: package-geometry
+    scope: per-image
+    level: required
+    requirement: Preserve the selected pouch geometry, closure, silhouette, and proportions.
+    requested_artifact_id: gallery-detail
+    artifact_id: gallery-detail-2026-09-09
+    profile_scope: named-profile
+    profile_id: ecommerce-thumbnail
+    status: pass
+    evidence: The independent reviewer opened the deterministic 320 px contain thumbnail (256x320). Pouch silhouette, closure,
+      perspective, and proportions remain consistent with the selected source.
+  - gate_id: exact-copy
+    scope: per-image
+    level: required
+    requirement: Preserve all visible approved exact copy without adding or changing readable package text.
+    requested_artifact_id: gallery-detail
+    artifact_id: gallery-detail-2026-09-09
+    profile_scope: full-resolution
+    profile_id: full-resolution
+    status: pass
+    evidence: The independent reviewer opened the gallery-detail-2026-09-09.png full-resolution RGB PNG. PPV FIXTURE, CITRUS
+      PANTRY MIX, the applicable variant name, and 240 g remain unchanged and readable where the approved crop permits.
+  - gate_id: exact-copy
+    scope: per-image
+    level: required
+    requirement: Preserve all visible approved exact copy without adding or changing readable package text.
+    requested_artifact_id: gallery-detail
+    artifact_id: gallery-detail-2026-09-09
+    profile_scope: named-profile
+    profile_id: ecommerce-thumbnail
+    status: pass
+    evidence: The independent reviewer opened the deterministic 320 px contain thumbnail (256x320). PPV FIXTURE, CITRUS PANTRY
+      MIX, the applicable variant name, and 240 g remain unchanged and readable where the approved crop permits.
+  - gate_id: invented-claims
+    scope: per-image
+    level: required
+    requirement: Add no unsupported benefit, certification, ingredient, legal, or performance claim.
+    requested_artifact_id: gallery-detail
+    artifact_id: gallery-detail-2026-09-09
+    profile_scope: full-resolution
+    profile_id: full-resolution
+    status: pass
+    evidence: The independent reviewer opened the gallery-detail-2026-09-09.png full-resolution RGB PNG. No benefit, certification,
+      ingredient, legal, environmental, or performance claim was added.
+  - gate_id: invented-claims
+    scope: per-image
+    level: required
+    requirement: Add no unsupported benefit, certification, ingredient, legal, or performance claim.
+    requested_artifact_id: gallery-detail
+    artifact_id: gallery-detail-2026-09-09
+    profile_scope: named-profile
+    profile_id: ecommerce-thumbnail
+    status: pass
+    evidence: The independent reviewer opened the deterministic 320 px contain thumbnail (256x320). No benefit, certification,
+      ingredient, legal, environmental, or performance claim was added.
+  - gate_id: reference-role
+    scope: per-image
+    level: required
+    requirement: Use each source or supporting plate only for its approved reference role.
+    requested_artifact_id: gallery-detail
+    artifact_id: gallery-detail-2026-09-09
+    profile_scope: full-resolution
+    profile_id: full-resolution
+    status: pass
+    evidence: The independent reviewer opened the gallery-detail-2026-09-09.png full-resolution RGB PNG. The selected package
+      source supplies identity, and deterministic layout operations supply only the approved crop, placement, background,
+      or inset.
+  - gate_id: reference-role
+    scope: per-image
+    level: required
+    requirement: Use each source or supporting plate only for its approved reference role.
+    requested_artifact_id: gallery-detail
+    artifact_id: gallery-detail-2026-09-09
+    profile_scope: named-profile
+    profile_id: ecommerce-thumbnail
+    status: pass
+    evidence: The independent reviewer opened the deterministic 320 px contain thumbnail (256x320). The selected package source
+      supplies identity, and deterministic layout operations supply only the approved crop, placement, background, or inset.
+  - gate_id: visual-hierarchy-identity
+    scope: per-image
+    level: required
+    requirement: Preserve the selected palette, illustration system, and package hierarchy.
+    requested_artifact_id: gallery-detail
+    artifact_id: gallery-detail-2026-09-09
+    profile_scope: full-resolution
+    profile_id: full-resolution
+    status: pass
+    evidence: The independent reviewer opened the gallery-detail-2026-09-09.png full-resolution RGB PNG. The warm paper field,
+      variant accents, flat ingredient illustrations, and copy hierarchy remain recognizable.
+  - gate_id: visual-hierarchy-identity
+    scope: per-image
+    level: required
+    requirement: Preserve the selected palette, illustration system, and package hierarchy.
+    requested_artifact_id: gallery-detail
+    artifact_id: gallery-detail-2026-09-09
+    profile_scope: named-profile
+    profile_id: ecommerce-thumbnail
+    status: pass
+    evidence: The independent reviewer opened the deterministic 320 px contain thumbnail (256x320). The warm paper field,
+      variant accents, flat ingredient illustrations, and copy hierarchy remain recognizable.
+  - gate_id: product-anatomy
+    scope: per-image
+    level: required
+    requirement: Keep package state and scene anatomy physically coherent with the approved brief.
+    requested_artifact_id: gallery-detail
+    artifact_id: gallery-detail-2026-09-09
+    profile_scope: full-resolution
+    profile_id: full-resolution
+    status: pass
+    evidence: The independent reviewer opened the gallery-detail-2026-09-09.png full-resolution RGB PNG. One Lemon Ginger
+      pouch remains readable in a closer crop with its closure and front graphics visible. The scene contains no impossible
+      package state or unsupported product behavior.
+  - gate_id: product-anatomy
+    scope: per-image
+    level: required
+    requirement: Keep package state and scene anatomy physically coherent with the approved brief.
+    requested_artifact_id: gallery-detail
+    artifact_id: gallery-detail-2026-09-09
+    profile_scope: named-profile
+    profile_id: ecommerce-thumbnail
+    status: pass
+    evidence: The independent reviewer opened the deterministic 320 px contain thumbnail (256x320). One Lemon Ginger pouch
+      remains readable in a closer crop with its closure and front graphics visible. The scene contains no impossible package
+      state or unsupported product behavior.
+  - gate_id: channel-fit
+    scope: per-image
+    level: required
+    requirement: Meet the approved dimensions, crop, safe areas, and thumbnail-readability target.
+    requested_artifact_id: gallery-detail
+    artifact_id: gallery-detail-2026-09-09
+    profile_scope: full-resolution
+    profile_id: full-resolution
+    status: pass
+    evidence: The independent reviewer opened the gallery-detail-2026-09-09.png full-resolution RGB PNG. The approved crop
+      and safe areas hold, and the package remains identifiable at the required review size.
+  - gate_id: channel-fit
+    scope: per-image
+    level: required
+    requirement: Meet the approved dimensions, crop, safe areas, and thumbnail-readability target.
+    requested_artifact_id: gallery-detail
+    artifact_id: gallery-detail-2026-09-09
+    profile_scope: named-profile
+    profile_id: ecommerce-thumbnail
+    status: pass
+    evidence: The independent reviewer opened the deterministic 320 px contain thumbnail (256x320). The approved crop and
+      safe areas hold, and the package remains identifiable at the required review size.
+  - gate_id: artifact-integrity
+    scope: per-image
+    level: required
+    requirement: Show no material seam, halo, clipping, corruption, or unintended frame artifact.
+    requested_artifact_id: gallery-detail
+    artifact_id: gallery-detail-2026-09-09
+    profile_scope: full-resolution
+    profile_id: full-resolution
+    status: pass
+    evidence: The independent reviewer opened the gallery-detail-2026-09-09.png full-resolution RGB PNG. No material seam,
+      halo, mask damage, unintended frame, clipping, or corrupt pixel region is visible.
+  - gate_id: artifact-integrity
+    scope: per-image
+    level: required
+    requirement: Show no material seam, halo, clipping, corruption, or unintended frame artifact.
+    requested_artifact_id: gallery-detail
+    artifact_id: gallery-detail-2026-09-09
+    profile_scope: named-profile
+    profile_id: ecommerce-thumbnail
+    status: pass
+    evidence: The independent reviewer opened the deterministic 320 px contain thumbnail (256x320). No material seam, halo,
+      mask damage, unintended frame, clipping, or corrupt pixel region is visible.
+  - gate_id: selection-lock
+    scope: per-image
+    level: required
+    requirement: Change only fields reopened by the approved AssetBrief and SelectionLock.
+    requested_artifact_id: gallery-detail
+    artifact_id: gallery-detail-2026-09-09
+    profile_scope: full-resolution
+    profile_id: full-resolution
+    status: pass
+    evidence: The independent reviewer opened the gallery-detail-2026-09-09.png full-resolution RGB PNG. Only the approved
+      canvas, crop, placement, background, shadow, color-panel, or source-pixel inset fields changed.
+  - gate_id: selection-lock
+    scope: per-image
+    level: required
+    requirement: Change only fields reopened by the approved AssetBrief and SelectionLock.
+    requested_artifact_id: gallery-detail
+    artifact_id: gallery-detail-2026-09-09
+    profile_scope: named-profile
+    profile_id: ecommerce-thumbnail
+    status: pass
+    evidence: The independent reviewer opened the deterministic 320 px contain thumbnail (256x320). Only the approved canvas,
+      crop, placement, background, shadow, color-panel, or source-pixel inset fields changed.
+  - gate_id: asset-role
+    scope: per-image
+    level: required
+    requirement: Perform the named ecommerce role without substituting another role.
+    requested_artifact_id: gallery-detail
+    artifact_id: gallery-detail-2026-09-09
+    profile_scope: full-resolution
+    profile_id: full-resolution
+    status: pass
+    evidence: The independent reviewer opened the gallery-detail-2026-09-09.png full-resolution RGB PNG. The image supports
+      package-face and closure-detail inspection.
+  - gate_id: asset-role
+    scope: per-image
+    level: required
+    requirement: Perform the named ecommerce role without substituting another role.
+    requested_artifact_id: gallery-detail
+    artifact_id: gallery-detail-2026-09-09
+    profile_scope: named-profile
+    profile_id: ecommerce-thumbnail
+    status: pass
+    evidence: The independent reviewer opened the deterministic 320 px contain thumbnail (256x320). The image supports package-face
+      and closure-detail inspection.
+  - gate_id: package-identity
+    scope: per-image
+    level: required
+    requirement: Retain the selected named-object package identity in rendered pixels.
+    requested_artifact_id: gallery-detail
+    artifact_id: gallery-detail-2026-09-09
+    profile_scope: full-resolution
+    profile_id: full-resolution
+    status: pass
+    evidence: The independent reviewer opened the gallery-detail-2026-09-09.png full-resolution RGB PNG. Build-report package-face
+      checks retain matching source and output opaque-pixel digests for every visible pouch face.
+  - gate_id: package-identity
+    scope: per-image
+    level: required
+    requirement: Retain the selected named-object package identity in rendered pixels.
+    requested_artifact_id: gallery-detail
+    artifact_id: gallery-detail-2026-09-09
+    profile_scope: named-profile
+    profile_id: ecommerce-thumbnail
+    status: pass
+    evidence: The independent reviewer opened the deterministic 320 px contain thumbnail (256x320). Build-report package-face
+      checks retain matching source and output opaque-pixel digests for every visible pouch face.
+  - gate_id: artifact-type
+    scope: per-image
+    level: required
+    requirement: Deliver one inspectable raster image for the requested ecommerce role.
+    requested_artifact_id: gallery-usage
+    artifact_id: gallery-usage-2026-09-09
+    profile_scope: full-resolution
+    profile_id: full-resolution
+    status: pass
+    evidence: The independent reviewer opened the gallery-usage-2026-09-09.png full-resolution RGB PNG. The file is readable
+      and has the expected raster format.
+  - gate_id: artifact-type
+    scope: per-image
+    level: required
+    requirement: Deliver one inspectable raster image for the requested ecommerce role.
+    requested_artifact_id: gallery-usage
+    artifact_id: gallery-usage-2026-09-09
+    profile_scope: named-profile
+    profile_id: ecommerce-thumbnail
+    status: pass
+    evidence: The independent reviewer opened the deterministic 320 px contain thumbnail (256x320). The file is readable and
+      has the expected raster format.
+  - gate_id: object-count
+    scope: per-image
+    level: required
+    requirement: Match the approved package and scene-object count in the AssetBrief.
+    requested_artifact_id: gallery-usage
+    artifact_id: gallery-usage-2026-09-09
+    profile_scope: full-resolution
+    profile_id: full-resolution
+    status: pass
+    evidence: The independent reviewer opened the gallery-usage-2026-09-09.png full-resolution RGB PNG. One unopened Berry
+      Oat pouch appears beside exactly one empty clear glass; no powder or prepared drink is present.
+  - gate_id: object-count
+    scope: per-image
+    level: required
+    requirement: Match the approved package and scene-object count in the AssetBrief.
+    requested_artifact_id: gallery-usage
+    artifact_id: gallery-usage-2026-09-09
+    profile_scope: named-profile
+    profile_id: ecommerce-thumbnail
+    status: pass
+    evidence: The independent reviewer opened the deterministic 320 px contain thumbnail (256x320). One unopened Berry Oat
+      pouch appears beside exactly one empty clear glass; no powder or prepared drink is present.
+  - gate_id: package-geometry
+    scope: per-image
+    level: required
+    requirement: Preserve the selected pouch geometry, closure, silhouette, and proportions.
+    requested_artifact_id: gallery-usage
+    artifact_id: gallery-usage-2026-09-09
+    profile_scope: full-resolution
+    profile_id: full-resolution
+    status: pass
+    evidence: The independent reviewer opened the gallery-usage-2026-09-09.png full-resolution RGB PNG. Pouch silhouette,
+      closure, perspective, and proportions remain consistent with the selected source.
+  - gate_id: package-geometry
+    scope: per-image
+    level: required
+    requirement: Preserve the selected pouch geometry, closure, silhouette, and proportions.
+    requested_artifact_id: gallery-usage
+    artifact_id: gallery-usage-2026-09-09
+    profile_scope: named-profile
+    profile_id: ecommerce-thumbnail
+    status: pass
+    evidence: The independent reviewer opened the deterministic 320 px contain thumbnail (256x320). Pouch silhouette, closure,
+      perspective, and proportions remain consistent with the selected source.
+  - gate_id: exact-copy
+    scope: per-image
+    level: required
+    requirement: Preserve all visible approved exact copy without adding or changing readable package text.
+    requested_artifact_id: gallery-usage
+    artifact_id: gallery-usage-2026-09-09
+    profile_scope: full-resolution
+    profile_id: full-resolution
+    status: pass
+    evidence: The independent reviewer opened the gallery-usage-2026-09-09.png full-resolution RGB PNG. PPV FIXTURE, CITRUS
+      PANTRY MIX, the applicable variant name, and 240 g remain unchanged and readable where the approved crop permits.
+  - gate_id: exact-copy
+    scope: per-image
+    level: required
+    requirement: Preserve all visible approved exact copy without adding or changing readable package text.
+    requested_artifact_id: gallery-usage
+    artifact_id: gallery-usage-2026-09-09
+    profile_scope: named-profile
+    profile_id: ecommerce-thumbnail
+    status: pass
+    evidence: The independent reviewer opened the deterministic 320 px contain thumbnail (256x320). PPV FIXTURE, CITRUS PANTRY
+      MIX, the applicable variant name, and 240 g remain unchanged and readable where the approved crop permits.
+  - gate_id: invented-claims
+    scope: per-image
+    level: required
+    requirement: Add no unsupported benefit, certification, ingredient, legal, or performance claim.
+    requested_artifact_id: gallery-usage
+    artifact_id: gallery-usage-2026-09-09
+    profile_scope: full-resolution
+    profile_id: full-resolution
+    status: pass
+    evidence: The independent reviewer opened the gallery-usage-2026-09-09.png full-resolution RGB PNG. No benefit, certification,
+      ingredient, legal, environmental, or performance claim was added.
+  - gate_id: invented-claims
+    scope: per-image
+    level: required
+    requirement: Add no unsupported benefit, certification, ingredient, legal, or performance claim.
+    requested_artifact_id: gallery-usage
+    artifact_id: gallery-usage-2026-09-09
+    profile_scope: named-profile
+    profile_id: ecommerce-thumbnail
+    status: pass
+    evidence: The independent reviewer opened the deterministic 320 px contain thumbnail (256x320). No benefit, certification,
+      ingredient, legal, environmental, or performance claim was added.
+  - gate_id: reference-role
+    scope: per-image
+    level: required
+    requirement: Use each source or supporting plate only for its approved reference role.
+    requested_artifact_id: gallery-usage
+    artifact_id: gallery-usage-2026-09-09
+    profile_scope: full-resolution
+    profile_id: full-resolution
+    status: pass
+    evidence: The independent reviewer opened the gallery-usage-2026-09-09.png full-resolution RGB PNG. The package-free,
+      text-free supporting plate supplies only the approved usage background; package pixels come from the selected source.
+  - gate_id: reference-role
+    scope: per-image
+    level: required
+    requirement: Use each source or supporting plate only for its approved reference role.
+    requested_artifact_id: gallery-usage
+    artifact_id: gallery-usage-2026-09-09
+    profile_scope: named-profile
+    profile_id: ecommerce-thumbnail
+    status: pass
+    evidence: The independent reviewer opened the deterministic 320 px contain thumbnail (256x320). The package-free, text-free
+      supporting plate supplies only the approved usage background; package pixels come from the selected source.
+  - gate_id: visual-hierarchy-identity
+    scope: per-image
+    level: required
+    requirement: Preserve the selected palette, illustration system, and package hierarchy.
+    requested_artifact_id: gallery-usage
+    artifact_id: gallery-usage-2026-09-09
+    profile_scope: full-resolution
+    profile_id: full-resolution
+    status: pass
+    evidence: The independent reviewer opened the gallery-usage-2026-09-09.png full-resolution RGB PNG. The warm paper field,
+      variant accents, flat ingredient illustrations, and copy hierarchy remain recognizable.
+  - gate_id: visual-hierarchy-identity
+    scope: per-image
+    level: required
+    requirement: Preserve the selected palette, illustration system, and package hierarchy.
+    requested_artifact_id: gallery-usage
+    artifact_id: gallery-usage-2026-09-09
+    profile_scope: named-profile
+    profile_id: ecommerce-thumbnail
+    status: pass
+    evidence: The independent reviewer opened the deterministic 320 px contain thumbnail (256x320). The warm paper field,
+      variant accents, flat ingredient illustrations, and copy hierarchy remain recognizable.
+  - gate_id: product-anatomy
+    scope: per-image
+    level: required
+    requirement: Keep package state and scene anatomy physically coherent with the approved brief.
+    requested_artifact_id: gallery-usage
+    artifact_id: gallery-usage-2026-09-09
+    profile_scope: full-resolution
+    profile_id: full-resolution
+    status: pass
+    evidence: The independent reviewer opened the gallery-usage-2026-09-09.png full-resolution RGB PNG. One unopened Berry
+      Oat pouch appears beside exactly one empty clear glass; no powder or prepared drink is present. The scene contains no
+      impossible package state or unsupported product behavior.
+  - gate_id: product-anatomy
+    scope: per-image
+    level: required
+    requirement: Keep package state and scene anatomy physically coherent with the approved brief.
+    requested_artifact_id: gallery-usage
+    artifact_id: gallery-usage-2026-09-09
+    profile_scope: named-profile
+    profile_id: ecommerce-thumbnail
+    status: pass
+    evidence: The independent reviewer opened the deterministic 320 px contain thumbnail (256x320). One unopened Berry Oat
+      pouch appears beside exactly one empty clear glass; no powder or prepared drink is present. The scene contains no impossible
+      package state or unsupported product behavior.
+  - gate_id: channel-fit
+    scope: per-image
+    level: required
+    requirement: Meet the approved dimensions, crop, safe areas, and thumbnail-readability target.
+    requested_artifact_id: gallery-usage
+    artifact_id: gallery-usage-2026-09-09
+    profile_scope: full-resolution
+    profile_id: full-resolution
+    status: pass
+    evidence: The independent reviewer opened the gallery-usage-2026-09-09.png full-resolution RGB PNG. The approved crop
+      and safe areas hold, and the package remains identifiable at the required review size.
+  - gate_id: channel-fit
+    scope: per-image
+    level: required
+    requirement: Meet the approved dimensions, crop, safe areas, and thumbnail-readability target.
+    requested_artifact_id: gallery-usage
+    artifact_id: gallery-usage-2026-09-09
+    profile_scope: named-profile
+    profile_id: ecommerce-thumbnail
+    status: pass
+    evidence: The independent reviewer opened the deterministic 320 px contain thumbnail (256x320). The approved crop and
+      safe areas hold, and the package remains identifiable at the required review size.
+  - gate_id: artifact-integrity
+    scope: per-image
+    level: required
+    requirement: Show no material seam, halo, clipping, corruption, or unintended frame artifact.
+    requested_artifact_id: gallery-usage
+    artifact_id: gallery-usage-2026-09-09
+    profile_scope: full-resolution
+    profile_id: full-resolution
+    status: pass
+    evidence: The independent reviewer opened the gallery-usage-2026-09-09.png full-resolution RGB PNG. No material seam,
+      halo, mask damage, unintended frame, clipping, or corrupt pixel region is visible.
+  - gate_id: artifact-integrity
+    scope: per-image
+    level: required
+    requirement: Show no material seam, halo, clipping, corruption, or unintended frame artifact.
+    requested_artifact_id: gallery-usage
+    artifact_id: gallery-usage-2026-09-09
+    profile_scope: named-profile
+    profile_id: ecommerce-thumbnail
+    status: pass
+    evidence: The independent reviewer opened the deterministic 320 px contain thumbnail (256x320). No material seam, halo,
+      mask damage, unintended frame, clipping, or corrupt pixel region is visible.
+  - gate_id: selection-lock
+    scope: per-image
+    level: required
+    requirement: Change only fields reopened by the approved AssetBrief and SelectionLock.
+    requested_artifact_id: gallery-usage
+    artifact_id: gallery-usage-2026-09-09
+    profile_scope: full-resolution
+    profile_id: full-resolution
+    status: pass
+    evidence: The independent reviewer opened the gallery-usage-2026-09-09.png full-resolution RGB PNG. Only the approved
+      canvas, crop, placement, background, shadow, color-panel, or source-pixel inset fields changed.
+  - gate_id: selection-lock
+    scope: per-image
+    level: required
+    requirement: Change only fields reopened by the approved AssetBrief and SelectionLock.
+    requested_artifact_id: gallery-usage
+    artifact_id: gallery-usage-2026-09-09
+    profile_scope: named-profile
+    profile_id: ecommerce-thumbnail
+    status: pass
+    evidence: The independent reviewer opened the deterministic 320 px contain thumbnail (256x320). Only the approved canvas,
+      crop, placement, background, shadow, color-panel, or source-pixel inset fields changed.
+  - gate_id: asset-role
+    scope: per-image
+    level: required
+    requirement: Perform the named ecommerce role without substituting another role.
+    requested_artifact_id: gallery-usage
+    artifact_id: gallery-usage-2026-09-09
+    profile_scope: full-resolution
+    profile_id: full-resolution
+    status: pass
+    evidence: The independent reviewer opened the gallery-usage-2026-09-09.png full-resolution RGB PNG. The image communicates
+      only the approved pre-opening setup.
+  - gate_id: asset-role
+    scope: per-image
+    level: required
+    requirement: Perform the named ecommerce role without substituting another role.
+    requested_artifact_id: gallery-usage
+    artifact_id: gallery-usage-2026-09-09
+    profile_scope: named-profile
+    profile_id: ecommerce-thumbnail
+    status: pass
+    evidence: The independent reviewer opened the deterministic 320 px contain thumbnail (256x320). The image communicates
+      only the approved pre-opening setup.
+  - gate_id: package-identity
+    scope: per-image
+    level: required
+    requirement: Retain the selected named-object package identity in rendered pixels.
+    requested_artifact_id: gallery-usage
+    artifact_id: gallery-usage-2026-09-09
+    profile_scope: full-resolution
+    profile_id: full-resolution
+    status: pass
+    evidence: The independent reviewer opened the gallery-usage-2026-09-09.png full-resolution RGB PNG. Build-report package-face
+      checks retain matching source and output opaque-pixel digests for every visible pouch face.
+  - gate_id: package-identity
+    scope: per-image
+    level: required
+    requirement: Retain the selected named-object package identity in rendered pixels.
+    requested_artifact_id: gallery-usage
+    artifact_id: gallery-usage-2026-09-09
+    profile_scope: named-profile
+    profile_id: ecommerce-thumbnail
+    status: pass
+    evidence: The independent reviewer opened the deterministic 320 px contain thumbnail (256x320). Build-report package-face
+      checks retain matching source and output opaque-pixel digests for every visible pouch face.
+  - gate_id: artifact-type
+    scope: per-image
+    level: required
+    requirement: Deliver one inspectable raster image for the requested ecommerce role.
+    requested_artifact_id: gallery-specification
+    artifact_id: gallery-specification-2026-09-09
+    profile_scope: full-resolution
+    profile_id: full-resolution
+    status: pass
+    evidence: The independent reviewer opened the gallery-specification-2026-09-09.png full-resolution RGB PNG. The file is
+      readable and has the expected raster format.
+  - gate_id: artifact-type
+    scope: per-image
+    level: required
+    requirement: Deliver one inspectable raster image for the requested ecommerce role.
+    requested_artifact_id: gallery-specification
+    artifact_id: gallery-specification-2026-09-09
+    profile_scope: named-profile
+    profile_id: ecommerce-thumbnail
+    status: pass
+    evidence: The independent reviewer opened the deterministic 320 px contain thumbnail (320x320). The file is readable and
+      has the expected raster format.
+  - gate_id: object-count
+    scope: per-image
+    level: required
+    requirement: Match the approved package and scene-object count in the AssetBrief.
+    requested_artifact_id: gallery-specification
+    artifact_id: gallery-specification-2026-09-09
+    profile_scope: full-resolution
+    profile_id: full-resolution
+    status: pass
+    evidence: The independent reviewer opened the gallery-specification-2026-09-09.png full-resolution RGB PNG. One complete
+      Lemon Ginger pouch appears with only the existing 240 g source pixels enlarged.
+  - gate_id: object-count
+    scope: per-image
+    level: required
+    requirement: Match the approved package and scene-object count in the AssetBrief.
+    requested_artifact_id: gallery-specification
+    artifact_id: gallery-specification-2026-09-09
+    profile_scope: named-profile
+    profile_id: ecommerce-thumbnail
+    status: pass
+    evidence: The independent reviewer opened the deterministic 320 px contain thumbnail (320x320). One complete Lemon Ginger
+      pouch appears with only the existing 240 g source pixels enlarged.
+  - gate_id: package-geometry
+    scope: per-image
+    level: required
+    requirement: Preserve the selected pouch geometry, closure, silhouette, and proportions.
+    requested_artifact_id: gallery-specification
+    artifact_id: gallery-specification-2026-09-09
+    profile_scope: full-resolution
+    profile_id: full-resolution
+    status: pass
+    evidence: The independent reviewer opened the gallery-specification-2026-09-09.png full-resolution RGB PNG. Pouch silhouette,
+      closure, perspective, and proportions remain consistent with the selected source.
+  - gate_id: package-geometry
+    scope: per-image
+    level: required
+    requirement: Preserve the selected pouch geometry, closure, silhouette, and proportions.
+    requested_artifact_id: gallery-specification
+    artifact_id: gallery-specification-2026-09-09
+    profile_scope: named-profile
+    profile_id: ecommerce-thumbnail
+    status: pass
+    evidence: The independent reviewer opened the deterministic 320 px contain thumbnail (320x320). Pouch silhouette, closure,
+      perspective, and proportions remain consistent with the selected source.
+  - gate_id: exact-copy
+    scope: per-image
+    level: required
+    requirement: Preserve all visible approved exact copy without adding or changing readable package text.
+    requested_artifact_id: gallery-specification
+    artifact_id: gallery-specification-2026-09-09
+    profile_scope: full-resolution
+    profile_id: full-resolution
+    status: pass
+    evidence: The independent reviewer opened the gallery-specification-2026-09-09.png full-resolution RGB PNG. PPV FIXTURE,
+      CITRUS PANTRY MIX, the applicable variant name, and 240 g remain unchanged and readable where the approved crop permits.
+  - gate_id: exact-copy
+    scope: per-image
+    level: required
+    requirement: Preserve all visible approved exact copy without adding or changing readable package text.
+    requested_artifact_id: gallery-specification
+    artifact_id: gallery-specification-2026-09-09
+    profile_scope: named-profile
+    profile_id: ecommerce-thumbnail
+    status: pass
+    evidence: The independent reviewer opened the deterministic 320 px contain thumbnail (320x320). PPV FIXTURE, CITRUS PANTRY
+      MIX, the applicable variant name, and 240 g remain unchanged and readable where the approved crop permits.
+  - gate_id: invented-claims
+    scope: per-image
+    level: required
+    requirement: Add no unsupported benefit, certification, ingredient, legal, or performance claim.
+    requested_artifact_id: gallery-specification
+    artifact_id: gallery-specification-2026-09-09
+    profile_scope: full-resolution
+    profile_id: full-resolution
+    status: pass
+    evidence: The independent reviewer opened the gallery-specification-2026-09-09.png full-resolution RGB PNG. No benefit,
+      certification, ingredient, legal, environmental, or performance claim was added.
+  - gate_id: invented-claims
+    scope: per-image
+    level: required
+    requirement: Add no unsupported benefit, certification, ingredient, legal, or performance claim.
+    requested_artifact_id: gallery-specification
+    artifact_id: gallery-specification-2026-09-09
+    profile_scope: named-profile
+    profile_id: ecommerce-thumbnail
+    status: pass
+    evidence: The independent reviewer opened the deterministic 320 px contain thumbnail (320x320). No benefit, certification,
+      ingredient, legal, environmental, or performance claim was added.
+  - gate_id: reference-role
+    scope: per-image
+    level: required
+    requirement: Use each source or supporting plate only for its approved reference role.
+    requested_artifact_id: gallery-specification
+    artifact_id: gallery-specification-2026-09-09
+    profile_scope: full-resolution
+    profile_id: full-resolution
+    status: pass
+    evidence: The independent reviewer opened the gallery-specification-2026-09-09.png full-resolution RGB PNG. The selected
+      package source supplies identity, and deterministic layout operations supply only the approved crop, placement, background,
+      or inset.
+  - gate_id: reference-role
+    scope: per-image
+    level: required
+    requirement: Use each source or supporting plate only for its approved reference role.
+    requested_artifact_id: gallery-specification
+    artifact_id: gallery-specification-2026-09-09
+    profile_scope: named-profile
+    profile_id: ecommerce-thumbnail
+    status: pass
+    evidence: The independent reviewer opened the deterministic 320 px contain thumbnail (320x320). The selected package source
+      supplies identity, and deterministic layout operations supply only the approved crop, placement, background, or inset.
+  - gate_id: visual-hierarchy-identity
+    scope: per-image
+    level: required
+    requirement: Preserve the selected palette, illustration system, and package hierarchy.
+    requested_artifact_id: gallery-specification
+    artifact_id: gallery-specification-2026-09-09
+    profile_scope: full-resolution
+    profile_id: full-resolution
+    status: pass
+    evidence: The independent reviewer opened the gallery-specification-2026-09-09.png full-resolution RGB PNG. The warm paper
+      field, variant accents, flat ingredient illustrations, and copy hierarchy remain recognizable.
+  - gate_id: visual-hierarchy-identity
+    scope: per-image
+    level: required
+    requirement: Preserve the selected palette, illustration system, and package hierarchy.
+    requested_artifact_id: gallery-specification
+    artifact_id: gallery-specification-2026-09-09
+    profile_scope: named-profile
+    profile_id: ecommerce-thumbnail
+    status: pass
+    evidence: The independent reviewer opened the deterministic 320 px contain thumbnail (320x320). The warm paper field,
+      variant accents, flat ingredient illustrations, and copy hierarchy remain recognizable.
+  - gate_id: product-anatomy
+    scope: per-image
+    level: required
+    requirement: Keep package state and scene anatomy physically coherent with the approved brief.
+    requested_artifact_id: gallery-specification
+    artifact_id: gallery-specification-2026-09-09
+    profile_scope: full-resolution
+    profile_id: full-resolution
+    status: pass
+    evidence: The independent reviewer opened the gallery-specification-2026-09-09.png full-resolution RGB PNG. One complete
+      Lemon Ginger pouch appears with only the existing 240 g source pixels enlarged. The scene contains no impossible package
+      state or unsupported product behavior.
+  - gate_id: product-anatomy
+    scope: per-image
+    level: required
+    requirement: Keep package state and scene anatomy physically coherent with the approved brief.
+    requested_artifact_id: gallery-specification
+    artifact_id: gallery-specification-2026-09-09
+    profile_scope: named-profile
+    profile_id: ecommerce-thumbnail
+    status: pass
+    evidence: The independent reviewer opened the deterministic 320 px contain thumbnail (320x320). One complete Lemon Ginger
+      pouch appears with only the existing 240 g source pixels enlarged. The scene contains no impossible package state or
+      unsupported product behavior.
+  - gate_id: channel-fit
+    scope: per-image
+    level: required
+    requirement: Meet the approved dimensions, crop, safe areas, and thumbnail-readability target.
+    requested_artifact_id: gallery-specification
+    artifact_id: gallery-specification-2026-09-09
+    profile_scope: full-resolution
+    profile_id: full-resolution
+    status: pass
+    evidence: The independent reviewer opened the gallery-specification-2026-09-09.png full-resolution RGB PNG. The approved
+      crop and safe areas hold, and the package remains identifiable at the required review size.
+  - gate_id: channel-fit
+    scope: per-image
+    level: required
+    requirement: Meet the approved dimensions, crop, safe areas, and thumbnail-readability target.
+    requested_artifact_id: gallery-specification
+    artifact_id: gallery-specification-2026-09-09
+    profile_scope: named-profile
+    profile_id: ecommerce-thumbnail
+    status: pass
+    evidence: The independent reviewer opened the deterministic 320 px contain thumbnail (320x320). The approved crop and
+      safe areas hold, and the package remains identifiable at the required review size.
+  - gate_id: artifact-integrity
+    scope: per-image
+    level: required
+    requirement: Show no material seam, halo, clipping, corruption, or unintended frame artifact.
+    requested_artifact_id: gallery-specification
+    artifact_id: gallery-specification-2026-09-09
+    profile_scope: full-resolution
+    profile_id: full-resolution
+    status: pass
+    evidence: The independent reviewer opened the gallery-specification-2026-09-09.png full-resolution RGB PNG. No material
+      seam, halo, mask damage, unintended frame, clipping, or corrupt pixel region is visible.
+  - gate_id: artifact-integrity
+    scope: per-image
+    level: required
+    requirement: Show no material seam, halo, clipping, corruption, or unintended frame artifact.
+    requested_artifact_id: gallery-specification
+    artifact_id: gallery-specification-2026-09-09
+    profile_scope: named-profile
+    profile_id: ecommerce-thumbnail
+    status: pass
+    evidence: The independent reviewer opened the deterministic 320 px contain thumbnail (320x320). No material seam, halo,
+      mask damage, unintended frame, clipping, or corrupt pixel region is visible.
+  - gate_id: selection-lock
+    scope: per-image
+    level: required
+    requirement: Change only fields reopened by the approved AssetBrief and SelectionLock.
+    requested_artifact_id: gallery-specification
+    artifact_id: gallery-specification-2026-09-09
+    profile_scope: full-resolution
+    profile_id: full-resolution
+    status: pass
+    evidence: The independent reviewer opened the gallery-specification-2026-09-09.png full-resolution RGB PNG. Only the approved
+      canvas, crop, placement, background, shadow, color-panel, or source-pixel inset fields changed.
+  - gate_id: selection-lock
+    scope: per-image
+    level: required
+    requirement: Change only fields reopened by the approved AssetBrief and SelectionLock.
+    requested_artifact_id: gallery-specification
+    artifact_id: gallery-specification-2026-09-09
+    profile_scope: named-profile
+    profile_id: ecommerce-thumbnail
+    status: pass
+    evidence: The independent reviewer opened the deterministic 320 px contain thumbnail (320x320). Only the approved canvas,
+      crop, placement, background, shadow, color-panel, or source-pixel inset fields changed.
+  - gate_id: asset-role
+    scope: per-image
+    level: required
+    requirement: Perform the named ecommerce role without substituting another role.
+    requested_artifact_id: gallery-specification
+    artifact_id: gallery-specification-2026-09-09
+    profile_scope: full-resolution
+    profile_id: full-resolution
+    status: pass
+    evidence: The independent reviewer opened the gallery-specification-2026-09-09.png full-resolution RGB PNG. The image
+      verifies the approved quantity without inventing specifications.
+  - gate_id: asset-role
+    scope: per-image
+    level: required
+    requirement: Perform the named ecommerce role without substituting another role.
+    requested_artifact_id: gallery-specification
+    artifact_id: gallery-specification-2026-09-09
+    profile_scope: named-profile
+    profile_id: ecommerce-thumbnail
+    status: pass
+    evidence: The independent reviewer opened the deterministic 320 px contain thumbnail (320x320). The image verifies the
+      approved quantity without inventing specifications.
+  - gate_id: package-identity
+    scope: per-image
+    level: required
+    requirement: Retain the selected named-object package identity in rendered pixels.
+    requested_artifact_id: gallery-specification
+    artifact_id: gallery-specification-2026-09-09
+    profile_scope: full-resolution
+    profile_id: full-resolution
+    status: pass
+    evidence: The independent reviewer opened the gallery-specification-2026-09-09.png full-resolution RGB PNG. Build-report
+      package-face checks retain matching source and output opaque-pixel digests for every visible pouch face.
+  - gate_id: package-identity
+    scope: per-image
+    level: required
+    requirement: Retain the selected named-object package identity in rendered pixels.
+    requested_artifact_id: gallery-specification
+    artifact_id: gallery-specification-2026-09-09
+    profile_scope: named-profile
+    profile_id: ecommerce-thumbnail
+    status: pass
+    evidence: The independent reviewer opened the deterministic 320 px contain thumbnail (320x320). Build-report package-face
+      checks retain matching source and output opaque-pixel digests for every visible pouch face.
+  - gate_id: artifact-type
+    scope: per-image
+    level: required
+    requirement: Deliver one inspectable raster image for the requested ecommerce role.
+    requested_artifact_id: gallery-context
+    artifact_id: gallery-context-2026-09-09
+    profile_scope: full-resolution
+    profile_id: full-resolution
+    status: pass
+    evidence: The independent reviewer opened the gallery-context-2026-09-09.png full-resolution RGB PNG. The file is readable
+      and has the expected raster format.
+  - gate_id: artifact-type
+    scope: per-image
+    level: required
+    requirement: Deliver one inspectable raster image for the requested ecommerce role.
+    requested_artifact_id: gallery-context
+    artifact_id: gallery-context-2026-09-09
+    profile_scope: named-profile
+    profile_id: ecommerce-thumbnail
+    status: pass
+    evidence: The independent reviewer opened the deterministic 320 px contain thumbnail (320x180). The file is readable and
+      has the expected raster format.
+  - gate_id: object-count
+    scope: per-image
+    level: required
+    requirement: Match the approved package and scene-object count in the AssetBrief.
+    requested_artifact_id: gallery-context
+    artifact_id: gallery-context-2026-09-09
+    profile_scope: full-resolution
+    profile_id: full-resolution
+    status: pass
+    evidence: The independent reviewer opened the gallery-context-2026-09-09.png full-resolution RGB PNG. Both sealed pouches
+      remain readable on the pantry shelf; generic unbranded props stay at the edges.
+  - gate_id: object-count
+    scope: per-image
+    level: required
+    requirement: Match the approved package and scene-object count in the AssetBrief.
+    requested_artifact_id: gallery-context
+    artifact_id: gallery-context-2026-09-09
+    profile_scope: named-profile
+    profile_id: ecommerce-thumbnail
+    status: pass
+    evidence: The independent reviewer opened the deterministic 320 px contain thumbnail (320x180). Both sealed pouches remain
+      readable on the pantry shelf; generic unbranded props stay at the edges.
+  - gate_id: package-geometry
+    scope: per-image
+    level: required
+    requirement: Preserve the selected pouch geometry, closure, silhouette, and proportions.
+    requested_artifact_id: gallery-context
+    artifact_id: gallery-context-2026-09-09
+    profile_scope: full-resolution
+    profile_id: full-resolution
+    status: pass
+    evidence: The independent reviewer opened the gallery-context-2026-09-09.png full-resolution RGB PNG. Pouch silhouette,
+      closure, perspective, and proportions remain consistent with the selected source.
+  - gate_id: package-geometry
+    scope: per-image
+    level: required
+    requirement: Preserve the selected pouch geometry, closure, silhouette, and proportions.
+    requested_artifact_id: gallery-context
+    artifact_id: gallery-context-2026-09-09
+    profile_scope: named-profile
+    profile_id: ecommerce-thumbnail
+    status: pass
+    evidence: The independent reviewer opened the deterministic 320 px contain thumbnail (320x180). Pouch silhouette, closure,
+      perspective, and proportions remain consistent with the selected source.
+  - gate_id: exact-copy
+    scope: per-image
+    level: required
+    requirement: Preserve all visible approved exact copy without adding or changing readable package text.
+    requested_artifact_id: gallery-context
+    artifact_id: gallery-context-2026-09-09
+    profile_scope: full-resolution
+    profile_id: full-resolution
+    status: pass
+    evidence: The independent reviewer opened the gallery-context-2026-09-09.png full-resolution RGB PNG. PPV FIXTURE, CITRUS
+      PANTRY MIX, the applicable variant name, and 240 g remain unchanged and readable where the approved crop permits.
+  - gate_id: exact-copy
+    scope: per-image
+    level: required
+    requirement: Preserve all visible approved exact copy without adding or changing readable package text.
+    requested_artifact_id: gallery-context
+    artifact_id: gallery-context-2026-09-09
+    profile_scope: named-profile
+    profile_id: ecommerce-thumbnail
+    status: pass
+    evidence: The independent reviewer opened the deterministic 320 px contain thumbnail (320x180). PPV FIXTURE, CITRUS PANTRY
+      MIX, the applicable variant name, and 240 g remain unchanged and readable where the approved crop permits.
+  - gate_id: invented-claims
+    scope: per-image
+    level: required
+    requirement: Add no unsupported benefit, certification, ingredient, legal, or performance claim.
+    requested_artifact_id: gallery-context
+    artifact_id: gallery-context-2026-09-09
+    profile_scope: full-resolution
+    profile_id: full-resolution
+    status: pass
+    evidence: The independent reviewer opened the gallery-context-2026-09-09.png full-resolution RGB PNG. No benefit, certification,
+      ingredient, legal, environmental, or performance claim was added.
+  - gate_id: invented-claims
+    scope: per-image
+    level: required
+    requirement: Add no unsupported benefit, certification, ingredient, legal, or performance claim.
+    requested_artifact_id: gallery-context
+    artifact_id: gallery-context-2026-09-09
+    profile_scope: named-profile
+    profile_id: ecommerce-thumbnail
+    status: pass
+    evidence: The independent reviewer opened the deterministic 320 px contain thumbnail (320x180). No benefit, certification,
+      ingredient, legal, environmental, or performance claim was added.
+  - gate_id: reference-role
+    scope: per-image
+    level: required
+    requirement: Use each source or supporting plate only for its approved reference role.
+    requested_artifact_id: gallery-context
+    artifact_id: gallery-context-2026-09-09
+    profile_scope: full-resolution
+    profile_id: full-resolution
+    status: pass
+    evidence: The independent reviewer opened the gallery-context-2026-09-09.png full-resolution RGB PNG. The package-free,
+      text-free supporting plate supplies only the approved context background; package pixels come from the selected source.
+  - gate_id: reference-role
+    scope: per-image
+    level: required
+    requirement: Use each source or supporting plate only for its approved reference role.
+    requested_artifact_id: gallery-context
+    artifact_id: gallery-context-2026-09-09
+    profile_scope: named-profile
+    profile_id: ecommerce-thumbnail
+    status: pass
+    evidence: The independent reviewer opened the deterministic 320 px contain thumbnail (320x180). The package-free, text-free
+      supporting plate supplies only the approved context background; package pixels come from the selected source.
+  - gate_id: visual-hierarchy-identity
+    scope: per-image
+    level: required
+    requirement: Preserve the selected palette, illustration system, and package hierarchy.
+    requested_artifact_id: gallery-context
+    artifact_id: gallery-context-2026-09-09
+    profile_scope: full-resolution
+    profile_id: full-resolution
+    status: pass
+    evidence: The independent reviewer opened the gallery-context-2026-09-09.png full-resolution RGB PNG. The warm paper field,
+      variant accents, flat ingredient illustrations, and copy hierarchy remain recognizable.
+  - gate_id: visual-hierarchy-identity
+    scope: per-image
+    level: required
+    requirement: Preserve the selected palette, illustration system, and package hierarchy.
+    requested_artifact_id: gallery-context
+    artifact_id: gallery-context-2026-09-09
+    profile_scope: named-profile
+    profile_id: ecommerce-thumbnail
+    status: pass
+    evidence: The independent reviewer opened the deterministic 320 px contain thumbnail (320x180). The warm paper field,
+      variant accents, flat ingredient illustrations, and copy hierarchy remain recognizable.
+  - gate_id: product-anatomy
+    scope: per-image
+    level: required
+    requirement: Keep package state and scene anatomy physically coherent with the approved brief.
+    requested_artifact_id: gallery-context
+    artifact_id: gallery-context-2026-09-09
+    profile_scope: full-resolution
+    profile_id: full-resolution
+    status: pass
+    evidence: The independent reviewer opened the gallery-context-2026-09-09.png full-resolution RGB PNG. Both sealed pouches
+      remain readable on the pantry shelf; generic unbranded props stay at the edges. The scene contains no impossible package
+      state or unsupported product behavior.
+  - gate_id: product-anatomy
+    scope: per-image
+    level: required
+    requirement: Keep package state and scene anatomy physically coherent with the approved brief.
+    requested_artifact_id: gallery-context
+    artifact_id: gallery-context-2026-09-09
+    profile_scope: named-profile
+    profile_id: ecommerce-thumbnail
+    status: pass
+    evidence: The independent reviewer opened the deterministic 320 px contain thumbnail (320x180). Both sealed pouches remain
+      readable on the pantry shelf; generic unbranded props stay at the edges. The scene contains no impossible package state
+      or unsupported product behavior.
+  - gate_id: channel-fit
+    scope: per-image
+    level: required
+    requirement: Meet the approved dimensions, crop, safe areas, and thumbnail-readability target.
+    requested_artifact_id: gallery-context
+    artifact_id: gallery-context-2026-09-09
+    profile_scope: full-resolution
+    profile_id: full-resolution
+    status: pass
+    evidence: The independent reviewer opened the gallery-context-2026-09-09.png full-resolution RGB PNG. The approved crop
+      and safe areas hold, and the package remains identifiable at the required review size.
+  - gate_id: channel-fit
+    scope: per-image
+    level: required
+    requirement: Meet the approved dimensions, crop, safe areas, and thumbnail-readability target.
+    requested_artifact_id: gallery-context
+    artifact_id: gallery-context-2026-09-09
+    profile_scope: named-profile
+    profile_id: ecommerce-thumbnail
+    status: pass
+    evidence: The independent reviewer opened the deterministic 320 px contain thumbnail (320x180). The approved crop and
+      safe areas hold, and the package remains identifiable at the required review size.
+  - gate_id: artifact-integrity
+    scope: per-image
+    level: required
+    requirement: Show no material seam, halo, clipping, corruption, or unintended frame artifact.
+    requested_artifact_id: gallery-context
+    artifact_id: gallery-context-2026-09-09
+    profile_scope: full-resolution
+    profile_id: full-resolution
+    status: pass
+    evidence: The independent reviewer opened the gallery-context-2026-09-09.png full-resolution RGB PNG. No material seam,
+      halo, mask damage, unintended frame, clipping, or corrupt pixel region is visible.
+  - gate_id: artifact-integrity
+    scope: per-image
+    level: required
+    requirement: Show no material seam, halo, clipping, corruption, or unintended frame artifact.
+    requested_artifact_id: gallery-context
+    artifact_id: gallery-context-2026-09-09
+    profile_scope: named-profile
+    profile_id: ecommerce-thumbnail
+    status: pass
+    evidence: The independent reviewer opened the deterministic 320 px contain thumbnail (320x180). No material seam, halo,
+      mask damage, unintended frame, clipping, or corrupt pixel region is visible.
+  - gate_id: selection-lock
+    scope: per-image
+    level: required
+    requirement: Change only fields reopened by the approved AssetBrief and SelectionLock.
+    requested_artifact_id: gallery-context
+    artifact_id: gallery-context-2026-09-09
+    profile_scope: full-resolution
+    profile_id: full-resolution
+    status: pass
+    evidence: The independent reviewer opened the gallery-context-2026-09-09.png full-resolution RGB PNG. Only the approved
+      canvas, crop, placement, background, shadow, color-panel, or source-pixel inset fields changed.
+  - gate_id: selection-lock
+    scope: per-image
+    level: required
+    requirement: Change only fields reopened by the approved AssetBrief and SelectionLock.
+    requested_artifact_id: gallery-context
+    artifact_id: gallery-context-2026-09-09
+    profile_scope: named-profile
+    profile_id: ecommerce-thumbnail
+    status: pass
+    evidence: The independent reviewer opened the deterministic 320 px contain thumbnail (320x180). Only the approved canvas,
+      crop, placement, background, shadow, color-panel, or source-pixel inset fields changed.
+  - gate_id: asset-role
+    scope: per-image
+    level: required
+    requirement: Perform the named ecommerce role without substituting another role.
+    requested_artifact_id: gallery-context
+    artifact_id: gallery-context-2026-09-09
+    profile_scope: full-resolution
+    profile_id: full-resolution
+    status: pass
+    evidence: The independent reviewer opened the gallery-context-2026-09-09.png full-resolution RGB PNG. The image places
+      both approved packages in a bounded pantry context.
+  - gate_id: asset-role
+    scope: per-image
+    level: required
+    requirement: Perform the named ecommerce role without substituting another role.
+    requested_artifact_id: gallery-context
+    artifact_id: gallery-context-2026-09-09
+    profile_scope: named-profile
+    profile_id: ecommerce-thumbnail
+    status: pass
+    evidence: The independent reviewer opened the deterministic 320 px contain thumbnail (320x180). The image places both
+      approved packages in a bounded pantry context.
+  - gate_id: package-identity
+    scope: per-image
+    level: required
+    requirement: Retain the selected named-object package identity in rendered pixels.
+    requested_artifact_id: gallery-context
+    artifact_id: gallery-context-2026-09-09
+    profile_scope: full-resolution
+    profile_id: full-resolution
+    status: pass
+    evidence: The independent reviewer opened the gallery-context-2026-09-09.png full-resolution RGB PNG. Build-report package-face
+      checks retain matching source and output opaque-pixel digests for every visible pouch face.
+  - gate_id: package-identity
+    scope: per-image
+    level: required
+    requirement: Retain the selected named-object package identity in rendered pixels.
+    requested_artifact_id: gallery-context
+    artifact_id: gallery-context-2026-09-09
+    profile_scope: named-profile
+    profile_id: ecommerce-thumbnail
+    status: pass
+    evidence: The independent reviewer opened the deterministic 320 px contain thumbnail (320x180). Build-report package-face
+      checks retain matching source and output opaque-pixel digests for every visible pouch face.
+  - gate_id: artifact-type
+    scope: per-image
+    level: required
+    requirement: Deliver one inspectable raster image for the requested ecommerce role.
+    requested_artifact_id: gallery-campaign
+    artifact_id: gallery-campaign-2026-09-09
+    profile_scope: full-resolution
+    profile_id: full-resolution
+    status: pass
+    evidence: The independent reviewer opened the gallery-campaign-2026-09-09.png full-resolution RGB PNG. The file is readable
+      and has the expected raster format.
+  - gate_id: artifact-type
+    scope: per-image
+    level: required
+    requirement: Deliver one inspectable raster image for the requested ecommerce role.
+    requested_artifact_id: gallery-campaign
+    artifact_id: gallery-campaign-2026-09-09
+    profile_scope: named-profile
+    profile_id: ecommerce-thumbnail
+    status: pass
+    evidence: The independent reviewer opened the deterministic 320 px contain thumbnail (320x180). The file is readable and
+      has the expected raster format.
+  - gate_id: object-count
+    scope: per-image
+    level: required
+    requirement: Match the approved package and scene-object count in the AssetBrief.
+    requested_artifact_id: gallery-campaign
+    artifact_id: gallery-campaign-2026-09-09
+    profile_scope: full-resolution
+    profile_id: full-resolution
+    status: pass
+    evidence: The independent reviewer opened the gallery-campaign-2026-09-09.png full-resolution RGB PNG. Two sealed pouches
+      form the approved campaign composition while the left field remains blank for later copy.
+  - gate_id: object-count
+    scope: per-image
+    level: required
+    requirement: Match the approved package and scene-object count in the AssetBrief.
+    requested_artifact_id: gallery-campaign
+    artifact_id: gallery-campaign-2026-09-09
+    profile_scope: named-profile
+    profile_id: ecommerce-thumbnail
+    status: pass
+    evidence: The independent reviewer opened the deterministic 320 px contain thumbnail (320x180). Two sealed pouches form
+      the approved campaign composition while the left field remains blank for later copy.
+  - gate_id: package-geometry
+    scope: per-image
+    level: required
+    requirement: Preserve the selected pouch geometry, closure, silhouette, and proportions.
+    requested_artifact_id: gallery-campaign
+    artifact_id: gallery-campaign-2026-09-09
+    profile_scope: full-resolution
+    profile_id: full-resolution
+    status: pass
+    evidence: The independent reviewer opened the gallery-campaign-2026-09-09.png full-resolution RGB PNG. Pouch silhouette,
+      closure, perspective, and proportions remain consistent with the selected source.
+  - gate_id: package-geometry
+    scope: per-image
+    level: required
+    requirement: Preserve the selected pouch geometry, closure, silhouette, and proportions.
+    requested_artifact_id: gallery-campaign
+    artifact_id: gallery-campaign-2026-09-09
+    profile_scope: named-profile
+    profile_id: ecommerce-thumbnail
+    status: pass
+    evidence: The independent reviewer opened the deterministic 320 px contain thumbnail (320x180). Pouch silhouette, closure,
+      perspective, and proportions remain consistent with the selected source.
+  - gate_id: exact-copy
+    scope: per-image
+    level: required
+    requirement: Preserve all visible approved exact copy without adding or changing readable package text.
+    requested_artifact_id: gallery-campaign
+    artifact_id: gallery-campaign-2026-09-09
+    profile_scope: full-resolution
+    profile_id: full-resolution
+    status: pass
+    evidence: The independent reviewer opened the gallery-campaign-2026-09-09.png full-resolution RGB PNG. PPV FIXTURE, CITRUS
+      PANTRY MIX, the applicable variant name, and 240 g remain unchanged and readable where the approved crop permits.
+  - gate_id: exact-copy
+    scope: per-image
+    level: required
+    requirement: Preserve all visible approved exact copy without adding or changing readable package text.
+    requested_artifact_id: gallery-campaign
+    artifact_id: gallery-campaign-2026-09-09
+    profile_scope: named-profile
+    profile_id: ecommerce-thumbnail
+    status: pass
+    evidence: The independent reviewer opened the deterministic 320 px contain thumbnail (320x180). PPV FIXTURE, CITRUS PANTRY
+      MIX, the applicable variant name, and 240 g remain unchanged and readable where the approved crop permits.
+  - gate_id: invented-claims
+    scope: per-image
+    level: required
+    requirement: Add no unsupported benefit, certification, ingredient, legal, or performance claim.
+    requested_artifact_id: gallery-campaign
+    artifact_id: gallery-campaign-2026-09-09
+    profile_scope: full-resolution
+    profile_id: full-resolution
+    status: pass
+    evidence: The independent reviewer opened the gallery-campaign-2026-09-09.png full-resolution RGB PNG. No benefit, certification,
+      ingredient, legal, environmental, or performance claim was added.
+  - gate_id: invented-claims
+    scope: per-image
+    level: required
+    requirement: Add no unsupported benefit, certification, ingredient, legal, or performance claim.
+    requested_artifact_id: gallery-campaign
+    artifact_id: gallery-campaign-2026-09-09
+    profile_scope: named-profile
+    profile_id: ecommerce-thumbnail
+    status: pass
+    evidence: The independent reviewer opened the deterministic 320 px contain thumbnail (320x180). No benefit, certification,
+      ingredient, legal, environmental, or performance claim was added.
+  - gate_id: reference-role
+    scope: per-image
+    level: required
+    requirement: Use each source or supporting plate only for its approved reference role.
+    requested_artifact_id: gallery-campaign
+    artifact_id: gallery-campaign-2026-09-09
+    profile_scope: full-resolution
+    profile_id: full-resolution
+    status: pass
+    evidence: The independent reviewer opened the gallery-campaign-2026-09-09.png full-resolution RGB PNG. The selected package
+      source supplies identity, and deterministic layout operations supply only the approved crop, placement, background,
+      or inset.
+  - gate_id: reference-role
+    scope: per-image
+    level: required
+    requirement: Use each source or supporting plate only for its approved reference role.
+    requested_artifact_id: gallery-campaign
+    artifact_id: gallery-campaign-2026-09-09
+    profile_scope: named-profile
+    profile_id: ecommerce-thumbnail
+    status: pass
+    evidence: The independent reviewer opened the deterministic 320 px contain thumbnail (320x180). The selected package source
+      supplies identity, and deterministic layout operations supply only the approved crop, placement, background, or inset.
+  - gate_id: visual-hierarchy-identity
+    scope: per-image
+    level: required
+    requirement: Preserve the selected palette, illustration system, and package hierarchy.
+    requested_artifact_id: gallery-campaign
+    artifact_id: gallery-campaign-2026-09-09
+    profile_scope: full-resolution
+    profile_id: full-resolution
+    status: pass
+    evidence: The independent reviewer opened the gallery-campaign-2026-09-09.png full-resolution RGB PNG. The warm paper
+      field, variant accents, flat ingredient illustrations, and copy hierarchy remain recognizable.
+  - gate_id: visual-hierarchy-identity
+    scope: per-image
+    level: required
+    requirement: Preserve the selected palette, illustration system, and package hierarchy.
+    requested_artifact_id: gallery-campaign
+    artifact_id: gallery-campaign-2026-09-09
+    profile_scope: named-profile
+    profile_id: ecommerce-thumbnail
+    status: pass
+    evidence: The independent reviewer opened the deterministic 320 px contain thumbnail (320x180). The warm paper field,
+      variant accents, flat ingredient illustrations, and copy hierarchy remain recognizable.
+  - gate_id: product-anatomy
+    scope: per-image
+    level: required
+    requirement: Keep package state and scene anatomy physically coherent with the approved brief.
+    requested_artifact_id: gallery-campaign
+    artifact_id: gallery-campaign-2026-09-09
+    profile_scope: full-resolution
+    profile_id: full-resolution
+    status: pass
+    evidence: The independent reviewer opened the gallery-campaign-2026-09-09.png full-resolution RGB PNG. Two sealed pouches
+      form the approved campaign composition while the left field remains blank for later copy. The scene contains no impossible
+      package state or unsupported product behavior.
+  - gate_id: product-anatomy
+    scope: per-image
+    level: required
+    requirement: Keep package state and scene anatomy physically coherent with the approved brief.
+    requested_artifact_id: gallery-campaign
+    artifact_id: gallery-campaign-2026-09-09
+    profile_scope: named-profile
+    profile_id: ecommerce-thumbnail
+    status: pass
+    evidence: The independent reviewer opened the deterministic 320 px contain thumbnail (320x180). Two sealed pouches form
+      the approved campaign composition while the left field remains blank for later copy. The scene contains no impossible
+      package state or unsupported product behavior.
+  - gate_id: channel-fit
+    scope: per-image
+    level: required
+    requirement: Meet the approved dimensions, crop, safe areas, and thumbnail-readability target.
+    requested_artifact_id: gallery-campaign
+    artifact_id: gallery-campaign-2026-09-09
+    profile_scope: full-resolution
+    profile_id: full-resolution
+    status: pass
+    evidence: The independent reviewer opened the gallery-campaign-2026-09-09.png full-resolution RGB PNG. The approved crop
+      and safe areas hold, and the package remains identifiable at the required review size.
+  - gate_id: channel-fit
+    scope: per-image
+    level: required
+    requirement: Meet the approved dimensions, crop, safe areas, and thumbnail-readability target.
+    requested_artifact_id: gallery-campaign
+    artifact_id: gallery-campaign-2026-09-09
+    profile_scope: named-profile
+    profile_id: ecommerce-thumbnail
+    status: pass
+    evidence: The independent reviewer opened the deterministic 320 px contain thumbnail (320x180). The approved crop and
+      safe areas hold, and the package remains identifiable at the required review size.
+  - gate_id: artifact-integrity
+    scope: per-image
+    level: required
+    requirement: Show no material seam, halo, clipping, corruption, or unintended frame artifact.
+    requested_artifact_id: gallery-campaign
+    artifact_id: gallery-campaign-2026-09-09
+    profile_scope: full-resolution
+    profile_id: full-resolution
+    status: pass
+    evidence: The independent reviewer opened the gallery-campaign-2026-09-09.png full-resolution RGB PNG. No material seam,
+      halo, mask damage, unintended frame, clipping, or corrupt pixel region is visible.
+  - gate_id: artifact-integrity
+    scope: per-image
+    level: required
+    requirement: Show no material seam, halo, clipping, corruption, or unintended frame artifact.
+    requested_artifact_id: gallery-campaign
+    artifact_id: gallery-campaign-2026-09-09
+    profile_scope: named-profile
+    profile_id: ecommerce-thumbnail
+    status: pass
+    evidence: The independent reviewer opened the deterministic 320 px contain thumbnail (320x180). No material seam, halo,
+      mask damage, unintended frame, clipping, or corrupt pixel region is visible.
+  - gate_id: selection-lock
+    scope: per-image
+    level: required
+    requirement: Change only fields reopened by the approved AssetBrief and SelectionLock.
+    requested_artifact_id: gallery-campaign
+    artifact_id: gallery-campaign-2026-09-09
+    profile_scope: full-resolution
+    profile_id: full-resolution
+    status: pass
+    evidence: The independent reviewer opened the gallery-campaign-2026-09-09.png full-resolution RGB PNG. Only the approved
+      canvas, crop, placement, background, shadow, color-panel, or source-pixel inset fields changed.
+  - gate_id: selection-lock
+    scope: per-image
+    level: required
+    requirement: Change only fields reopened by the approved AssetBrief and SelectionLock.
+    requested_artifact_id: gallery-campaign
+    artifact_id: gallery-campaign-2026-09-09
+    profile_scope: named-profile
+    profile_id: ecommerce-thumbnail
+    status: pass
+    evidence: The independent reviewer opened the deterministic 320 px contain thumbnail (320x180). Only the approved canvas,
+      crop, placement, background, shadow, color-panel, or source-pixel inset fields changed.
+  - gate_id: asset-role
+    scope: per-image
+    level: required
+    requirement: Perform the named ecommerce role without substituting another role.
+    requested_artifact_id: gallery-campaign
+    artifact_id: gallery-campaign-2026-09-09
+    profile_scope: full-resolution
+    profile_id: full-resolution
+    status: pass
+    evidence: The independent reviewer opened the gallery-campaign-2026-09-09.png full-resolution RGB PNG. The image provides
+      a campaign composition with reserved negative space and no campaign claim.
+  - gate_id: asset-role
+    scope: per-image
+    level: required
+    requirement: Perform the named ecommerce role without substituting another role.
+    requested_artifact_id: gallery-campaign
+    artifact_id: gallery-campaign-2026-09-09
+    profile_scope: named-profile
+    profile_id: ecommerce-thumbnail
+    status: pass
+    evidence: The independent reviewer opened the deterministic 320 px contain thumbnail (320x180). The image provides a campaign
+      composition with reserved negative space and no campaign claim.
+  - gate_id: package-identity
+    scope: per-image
+    level: required
+    requirement: Retain the selected named-object package identity in rendered pixels.
+    requested_artifact_id: gallery-campaign
+    artifact_id: gallery-campaign-2026-09-09
+    profile_scope: full-resolution
+    profile_id: full-resolution
+    status: pass
+    evidence: The independent reviewer opened the gallery-campaign-2026-09-09.png full-resolution RGB PNG. Build-report package-face
+      checks retain matching source and output opaque-pixel digests for every visible pouch face.
+  - gate_id: package-identity
+    scope: per-image
+    level: required
+    requirement: Retain the selected named-object package identity in rendered pixels.
+    requested_artifact_id: gallery-campaign
+    artifact_id: gallery-campaign-2026-09-09
+    profile_scope: named-profile
+    profile_id: ecommerce-thumbnail
+    status: pass
+    evidence: The independent reviewer opened the deterministic 320 px contain thumbnail (320x180). Build-report package-face
+      checks retain matching source and output opaque-pixel digests for every visible pouch face.
+  - gate_id: artifact-type
+    scope: per-image
+    level: required
+    requirement: Deliver one inspectable raster image for the requested ecommerce role.
+    requested_artifact_id: gallery-channel-variant
+    artifact_id: gallery-channel-variant-2026-09-09
+    profile_scope: full-resolution
+    profile_id: full-resolution
+    status: pass
+    evidence: The independent reviewer opened the gallery-channel-variant-2026-09-09.png full-resolution RGB PNG. The file
+      is readable and has the expected raster format.
+  - gate_id: artifact-type
+    scope: per-image
+    level: required
+    requirement: Deliver one inspectable raster image for the requested ecommerce role.
+    requested_artifact_id: gallery-channel-variant
+    artifact_id: gallery-channel-variant-2026-09-09
+    profile_scope: named-profile
+    profile_id: ecommerce-thumbnail
+    status: pass
+    evidence: The independent reviewer opened the deterministic 320 px contain thumbnail (320x320). The file is readable and
+      has the expected raster format.
+  - gate_id: object-count
+    scope: per-image
+    level: required
+    requirement: Match the approved package and scene-object count in the AssetBrief.
+    requested_artifact_id: gallery-channel-variant
+    artifact_id: gallery-channel-variant-2026-09-09
+    profile_scope: full-resolution
+    profile_id: full-resolution
+    status: pass
+    evidence: The independent reviewer opened the gallery-channel-variant-2026-09-09.png full-resolution RGB PNG. One complete
+      Lemon Ginger pouch appears on a quiet square field with no added frame, line, claim, or copy.
+  - gate_id: object-count
+    scope: per-image
+    level: required
+    requirement: Match the approved package and scene-object count in the AssetBrief.
+    requested_artifact_id: gallery-channel-variant
+    artifact_id: gallery-channel-variant-2026-09-09
+    profile_scope: named-profile
+    profile_id: ecommerce-thumbnail
+    status: pass
+    evidence: The independent reviewer opened the deterministic 320 px contain thumbnail (320x320). One complete Lemon Ginger
+      pouch appears on a quiet square field with no added frame, line, claim, or copy.
+  - gate_id: package-geometry
+    scope: per-image
+    level: required
+    requirement: Preserve the selected pouch geometry, closure, silhouette, and proportions.
+    requested_artifact_id: gallery-channel-variant
+    artifact_id: gallery-channel-variant-2026-09-09
+    profile_scope: full-resolution
+    profile_id: full-resolution
+    status: pass
+    evidence: The independent reviewer opened the gallery-channel-variant-2026-09-09.png full-resolution RGB PNG. Pouch silhouette,
+      closure, perspective, and proportions remain consistent with the selected source.
+  - gate_id: package-geometry
+    scope: per-image
+    level: required
+    requirement: Preserve the selected pouch geometry, closure, silhouette, and proportions.
+    requested_artifact_id: gallery-channel-variant
+    artifact_id: gallery-channel-variant-2026-09-09
+    profile_scope: named-profile
+    profile_id: ecommerce-thumbnail
+    status: pass
+    evidence: The independent reviewer opened the deterministic 320 px contain thumbnail (320x320). Pouch silhouette, closure,
+      perspective, and proportions remain consistent with the selected source.
+  - gate_id: exact-copy
+    scope: per-image
+    level: required
+    requirement: Preserve all visible approved exact copy without adding or changing readable package text.
+    requested_artifact_id: gallery-channel-variant
+    artifact_id: gallery-channel-variant-2026-09-09
+    profile_scope: full-resolution
+    profile_id: full-resolution
+    status: pass
+    evidence: The independent reviewer opened the gallery-channel-variant-2026-09-09.png full-resolution RGB PNG. PPV FIXTURE,
+      CITRUS PANTRY MIX, the applicable variant name, and 240 g remain unchanged and readable where the approved crop permits.
+  - gate_id: exact-copy
+    scope: per-image
+    level: required
+    requirement: Preserve all visible approved exact copy without adding or changing readable package text.
+    requested_artifact_id: gallery-channel-variant
+    artifact_id: gallery-channel-variant-2026-09-09
+    profile_scope: named-profile
+    profile_id: ecommerce-thumbnail
+    status: pass
+    evidence: The independent reviewer opened the deterministic 320 px contain thumbnail (320x320). PPV FIXTURE, CITRUS PANTRY
+      MIX, the applicable variant name, and 240 g remain unchanged and readable where the approved crop permits.
+  - gate_id: invented-claims
+    scope: per-image
+    level: required
+    requirement: Add no unsupported benefit, certification, ingredient, legal, or performance claim.
+    requested_artifact_id: gallery-channel-variant
+    artifact_id: gallery-channel-variant-2026-09-09
+    profile_scope: full-resolution
+    profile_id: full-resolution
+    status: pass
+    evidence: The independent reviewer opened the gallery-channel-variant-2026-09-09.png full-resolution RGB PNG. No benefit,
+      certification, ingredient, legal, environmental, or performance claim was added.
+  - gate_id: invented-claims
+    scope: per-image
+    level: required
+    requirement: Add no unsupported benefit, certification, ingredient, legal, or performance claim.
+    requested_artifact_id: gallery-channel-variant
+    artifact_id: gallery-channel-variant-2026-09-09
+    profile_scope: named-profile
+    profile_id: ecommerce-thumbnail
+    status: pass
+    evidence: The independent reviewer opened the deterministic 320 px contain thumbnail (320x320). No benefit, certification,
+      ingredient, legal, environmental, or performance claim was added.
+  - gate_id: reference-role
+    scope: per-image
+    level: required
+    requirement: Use each source or supporting plate only for its approved reference role.
+    requested_artifact_id: gallery-channel-variant
+    artifact_id: gallery-channel-variant-2026-09-09
+    profile_scope: full-resolution
+    profile_id: full-resolution
+    status: pass
+    evidence: The independent reviewer opened the gallery-channel-variant-2026-09-09.png full-resolution RGB PNG. The selected
+      package source supplies identity, and deterministic layout operations supply only the approved crop, placement, background,
+      or inset.
+  - gate_id: reference-role
+    scope: per-image
+    level: required
+    requirement: Use each source or supporting plate only for its approved reference role.
+    requested_artifact_id: gallery-channel-variant
+    artifact_id: gallery-channel-variant-2026-09-09
+    profile_scope: named-profile
+    profile_id: ecommerce-thumbnail
+    status: pass
+    evidence: The independent reviewer opened the deterministic 320 px contain thumbnail (320x320). The selected package source
+      supplies identity, and deterministic layout operations supply only the approved crop, placement, background, or inset.
+  - gate_id: visual-hierarchy-identity
+    scope: per-image
+    level: required
+    requirement: Preserve the selected palette, illustration system, and package hierarchy.
+    requested_artifact_id: gallery-channel-variant
+    artifact_id: gallery-channel-variant-2026-09-09
+    profile_scope: full-resolution
+    profile_id: full-resolution
+    status: pass
+    evidence: The independent reviewer opened the gallery-channel-variant-2026-09-09.png full-resolution RGB PNG. The warm
+      paper field, variant accents, flat ingredient illustrations, and copy hierarchy remain recognizable.
+  - gate_id: visual-hierarchy-identity
+    scope: per-image
+    level: required
+    requirement: Preserve the selected palette, illustration system, and package hierarchy.
+    requested_artifact_id: gallery-channel-variant
+    artifact_id: gallery-channel-variant-2026-09-09
+    profile_scope: named-profile
+    profile_id: ecommerce-thumbnail
+    status: pass
+    evidence: The independent reviewer opened the deterministic 320 px contain thumbnail (320x320). The warm paper field,
+      variant accents, flat ingredient illustrations, and copy hierarchy remain recognizable.
+  - gate_id: product-anatomy
+    scope: per-image
+    level: required
+    requirement: Keep package state and scene anatomy physically coherent with the approved brief.
+    requested_artifact_id: gallery-channel-variant
+    artifact_id: gallery-channel-variant-2026-09-09
+    profile_scope: full-resolution
+    profile_id: full-resolution
+    status: pass
+    evidence: The independent reviewer opened the gallery-channel-variant-2026-09-09.png full-resolution RGB PNG. One complete
+      Lemon Ginger pouch appears on a quiet square field with no added frame, line, claim, or copy. The scene contains no
+      impossible package state or unsupported product behavior.
+  - gate_id: product-anatomy
+    scope: per-image
+    level: required
+    requirement: Keep package state and scene anatomy physically coherent with the approved brief.
+    requested_artifact_id: gallery-channel-variant
+    artifact_id: gallery-channel-variant-2026-09-09
+    profile_scope: named-profile
+    profile_id: ecommerce-thumbnail
+    status: pass
+    evidence: The independent reviewer opened the deterministic 320 px contain thumbnail (320x320). One complete Lemon Ginger
+      pouch appears on a quiet square field with no added frame, line, claim, or copy. The scene contains no impossible package
+      state or unsupported product behavior.
+  - gate_id: channel-fit
+    scope: per-image
+    level: required
+    requirement: Meet the approved dimensions, crop, safe areas, and thumbnail-readability target.
+    requested_artifact_id: gallery-channel-variant
+    artifact_id: gallery-channel-variant-2026-09-09
+    profile_scope: full-resolution
+    profile_id: full-resolution
+    status: pass
+    evidence: The independent reviewer opened the gallery-channel-variant-2026-09-09.png full-resolution RGB PNG. The approved
+      crop and safe areas hold, and the package remains identifiable at the required review size.
+  - gate_id: channel-fit
+    scope: per-image
+    level: required
+    requirement: Meet the approved dimensions, crop, safe areas, and thumbnail-readability target.
+    requested_artifact_id: gallery-channel-variant
+    artifact_id: gallery-channel-variant-2026-09-09
+    profile_scope: named-profile
+    profile_id: ecommerce-thumbnail
+    status: pass
+    evidence: The independent reviewer opened the deterministic 320 px contain thumbnail (320x320). The approved crop and
+      safe areas hold, and the package remains identifiable at the required review size.
+  - gate_id: artifact-integrity
+    scope: per-image
+    level: required
+    requirement: Show no material seam, halo, clipping, corruption, or unintended frame artifact.
+    requested_artifact_id: gallery-channel-variant
+    artifact_id: gallery-channel-variant-2026-09-09
+    profile_scope: full-resolution
+    profile_id: full-resolution
+    status: pass
+    evidence: The independent reviewer opened the gallery-channel-variant-2026-09-09.png full-resolution RGB PNG. No material
+      seam, halo, mask damage, unintended frame, clipping, or corrupt pixel region is visible.
+  - gate_id: artifact-integrity
+    scope: per-image
+    level: required
+    requirement: Show no material seam, halo, clipping, corruption, or unintended frame artifact.
+    requested_artifact_id: gallery-channel-variant
+    artifact_id: gallery-channel-variant-2026-09-09
+    profile_scope: named-profile
+    profile_id: ecommerce-thumbnail
+    status: pass
+    evidence: The independent reviewer opened the deterministic 320 px contain thumbnail (320x320). No material seam, halo,
+      mask damage, unintended frame, clipping, or corrupt pixel region is visible.
+  - gate_id: selection-lock
+    scope: per-image
+    level: required
+    requirement: Change only fields reopened by the approved AssetBrief and SelectionLock.
+    requested_artifact_id: gallery-channel-variant
+    artifact_id: gallery-channel-variant-2026-09-09
+    profile_scope: full-resolution
+    profile_id: full-resolution
+    status: pass
+    evidence: The independent reviewer opened the gallery-channel-variant-2026-09-09.png full-resolution RGB PNG. Only the
+      approved canvas, crop, placement, background, shadow, color-panel, or source-pixel inset fields changed.
+  - gate_id: selection-lock
+    scope: per-image
+    level: required
+    requirement: Change only fields reopened by the approved AssetBrief and SelectionLock.
+    requested_artifact_id: gallery-channel-variant
+    artifact_id: gallery-channel-variant-2026-09-09
+    profile_scope: named-profile
+    profile_id: ecommerce-thumbnail
+    status: pass
+    evidence: The independent reviewer opened the deterministic 320 px contain thumbnail (320x320). Only the approved canvas,
+      crop, placement, background, shadow, color-panel, or source-pixel inset fields changed.
+  - gate_id: asset-role
+    scope: per-image
+    level: required
+    requirement: Perform the named ecommerce role without substituting another role.
+    requested_artifact_id: gallery-channel-variant
+    artifact_id: gallery-channel-variant-2026-09-09
+    profile_scope: full-resolution
+    profile_id: full-resolution
+    status: pass
+    evidence: The independent reviewer opened the gallery-channel-variant-2026-09-09.png full-resolution RGB PNG. The image
+      adapts the approved package to a square channel crop.
+  - gate_id: asset-role
+    scope: per-image
+    level: required
+    requirement: Perform the named ecommerce role without substituting another role.
+    requested_artifact_id: gallery-channel-variant
+    artifact_id: gallery-channel-variant-2026-09-09
+    profile_scope: named-profile
+    profile_id: ecommerce-thumbnail
+    status: pass
+    evidence: The independent reviewer opened the deterministic 320 px contain thumbnail (320x320). The image adapts the approved
+      package to a square channel crop.
+  - gate_id: package-identity
+    scope: per-image
+    level: required
+    requirement: Retain the selected named-object package identity in rendered pixels.
+    requested_artifact_id: gallery-channel-variant
+    artifact_id: gallery-channel-variant-2026-09-09
+    profile_scope: full-resolution
+    profile_id: full-resolution
+    status: pass
+    evidence: The independent reviewer opened the gallery-channel-variant-2026-09-09.png full-resolution RGB PNG. Build-report
+      package-face checks retain matching source and output opaque-pixel digests for every visible pouch face.
+  - gate_id: package-identity
+    scope: per-image
+    level: required
+    requirement: Retain the selected named-object package identity in rendered pixels.
+    requested_artifact_id: gallery-channel-variant
+    artifact_id: gallery-channel-variant-2026-09-09
+    profile_scope: named-profile
+    profile_id: ecommerce-thumbnail
+    status: pass
+    evidence: The independent reviewer opened the deterministic 320 px contain thumbnail (320x320). Build-report package-face
+      checks retain matching source and output opaque-pixel digests for every visible pouch face.
+  - gate_id: set-completeness
+    scope: cross-set
+    level: required
+    requirement: Deliver every requested ecommerce role exactly once.
+    requested_artifact_id: null
+    artifact_id: null
+    profile_scope: cross-set
+    profile_id: cross-set
+    status: pass
+    evidence: All seven requested roles are present exactly once with inspectable locators and matching SHA-256 values.
+  - gate_id: cross-asset-package-identity
+    scope: cross-set
+    level: required
+    requirement: Keep the selected package identity consistent across the complete set.
+    requested_artifact_id: null
+    artifact_id: null
+    profile_scope: cross-set
+    profile_id: cross-set
+    status: pass
+    evidence: Package-face checks and visual inspection show the same pouch geometry, copy hierarchy, palette, and illustrations
+      across all seven assets.
+  - gate_id: cross-asset-sku-consistency
+    scope: cross-set
+    level: required
+    requirement: Keep Lemon Ginger and Berry Oat assignments consistent across assets.
+    requested_artifact_id: null
+    artifact_id: null
+    profile_scope: cross-set
+    profile_id: cross-set
+    status: pass
+    evidence: Lemon Ginger keeps yellow citrus and ginger cues, while Berry Oat keeps red berry and oat cues wherever each
+      SKU appears.
+  - gate_id: cross-asset-claims-consistency
+    scope: cross-set
+    level: required
+    requirement: Keep claims and exact-copy treatment consistent across the set.
+    requested_artifact_id: null
+    artifact_id: null
+    profile_scope: cross-set
+    profile_id: cross-set
+    status: pass
+    evidence: No asset adds a new claim, certification, instruction, or package copy beyond the approved source pixels.
+  - gate_id: sequence-role-coverage
+    scope: cross-set
+    level: required
+    requirement: Cover the approved catalog, detail, usage, specification, context, campaign, and channel-variant sequence.
+    requested_artifact_id: null
+    artifact_id: null
+    profile_scope: cross-set
+    profile_id: cross-set
+    status: pass
+    evidence: The final set contains all seven approved roles and each image performs its named job without role substitution.
+  - gate_id: cross-asset-channel-fit
+    scope: cross-set
+    level: required
+    requirement: Keep the set readable in full-resolution and required ecommerce-thumbnail profiles.
+    requested_artifact_id: null
+    artifact_id: null
+    profile_scope: cross-set
+    profile_id: cross-set
+    status: pass
+    evidence: The independent reviewer opened all seven full-resolution files and all seven deterministic 320 px thumbnails;
+      every role remains identifiable.
+  required_failures: []
+  advisory_findings:
+  - Concept-stage QA does not provide print, legal, regulatory, supplier, consumer, conversion, or platform approval.
+  - GitHub publication remains unauthorized and requires a separate current-user confirmation.
+remaining_work:
+- Keep GitHub publication behind a separate current-user confirmation.
+- Complete print, legal, regulatory, supplier, platform, and physical production validation before production use.

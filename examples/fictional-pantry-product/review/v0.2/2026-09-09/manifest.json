@@ -1,0 +1,89 @@
+{
+  "images": [
+    {
+      "height": 1080,
+      "mode": "RGB",
+      "orientation": 1,
+      "sha256": "6786a09bf0d245f64015299f07a4f0dbd0e011d2cb1cc2c61172dacdc42ba9f7",
+      "source_orientation": 1,
+      "source_path": "gallery-campaign-2026-09-09.png",
+      "thumbnail_height": 180,
+      "thumbnail_path": "thumbnails/gallery-campaign-2026-09-09.png",
+      "thumbnail_width": 320,
+      "width": 1920
+    },
+    {
+      "height": 1086,
+      "mode": "RGB",
+      "orientation": 1,
+      "sha256": "d890af034593b43fd1d5c10a51ee9f97f59d8de938ddf311bca5eaef17ab8d38",
+      "source_orientation": 1,
+      "source_path": "gallery-catalog-2026-09-09.png",
+      "thumbnail_height": 240,
+      "thumbnail_path": "thumbnails/gallery-catalog-2026-09-09.png",
+      "thumbnail_width": 320,
+      "width": 1448
+    },
+    {
+      "height": 1200,
+      "mode": "RGB",
+      "orientation": 1,
+      "sha256": "209a65915981963de95f68e077dffc36f198a9910be605c8d88e4ed411eba6bc",
+      "source_orientation": 1,
+      "source_path": "gallery-channel-variant-2026-09-09.png",
+      "thumbnail_height": 320,
+      "thumbnail_path": "thumbnails/gallery-channel-variant-2026-09-09.png",
+      "thumbnail_width": 320,
+      "width": 1200
+    },
+    {
+      "height": 1080,
+      "mode": "RGB",
+      "orientation": 1,
+      "sha256": "3e266572cbd975e07179ca4c0de06a40009ea84628e5cccc8e1a3dc345919058",
+      "source_orientation": 1,
+      "source_path": "gallery-context-2026-09-09.png",
+      "thumbnail_height": 180,
+      "thumbnail_path": "thumbnails/gallery-context-2026-09-09.png",
+      "thumbnail_width": 320,
+      "width": 1920
+    },
+    {
+      "height": 900,
+      "mode": "RGB",
+      "orientation": 1,
+      "sha256": "2e51f7bde4b48de152f03ac0a45eb80152c61f7cdb181c7d3cd9d6e566b14b85",
+      "source_orientation": 1,
+      "source_path": "gallery-detail-2026-09-09.png",
+      "thumbnail_height": 320,
+      "thumbnail_path": "thumbnails/gallery-detail-2026-09-09.png",
+      "thumbnail_width": 256,
+      "width": 720
+    },
+    {
+      "height": 1200,
+      "mode": "RGB",
+      "orientation": 1,
+      "sha256": "786fc55979c1edadcd64c951aecf7c0aae952aa8fe6ecfbea6882981676bbba0",
+      "source_orientation": 1,
+      "source_path": "gallery-specification-2026-09-09.png",
+      "thumbnail_height": 320,
+      "thumbnail_path": "thumbnails/gallery-specification-2026-09-09.png",
+      "thumbnail_width": 320,
+      "width": 1200
+    },
+    {
+      "height": 1500,
+      "mode": "RGB",
+      "orientation": 1,
+      "sha256": "541ee5629533a46101aed0d1f7b50489a3fed154987d38b84870736c0708b35b",
+      "source_orientation": 1,
+      "source_path": "gallery-usage-2026-09-09.png",
+      "thumbnail_height": 320,
+      "thumbnail_path": "thumbnails/gallery-usage-2026-09-09.png",
+      "thumbnail_width": 256,
+      "width": 1200
+    }
+  ],
+  "schema_version": 1
+}

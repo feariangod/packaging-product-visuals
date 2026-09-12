@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "id": "v0.2.0-publication-2026-09-12",
+  "authorization": {
+    "authority": "current-user",
+    "date": "2026-09-12",
+    "basis": "The maintainer explicitly requested publishing the corrected Skill to GitHub after the local implementation and review report.",
+    "scope": "The reviewed public repository source, documentation, tests, and owned Quiet Pantry fixture assets for v0.2.0. This is release-specific authorization, not permission derived from a reference document."
+  },
+  "destination": {
+    "repository": "https://github.com/feariangod/packaging-product-visuals",
+    "branch": "main",
+    "tag": "v0.2.0"
+  },
+  "permissions": {
+    "repository_publication": true,
+    "listed_fixture_redistribution": true,
+    "marketplace_submission": false,
+    "private_material_publication": false,
+    "font_binary_publication": false,
+    "future_asset_publication": false
+  },
+  "asset_inventory": {
+    "path": "examples/fictional-pantry-product/asset-provenance.yaml",
+    "sha256": "9f92084abe3c0042cd97738538b99dfe777ed180b3a9614b70c5ce3861804cb6",
+    "asset_count": 27,
+    "includes": "Owned source fixtures, retained attempts, the two raw v0.2 background plates, transform masks, final gallery images, and review thumbnails listed by exact path and hash in this inventory.",
+    "license": "Any rights held by the maintainer are offered under Apache-2.0, subject to the ownership and non-uniqueness limits in ASSET_LICENSES.md."
+  },
+  "preserved_historical_records": [
+    {
+      "path": "examples/fictional-pantry-product/generation-receipt-v0.2-2026-09-09.yaml",
+      "sha256": "62a6672cd6e0bc3c28805673afbcba26a9a368a5dd55274e3cd9381af9df3942"
+    },
+    {
+      "path": "examples/fictional-pantry-product/final-build-authorization-2026-09-09.yaml",
+      "sha256": "8f7270a0945d3ed42bbaf399ec4f310acf95b6b4cccdd4097cefb11e358ecf98"
+    },
+    {
+      "path": "tests/evals/v0.2-release-audit.md",
+      "sha256": "935d84627261677ab95c8ce744fc0d8167ecd24825f2b4ad6627a91344a60916"
+    }
+  ],
+  "boundaries": [
+    "Generation-time redistribution and publication values remain unchanged as dated history; this record supplies the later release-specific authorization.",
+    "Private project files, unrelated local trials, credentials, third-party references, and font binaries are excluded.",
+    "Publication does not certify copyrightability, exclusivity, trademark clearance, actual font loading, consumer preference, platform acceptance, or production readiness.",
+    "This record authorizes the release action but does not by itself prove that the remote push, tag, release, or validation completed."
+  ]
+}

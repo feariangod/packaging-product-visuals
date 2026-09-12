@@ -1,8 +1,9 @@
-schema_version: 1
-executed_on: '2026-09-08'
+schema_version: 2
+executed_on: '2026-09-09'
 runtime:
   client: codex-cli
   client_version: 0.153.4
+  client_executable_sha256: 8d7610e87f68c6ebd69e4ca2442ac30f713533b929b5011f43ca0ae6c0a76e8c
   model: gpt-5.6-luna
   reasoning_effort: low
   sandbox: read-only
@@ -12,6 +13,10 @@ runtime:
     version: '26.5'
     build: 25F71
     architecture: arm64
+  capture_basis:
+    client_version: codex --version
+    operating_system: uname and sw_vers on macOS
+    invocation_settings: generated codex exec argv
 scenario:
   explicit_skill_invocation: $packaging-product-visuals
   requested_artifact: one rendered packaging concept image
@@ -19,197 +24,489 @@ scenario:
   intentionally_unavailable_capability: image generation or editing
   expected_status: blocked
 method:
-  accepted_fresh_session_count: 5
+  required_fresh_session_count: 5
   standalone_session_count: 4
   plugin_session_count: 1
   home_isolated_per_session: true
   codex_home_isolated_per_session: true
   cwd_isolated_per_session: true
-  credentials: copied only into each isolated runtime and omitted from evidence
-  event_hash_basis: raw codex exec JSONL bytes retained outside the repository
-  install_tree_hash_basis: SHA-256 over sorted relative file paths followed by file bytes
-  public_candidate_file_count: 7
+  credentials: copied as 0600, removed after each session, omitted from summary
+  runtime_discovery: codex app-server skills/list with forceReload=true for each layout
+  agent_command_reads: optional; any observed command must remain exact, read-only, and successful
+  event_hash_basis: canonical JSONL after absolute-path sanitization; raw bytes retained privately
+  install_tree_hash_basis: SHA-256 over sorted relative paths followed by file bytes
+  public_candidate_file_count: 10
   public_candidate_source: git ls-files --cached --others --exclude-standard
-  source_skill_tree_sha256: 9ea3637629dc53712670a5dd5ab09c9084e69794649ea8a2241116d1318207f0
+  source_skill_tree_sha256: b3279d2d80b0a06d8e646f36aee705d9aa5484a6b24fc8815ac4a2acdab23edc
+  public_candidate_file_sha256:
+    SKILL.md: 16479a562ede31261422a92d42d93f44979d08e1561cc3f25d0fb67038525454
+    agents/openai.yaml: 786bb8588fb456c869690aea7e31efa43a247d7deb151e4034933e78547c8399
+    references/contracts.md: 4f509c685a8ada3c2d0aa78d13042779d1fd3299cc35f77936e276eff53222e2
+    references/ecommerce-assets.md: e1c5d7fc0564dec5b3508693483da6bf77c9fb64a34c5e14bb33c8329c2a0d9f
+    references/packaging-directions.md: 86a9b28e1d6eb08401c590d55d14ea934b5c1d92709b5b891405e47bd4102f8e
+    references/packaging-qa.md: f03f8f2feb0e1a5817ffe0434fc672b35c4effb3ac6315de4f9db81f39050e4f
+    references/product-and-research.md: e6d9c8b14e67e9cc3aaf782ee8ee5c489b925154f5b95cb9c4a7cd8db53bb3ad
+    references/rights-and-privacy.md: 568a6a21fafc5e3f3b339606bbc577839dc14c95f98d8168b026d3f4386f6085
+    references/workflow.md: 267da3b7a83701352ddf3e6e7e099f59c227064da8edbdaa286e89acf398c05b
+    scripts/prepare_review_pack.py: 8b40e040d34f76d39cdd11ac063a8258731083ef0d991cdd5c892a14fd3a87ac
+  git_head: 5d5fcaaa289da5bf6fbb09ec051a1d9d74c5adcb
+  git_status: dirty
+  git_status_sha256: 6d4eeff58ad0d67900ce4ff765204089d2a600c0069825f7707d791a771ff26e
+  harness_artifacts:
+    runtime_harness_sha256: 61fbea4eebc4cc21ab94aaef188bf038128cae26cc3d8929ff5204c0c17ecfef
+    install_schema_sha256: ddeaf12a896b22a4fd155cdaedb11ad2a53ad98614ac80f6e74201418a16049b
+    probe_schema_sha256: f0a94a1cd4bc8ffbc5af9c59f1bbe0c54e498a1d96016a78fdfeff481b51a4bc
+    scenario_sha256: 4397874282052b5926b13b44f4edf608bc450e7a7472d1e1d2aac7290f40fd2b
+    plugin_manifest_sha256: 4a976334eef08d4da2152e5f166c03804f82ec141ce24b8e9b40863f5c902349
 plugin_installation:
   marketplace_name: ppv-install-smoke
   marketplace_source: isolated local filesystem marketplace
   distribution: skills-only plugin
   distribution_contents:
-    - .codex-plugin/plugin.json
-    - skills/packaging-product-visuals/
-    - LICENSE
-  marketplace_add_exit_code: 0
-  plugin_add_exit_code: 0
-  plugin_list_exit_code: 0
+  - .codex-plugin/plugin.json
+  - skills/packaging-product-visuals/
+  - LICENSE
+  command_receipts:
+    marketplace-add:
+      argv:
+      - <codex-bin>
+      - plugin
+      - marketplace
+      - add
+      - -c
+      - cli_auth_credentials_store="file"
+      - --json
+      - <private-marketplace>
+      exit_code: 0
+      stdout_sha256: 7b7d1411347d61e6f46cfa4bd94aa4ed51d3d36baf7cbb6e90a10a017ed35f13
+      stderr_sha256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+      json_output: true
+      credential_leak_detected: false
+    plugin-add:
+      argv:
+      - <codex-bin>
+      - plugin
+      - add
+      - -c
+      - cli_auth_credentials_store="file"
+      - --json
+      - packaging-product-visuals@ppv-install-smoke
+      exit_code: 0
+      stdout_sha256: 71883c8ac7ce63661d6bf8bab4b16f77a419bf58fd97b65083c1425d93f67653
+      stderr_sha256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+      json_output: true
+      credential_leak_detected: false
+    plugin-list:
+      argv:
+      - <codex-bin>
+      - plugin
+      - list
+      - -c
+      - cli_auth_credentials_store="file"
+      - --json
+      exit_code: 0
+      stdout_sha256: 0e828584e3572534015350b8a1fcbd8e4727b3266c677ef4a797d031fb1924ac
+      stderr_sha256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+      json_output: true
+      credential_leak_detected: false
   plugin_id: packaging-product-visuals@ppv-install-smoke
-  plugin_version: 0.1.0
+  plugin_version: 0.2.0
   installed: true
   enabled: true
+  plugin_list_source_inside_private_session: true
   remote_catalog_required: false
   cache_audit:
-    installed_file_count: 9
-    installed_skill_file_count: 7
+    cache_root_basis: unique isolated cache manifest matching plugin name and version
+    installed_file_count: 12
+    installed_skill_file_count: 10
     pyc_file_count: 0
     unexpected_files: []
+    missing_files: []
     installed_files:
-      - .codex-plugin/plugin.json
-      - LICENSE
-      - skills/packaging-product-visuals/SKILL.md
-      - skills/packaging-product-visuals/agents/openai.yaml
-      - skills/packaging-product-visuals/references/contracts.md
-      - skills/packaging-product-visuals/references/packaging-qa.md
-      - skills/packaging-product-visuals/references/rights-and-privacy.md
-      - skills/packaging-product-visuals/references/workflow.md
-      - skills/packaging-product-visuals/scripts/prepare_review_pack.py
+    - .codex-plugin/plugin.json
+    - LICENSE
+    - skills/packaging-product-visuals/SKILL.md
+    - skills/packaging-product-visuals/agents/openai.yaml
+    - skills/packaging-product-visuals/references/contracts.md
+    - skills/packaging-product-visuals/references/ecommerce-assets.md
+    - skills/packaging-product-visuals/references/packaging-directions.md
+    - skills/packaging-product-visuals/references/packaging-qa.md
+    - skills/packaging-product-visuals/references/product-and-research.md
+    - skills/packaging-product-visuals/references/rights-and-privacy.md
+    - skills/packaging-product-visuals/references/workflow.md
+    - skills/packaging-product-visuals/scripts/prepare_review_pack.py
 results:
-  - id: explicit-codex-home-skills
-    distribution: standalone
-    environment:
-      home: isolated temporary home
-      codex_home: explicitly set to an isolated temporary Codex home
-      install_relative_path: $CODEX_HOME/skills/packaging-product-visuals
-      cwd: isolated empty project outside the install tree
-      ignore_user_config: true
-    exit_code: 0
-    event_stream_sha256: 63c52fdf407261c298d0bfdd35fe553b2d45906927403df6f8e49b6402d046ad
-    load_trace:
-      event_type: item.completed
-      item_type: command_execution
-      skill_file: $CODEX_HOME/skills/packaging-product-visuals/SKILL.md
-      skill_read_exit_code: 0
-      reference_file: $CODEX_HOME/skills/packaging-product-visuals/references/contracts.md
-      reference_read_exit_code: 0
-    outcome:
-      skill_discovered: true
-      skill_loaded: true
-      relative_reference_resolved: true
-      capability_gap_reported: image_generation_unavailable
-      status: blocked
-      artifact_invented: false
-      files_written: false
-    install_tree_sha256_before: 9ea3637629dc53712670a5dd5ab09c9084e69794649ea8a2241116d1318207f0
-    install_tree_sha256_after: 9ea3637629dc53712670a5dd5ab09c9084e69794649ea8a2241116d1318207f0
-  - id: default-codex-home-skills
-    distribution: standalone
-    environment:
-      home: isolated temporary home
-      codex_home: unset and derived from the isolated home
-      install_relative_path: $HOME/.codex/skills/packaging-product-visuals
-      cwd: isolated empty project outside the install tree
-      ignore_user_config: true
-    exit_code: 0
-    event_stream_sha256: 8e5a9fb0b70460cf73c8f08e6a08afda5362aee0506470375912fde9831fd683
-    load_trace:
-      event_type: item.completed
-      item_type: command_execution
-      skill_file: $HOME/.codex/skills/packaging-product-visuals/SKILL.md
-      skill_read_exit_code: 0
-      reference_file: $HOME/.codex/skills/packaging-product-visuals/references/contracts.md
-      reference_read_exit_code: 0
-    outcome:
-      skill_discovered: true
-      skill_loaded: true
-      relative_reference_resolved: true
-      capability_gap_reported: image_generation_unavailable
-      status: blocked
-      artifact_invented: false
-      files_written: false
-    install_tree_sha256_before: 9ea3637629dc53712670a5dd5ab09c9084e69794649ea8a2241116d1318207f0
-    install_tree_sha256_after: 9ea3637629dc53712670a5dd5ab09c9084e69794649ea8a2241116d1318207f0
-  - id: user-agents-skills
-    distribution: standalone
-    environment:
-      home: isolated temporary home
-      codex_home: unset and derived from the isolated home
-      install_relative_path: $HOME/.agents/skills/packaging-product-visuals
-      cwd: isolated empty project outside the install tree
-      ignore_user_config: true
-    exit_code: 0
-    event_stream_sha256: 59636455f9b0a2b1b58eb7514359eb9e1828252d5792000be9d632d4809f5e27
-    load_trace:
-      event_type: item.completed
-      item_type: command_execution
-      skill_file: $HOME/.agents/skills/packaging-product-visuals/SKILL.md
-      skill_read_exit_code: 0
-      reference_file: $HOME/.agents/skills/packaging-product-visuals/references/contracts.md
-      reference_read_exit_code: 0
-    outcome:
-      skill_discovered: true
-      skill_loaded: true
-      relative_reference_resolved: true
-      capability_gap_reported: image_generation_unavailable
-      status: blocked
-      artifact_invented: false
-      files_written: false
-    install_tree_sha256_before: 9ea3637629dc53712670a5dd5ab09c9084e69794649ea8a2241116d1318207f0
-    install_tree_sha256_after: 9ea3637629dc53712670a5dd5ab09c9084e69794649ea8a2241116d1318207f0
-  - id: project-agents-skills
-    distribution: standalone
-    environment:
-      home: isolated temporary home
-      codex_home: unset and derived from the isolated home
-      install_relative_path: <project>/.agents/skills/packaging-product-visuals
-      cwd: isolated project root containing only the project-local install
-      ignore_user_config: true
-    exit_code: 0
-    event_stream_sha256: c1e3404b5851028014ef87d1df766ab2c4f89c1a57a65be3357d0f4b46d3e4a9
-    load_trace:
-      event_type: item.completed
-      item_type: command_execution
-      skill_file: <project>/.agents/skills/packaging-product-visuals/SKILL.md
-      skill_read_exit_code: 0
-      reference_file: <project>/.agents/skills/packaging-product-visuals/references/contracts.md
-      reference_read_exit_code: 0
-    outcome:
-      skill_discovered: true
-      skill_loaded: true
-      relative_reference_resolved: true
-      capability_gap_reported: image_generation_unavailable
-      status: blocked
-      artifact_invented: false
-      files_written: false
-    install_tree_sha256_before: 9ea3637629dc53712670a5dd5ab09c9084e69794649ea8a2241116d1318207f0
-    install_tree_sha256_after: 9ea3637629dc53712670a5dd5ab09c9084e69794649ea8a2241116d1318207f0
-  - id: local-marketplace-plugin
-    distribution: skills-only-plugin
-    environment:
-      home: isolated temporary home
-      codex_home: explicitly set to the isolated plugin-install Codex home
-      install_relative_path: $CODEX_HOME/plugins/cache/ppv-install-smoke/packaging-product-visuals/0.1.0/skills/packaging-product-visuals
-      cwd: isolated empty project outside the marketplace and install cache
-      ignore_user_config: false
-      ignore_user_config_reason: plugin enablement is the isolated config written by the local marketplace and plugin install commands
-      config_provenance: generated only by codex plugin marketplace add and codex plugin add
-    exit_code: 0
-    event_stream_sha256: 8b56d749ea070e45b2fe8c087912d2140392039755323e706b15baea4074d4f9
-    discovered_skill_id: packaging-product-visuals:packaging-product-visuals
-    load_trace:
-      event_type: item.completed
-      item_type: command_execution
-      initial_path_probe_exit_code: 1
-      initial_path_probe_note: omitted the plugin-name cache segment; no file was read or written
-      skill_file: $CODEX_HOME/plugins/cache/ppv-install-smoke/packaging-product-visuals/0.1.0/skills/packaging-product-visuals/SKILL.md
-      skill_read_exit_code: 0
-      reference_file: $CODEX_HOME/plugins/cache/ppv-install-smoke/packaging-product-visuals/0.1.0/skills/packaging-product-visuals/references/contracts.md
-      reference_read_exit_code: 0
-    outcome:
-      skill_discovered: true
-      skill_loaded: true
-      relative_reference_resolved: true
-      capability_gap_reported: image_generation_unavailable
-      status: blocked
-      artifact_invented: false
-      files_written: false
-    install_tree_sha256_before: 9ea3637629dc53712670a5dd5ab09c9084e69794649ea8a2241116d1318207f0
-    install_tree_sha256_after: 9ea3637629dc53712670a5dd5ab09c9084e69794649ea8a2241116d1318207f0
+- id: explicit-codex-home-skills
+  distribution: standalone
+  environment:
+    home: isolated temporary home
+    codex_home: explicitly set to an isolated temporary Codex home
+    install_relative_path: $CODEX_HOME/skills/packaging-product-visuals
+    cwd: isolated empty project outside the install tree
+    ignore_user_config: true
+  exit_code: 0
+  event_stream_sha256: 5d2ff041020f322b8ec47df2ffaaa84784a196cfa3d7643fa6be4efd1270c125
+  structured_response_sha256: 26a31c4c678ad551aaf88bfc01f1ea72bd4512342d5416c21f2bfce5e0332170
+  command_evidence:
+    completed_command_count: 0
+    successful_command_count: 0
+    commands: []
+    required_reads:
+    - path: $CODEX_HOME/skills/packaging-product-visuals/SKILL.md
+      target_sha256: 16479a562ede31261422a92d42d93f44979d08e1561cc3f25d0fb67038525454
+      content_marker_sha256: cea0d09d05afdd8799b8caa10bd60dc9fa025621a0f2a4840a08fbf78ec0eb4c
+      path_read_command_observed: false
+      content_marker_observed: false
+      succeeded: false
+    - path: $CODEX_HOME/skills/packaging-product-visuals/references/contracts.md
+      target_sha256: 4f509c685a8ada3c2d0aa78d13042779d1fd3299cc35f77936e276eff53222e2
+      content_marker_sha256: a0cc23f76e1bf58aea058fafb7ff502484f8368ac3bfe56f990a425f896c9a1a
+      path_read_command_observed: false
+      content_marker_observed: false
+      succeeded: false
+    required_reads_succeeded: false
+    all_commands_allowed: false
+    unexpected_command_count: 0
+    duplicate_required_read_count: 0
+    nonzero_command_exit_count: 0
+    write_like_command_detected: false
+  event_evidence:
+    jsonl_line_count: 4
+    event_type_counts:
+      item.completed: 1
+      thread.started: 1
+      turn.completed: 1
+      turn.started: 1
+    item_type_counts:
+      agent_message: 1
+    single_thread_turn: true
+    event_order_valid: true
+    lifecycle_complete: true
+    failed_event_count: 0
+    incomplete_item_count: 0
+    unmatched_completed_item_count: 0
+    duplicate_item_event_count: 0
+    command_pair_order_valid: true
+    nonzero_command_exit_count: 0
+    disallowed_item_types: []
+  outcome:
+    skill_discovered_and_enabled: true
+    structured_skill_invocation_reported: true
+    reference_file_present_and_hashed: true
+    agent_file_reads_observed: false
+    capability_gap_reported: image_generation_unavailable
+    status: blocked
+    artifact_invented: false
+    files_written: false
+  install_tree_sha256_before: b3279d2d80b0a06d8e646f36aee705d9aa5484a6b24fc8815ac4a2acdab23edc
+  install_tree_sha256_after: b3279d2d80b0a06d8e646f36aee705d9aa5484a6b24fc8815ac4a2acdab23edc
+  workspace_tree_sha256_before: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+  workspace_tree_sha256_after: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+  credential_copy_mode: '0600'
+  credential_store: file
+  credential_copy_removed: true
+  credential_leak_detected: false
+  evidence_errors: []
+- id: default-codex-home-skills
+  distribution: standalone
+  environment:
+    home: isolated temporary home
+    codex_home: unset and derived from the isolated home
+    install_relative_path: $HOME/.codex/skills/packaging-product-visuals
+    cwd: isolated empty project outside the install tree
+    ignore_user_config: true
+  exit_code: 0
+  event_stream_sha256: 0a4d39cc912f03da274f3e21c434ca93c980bdbbee24d68d43cf31f67a808bd8
+  structured_response_sha256: af477163d3a8523846b0e08de76740c7186a2f0a3dd396504714c18f8d93bcf1
+  command_evidence:
+    completed_command_count: 0
+    successful_command_count: 0
+    commands: []
+    required_reads:
+    - path: $HOME/.codex/skills/packaging-product-visuals/SKILL.md
+      target_sha256: 16479a562ede31261422a92d42d93f44979d08e1561cc3f25d0fb67038525454
+      content_marker_sha256: cea0d09d05afdd8799b8caa10bd60dc9fa025621a0f2a4840a08fbf78ec0eb4c
+      path_read_command_observed: false
+      content_marker_observed: false
+      succeeded: false
+    - path: $HOME/.codex/skills/packaging-product-visuals/references/contracts.md
+      target_sha256: 4f509c685a8ada3c2d0aa78d13042779d1fd3299cc35f77936e276eff53222e2
+      content_marker_sha256: a0cc23f76e1bf58aea058fafb7ff502484f8368ac3bfe56f990a425f896c9a1a
+      path_read_command_observed: false
+      content_marker_observed: false
+      succeeded: false
+    required_reads_succeeded: false
+    all_commands_allowed: false
+    unexpected_command_count: 0
+    duplicate_required_read_count: 0
+    nonzero_command_exit_count: 0
+    write_like_command_detected: false
+  event_evidence:
+    jsonl_line_count: 4
+    event_type_counts:
+      item.completed: 1
+      thread.started: 1
+      turn.completed: 1
+      turn.started: 1
+    item_type_counts:
+      agent_message: 1
+    single_thread_turn: true
+    event_order_valid: true
+    lifecycle_complete: true
+    failed_event_count: 0
+    incomplete_item_count: 0
+    unmatched_completed_item_count: 0
+    duplicate_item_event_count: 0
+    command_pair_order_valid: true
+    nonzero_command_exit_count: 0
+    disallowed_item_types: []
+  outcome:
+    skill_discovered_and_enabled: true
+    structured_skill_invocation_reported: true
+    reference_file_present_and_hashed: true
+    agent_file_reads_observed: false
+    capability_gap_reported: image_generation_unavailable
+    status: blocked
+    artifact_invented: false
+    files_written: false
+  install_tree_sha256_before: b3279d2d80b0a06d8e646f36aee705d9aa5484a6b24fc8815ac4a2acdab23edc
+  install_tree_sha256_after: b3279d2d80b0a06d8e646f36aee705d9aa5484a6b24fc8815ac4a2acdab23edc
+  workspace_tree_sha256_before: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+  workspace_tree_sha256_after: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+  credential_copy_mode: '0600'
+  credential_store: file
+  credential_copy_removed: true
+  credential_leak_detected: false
+  evidence_errors: []
+- id: user-agents-skills
+  distribution: standalone
+  environment:
+    home: isolated temporary home
+    codex_home: unset and derived from the isolated home
+    install_relative_path: $HOME/.agents/skills/packaging-product-visuals
+    cwd: isolated empty project outside the install tree
+    ignore_user_config: true
+  exit_code: 0
+  event_stream_sha256: ccd8155d7eed0c7ccff9788eb86077b1da6143f3285f7245ecda5327c76a3312
+  structured_response_sha256: d0db5a98dede1b322e46d5c525a647ec895bd5f63e0ca2ae825e7854e6bb17ac
+  command_evidence:
+    completed_command_count: 0
+    successful_command_count: 0
+    commands: []
+    required_reads:
+    - path: $HOME/.agents/skills/packaging-product-visuals/SKILL.md
+      target_sha256: 16479a562ede31261422a92d42d93f44979d08e1561cc3f25d0fb67038525454
+      content_marker_sha256: cea0d09d05afdd8799b8caa10bd60dc9fa025621a0f2a4840a08fbf78ec0eb4c
+      path_read_command_observed: false
+      content_marker_observed: false
+      succeeded: false
+    - path: $HOME/.agents/skills/packaging-product-visuals/references/contracts.md
+      target_sha256: 4f509c685a8ada3c2d0aa78d13042779d1fd3299cc35f77936e276eff53222e2
+      content_marker_sha256: a0cc23f76e1bf58aea058fafb7ff502484f8368ac3bfe56f990a425f896c9a1a
+      path_read_command_observed: false
+      content_marker_observed: false
+      succeeded: false
+    required_reads_succeeded: false
+    all_commands_allowed: false
+    unexpected_command_count: 0
+    duplicate_required_read_count: 0
+    nonzero_command_exit_count: 0
+    write_like_command_detected: false
+  event_evidence:
+    jsonl_line_count: 4
+    event_type_counts:
+      item.completed: 1
+      thread.started: 1
+      turn.completed: 1
+      turn.started: 1
+    item_type_counts:
+      agent_message: 1
+    single_thread_turn: true
+    event_order_valid: true
+    lifecycle_complete: true
+    failed_event_count: 0
+    incomplete_item_count: 0
+    unmatched_completed_item_count: 0
+    duplicate_item_event_count: 0
+    command_pair_order_valid: true
+    nonzero_command_exit_count: 0
+    disallowed_item_types: []
+  outcome:
+    skill_discovered_and_enabled: true
+    structured_skill_invocation_reported: true
+    reference_file_present_and_hashed: true
+    agent_file_reads_observed: false
+    capability_gap_reported: image_generation_unavailable
+    status: blocked
+    artifact_invented: false
+    files_written: false
+  install_tree_sha256_before: b3279d2d80b0a06d8e646f36aee705d9aa5484a6b24fc8815ac4a2acdab23edc
+  install_tree_sha256_after: b3279d2d80b0a06d8e646f36aee705d9aa5484a6b24fc8815ac4a2acdab23edc
+  workspace_tree_sha256_before: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+  workspace_tree_sha256_after: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+  credential_copy_mode: '0600'
+  credential_store: file
+  credential_copy_removed: true
+  credential_leak_detected: false
+  evidence_errors: []
+- id: project-agents-skills
+  distribution: standalone
+  environment:
+    home: isolated temporary home
+    codex_home: unset and derived from the isolated home
+    install_relative_path: <project>/.agents/skills/packaging-product-visuals
+    cwd: isolated project containing only the project-local install
+    ignore_user_config: true
+  exit_code: 0
+  event_stream_sha256: 8818e26e655695cb64d1440f8fb7e2d3db3d50ecad29dccb18480c8d42b31da5
+  structured_response_sha256: dd0d51a0c4a3bf433f5ffd01242b126f002075bb5564898391088fe0a530586c
+  command_evidence:
+    completed_command_count: 0
+    successful_command_count: 0
+    commands: []
+    required_reads:
+    - path: <project>/.agents/skills/packaging-product-visuals/SKILL.md
+      target_sha256: 16479a562ede31261422a92d42d93f44979d08e1561cc3f25d0fb67038525454
+      content_marker_sha256: cea0d09d05afdd8799b8caa10bd60dc9fa025621a0f2a4840a08fbf78ec0eb4c
+      path_read_command_observed: false
+      content_marker_observed: false
+      succeeded: false
+    - path: <project>/.agents/skills/packaging-product-visuals/references/contracts.md
+      target_sha256: 4f509c685a8ada3c2d0aa78d13042779d1fd3299cc35f77936e276eff53222e2
+      content_marker_sha256: a0cc23f76e1bf58aea058fafb7ff502484f8368ac3bfe56f990a425f896c9a1a
+      path_read_command_observed: false
+      content_marker_observed: false
+      succeeded: false
+    required_reads_succeeded: false
+    all_commands_allowed: false
+    unexpected_command_count: 0
+    duplicate_required_read_count: 0
+    nonzero_command_exit_count: 0
+    write_like_command_detected: false
+  event_evidence:
+    jsonl_line_count: 4
+    event_type_counts:
+      item.completed: 1
+      thread.started: 1
+      turn.completed: 1
+      turn.started: 1
+    item_type_counts:
+      agent_message: 1
+    single_thread_turn: true
+    event_order_valid: true
+    lifecycle_complete: true
+    failed_event_count: 0
+    incomplete_item_count: 0
+    unmatched_completed_item_count: 0
+    duplicate_item_event_count: 0
+    command_pair_order_valid: true
+    nonzero_command_exit_count: 0
+    disallowed_item_types: []
+  outcome:
+    skill_discovered_and_enabled: true
+    structured_skill_invocation_reported: true
+    reference_file_present_and_hashed: true
+    agent_file_reads_observed: false
+    capability_gap_reported: image_generation_unavailable
+    status: blocked
+    artifact_invented: false
+    files_written: false
+  install_tree_sha256_before: b3279d2d80b0a06d8e646f36aee705d9aa5484a6b24fc8815ac4a2acdab23edc
+  install_tree_sha256_after: b3279d2d80b0a06d8e646f36aee705d9aa5484a6b24fc8815ac4a2acdab23edc
+  workspace_tree_sha256_before: 08c68038d71548e945e4c2cfc52c532595ff6de7c81bc758cde842997462c8ab
+  workspace_tree_sha256_after: 08c68038d71548e945e4c2cfc52c532595ff6de7c81bc758cde842997462c8ab
+  credential_copy_mode: '0600'
+  credential_store: file
+  credential_copy_removed: true
+  credential_leak_detected: false
+  evidence_errors: []
+- id: local-marketplace-plugin
+  distribution: skills-only-plugin
+  environment:
+    home: isolated temporary home
+    codex_home: explicitly set to the isolated plugin-install Codex home
+    install_relative_path: <plugin-cache>/skills/packaging-product-visuals
+    cwd: isolated empty project outside the marketplace and install cache
+    ignore_user_config: false
+    ignore_user_config_reason: plugin enablement is the isolated config generated by marketplace and plugin
+      add
+  exit_code: 0
+  event_stream_sha256: 4e7bd3090325c6f8d765967b6adc5d94b67086da137a809510363042843e308b
+  discovered_skill_id: packaging-product-visuals:packaging-product-visuals
+  command_evidence:
+    completed_command_count: 0
+    successful_command_count: 0
+    commands: []
+    required_reads:
+    - path: <plugin-cache>/skills/packaging-product-visuals/SKILL.md
+      target_sha256: 16479a562ede31261422a92d42d93f44979d08e1561cc3f25d0fb67038525454
+      content_marker_sha256: cea0d09d05afdd8799b8caa10bd60dc9fa025621a0f2a4840a08fbf78ec0eb4c
+      path_read_command_observed: false
+      content_marker_observed: false
+      succeeded: false
+    - path: <plugin-cache>/skills/packaging-product-visuals/references/contracts.md
+      target_sha256: 4f509c685a8ada3c2d0aa78d13042779d1fd3299cc35f77936e276eff53222e2
+      content_marker_sha256: a0cc23f76e1bf58aea058fafb7ff502484f8368ac3bfe56f990a425f896c9a1a
+      path_read_command_observed: false
+      content_marker_observed: false
+      succeeded: false
+    required_reads_succeeded: false
+    all_commands_allowed: false
+    unexpected_command_count: 0
+    duplicate_required_read_count: 0
+    nonzero_command_exit_count: 0
+    write_like_command_detected: false
+  event_evidence:
+    jsonl_line_count: 4
+    event_type_counts:
+      item.completed: 1
+      thread.started: 1
+      turn.completed: 1
+      turn.started: 1
+    item_type_counts:
+      agent_message: 1
+    single_thread_turn: true
+    event_order_valid: true
+    lifecycle_complete: true
+    failed_event_count: 0
+    incomplete_item_count: 0
+    unmatched_completed_item_count: 0
+    duplicate_item_event_count: 0
+    command_pair_order_valid: true
+    nonzero_command_exit_count: 0
+    disallowed_item_types: []
+  outcome:
+    skill_discovered_and_enabled: true
+    structured_skill_invocation_reported: true
+    reference_file_present_and_hashed: true
+    agent_file_reads_observed: false
+    capability_gap_reported: image_generation_unavailable
+    status: blocked
+    artifact_invented: false
+    files_written: false
+  install_tree_sha256_before: b3279d2d80b0a06d8e646f36aee705d9aa5484a6b24fc8815ac4a2acdab23edc
+  install_tree_sha256_after: b3279d2d80b0a06d8e646f36aee705d9aa5484a6b24fc8815ac4a2acdab23edc
+  workspace_tree_sha256_before: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+  workspace_tree_sha256_after: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+  credential_copy_mode: '0600'
+  credential_store: file
+  credential_copy_removed: true
+  credential_leak_detected: false
+  evidence_errors: []
 acceptance:
   result: passed
   accepted_sessions: 5
-  skill_discovery_successes: 5
-  skill_load_successes: 5
-  relative_reference_successes: 5
+  skill_discovery_and_enablement_successes: 5
+  structured_skill_invocation_reports: 5
+  reference_file_hash_successes: 5
+  agent_file_read_successes: 0
   honest_capability_blocks: 5
   invented_artifacts: 0
   install_tree_mutations: 0
+  workspace_tree_mutations: 0
   session_exit_failures: 0
+  evidence_error_count: 0
+private_audit_receipt:
+  raw_root: <private-audit-root>
+  run_manifest_sha256: 329112cb0dad6c245c538bf358ff8b7c9f562be6888dbba3e202d457e169a83f
+  verification: passed

@@ -8,6 +8,7 @@ import yaml
 
 REPO_ROOT = Path(__file__).parents[1]
 EVALS_ROOT = REPO_ROOT / "tests" / "evals"
+V01_ROUTING_CASES_PATH = EVALS_ROOT / "v0.1-routing-cases.yaml"
 
 
 def test_behavior_probe_output_schemas_are_valid_json():
@@ -21,10 +22,12 @@ def test_behavior_probe_output_schemas_are_valid_json():
         assert document["additionalProperties"] is False
 
 
-def test_fresh_session_routing_results_match_declared_cases():
+def test_v01_fresh_session_routing_results_match_archived_declared_cases():
     declared = {
         case["id"]: case
-        for case in yaml.safe_load((REPO_ROOT / "tests" / "routing-cases.yaml").read_text(encoding="utf-8"))["cases"]
+        for case in yaml.safe_load(
+            V01_ROUTING_CASES_PATH.read_text(encoding="utf-8")
+        )["cases"]
     }
     evidence = yaml.safe_load((EVALS_ROOT / "routing-results.yaml").read_text(encoding="utf-8"))
     observed = evidence["results"]

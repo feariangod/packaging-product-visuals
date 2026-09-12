@@ -1,0 +1,363 @@
+{
+  "schema_version": 1,
+  "id": "fictional-pantry-public-forward-v0.2-deterministic-transform",
+  "run_date": "2026-09-09",
+  "final_output_root": "generated/v0.2/2026-09-09",
+  "source": {
+    "locator": "generated/compare-direction-a.png",
+    "sha256": "a2c1d38551febace8a1bfec48011e7e36528695e244ec892d2c4fa4ad3d4f4fb",
+    "dimensions": [1448, 1086],
+    "mode": "RGB",
+    "icc_profile_present": false,
+    "icc_profile_sha256": null
+  },
+  "masks": [
+    {
+      "id": "lemon-ginger-mask",
+      "sku_id": "lemon-ginger",
+      "locator": "transforms/v0.2/2026-09-09/lemon-ginger-mask-2026-09-09.png",
+      "sha256": "581224206f0e72063380c549620aac36e91414482774e633ee87582ad7bc7c6f",
+      "dimensions": [1448, 1086],
+      "mode": "L",
+      "feather_radius": 1.0,
+      "crop_rect": [110, 114, 705, 976],
+      "polygon": [
+        [116, 118],
+        [689, 118],
+        [699, 128],
+        [699, 181],
+        [691, 188],
+        [692, 921],
+        [688, 945],
+        [670, 959],
+        [653, 965],
+        [166, 965],
+        [147, 958],
+        [136, 947],
+        [131, 924],
+        [125, 205],
+        [116, 199]
+      ]
+    },
+    {
+      "id": "berry-oat-mask",
+      "sku_id": "berry-oat",
+      "locator": "transforms/v0.2/2026-09-09/berry-oat-mask-2026-09-09.png",
+      "sha256": "479946697e7acbca8e5809d286819089c0de138ba2826890328923d14b336606",
+      "dimensions": [1448, 1086],
+      "mode": "L",
+      "feather_radius": 1.0,
+      "crop_rect": [745, 114, 1337, 981],
+      "polygon": [
+        [754, 118],
+        [1324, 118],
+        [1333, 128],
+        [1333, 181],
+        [1325, 188],
+        [1326, 930],
+        [1322, 951],
+        [1304, 964],
+        [1288, 970],
+        [797, 970],
+        [780, 963],
+        [768, 952],
+        [763, 930],
+        [757, 205],
+        [749, 199],
+        [749, 132]
+      ]
+    }
+  ],
+  "rendering": {
+    "source_color_interpretation": "Decode the source as 8-bit RGB without assigning an ICC profile; emit 8-bit RGB PNG with no embedded ICC profile.",
+    "package_resize_filter": "none",
+    "png": {
+      "format": "PNG",
+      "optimize": false,
+      "compress_level": 9
+    }
+  },
+  "graph": [
+    {
+      "requested_artifact_id": "gallery-catalog",
+      "role": "catalog",
+      "parent_asset_brief_id": null,
+      "required_input_asset_ids": ["compare-direction-a"],
+      "preview_enabled": true,
+      "blocked_without": [],
+      "final_filename": "gallery-catalog-2026-09-09.png",
+      "canvas": {
+        "dimensions": [1448, 1086],
+        "mode": "RGB",
+        "background": [238, 232, 222]
+      },
+      "operation": "identity_copy",
+      "crop_rect": null,
+      "placements": [],
+      "derived_insets": [],
+      "decorations": [],
+      "shadow": null,
+      "face_check_mask_ids": ["lemon-ginger-mask", "berry-oat-mask"]
+    },
+    {
+      "requested_artifact_id": "gallery-detail",
+      "role": "detail",
+      "parent_asset_brief_id": "gallery-catalog",
+      "required_input_asset_ids": ["gallery-catalog"],
+      "preview_enabled": true,
+      "blocked_without": [],
+      "final_filename": "gallery-detail-2026-09-09.png",
+      "canvas": {
+        "dimensions": [720, 900],
+        "mode": "RGB",
+        "background": [239, 233, 224]
+      },
+      "operation": "direct_crop",
+      "crop_rect": [0, 86, 720, 986],
+      "placements": [],
+      "derived_insets": [],
+      "decorations": [],
+      "shadow": null,
+      "face_check_mask_ids": ["lemon-ginger-mask"]
+    },
+    {
+      "requested_artifact_id": "gallery-usage",
+      "role": "usage",
+      "parent_asset_brief_id": "gallery-catalog",
+      "required_input_asset_ids": [
+        "gallery-catalog",
+        "gallery-usage-background-plate"
+      ],
+      "preview_enabled": false,
+      "blocked_without": ["gallery-usage-background-plate"],
+      "final_filename": "gallery-usage-2026-09-09.png",
+      "canvas": {
+        "dimensions": [1200, 1500],
+        "mode": "RGB",
+        "background": [238, 232, 222]
+      },
+      "operation": "blocked_composite",
+      "crop_rect": null,
+      "placements": [
+        {
+          "id": "usage-berry-oat-primary",
+          "source_asset_id": "gallery-catalog",
+          "source_crop_rect": [745, 114, 1337, 981],
+          "mask_id": "berry-oat-mask",
+          "mask_crop_rect": [745, 114, 1337, 981],
+          "destination_xy": [304, 510],
+          "affine_matrix": [1, 0, 0, 0, 1, 0],
+          "resize_filter": "none"
+        }
+      ],
+      "derived_insets": [],
+      "decorations": [],
+      "shadow": {
+        "offset": [0, 18],
+        "blur_radius": 18,
+        "opacity": 64,
+        "color": [48, 34, 24]
+      },
+      "face_check_mask_ids": ["berry-oat-mask"]
+    },
+    {
+      "requested_artifact_id": "gallery-specification",
+      "role": "specification",
+      "parent_asset_brief_id": "gallery-detail",
+      "required_input_asset_ids": ["gallery-detail"],
+      "preview_enabled": true,
+      "blocked_without": [],
+      "final_filename": "gallery-specification-2026-09-09.png",
+      "canvas": {
+        "dimensions": [1200, 1200],
+        "mode": "RGB",
+        "background": [235, 229, 219]
+      },
+      "operation": "composite",
+      "crop_rect": null,
+      "placements": [
+        {
+          "id": "specification-lemon-ginger-primary",
+          "source_asset_id": "gallery-detail",
+          "source_crop_rect": [0, 0, 720, 900],
+          "mask_id": "lemon-ginger-mask",
+          "mask_crop_rect": [0, 86, 720, 986],
+          "destination_xy": [64, 150],
+          "affine_matrix": [1, 0, 0, 0, 1, 0],
+          "resize_filter": "none"
+        }
+      ],
+      "derived_insets": [
+        {
+          "id": "specification-quantity-inset",
+          "source_asset_id": "gallery-detail",
+          "source_crop_rect": [300, 785, 505, 865],
+          "destination_rect": [816, 640, 1160, 774],
+          "resize_filter": "Pillow.Image.Resampling.LANCZOS",
+          "border_color": [93, 78, 62],
+          "border_width": 2
+        }
+      ],
+      "decorations": [
+        {
+          "type": "rectangle",
+          "box": [785, 600, 1199, 815],
+          "fill": [248, 244, 236]
+        },
+        {
+          "type": "line",
+          "points": [816, 822, 1160, 822],
+          "fill": [187, 153, 48],
+          "width": 6
+        }
+      ],
+      "shadow": {
+        "offset": [0, 18],
+        "blur_radius": 18,
+        "opacity": 58,
+        "color": [48, 34, 24]
+      },
+      "face_check_mask_ids": ["lemon-ginger-mask"]
+    },
+    {
+      "requested_artifact_id": "gallery-context",
+      "role": "context",
+      "parent_asset_brief_id": "gallery-catalog",
+      "required_input_asset_ids": [
+        "gallery-catalog",
+        "gallery-context-background-plate"
+      ],
+      "preview_enabled": false,
+      "blocked_without": ["gallery-context-background-plate"],
+      "final_filename": "gallery-context-2026-09-09.png",
+      "canvas": {
+        "dimensions": [1920, 1080],
+        "mode": "RGB",
+        "background": [238, 232, 222]
+      },
+      "operation": "blocked_composite",
+      "crop_rect": null,
+      "placements": [
+        {
+          "id": "context-lemon-ginger-primary",
+          "source_asset_id": "gallery-catalog",
+          "source_crop_rect": [110, 114, 705, 976],
+          "mask_id": "lemon-ginger-mask",
+          "mask_crop_rect": [110, 114, 705, 976],
+          "destination_xy": [290, 125],
+          "affine_matrix": [1, 0, 0, 0, 1, 0],
+          "resize_filter": "none"
+        },
+        {
+          "id": "context-berry-oat-primary",
+          "source_asset_id": "gallery-catalog",
+          "source_crop_rect": [745, 114, 1337, 981],
+          "mask_id": "berry-oat-mask",
+          "mask_crop_rect": [745, 114, 1337, 981],
+          "destination_xy": [1038, 115],
+          "affine_matrix": [1, 0, 0, 0, 1, 0],
+          "resize_filter": "none"
+        }
+      ],
+      "derived_insets": [],
+      "decorations": [],
+      "shadow": {
+        "offset": [0, 18],
+        "blur_radius": 18,
+        "opacity": 64,
+        "color": [48, 34, 24]
+      },
+      "face_check_mask_ids": ["lemon-ginger-mask", "berry-oat-mask"]
+    },
+    {
+      "requested_artifact_id": "gallery-campaign",
+      "role": "campaign",
+      "parent_asset_brief_id": "gallery-catalog",
+      "required_input_asset_ids": ["gallery-catalog"],
+      "preview_enabled": true,
+      "blocked_without": [],
+      "final_filename": "gallery-campaign-2026-09-09.png",
+      "canvas": {
+        "dimensions": [1920, 1080],
+        "mode": "RGB",
+        "background": [234, 225, 211]
+      },
+      "operation": "composite",
+      "crop_rect": null,
+      "placements": [
+        {
+          "id": "campaign-lemon-ginger-primary",
+          "source_asset_id": "gallery-catalog",
+          "source_crop_rect": [110, 114, 705, 976],
+          "mask_id": "lemon-ginger-mask",
+          "mask_crop_rect": [110, 114, 705, 976],
+          "destination_xy": [610, 175],
+          "affine_matrix": [1, 0, 0, 0, 1, 0],
+          "resize_filter": "none"
+        },
+        {
+          "id": "campaign-berry-oat-primary",
+          "source_asset_id": "gallery-catalog",
+          "source_crop_rect": [745, 114, 1337, 981],
+          "mask_id": "berry-oat-mask",
+          "mask_crop_rect": [745, 114, 1337, 981],
+          "destination_xy": [1240, 45],
+          "affine_matrix": [1, 0, 0, 0, 1, 0],
+          "resize_filter": "none"
+        }
+      ],
+      "derived_insets": [],
+      "decorations": [
+        {
+          "type": "rectangle",
+          "box": [540, 120, 1240, 1080],
+          "fill": [239, 196, 70]
+        },
+        {
+          "type": "rectangle",
+          "box": [1170, 0, 1920, 1010],
+          "fill": [173, 65, 63]
+        }
+      ],
+      "shadow": {
+        "offset": [0, 20],
+        "blur_radius": 20,
+        "opacity": 70,
+        "color": [48, 34, 24]
+      },
+      "face_check_mask_ids": ["lemon-ginger-mask", "berry-oat-mask"]
+    },
+    {
+      "requested_artifact_id": "gallery-channel-variant",
+      "role": "channel-variant",
+      "parent_asset_brief_id": "gallery-catalog",
+      "required_input_asset_ids": ["gallery-catalog"],
+      "preview_enabled": true,
+      "blocked_without": [],
+      "final_filename": "gallery-channel-variant-2026-09-09.png",
+      "canvas": {
+        "dimensions": [1200, 1200],
+        "mode": "RGB",
+        "background": [244, 239, 230]
+      },
+      "operation": "composite",
+      "crop_rect": null,
+      "placements": [
+        {
+          "id": "channel-lemon-ginger-primary",
+          "source_asset_id": "gallery-catalog",
+          "source_crop_rect": [110, 114, 705, 976],
+          "mask_id": "lemon-ginger-mask",
+          "mask_crop_rect": [110, 114, 705, 976],
+          "destination_xy": [303, 166],
+          "affine_matrix": [1, 0, 0, 0, 1, 0],
+          "resize_filter": "none"
+        }
+      ],
+      "derived_insets": [],
+      "decorations": [],
+      "shadow": null,
+      "face_check_mask_ids": ["lemon-ginger-mask"]
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+schema_version: 1
+scenarios:
+  - id: uncertain-product-start
+    request: >-
+      I have an early idea for a fictional pantry drink mix, but its audience,
+      package construction, and variant system are not decided. Help me reach
+      a decision-ready packaging route without inventing product claims.
+    expected_start_stage: product-definition
+    expected_scope_end_stage: decision-freeze
+    active_stage_outputs:
+      - ProductBrief
+    ecommerce_roles: []
+    prohibited_claims:
+      - health benefit
+      - certification
+      - regulatory compliance
+      - consumer preference validation
+
+  - id: approved-package-gallery
+    request: >-
+      An approved fictional package identity already exists. Continue from
+      ecommerce planning through QA delivery for a channel-specific set with
+      a catalog image, a context image, and one channel-variant crop. Preserve
+      the approved package identity throughout and do not add unrequested roles.
+    expected_start_stage: ecommerce-planning
+    expected_scope_end_stage: qa-delivery
+    active_stage_outputs:
+      - EcommerceAssetPlan
+      - AssetBrief
+    ecommerce_roles:
+      - catalog
+      - context
+      - channel-variant
+    prohibited_claims:
+      - unsupported benefit
+      - unverified specification
+      - publication authorization
+
+  - id: three-sku-full-chain
+    request: >-
+      Develop three fictional pantry drink-mix SKUs from an early product idea
+      through comparable packaging directions and a complete ecommerce image
+      set. Keep every direction comparable across every SKU before selection.
+      The channel and image jobs are not provided, so do not choose ecommerce
+      roles before the ecommerce-planning stage.
+    expected_start_stage: product-definition
+    expected_scope_end_stage: qa-delivery
+    active_stage_outputs:
+      - ProductBrief
+    ecommerce_roles: []
+    prohibited_claims:
+      - health benefit
+      - certification
+      - manufacturing approval
+      - legal clearance

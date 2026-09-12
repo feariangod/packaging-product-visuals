@@ -1,0 +1,79 @@
+schema_version: 1
+id: public-fictional-v02-approval-2026-09-09
+evidence_kind: current-user-generation-authorization
+status: blocked
+historical_authorization_status: passed
+record_role: superseded-pre-correction-authorization
+superseded_by: public-fictional-v02-final-build-authorization-2026-09-09
+applies_to_final_run: false
+status_reason: This historical record binds the pre-correction transform only. It did not authorize the QA-corrected transform, and its blocked status does not describe the later final run, which has a separate current-user authorization record.
+authorization:
+  authority: current-user
+  basis: Current user confirmed this exact local generation package on 2026-09-09. This authorization does not include GitHub publication.
+  confirmed_at_utc: "2026-09-09T01:26:15Z"
+approved_scope:
+  selection_lock_id: fictional-pantry-selection-lock-v02
+  ecommerce_asset_plan_id: fictional-pantry-ecommerce-plan-v02
+  selected_direction_id: quiet-pantry
+  selected_sku_ids: [lemon-ginger, berry-oat]
+  required_roles: [catalog, detail, usage, specification, context, campaign, channel-variant]
+  source_artifact_id: compare-direction-a
+  source_artifact_sha256: a2c1d38551febace8a1bfec48011e7e36528695e244ec892d2c4fa4ad3d4f4fb
+  package_identity_sha256: 39d1ee7e7ea63ab815eadb9667ece008f3183db388350154d4a9f70ade1ab758
+transform_binding:
+  locator: transforms/v0.2/2026-09-09/transform-spec-2026-09-09.json
+  sha256: 838ab559d9686d1e17e9d4e145c4a5ed60386fe6de6c143e56941a61df4f0952
+current_transform_check:
+  checked_on: "2026-09-09"
+  observed_sha256: 7c5d0f172780cb9b6479e936385f32868f3a4a2d2f8f33c5450c2c202c1883cc
+  status: mismatch
+  generation_authorized: false
+  requires_new_current_user_confirmation: true
+current_scope_status:
+  decision_lock: passed
+  selection_lock: passed
+  ecommerce_asset_plan: passed
+  asset_briefs: passed
+  ecommerce_generation: blocked
+  qa_delivery: not-run
+usage_scene_constraint: For this fictional concept, the unopened Berry Oat pouch may be shown beside one empty clear glass as a pre-opening setup. No preparation, dosage, serving, consumption, or performance instruction is defined.
+specification_constraint: Show only the approved 240 g quantity as source-derived package pixels; do not invent dimensions, counts, callout labels, legal clearance, or production specifications.
+qa_plan:
+  required_gate_ids:
+    - artifact-type
+    - object-count
+    - package-geometry
+    - exact-copy
+    - invented-claims
+    - reference-role
+    - visual-hierarchy-identity
+    - product-anatomy
+    - channel-fit
+    - artifact-integrity
+    - selection-lock
+    - asset-role
+    - package-identity
+  cross_set_required_gate_ids:
+    - set-completeness
+    - cross-asset-package-identity
+    - cross-asset-sku-consistency
+    - cross-asset-claims-consistency
+    - sequence-role-coverage
+    - cross-asset-channel-fit
+  required_profile_ids: [full-resolution, ecommerce-thumbnail]
+  independent_review_required: true
+  expected_gate_rows: 188
+generation_budget:
+  paid_calls_allowed: true
+  maximum_total_calls: 4
+  maximum_calls_per_background_plate: 2
+  deterministic_roles: [catalog, detail, specification, campaign, channel-variant]
+  external_background_plate_roles: [usage, context]
+output:
+  root: generated/v0.2/2026-09-09
+  overwrite: false
+  retention_policy: preserve
+  publication_authorized: false
+publication:
+  authorized: false
+  requires_new_current_user_confirmation: true

@@ -1,7 +1,7 @@
 {
   "name": "packaging-product-visuals",
-  "version": "0.1.0",
-  "description": "Develop and review controlled packaging-led product visuals.",
+  "version": "0.2.0",
+  "description": "Stage-gated packaging-to-ecommerce workflow with evidence, locks, permissions, and QA.",
   "author": {
     "name": "feariangod"
   },
@@ -9,26 +9,30 @@
   "keywords": [
     "packaging",
     "product-visuals",
-    "image-generation",
+    "product-research",
+    "ecommerce-assets",
+    "multi-sku",
     "visual-qa"
   ],
   "skills": "./skills/",
   "interface": {
     "displayName": "Packaging Product Visuals",
-    "shortDescription": "Controlled packaging concept visuals and QA",
-    "longDescription": "Compare, refine, and present packaging-led product concept visuals while preserving approved product facts and visual identity.",
+    "shortDescription": "Stage-gated packaging and ecommerce product visuals",
+    "longDescription": "Continue from the earliest incomplete product or packaging maturity stage through research, identity-locked concepts, ecommerce planning, and QA delivery.",
     "developerName": "feariangod",
     "category": "Design",
     "capabilities": [
-      "Packaging image workflow orchestration",
-      "Permission-aware artifact handling",
-      "Packaging visual QA contracts",
-      "Local review-pack preparation"
+      "Product and packaging maturity routing",
+      "Evidence-bounded packaging research",
+      "Direction-by-SKU comparison and identity locks",
+      "Ecommerce asset planning and role-specific handoffs",
+      "Permission-aware delivery and QA",
+      "Local bilingual review-pack preparation"
     ],
     "defaultPrompt": [
-      "Use $packaging-product-visuals to compare packaging directions under one frozen baseline.",
-      "Use $packaging-product-visuals to refine this package without changing its locked identity.",
-      "Use $packaging-product-visuals to create a neutral packshot from this approved package."
+      "Use $packaging-product-visuals to take this product idea from its earliest incomplete definition and research stage.",
+      "Use $packaging-product-visuals to plan a complete ecommerce asset set from this approved package identity.",
+      "Use $packaging-product-visuals to correct this existing package artifact without changing its locked identity."
     ]
   }
 }

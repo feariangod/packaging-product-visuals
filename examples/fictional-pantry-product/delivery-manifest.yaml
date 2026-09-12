@@ -1,0 +1,118 @@
+schema_version: 2
+id: fictional-pantry-delivery-manifest-v02
+processing_policy:
+  authorization:
+    authority: current-user
+    record_id: public-fictional-v02-final-build-authorization-2026-09-09
+    generation_authorized: true
+    publication_authorized: false
+    basis: Current user re-confirmed the QA-corrected transform, two text-free background plates, seven-role local build, 188-row QA scope, and four-call ceiling. GitHub publication remains outside this authorization.
+    confirmed_at_utc: "2026-09-09T08:47:30Z"
+    record_created_at_utc: "2026-09-09T08:55:19Z"
+  default_permissions: &public_permissions
+    confidentiality: public
+    inspect_allowed: true
+    external_processing_allowed: true
+    derivative_allowed: true
+    redistribution_allowed: true
+    publication_allowed: true
+    attribution_status: not-required
+    attribution_text: null
+    attribution_fulfilled: not-applicable
+  field_overrides:
+    - json_pointer: /artifacts
+      permissions:
+        confidentiality: public
+        inspect_allowed: true
+        external_processing_allowed: true
+        derivative_allowed: true
+        redistribution_allowed: false
+        publication_allowed: false
+        attribution_status: not-required
+        attribution_text: null
+        attribution_fulfilled: not-applicable
+project_state_id: fictional-pantry-project-state-v02
+decision_lock_id: fictional-pantry-decision-lock-v02
+selection_lock_id: fictional-pantry-selection-lock-v02
+ecommerce_asset_plan_id: fictional-pantry-ecommerce-plan-v02
+qa_plan_id: fictional-pantry-ecommerce-qa-plan-v02
+source_bindings:
+  decision_lock_sha256: 1743c0c0b6e861f31be1faa00cd30c2d9375636f0603627b5744950e42ef8075
+  decision_lock_hash_basis: canonical-sorted-compact-utf8-json
+  selection_source_artifact_id: compare-direction-a
+  selection_source_sha256: a2c1d38551febace8a1bfec48011e7e36528695e244ec892d2c4fa4ad3d4f4fb
+  planning_authorization_record_id: public-fictional-v02-approval-2026-09-09
+  planning_authorization_sha256: cda33edc96f1927b5a5ca3c804ed519bb4438d39a495fea172d6056a3c18e928
+  final_authorization_record_id: public-fictional-v02-final-build-authorization-2026-09-09
+  final_authorization_public_record_sha256: 8f7270a0945d3ed42bbaf399ec4f310acf95b6b4cccdd4097cefb11e358ecf98
+  final_authorization_source_sha256: a30e4a586b84afc0425f2d826f4acb9d631be6e6b1c1aa433309151f136f9da3
+  authorized_transform_sha256: 7c5d0f172780cb9b6479e936385f32868f3a4a2d2f8f33c5450c2c202c1883cc
+  current_transform_sha256: 7c5d0f172780cb9b6479e936385f32868f3a4a2d2f8f33c5450c2c202c1883cc
+  transform_binding_status: match
+  generation_receipt_sha256: 62a6672cd6e0bc3c28805673afbcba26a9a368a5dd55274e3cd9381af9df3942
+  final_build_report_sha256: a63d8823b98ecb9d22817ca0713847a991f4c3a2693ee99054ed0e7c4d0a2a79
+  plate_provenance_sha256: 5a9873e3296b6c832f4cc7965c233a7e80c883e333e05aa12625afc8350e33df
+  qa_result_sha256: 752c9529a563b70788c5c3ef4b844f10528794e0a48b21c600116d5ca56761e2
+  review_manifest_sha256: 7c19323cdf878741d0bc48f00de6dfcbaaacbb0c5457cd8796a67a9f5c4aacc3
+requested_artifact_ids: [gallery-catalog, gallery-detail, gallery-usage, gallery-specification, gallery-context, gallery-campaign, gallery-channel-variant]
+artifacts:
+  - &catalog_artifact
+    requested_artifact_id: gallery-catalog
+    artifact_id: gallery-catalog-2026-09-09
+    asset_brief_id: gallery-catalog
+    role: catalog
+    locator: examples/fictional-pantry-product/generated/v0.2/2026-09-09/gallery-catalog-2026-09-09.png
+    locator_type: relative_path
+    sha256: d890af034593b43fd1d5c10a51ee9f97f59d8de938ddf311bca5eaef17ab8d38
+    status: passed
+    blocking_reason: null
+    expected_package_identity_sha256: 39d1ee7e7ea63ab815eadb9667ece008f3183db388350154d4a9f70ade1ab758
+    review_profile_ids: [full-resolution, ecommerce-thumbnail]
+  - <<: *catalog_artifact
+    requested_artifact_id: gallery-detail
+    artifact_id: gallery-detail-2026-09-09
+    asset_brief_id: gallery-detail
+    role: detail
+    locator: examples/fictional-pantry-product/generated/v0.2/2026-09-09/gallery-detail-2026-09-09.png
+    sha256: 2e51f7bde4b48de152f03ac0a45eb80152c61f7cdb181c7d3cd9d6e566b14b85
+  - <<: *catalog_artifact
+    requested_artifact_id: gallery-usage
+    artifact_id: gallery-usage-2026-09-09
+    asset_brief_id: gallery-usage
+    role: usage
+    locator: examples/fictional-pantry-product/generated/v0.2/2026-09-09/gallery-usage-2026-09-09.png
+    sha256: 541ee5629533a46101aed0d1f7b50489a3fed154987d38b84870736c0708b35b
+  - <<: *catalog_artifact
+    requested_artifact_id: gallery-specification
+    artifact_id: gallery-specification-2026-09-09
+    asset_brief_id: gallery-specification
+    role: specification
+    locator: examples/fictional-pantry-product/generated/v0.2/2026-09-09/gallery-specification-2026-09-09.png
+    sha256: 786fc55979c1edadcd64c951aecf7c0aae952aa8fe6ecfbea6882981676bbba0
+  - <<: *catalog_artifact
+    requested_artifact_id: gallery-context
+    artifact_id: gallery-context-2026-09-09
+    asset_brief_id: gallery-context
+    role: context
+    locator: examples/fictional-pantry-product/generated/v0.2/2026-09-09/gallery-context-2026-09-09.png
+    sha256: 3e266572cbd975e07179ca4c0de06a40009ea84628e5cccc8e1a3dc345919058
+  - <<: *catalog_artifact
+    requested_artifact_id: gallery-campaign
+    artifact_id: gallery-campaign-2026-09-09
+    asset_brief_id: gallery-campaign
+    role: campaign
+    locator: examples/fictional-pantry-product/generated/v0.2/2026-09-09/gallery-campaign-2026-09-09.png
+    sha256: 6786a09bf0d245f64015299f07a4f0dbd0e011d2cb1cc2c61172dacdc42ba9f7
+  - <<: *catalog_artifact
+    requested_artifact_id: gallery-channel-variant
+    artifact_id: gallery-channel-variant-2026-09-09
+    asset_brief_id: gallery-channel-variant
+    role: channel-variant
+    locator: examples/fictional-pantry-product/generated/v0.2/2026-09-09/gallery-channel-variant-2026-09-09.png
+    sha256: 209a65915981963de95f68e077dffc36f198a9910be605c8d88e4ed411eba6bc
+per_image_qa_status: pass
+cross_set_qa_status: pass
+completeness_status: passed
+remaining_work:
+  - Keep GitHub publication behind a separate current-user confirmation.
+  - Complete print, legal, regulatory, supplier, platform, and physical production validation before production use.

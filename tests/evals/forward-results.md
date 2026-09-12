@@ -12,7 +12,7 @@ Recorded on 2026-09-08. The public fixture is fictional and uses the explicit sa
 
 `passed` means that every requested concept artifact exists and every predeclared gate passed at full resolution and in the 320-pixel contain profile. It does not mean print-ready, legally cleared, manufacturing-validated, or production-approved.
 
-Machine-readable run receipts and the complete artifact-by-gate-by-profile matrix are in [forward-receipts.yaml](forward-receipts.yaml). Candidate Skill classification evidence is in [routing-results.yaml](routing-results.yaml), permission and lock behavior evidence is in [contract-probe-results.yaml](contract-probe-results.yaml), and clean-install behavior is in [install-smoke-results.yaml](install-smoke-results.yaml).
+Machine-readable run receipts and the complete artifact-by-gate-by-profile matrix are in [forward-receipts.yaml](forward-receipts.yaml). Candidate Skill classification evidence is in [routing-results.yaml](routing-results.yaml), permission and lock behavior evidence is in [contract-probe-results.yaml](contract-probe-results.yaml), and the byte-preserved v0.1 clean-install evidence is in [v0.1-install-smoke-results.yaml](v0.1-install-smoke-results.yaml).
 
 ## Runtime And Authorization
 

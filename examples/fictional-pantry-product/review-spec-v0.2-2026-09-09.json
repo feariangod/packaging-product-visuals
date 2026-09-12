@@ -1,0 +1,104 @@
+{
+  "schema_version": 1,
+  "title": {
+    "en": "Quiet Pantry ecommerce set review",
+    "zh": "Quiet Pantry 电商套图审阅"
+  },
+  "product": {
+    "name": {
+      "en": "PPV Fixture Citrus Pantry Mix",
+      "zh": "PPV Fixture 柑橘食品柜冲调粉"
+    },
+    "summary": {
+      "en": "This fictional two-SKU pouch set passed concept-stage QA. GitHub publication is not authorized.",
+      "zh": "这套虚构双 SKU 袋装图已通过概念阶段 QA，尚未授权发布到 GitHub。"
+    }
+  },
+  "direction": {
+    "en": "Quiet Pantry",
+    "zh": "安静食品柜"
+  },
+  "delivery_status": "passed",
+  "stages": [
+    {"id": "product-definition", "status": "passed"},
+    {"id": "research-options", "status": "passed"},
+    {"id": "decision-freeze", "status": "passed"},
+    {"id": "packaging-directions", "status": "passed"},
+    {"id": "selection-refinement", "status": "passed"},
+    {"id": "ecommerce-planning", "status": "passed"},
+    {"id": "ecommerce-generation", "status": "passed"},
+    {"id": "qa-delivery", "status": "passed"}
+  ],
+  "assets": [
+    {
+      "source": "gallery-catalog-2026-09-09.png",
+      "stage": "ecommerce-generation",
+      "role": "catalog",
+      "status": "passed",
+      "title": {"en": "Two-SKU catalog lineup", "zh": "双 SKU 目录陈列"},
+      "summary": {"en": "Both sealed pouches appear together on the approved neutral field.", "zh": "两款密封袋装共同置于已批准的中性背景上。"},
+      "identity": {"en": "Pouch geometry, PPV FIXTURE, CITRUS PANTRY MIX, variant names, 240 g, palette, and illustrations remain locked.", "zh": "袋型、PPV FIXTURE、CITRUS PANTRY MIX、口味名、240 g、配色与插画均保持锁定。"},
+      "qa": {"en": "Full-resolution and 320 px inspection passed for identity, copy, object count, and catalog readability.", "zh": "完整尺寸与 320 px 检查均通过，包装身份、文案、物体数量和目录识别清楚。"}
+    },
+    {
+      "source": "gallery-detail-2026-09-09.png",
+      "stage": "ecommerce-generation",
+      "role": "detail",
+      "status": "passed",
+      "title": {"en": "Lemon Ginger detail", "zh": "Lemon Ginger 细节图"},
+      "summary": {"en": "A closer crop shows the selected Lemon Ginger package face.", "zh": "近景裁切展示已选 Lemon Ginger 包装正面。"},
+      "identity": {"en": "Copy, geometry, palette, and illustration remain unchanged.", "zh": "文案、袋型、配色和插画均未改变。"},
+      "qa": {"en": "The crop, copy, closure cue, and package-face identity passed at both review sizes.", "zh": "裁切、文案、封口特征和包装正面身份在两种审阅尺寸下均通过。"}
+    },
+    {
+      "source": "gallery-usage-2026-09-09.png",
+      "stage": "ecommerce-generation",
+      "role": "usage",
+      "status": "passed",
+      "title": {"en": "Pre-opening setup", "zh": "开封前准备场景"},
+      "summary": {"en": "One sealed Berry Oat pouch stands beside exactly one empty clear glass.", "zh": "一袋密封 Berry Oat 与恰好一个空透明杯并列。"},
+      "identity": {"en": "The pouch stays sealed. The image adds no powder, drink, dosage, serving, or performance instruction.", "zh": "包装保持密封，画面没有新增粉末、饮品、用量、食用或效果说明。"},
+      "qa": {"en": "Object count, scene state, claims, composite edges, and thumbnail recognition passed.", "zh": "物体数量、场景状态、声称、合成边缘和缩略图识别均通过。"}
+    },
+    {
+      "source": "gallery-specification-2026-09-09.png",
+      "stage": "ecommerce-generation",
+      "role": "specification",
+      "status": "passed",
+      "title": {"en": "Quantity specification", "zh": "净含量规格图"},
+      "summary": {"en": "The approved 240 g source pixels are enlarged beside the complete Lemon Ginger pouch.", "zh": "完整 Lemon Ginger 袋装旁放大展示已批准的 240 g 源像素。"},
+      "identity": {"en": "Only the existing 240 g copy appears. The image adds no dimensions, counts, materials, or legal conclusions.", "zh": "画面只展示现有 240 g 文案，没有新增尺寸、数量、材质或法规结论。"},
+      "qa": {"en": "Source-pixel identity, complete-pouch visibility, and the no-invented-specification rule passed.", "zh": "源像素身份、完整包装可见性和不得虚构规格的要求均通过。"}
+    },
+    {
+      "source": "gallery-context-2026-09-09.png",
+      "stage": "ecommerce-generation",
+      "role": "context",
+      "status": "passed",
+      "title": {"en": "Pantry shelf context", "zh": "食品柜层架场景"},
+      "summary": {"en": "Both sealed pouches stand on a warm fictional pantry shelf with unbranded props at the edges.", "zh": "两款密封袋装置于暖色虚构食品柜层架，无品牌道具位于画面边缘。"},
+      "identity": {"en": "Both package faces, SKU assignments, copy, and palettes remain locked.", "zh": "两个包装正面、SKU 对应、文案与配色均保持锁定。"},
+      "qa": {"en": "Placement, background provenance, package identity, cross-SKU consistency, and both review sizes passed.", "zh": "摆位、背景来源、包装身份、跨 SKU 一致性和两种审阅尺寸均通过。"}
+    },
+    {
+      "source": "gallery-campaign-2026-09-09.png",
+      "stage": "ecommerce-generation",
+      "role": "campaign",
+      "status": "passed",
+      "title": {"en": "Blank-copy campaign composition", "zh": "无文案活动构图"},
+      "summary": {"en": "Two pouches form a campaign composition while the left side remains open for later channel copy.", "zh": "两款袋装构成活动画面，左侧留给后续渠道文案。"},
+      "identity": {"en": "The image adds no benefit message, new claim, or package redesign.", "zh": "画面没有新增利益点文案、声称或包装重设计。"},
+      "qa": {"en": "Negative space, two-pouch count, package identity, clean edges, and thumbnail readability passed.", "zh": "留白、双包装数量、包装身份、边缘完整性和缩略图识别均通过。"}
+    },
+    {
+      "source": "gallery-channel-variant-2026-09-09.png",
+      "stage": "ecommerce-generation",
+      "role": "channel-variant",
+      "status": "passed",
+      "title": {"en": "Square channel variant", "zh": "方形渠道变体"},
+      "summary": {"en": "One complete Lemon Ginger pouch is placed on a quiet square channel canvas.", "zh": "一袋完整 Lemon Ginger 置于克制的方形渠道画布。"},
+      "identity": {"en": "The square adaptation changes only placement and background. It adds no frame, line, claim, or copy.", "zh": "方形适配只改变摆位与背景，没有新增边框、线条、声称或文案。"},
+      "qa": {"en": "Square crop, safe margin, package identity, artifact integrity, and 320 px recognition passed.", "zh": "方形裁切、安全边距、包装身份、成品完整性和 320 px 识别均通过。"}
+    }
+  ]
+}

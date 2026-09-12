@@ -1,6 +1,5 @@
 import hashlib
 import re
-import subprocess
 from pathlib import Path
 
 import yaml
@@ -8,8 +7,11 @@ import yaml
 
 REPO_ROOT = Path(__file__).parents[1]
 EVIDENCE_PATH = REPO_ROOT / "tests" / "evals" / "install-smoke-results.yaml"
+V01_EVIDENCE_PATH = REPO_ROOT / "tests" / "evals" / "v0.1-install-smoke-results.yaml"
 SOURCE_SKILL = REPO_ROOT / "skills" / "packaging-product-visuals"
 SHA256 = re.compile(r"[0-9a-f]{64}")
+V01_EVIDENCE_SHA256 = "13b47b23fcf159e26517df0cbeef4e7f041d6141f5563003f86f0ab2de5d8d71"
+V02_EVIDENCE_SHA256 = "48bec2b02aaa4245888261ed73cc9d1e6a17872c830bff6cfbf9e1321912d297"
 
 
 def _all_strings(value):
@@ -22,25 +24,6 @@ def _all_strings(value):
             yield from _all_strings(child)
     elif isinstance(value, str):
         yield value
-
-
-def _public_candidate_files():
-    result = subprocess.run(
-        [
-            "git",
-            "ls-files",
-            "--cached",
-            "--others",
-            "--exclude-standard",
-            "--",
-            "skills/packaging-product-visuals",
-        ],
-        cwd=REPO_ROOT,
-        check=True,
-        capture_output=True,
-        text=True,
-    )
-    return [REPO_ROOT / name for name in result.stdout.splitlines()]
 
 
 def _public_candidate_tree_digest(paths):
@@ -81,39 +64,55 @@ def test_public_candidate_digest_does_not_inherit_platform_path_sorting():
     assert _public_candidate_tree_digest(paths) == expected
 
 
-def test_install_smoke_matrix_covers_the_five_required_fresh_sessions():
+def test_v01_install_smoke_evidence_is_preserved_byte_for_byte():
+    assert hashlib.sha256(V01_EVIDENCE_PATH.read_bytes()).hexdigest() == (
+        V01_EVIDENCE_SHA256
+    )
+    evidence = yaml.safe_load(V01_EVIDENCE_PATH.read_text(encoding="utf-8"))
+    assert evidence["schema_version"] == 1
+    assert evidence["executed_on"] == "2026-09-08"
+    assert evidence["plugin_installation"]["plugin_version"] == "0.1.0"
+
+
+def test_historical_install_smoke_matrix_preserves_the_five_recorded_sessions():
+    assert hashlib.sha256(EVIDENCE_PATH.read_bytes()).hexdigest() == V02_EVIDENCE_SHA256
     evidence = yaml.safe_load(EVIDENCE_PATH.read_text(encoding="utf-8"))
     results = evidence["results"]
-    candidate_files = _public_candidate_files()
+    candidate_files = evidence["method"]["public_candidate_file_sha256"]
 
-    assert evidence["executed_on"] == "2026-09-08"
-    assert evidence["runtime"] == {
-        "client": "codex-cli",
-        "client_version": "0.153.4",
-        "model": "gpt-5.6-luna",
-        "reasoning_effort": "low",
-        "sandbox": "read-only",
-        "ephemeral": True,
-        "operating_system": {
-            "name": "macOS",
-            "version": "26.5",
-            "build": "25F71",
-            "architecture": "arm64",
-        },
+    assert evidence["schema_version"] == 2
+    assert evidence["executed_on"] == "2026-09-09"
+    runtime = evidence["runtime"]
+    assert runtime["client"] == "codex-cli"
+    assert runtime["client_version"] == "0.153.4"
+    assert SHA256.fullmatch(runtime["client_executable_sha256"])
+    assert runtime["model"] == "gpt-5.6-luna"
+    assert runtime["reasoning_effort"] == "low"
+    assert runtime["sandbox"] == "read-only"
+    assert runtime["ephemeral"] is True
+    assert runtime["operating_system"] == {
+        "name": "macOS",
+        "version": "26.5",
+        "build": "25F71",
+        "architecture": "arm64",
     }
+    assert runtime["capture_basis"]["client_version"] == "codex --version"
     assert evidence["scenario"]["explicit_skill_invocation"] == "$packaging-product-visuals"
-    assert evidence["method"]["accepted_fresh_session_count"] == 5
+    assert evidence["method"]["required_fresh_session_count"] == 5
     assert evidence["method"]["standalone_session_count"] == 4
     assert evidence["method"]["plugin_session_count"] == 1
-    assert evidence["method"]["public_candidate_file_count"] == len(candidate_files) == 7
+    assert evidence["method"]["runtime_discovery"] == (
+        "codex app-server skills/list with forceReload=true for each layout"
+    )
+    assert evidence["method"]["public_candidate_file_count"] == len(candidate_files) == 10
     assert evidence["method"]["public_candidate_source"] == (
         "git ls-files --cached --others --exclude-standard"
     )
-    assert evidence["method"]["source_skill_tree_sha256"] == (
-        _public_candidate_tree_digest(candidate_files)
-    )
-    assert all("__pycache__" not in path.parts for path in candidate_files)
-    assert all(path.suffix != ".pyc" for path in candidate_files)
+    # These immutable receipts describe the September 9 candidate, not today's source.
+    assert SHA256.fullmatch(evidence["method"]["source_skill_tree_sha256"])
+    assert all(SHA256.fullmatch(value) for value in candidate_files.values())
+    assert all("__pycache__" not in Path(name).parts for name in candidate_files)
+    assert all(Path(name).suffix != ".pyc" for name in candidate_files)
     assert len(results) == 5
     assert {result["id"] for result in results} == {
         "explicit-codex-home-skills",
@@ -124,29 +123,26 @@ def test_install_smoke_matrix_covers_the_five_required_fresh_sessions():
     }
 
 
-def test_each_install_smoke_session_loaded_the_skill_and_blocked_honestly():
+def test_each_install_smoke_session_reports_only_observed_install_and_behavior_evidence():
     evidence = yaml.safe_load(EVIDENCE_PATH.read_text(encoding="utf-8"))
     source_digest = evidence["method"]["source_skill_tree_sha256"]
 
     assert SHA256.fullmatch(source_digest)
     for result in evidence["results"]:
-        trace = result["load_trace"]
         outcome = result["outcome"]
 
         assert result["exit_code"] == 0
         assert SHA256.fullmatch(result["event_stream_sha256"])
-        assert trace["event_type"] == "item.completed"
-        assert trace["item_type"] == "command_execution"
-        assert trace["skill_file"].endswith("/packaging-product-visuals/SKILL.md")
-        assert trace["skill_read_exit_code"] == 0
-        assert trace["reference_file"].endswith(
-            "/packaging-product-visuals/references/contracts.md"
-        )
-        assert trace["reference_read_exit_code"] == 0
+        assert result["event_evidence"]["lifecycle_complete"] is True
+        assert result["event_evidence"]["failed_event_count"] == 0
+        assert result["command_evidence"]["unexpected_command_count"] == 0
+        assert result["command_evidence"]["nonzero_command_exit_count"] == 0
+        assert result["command_evidence"]["write_like_command_detected"] is False
         assert outcome == {
-            "skill_discovered": True,
-            "skill_loaded": True,
-            "relative_reference_resolved": True,
+            "skill_discovered_and_enabled": True,
+            "structured_skill_invocation_reported": True,
+            "reference_file_present_and_hashed": True,
+            "agent_file_reads_observed": False,
             "capability_gap_reported": "image_generation_unavailable",
             "status": "blocked",
             "artifact_invented": False,
@@ -154,6 +150,13 @@ def test_each_install_smoke_session_loaded_the_skill_and_blocked_honestly():
         }
         assert result["install_tree_sha256_before"] == source_digest
         assert result["install_tree_sha256_after"] == source_digest
+        assert result["workspace_tree_sha256_before"] == result[
+            "workspace_tree_sha256_after"
+        ]
+        assert result["credential_copy_mode"] == "0600"
+        assert result["credential_copy_removed"] is True
+        assert result["credential_leak_detected"] is False
+        assert result["evidence_errors"] == []
 
 
 def test_standalone_and_plugin_config_isolation_are_explicit():
@@ -172,39 +175,46 @@ def test_standalone_and_plugin_config_isolation_are_explicit():
     assert plugin["environment"]["ignore_user_config"] is False
     assert "plugin enablement" in plugin["environment"]["ignore_user_config_reason"]
     assert plugin["discovered_skill_id"] == "packaging-product-visuals:packaging-product-visuals"
-    assert plugin["load_trace"]["initial_path_probe_exit_code"] == 1
     installation = evidence["plugin_installation"]
-    cache_audit = installation.pop("cache_audit")
-    assert installation == {
-        "marketplace_name": "ppv-install-smoke",
-        "marketplace_source": "isolated local filesystem marketplace",
-        "distribution": "skills-only plugin",
-        "distribution_contents": [
-            ".codex-plugin/plugin.json",
-            "skills/packaging-product-visuals/",
-            "LICENSE",
-        ],
-        "marketplace_add_exit_code": 0,
-        "plugin_add_exit_code": 0,
-        "plugin_list_exit_code": 0,
-        "plugin_id": "packaging-product-visuals@ppv-install-smoke",
-        "plugin_version": "0.1.0",
-        "installed": True,
-        "enabled": True,
-        "remote_catalog_required": False,
-    }
-    candidate_files = _public_candidate_files()
+    assert installation["marketplace_name"] == "ppv-install-smoke"
+    assert installation["marketplace_source"] == "isolated local filesystem marketplace"
+    assert installation["distribution"] == "skills-only plugin"
+    assert installation["distribution_contents"] == [
+        ".codex-plugin/plugin.json",
+        "skills/packaging-product-visuals/",
+        "LICENSE",
+    ]
+    assert installation["plugin_id"] == "packaging-product-visuals@ppv-install-smoke"
+    assert installation["plugin_version"] == "0.2.0"
+    assert installation["installed"] is True
+    assert installation["enabled"] is True
+    assert installation["plugin_list_source_inside_private_session"] is True
+    assert installation["remote_catalog_required"] is False
+    receipts = installation["command_receipts"]
+    assert set(receipts) == {"marketplace-add", "plugin-add", "plugin-list"}
+    for receipt in receipts.values():
+        assert receipt["exit_code"] == 0
+        assert receipt["json_output"] is True
+        assert receipt["credential_leak_detected"] is False
+        assert SHA256.fullmatch(receipt["stdout_sha256"])
+        assert SHA256.fullmatch(receipt["stderr_sha256"])
+
+    cache_audit = installation["cache_audit"]
+    candidate_files = evidence["method"]["public_candidate_file_sha256"]
     expected_cache_files = sorted(
         [".codex-plugin/plugin.json", "LICENSE"]
-        + [path.relative_to(REPO_ROOT).as_posix() for path in candidate_files]
+        + [
+            "skills/packaging-product-visuals/"
+            + relative_path
+            for relative_path in candidate_files
+        ]
     )
-    assert cache_audit == {
-        "installed_file_count": len(expected_cache_files),
-        "installed_skill_file_count": len(candidate_files),
-        "pyc_file_count": 0,
-        "unexpected_files": [],
-        "installed_files": expected_cache_files,
-    }
+    assert cache_audit["installed_file_count"] == len(expected_cache_files)
+    assert cache_audit["installed_skill_file_count"] == len(candidate_files)
+    assert cache_audit["pyc_file_count"] == 0
+    assert cache_audit["unexpected_files"] == []
+    assert cache_audit["missing_files"] == []
+    assert cache_audit["installed_files"] == expected_cache_files
     assert not any("__pycache__" in name or name.endswith(".pyc") for name in expected_cache_files)
 
 
@@ -226,12 +236,19 @@ def test_install_smoke_acceptance_totals_match_the_rows():
     assert acceptance == {
         "result": "passed",
         "accepted_sessions": len(results),
-        "skill_discovery_successes": sum(
-            result["outcome"]["skill_discovered"] for result in results
+        "skill_discovery_and_enablement_successes": sum(
+            result["outcome"]["skill_discovered_and_enabled"] for result in results
         ),
-        "skill_load_successes": sum(result["outcome"]["skill_loaded"] for result in results),
-        "relative_reference_successes": sum(
-            result["outcome"]["relative_reference_resolved"] for result in results
+        "structured_skill_invocation_reports": sum(
+            result["outcome"]["structured_skill_invocation_reported"]
+            for result in results
+        ),
+        "reference_file_hash_successes": sum(
+            result["outcome"]["reference_file_present_and_hashed"]
+            for result in results
+        ),
+        "agent_file_read_successes": sum(
+            result["outcome"]["agent_file_reads_observed"] for result in results
         ),
         "honest_capability_blocks": sum(
             result["outcome"]["status"] == "blocked" for result in results
@@ -241,5 +258,11 @@ def test_install_smoke_acceptance_totals_match_the_rows():
             result["install_tree_sha256_before"] != result["install_tree_sha256_after"]
             for result in results
         ),
+        "workspace_tree_mutations": sum(
+            result["workspace_tree_sha256_before"]
+            != result["workspace_tree_sha256_after"]
+            for result in results
+        ),
         "session_exit_failures": sum(result["exit_code"] != 0 for result in results),
+        "evidence_error_count": sum(len(result["evidence_errors"]) for result in results),
     }

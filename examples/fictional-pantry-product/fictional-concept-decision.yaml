@@ -1,0 +1,29 @@
+schema_version: 1
+id: fictional-pantry-concept-decision-v02
+record_type: independent-public-fixture-decision
+status: approved-for-fixture-concept
+approval:
+  authority: fixture-maintainer
+  basis: Selects one bounded fictional concept route after reviewing the authored research input and package option comparison. It does not claim consumer, legal, supplier, or production validation.
+  approved_at_utc: "2026-09-09T00:45:00Z"
+decision:
+  category: fictional pantry drink mix
+  audience_task: Distinguish two flavor variants quickly in an ecommerce thumbnail while reading the product and quantity hierarchy.
+  usage_task: Store the sealed dry mix in a pantry and recognize the package state before opening; no preparation, dosage, serving, consumption, or performance instruction is defined.
+  package_construction: resealable stand-up pantry pouch
+  target_specification_range: 240 g nominal concept pack within a 200 to 300 g research range; final dimensions and fill volume remain supplier questions.
+  variant_ids: [lemon-ginger, berry-oat]
+  preferred_option_id: fictional-stand-up-pouch
+  exact_copy_state: approved
+  exact_copy:
+    copy-brand: PPV FIXTURE
+    copy-product-name: CITRUS PANTRY MIX
+    copy-lemon-ginger: LEMON GINGER
+    copy-berry-oat: BERRY OAT
+    copy-quantity: 240 g
+  approved_claims:
+    claim-fictional-product: Fictional dry pantry mix for testing only.
+  exclusions: [health benefit, certification, environmental benefit, production approval, legal clearance]
+remaining_work:
+  - validate dieline, material, barrier, filling, sealing, transport, labeling, dimensions, and supplier feasibility
+  - validate audience response and channel performance separately

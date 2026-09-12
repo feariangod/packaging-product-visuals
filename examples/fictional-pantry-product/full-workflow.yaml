@@ -1,0 +1,939 @@
+schema_version: 2
+id: fictional-pantry-full-workflow-v02
+evidence_scope:
+  evidence_type: retrospective-upstream-contract-reconstruction-plus-forward-ecommerce-delivery
+  historical_direction_artifacts:
+    receipt_id: compare-forward-2026-09-08
+    successful_generation_times_utc: ["2026-09-08T11:25:00Z", "2026-09-08T11:48:18Z"]
+    decision_lock_approved_at_utc: "2026-09-09T00:45:00Z"
+    generated_before_decision_lock: true
+    post_lock_direction_generation_proven: false
+  dated_forward_scope: [selection-refinement, ecommerce-planning, ecommerce-generation, qa-delivery]
+  limitation: The fixture retrospectively maps two owned historical direction boards into the v0.2 upstream contracts. It does not prove that those packaging directions were generated after the v0.2 DecisionLock. The dated forward run begins with selection and ecommerce delivery.
+processing_policy:
+  authorization:
+    authority: current-user
+    record_id: public-fictional-v02-final-build-authorization-2026-09-09
+    generation_authorized: true
+    publication_authorized: false
+    basis: Current user re-confirmed the QA-corrected transform, two text-free background plates, seven-role local build, 188-row QA scope, and four-call ceiling. GitHub publication remains outside this authorization.
+    confirmed_at_utc: "2026-09-09T08:47:30Z"
+    record_created_at_utc: "2026-09-09T08:55:19Z"
+  default_permissions: &public_permissions
+    confidentiality: public
+    inspect_allowed: true
+    external_processing_allowed: true
+    derivative_allowed: true
+    redistribution_allowed: true
+    publication_allowed: true
+    attribution_status: not-required
+    attribution_text: null
+    attribution_fulfilled: not-applicable
+  field_overrides:
+    - json_pointer: /output
+      permissions: &nonpublication_permissions
+        confidentiality: public
+        inspect_allowed: true
+        external_processing_allowed: true
+        derivative_allowed: true
+        redistribution_allowed: false
+        publication_allowed: false
+        attribution_status: not-required
+        attribution_text: null
+        attribution_fulfilled: not-applicable
+    - json_pointer: /publication
+      permissions: *nonpublication_permissions
+approval_provenance_template: &legacy_compare_approval
+  approval_source_id: legacy-forward-receipts
+  approval_record_id: compare-forward-2026-09-08
+fixture_decision_approval: &fixture_decision_approval
+  approval_source_id: fixture-concept-decision
+  approval_record_id: fictional-pantry-concept-decision-v02
+sources:
+  - id: fictional-authoring-record
+    locator: examples/fictional-pantry-product/brief-compare.yaml
+    source_type: trusted-record
+    accessed_at_utc: "2026-09-08T10:30:00Z"
+    access_limits: Public fictional fixture only; not authorization for a new run.
+    sha256: 85f2cfdcf41c7e4fe5f981e5f28a9e7443a9b895f50f511c94cbd5d2efa84eb8
+    permissions: *public_permissions
+  - id: fixture-research-input
+    locator: examples/fictional-pantry-product/fictional-research-input.yaml
+    source_type: research-source
+    accessed_at_utc: "2026-09-09T00:30:00Z"
+    access_limits: Authored public fixture input only; it demonstrates research structure but is not real market, consumer, supplier, or production evidence.
+    sha256: 7372a244295dc0b265e5bbbda33221e072f7dc3bda5d8a32ea4b6edb9f980791
+    record_ids: [fictional-pantry-research-input-v02]
+    permissions: *public_permissions
+  - id: fixture-concept-decision
+    locator: examples/fictional-pantry-product/fictional-concept-decision.yaml
+    source_type: trusted-record
+    accessed_at_utc: "2026-09-09T00:45:00Z"
+    access_limits: Independent public fixture decision for concept workflow testing; not generation or publication authorization.
+    sha256: 8391c7706f2955b484deb4b10c0b35cd8ff4ac5951a6910cf6cb1b79f0734261
+    record_ids: [fictional-pantry-concept-decision-v02]
+    permissions: *public_permissions
+  - id: fixture-present-reference
+    locator: examples/fictional-pantry-product/assets/present-source.png
+    source_type: artifact
+    accessed_at_utc: "2026-09-09T00:30:00Z"
+    access_limits: Owned geometric packaging fixture for hierarchy and structure observation only.
+    sha256: 13ff82e7e7251e39daa112e0f16e73853be6afd3d7e10e23f0a2a238da3a4c2f
+    permissions: *public_permissions
+  - id: fixture-refine-reference
+    locator: examples/fictional-pantry-product/assets/refine-source.png
+    source_type: artifact
+    accessed_at_utc: "2026-09-09T00:30:00Z"
+    access_limits: Owned geometric packaging fixture used as an anti-reference for crowded hierarchy only.
+    sha256: bb9b5422aa980d7f67fbbff0f3e9b0cf51754ed80024c2b569ebd79c238a977b
+    permissions: *public_permissions
+  - id: fixture-asset-register
+    locator: examples/fictional-pantry-product/asset-provenance.yaml
+    source_type: trusted-record
+    accessed_at_utc: "2026-09-08T11:48:18Z"
+    access_limits: Public ownership and hash registry only; not authorization for a new run.
+    sha256: 9f92084abe3c0042cd97738538b99dfe777ed180b3a9614b70c5ce3861804cb6
+    permissions: *public_permissions
+  - id: compare-direction-a-source
+    locator: examples/fictional-pantry-product/generated/compare-direction-a.png
+    source_type: artifact
+    accessed_at_utc: "2026-09-08T11:48:18Z"
+    access_limits: Inspectable two-SKU compare board; selected only at named-object scope.
+    sha256: a2c1d38551febace8a1bfec48011e7e36528695e244ec892d2c4fa4ad3d4f4fb
+    permissions: *public_permissions
+  - id: compare-direction-b-source
+    locator: examples/fictional-pantry-product/generated/compare-direction-b.png
+    source_type: artifact
+    accessed_at_utc: "2026-09-08T11:48:18Z"
+    access_limits: Inspectable two-SKU compare board; comparison evidence only.
+    sha256: 066cc63a2d2aa54a1b02e67104bab5b1a1e677c16d96e5ec641213f176c74aae
+    permissions: *public_permissions
+  - id: legacy-forward-receipts
+    locator: tests/evals/forward-receipts.yaml
+    source_type: trusted-record
+    accessed_at_utc: "2026-09-08T11:48:18Z"
+    access_limits: Historical public compare receipt; supports only recorded baseline, exact-copy, artifact, and QA facts.
+    sha256: 72a03643558dc54dd334615de552a6623ee5ba0ed82ad36506c2f2f70fb8dc41
+    record_ids: [compare-forward-2026-09-08]
+    permissions: *public_permissions
+  - id: public-fictional-v02-authorization
+    locator: examples/fictional-pantry-product/forward-authorization-2026-09-09.yaml
+    source_type: authorization-record
+    accessed_at_utc: "2026-09-09T01:26:15Z"
+    access_limits: Approves the selected direction, ecommerce plan, seven asset briefs, QA scope, call budget, and non-public output. Its recorded transform SHA-256 is historical and does not authorize the current QA-corrected transform.
+    sha256: cda33edc96f1927b5a5ca3c804ed519bb4438d39a495fea172d6056a3c18e928
+    record_ids: [public-fictional-v02-approval-2026-09-09]
+    permissions: *public_permissions
+  - id: public-fictional-v02-final-authorization
+    locator: examples/fictional-pantry-product/final-build-authorization-2026-09-09.yaml
+    source_type: authorization-record
+    accessed_at_utc: "2026-09-09T08:55:19Z"
+    access_limits: Public redacted record of the exact local generation authorization; external local input locators are omitted, and publication is not authorized.
+    sha256: 8f7270a0945d3ed42bbaf399ec4f310acf95b6b4cccdd4097cefb11e358ecf98
+    record_ids: [public-fictional-v02-final-build-authorization-2026-09-09]
+    permissions: *public_permissions
+contracts:
+  product_brief:
+    id: fictional-pantry-product-brief-v02
+    product:
+      category: fictional pantry drink mix
+      product_name: PPV Fixture Citrus Pantry Mix
+      form: dry pantry mix
+      usage_occasions:
+        - at-home pantry preparation
+        - online flavor comparison before purchase
+      audience:
+        description: Adults shopping online for compact pantry drink mixes who need to distinguish flavor variants quickly from a thumbnail.
+        evidence_ids: [fixture-research-input]
+      variants:
+        - id: lemon-ginger
+          name: Lemon Ginger
+          sku_order: 1
+        - id: berry-oat
+          name: Berry Oat
+          sku_order: 2
+      naming_state: approved
+      verified_facts:
+        - id: fictional-product-fact
+          value: Fictional dry pantry mix for testing only.
+          source_id: legacy-forward-receipts
+          permissions: *public_permissions
+      claim_items:
+        - id: claim-fictional-product
+          value: Fictional dry pantry mix for testing only.
+          source_id: legacy-forward-receipts
+          approval_state: approved
+          approved_by: trusted-record
+          approval_basis: Recorded public compare receipt contains this exact fictional claim.
+          <<: *legacy_compare_approval
+          permissions: *public_permissions
+      prohibited_claim_item_ids: []
+    exact_copy:
+      readable_copy_required: true
+      exact_copy_items:
+        - id: copy-brand
+          value: PPV FIXTURE
+          source_id: legacy-forward-receipts
+          copy_role: brand
+          approval_state: approved
+          approved_by: trusted-record
+          approval_basis: Recorded public compare receipt contains this exact copy.
+          <<: *legacy_compare_approval
+          permissions: *public_permissions
+        - id: copy-product-name
+          value: CITRUS PANTRY MIX
+          source_id: legacy-forward-receipts
+          copy_role: product-name
+          approval_state: approved
+          approved_by: trusted-record
+          approval_basis: Recorded public compare receipt contains this exact copy.
+          <<: *legacy_compare_approval
+          permissions: *public_permissions
+        - id: copy-lemon-ginger
+          value: LEMON GINGER
+          source_id: legacy-forward-receipts
+          copy_role: variant-name
+          approval_state: approved
+          approved_by: trusted-record
+          approval_basis: Recorded public compare receipt contains this exact copy.
+          <<: *legacy_compare_approval
+          permissions: *public_permissions
+        - id: copy-berry-oat
+          value: BERRY OAT
+          source_id: legacy-forward-receipts
+          copy_role: variant-name
+          approval_state: approved
+          approved_by: trusted-record
+          approval_basis: Recorded public compare receipt contains this exact copy.
+          <<: *legacy_compare_approval
+          permissions: *public_permissions
+        - id: copy-quantity
+          value: 240 g
+          source_id: legacy-forward-receipts
+          copy_role: quantity
+          approval_state: approved
+          approved_by: trusted-record
+          approval_basis: Recorded public compare receipt contains this exact copy.
+          <<: *legacy_compare_approval
+          permissions: *public_permissions
+      required_item_ids: [copy-brand, copy-product-name, copy-lemon-ginger, copy-berry-oat, copy-quantity]
+      forbidden_item_ids: []
+      permissions: *public_permissions
+    package_starting_point:
+      construction: resealable stand-up pouch
+      target_specification: 240 g nominal concept pack
+      status: working
+      constraints:
+        - both variants must use one comparable front-facing package format
+        - the pack must support pantry storage and ecommerce thumbnail recognition
+      open_questions:
+        - whether a carton or canister offers a stronger product and audience fit
+        - which nominal capacity range should be carried into concept generation
+    commercial_constraints: [No health, certification, or environmental claims.]
+    package_unknowns: [final dimensions, fill volume, material, barrier, sealing, transport]
+    research_hypotheses:
+      - The target buyer needs fast flavor differentiation at ecommerce thumbnail size.
+      - A resealable 240 g stand-up pouch is a plausible starting route, not yet the frozen package decision.
+    approved_by: trusted-record
+    approval_basis: The independent fictional concept decision accepts this authored product brief for workflow testing without claiming market validation.
+    <<: *fixture_decision_approval
+    frozen_fields: [category, product_name, form, usage_occasions, audience, variants, exact_copy]
+    open_fields: [package_starting_point, production validation]
+  research_board:
+    id: fictional-pantry-research-board-v02
+    product_brief_id: fictional-pantry-product-brief-v02
+    scope:
+      questions:
+        - Which front-of-pack and series principles make two variants comparable?
+        - Which calm and high-recognition aesthetic routes fit the authored audience task without claiming consumer preference?
+        - Which package constructions remain viable concept alternatives for the dry mix?
+        - Which specification ranges should be compared before freezing the package route?
+      dimensions: [same-category-packaging, audience-aesthetics, package-construction, package-specification]
+      searched_sources: [fixture-research-input, fixture-present-reference, fixture-refine-reference]
+      date_range: "2026-09-09"
+      coverage_limits:
+        - This public fixture uses authored research inputs and owned geometric package references only.
+        - No real competitor, consumer, regulatory, legal, supplier, platform, or production research was performed.
+    findings:
+      - id: finding-category-hierarchy
+        statement: The owned package references expose a stable brand, product, variant, illustration, and quantity hierarchy that can be held constant across directions.
+        evidence_class: visible-observation
+        source_ids: [fixture-present-reference, fixture-refine-reference]
+        observed_or_published_at: "2026-09-09"
+        accessed_at_utc: "2026-09-09T00:30:00Z"
+        confidence: high
+        access_limits: Limited to the owned geometric fixture images; not a real category convention claim.
+        decision_use: Keep the information hierarchy and front-facing comparison baseline stable.
+      - id: finding-audience-aesthetic-routes
+        statement: A calm pantry-led route and a brighter recognition-led route are suitable comparison hypotheses for the authored thumbnail task.
+        evidence_class: design-inference
+        source_ids: [fixture-research-input, fixture-present-reference, fixture-refine-reference]
+        observed_or_published_at: "2026-09-09"
+        accessed_at_utc: "2026-09-09T00:30:00Z"
+        confidence: medium
+        access_limits: Fixture design judgment only; it does not establish consumer preference or conversion.
+        decision_use: Generate two distinct systems under one product and package baseline.
+      - id: finding-structure-options
+        statement: Stand-up pouch, carton with inner sachets, and rigid canister are the authored concept routes that require comparison.
+        evidence_class: sourced-evidence
+        source_ids: [fixture-research-input]
+        observed_or_published_at: "2026-09-09"
+        accessed_at_utc: "2026-09-09T00:30:00Z"
+        confidence: medium
+        access_limits: Authored fixture option set only; no supplier or manufacturing evidence.
+        decision_use: Compare all three structures before freezing one concept route.
+      - id: finding-specification-options
+        statement: The authored comparison ranges are 200 to 300 g for a pouch, 8 to 12 sachets for a carton, and 250 to 400 g for a canister.
+        evidence_class: sourced-evidence
+        source_ids: [fixture-research-input]
+        observed_or_published_at: "2026-09-09"
+        accessed_at_utc: "2026-09-09T00:30:00Z"
+        confidence: medium
+        access_limits: Concept ranges for workflow testing only; final dimensions and fill volume are unknown.
+        decision_use: Select a bounded concept specification while retaining production questions.
+    references:
+      - source_id: fixture-present-reference
+        role: information-architecture
+        permitted_elements: [hierarchy spacing, front-facing package reading order]
+        prohibited_elements: [identity substitution, exact pixel copying, consumer claims]
+      - source_id: fixture-refine-reference
+        role: anti-reference
+        permitted_elements: [recognizing crowded title-to-illustration spacing]
+        prohibited_elements: [identity substitution, exact pixel copying, consumer claims]
+      - source_id: fixture-research-input
+        role: audience-aesthetic
+        permitted_elements: [calm versus high-recognition comparison question, thumbnail task]
+        prohibited_elements: [consumer preference, conversion, trend, or market claims]
+      - source_id: fixture-research-input
+        role: material-structure
+        permitted_elements: [pouch, carton, and canister concept alternatives]
+        prohibited_elements: [supplier feasibility, barrier, sealing, or manufacturing conclusions]
+      - source_id: fixture-research-input
+        role: package-specification
+        permitted_elements: [authored concept ranges for option comparison]
+        prohibited_elements: [final dimensions, fill performance, or production approval]
+    evidence_gaps:
+      - No real same-category market sample or audience preference evidence.
+      - No supplier, production, regulatory, legal, or platform validation.
+    research_plan_if_blocked:
+      - Replace authored fixture inputs with current category, audience, structure, specification, and channel evidence before applying conclusions to a real product.
+      - Obtain supplier and production evidence before treating the selected concept route as manufacturable.
+  packaging_option_matrix:
+    id: fictional-pantry-option-matrix-v02
+    research_board_id: fictional-pantry-research-board-v02
+    product_brief_id: fictional-pantry-product-brief-v02
+    criteria:
+      - id: thumbnail-recognition
+        requirement: Two variants must remain directly comparable and readable in ecommerce thumbnails.
+        evidence_ids: [finding-category-hierarchy, finding-audience-aesthetic-routes]
+      - id: pantry-use
+        requirement: The package concept must support a sealed pantry-storage and pre-opening use story.
+        evidence_ids: [finding-structure-options]
+      - id: specification-fit
+        requirement: The concept target must stay inside one researched option range and keep final dimensions as production work.
+        evidence_ids: [finding-specification-options]
+    options:
+      - id: fictional-stand-up-pouch
+        construction: resealable stand-up pantry pouch
+        target_specification_range: 200 to 300 g research range with a 240 g nominal concept target
+        opening_and_dispensing: tear notch and resealable zipper concept; dispensing behavior remains unverified
+        product_fit: Compact dry-mix format with one broad front panel for the shared hierarchy.
+        audience_task_fit: Supports direct two-SKU comparison and flavor differentiation at thumbnail size.
+        storage_and_usage: Supports a sealed pantry-storage cue and repeated-opening hypothesis.
+        ecommerce_communication: Strong front silhouette and enough panel area for product, variant, illustration, and quantity.
+        evidence_ids: [finding-category-hierarchy, finding-audience-aesthetic-routes, finding-structure-options, finding-specification-options]
+        evidence_confidence: medium
+        concept_risks: [No material, barrier, sealing, or transport validation.]
+        supplier_questions: [Confirm dimensions, fill volume, zipper, tear notch, laminate, sealing window, and barrier needs.]
+        production_validation_required: [dieline, dimensions, material, barrier, filling, sealing, transport, labeling]
+      - id: fictional-carton-sachets
+        construction: paperboard carton with inner sachets
+        target_specification_range: 8 to 12 single-use sachets; sachet weight and carton dimensions unknown
+        opening_and_dispensing: open carton and remove one inner sachet; sachet opening behavior unverified
+        product_fit: Separates portions and offers more panel area, but introduces a secondary package and count system.
+        audience_task_fit: Can organize flavors clearly, but the carton front alone does not reveal the inner format.
+        storage_and_usage: Stacks in a pantry but adds component and disposal complexity.
+        ecommerce_communication: Supports front, side, and contents views; needs extra images to explain the inner sachets.
+        evidence_ids: [finding-structure-options, finding-specification-options]
+        evidence_confidence: low
+        concept_risks: [Inner sachet count and material system are undefined; more components increase validation scope.]
+        supplier_questions: [Confirm sachet format, count, carton dimensions, filling sequence, and labeling split.]
+        production_validation_required: [carton dieline, sachet specification, count, material, filling, sealing, transport, labeling]
+      - id: fictional-canister
+        construction: rigid pantry canister
+        target_specification_range: 250 to 400 g research range; final diameter, height, and fill volume unknown
+        opening_and_dispensing: removable lid and separate scoop hypothesis; no scoop is approved
+        product_fit: Strong repeated-use silhouette, but requires a larger rigid format and additional component decisions.
+        audience_task_fit: Easy to recognize as a pantry object, with less flexible front-panel hierarchy across variants.
+        storage_and_usage: Stable on shelf but less space-efficient for shipping and home storage.
+        ecommerce_communication: Strong silhouette and lid-detail opportunity; specification image becomes more important.
+        evidence_ids: [finding-structure-options, finding-specification-options]
+        evidence_confidence: low
+        concept_risks: [Rigid material, closure, scoop, filling, transport, and breakage questions are unresolved.]
+        supplier_questions: [Confirm material, closure, dimensions, fill volume, scoop decision, sealing, and transport.]
+        production_validation_required: [dimensions, material, closure, filling, sealing, transport, labeling]
+    preferred_option_id: fictional-stand-up-pouch
+    alternatives_retained: [fictional-carton-sachets, fictional-canister]
+    recommendation_basis: The pouch best supports the authored thumbnail-comparison and pantry tasks with the smallest concept scope. This is a fixture design decision, not consumer or production validation.
+  decision_lock:
+    id: fictional-pantry-decision-lock-v02
+    origin: workflow
+    product_brief_id: fictional-pantry-product-brief-v02
+    research_board_id: fictional-pantry-research-board-v02
+    packaging_option_matrix_id: fictional-pantry-option-matrix-v02
+    import_source_id: null
+    import_source_sha256: null
+    approved_by: trusted-record
+    approval_basis: The independent fixture decision selects the pouch route after the authored four-dimension research and option comparison. It does not claim consumer or production validation.
+    <<: *fixture_decision_approval
+    approved_at_utc: "2026-09-09T00:45:00Z"
+    category: fictional pantry drink mix
+    audience_task: Distinguish two flavor variants quickly in an ecommerce thumbnail while reading the product and quantity hierarchy.
+    usage_task: Store the sealed dry mix in a pantry and recognize the package state before opening; no preparation, dosage, serving, consumption, or performance instruction is defined.
+    package_construction: resealable stand-up pantry pouch
+    target_specification_range: 240 g nominal concept pack within a 200 to 300 g research range; final dimensions and fill volume remain supplier questions.
+    variant_ids: [lemon-ginger, berry-oat]
+    exact_copy_state: approved
+    claim_items:
+      - id: claim-fictional-product
+        value: Fictional dry pantry mix for testing only.
+        source_id: legacy-forward-receipts
+        approval_state: approved
+        approved_by: trusted-record
+        approval_basis: Recorded public compare receipt contains this exact fictional claim.
+        <<: *legacy_compare_approval
+        permissions: *public_permissions
+    exact_copy_items:
+      - id: copy-brand
+        value: PPV FIXTURE
+        source_id: legacy-forward-receipts
+        copy_role: brand
+        approval_state: approved
+        approved_by: trusted-record
+        approval_basis: Recorded public compare receipt contains this exact copy.
+        <<: *legacy_compare_approval
+        permissions: *public_permissions
+      - id: copy-product-name
+        value: CITRUS PANTRY MIX
+        source_id: legacy-forward-receipts
+        copy_role: product-name
+        approval_state: approved
+        approved_by: trusted-record
+        approval_basis: Recorded public compare receipt contains this exact copy.
+        <<: *legacy_compare_approval
+        permissions: *public_permissions
+      - id: copy-lemon-ginger
+        value: LEMON GINGER
+        source_id: legacy-forward-receipts
+        copy_role: variant-name
+        approval_state: approved
+        approved_by: trusted-record
+        approval_basis: Recorded public compare receipt contains this exact copy.
+        <<: *legacy_compare_approval
+        permissions: *public_permissions
+      - id: copy-berry-oat
+        value: BERRY OAT
+        source_id: legacy-forward-receipts
+        copy_role: variant-name
+        approval_state: approved
+        approved_by: trusted-record
+        approval_basis: Recorded public compare receipt contains this exact copy.
+        <<: *legacy_compare_approval
+        permissions: *public_permissions
+      - id: copy-quantity
+        value: 240 g
+        source_id: legacy-forward-receipts
+        copy_role: quantity
+        approval_state: approved
+        approved_by: trusted-record
+        approval_basis: Recorded public compare receipt contains this exact copy.
+        <<: *legacy_compare_approval
+        permissions: *public_permissions
+    claim_item_ids: [claim-fictional-product]
+    exact_copy_item_ids: [copy-brand, copy-product-name, copy-lemon-ginger, copy-berry-oat, copy-quantity]
+    prohibited_claim_item_ids: []
+    exclusions: [health benefit, certification, environmental benefit, production approval, legal clearance]
+    unknown_fields: []
+    unverified_fields: []
+    frozen_fields: [category, audience_task, usage_task, package_construction, target_specification_range, variant_ids, exact_copy]
+    open_fields: [production validation]
+    verified_prompt_fact_fields: [category, audience_task, usage_task, package_construction, target_specification_range]
+    production_unknowns: [dieline, dimensions, fill volume, material, barrier, filling, sealing, transport, labeling]
+    source_contract_hashes:
+      hash_basis: canonical-sorted-compact-utf8-json
+      product_brief_sha256: 328fb1c4f076bf116c31b1855b2cc3b5afe87173238faf31125038b15bb01fd9
+      research_board_sha256: 5dfa53a136ca8beb702d51b433a38e3bbc8218cbeabe3057ff7b6447c6a19e69
+      packaging_option_matrix_sha256: 2a9138982182b506739cf2153d6119bb1e7e0851e88eaec681df7f1d4e1a79c2
+  series_system:
+    id: fictional-pantry-series-system-v02
+    decision_lock_id: fictional-pantry-decision-lock-v02
+    sku_order: [lemon-ginger, berry-oat]
+    shared_identity_fields: [pouch geometry, closure, PPV FIXTURE, CITRUS PANTRY MIX, quantity, front camera]
+    fixed_hierarchy: [brand, product name, ingredient illustration, variant name, quantity]
+    variable_fields: [variant name, ingredient illustration, variant accent color]
+    differentiation_rules: [Lemon Ginger uses yellow citrus and ginger cues; Berry Oat uses red berry and oat cues.]
+    comparison_conditions:
+      package_snapshot:
+        form: stand-up pantry pouch
+        geometry: front-facing gusset pouch with resealable top
+      exact_copy_snapshot:
+        exact_copy_item_ids: [copy-brand, copy-product-name, copy-lemon-ginger, copy-berry-oat, copy-quantity]
+      object_count: 2
+      camera_baseline:
+        view: front
+        crop: full pouch with margin
+      channel_snapshot:
+        deliverable: ecommerce comparison board
+      exclusions: [claims, certifications, real brands]
+  packaging_direction_set:
+    id: fictional-pantry-direction-set-v02
+    decision_lock_id: fictional-pantry-decision-lock-v02
+    series_system_id: fictional-pantry-series-system-v02
+    internal_operation: compare
+    directions:
+      - id: quiet-pantry
+        name: Quiet Pantry
+        objective: Calm ingredient-led fictional pouch direction.
+        visual_definition:
+          palette: warm paper with restrained yellow and red accents
+          illustration: small geometric citrus and berry forms
+          typography: compact serif display with plain sans labels
+        target_values: {thumbnail_recognition: clear, decoration: restrained}
+        reference_roles:
+          - source_or_asset_id: compare-direction-a-source
+            role: owned compare-board evidence
+            permitted_elements: [named-object mapping, camera and margin comparison]
+            prohibited_elements: [new claims, identity substitution]
+        changed_fields: [visual_system, illustration_language]
+        frozen_fields: [package, exact_copy, sku_order, camera]
+        exclusions: [photographic food, real logos]
+      - id: bright-counter
+        name: Bright Counter
+        objective: Higher shelf-block recognition with the same fictional pouch facts.
+        visual_definition:
+          palette: white field with high-contrast variant blocks
+          illustration: large flat pantry ingredient shapes
+          typography: rounded heavy sans with wide tracking
+        target_values: {thumbnail_recognition: strong, decoration: moderate}
+        reference_roles:
+          - source_or_asset_id: compare-direction-b-source
+            role: owned compare-board evidence
+            permitted_elements: [named-object mapping, camera and margin comparison]
+            prohibited_elements: [new claims, identity substitution]
+        changed_fields: [visual_system, color_block_scale]
+        frozen_fields: [package, exact_copy, sku_order, camera]
+        exclusions: [photographic food, real logos]
+    requested_artifacts:
+      - {id: quiet-pantry-lemon-ginger, direction_id: quiet-pantry, sku_id: lemon-ginger, status: requested}
+      - {id: quiet-pantry-berry-oat, direction_id: quiet-pantry, sku_id: berry-oat, status: requested}
+      - {id: bright-counter-lemon-ginger, direction_id: bright-counter, sku_id: lemon-ginger, status: requested}
+      - {id: bright-counter-berry-oat, direction_id: bright-counter, sku_id: berry-oat, status: requested}
+    artifacts:
+      - requested_artifact_id: quiet-pantry-lemon-ginger
+        artifact_id: compare-direction-a-lemon-ginger
+        locator: examples/fictional-pantry-product/generated/compare-direction-a.png
+        locator_type: relative_path
+        sha256: a2c1d38551febace8a1bfec48011e7e36528695e244ec892d2c4fa4ad3d4f4fb
+        status: passed
+        source_asset_id: compare-direction-a
+        source_object_id: lemon-ginger
+        source_receipt: &compare_a_receipt
+          source_id: legacy-forward-receipts
+          receipt_id: compare-forward-2026-09-08
+          receipt_sha256: 72a03643558dc54dd334615de552a6623ee5ba0ed82ad36506c2f2f70fb8dc41
+          requested_artifact_id: compare-direction-a
+        direction_id: quiet-pantry
+        object_mapping_evidence: Left pouch visibly carries the LEMON GINGER exact-copy item.
+      - requested_artifact_id: quiet-pantry-berry-oat
+        artifact_id: compare-direction-a-berry-oat
+        locator: examples/fictional-pantry-product/generated/compare-direction-a.png
+        locator_type: relative_path
+        sha256: a2c1d38551febace8a1bfec48011e7e36528695e244ec892d2c4fa4ad3d4f4fb
+        status: passed
+        source_asset_id: compare-direction-a
+        source_object_id: berry-oat
+        source_receipt: *compare_a_receipt
+        direction_id: quiet-pantry
+        object_mapping_evidence: Right pouch visibly carries the BERRY OAT exact-copy item.
+      - requested_artifact_id: bright-counter-lemon-ginger
+        artifact_id: compare-direction-b-lemon-ginger
+        locator: examples/fictional-pantry-product/generated/compare-direction-b.png
+        locator_type: relative_path
+        sha256: 066cc63a2d2aa54a1b02e67104bab5b1a1e677c16d96e5ec641213f176c74aae
+        status: passed
+        source_asset_id: compare-direction-b
+        source_object_id: lemon-ginger
+        source_receipt: &compare_b_receipt
+          source_id: legacy-forward-receipts
+          receipt_id: compare-forward-2026-09-08
+          receipt_sha256: 72a03643558dc54dd334615de552a6623ee5ba0ed82ad36506c2f2f70fb8dc41
+          requested_artifact_id: compare-direction-b
+        direction_id: bright-counter
+        object_mapping_evidence: Left pouch visibly carries the LEMON GINGER exact-copy item.
+      - requested_artifact_id: bright-counter-berry-oat
+        artifact_id: compare-direction-b-berry-oat
+        locator: examples/fictional-pantry-product/generated/compare-direction-b.png
+        locator_type: relative_path
+        sha256: 066cc63a2d2aa54a1b02e67104bab5b1a1e677c16d96e5ec641213f176c74aae
+        status: passed
+        source_asset_id: compare-direction-b
+        source_object_id: berry-oat
+        source_receipt: *compare_b_receipt
+        direction_id: bright-counter
+        object_mapping_evidence: Right pouch visibly carries the BERRY OAT exact-copy item.
+    direction_by_sku_matrix:
+      - {direction_id: quiet-pantry, sku_id: lemon-ginger, requested_artifact_id: quiet-pantry-lemon-ginger, artifact_id: compare-direction-a-lemon-ginger, status: passed, comparison_gates_passed: true}
+      - {direction_id: quiet-pantry, sku_id: berry-oat, requested_artifact_id: quiet-pantry-berry-oat, artifact_id: compare-direction-a-berry-oat, status: passed, comparison_gates_passed: true}
+      - {direction_id: bright-counter, sku_id: lemon-ginger, requested_artifact_id: bright-counter-lemon-ginger, artifact_id: compare-direction-b-lemon-ginger, status: passed, comparison_gates_passed: true}
+      - {direction_id: bright-counter, sku_id: berry-oat, requested_artifact_id: bright-counter-berry-oat, artifact_id: compare-direction-b-berry-oat, status: passed, comparison_gates_passed: true}
+    comparison_profiles: [full-resolution, ecommerce-thumbnail]
+    comparison_findings:
+      - All four direction-by-SKU cells are inspectable named objects in owned public compare boards.
+  selection_lock:
+    id: fictional-pantry-selection-lock-v02
+    status: passed
+    decision_lock_id: fictional-pantry-decision-lock-v02
+    packaging_direction_set_id: fictional-pantry-direction-set-v02
+    selected_direction_id: quiet-pantry
+    selected_matrix_artifact_ids: [compare-direction-a-lemon-ginger, compare-direction-a-berry-oat]
+    source_artifact_id: compare-direction-a
+    source_artifact_sha256: a2c1d38551febace8a1bfec48011e7e36528695e244ec892d2c4fa4ad3d4f4fb
+    source_scope: named-objects
+    source_object_ids: [lemon-ginger, berry-oat]
+    approved_by: current-user
+    approval_basis: Current user selected quiet-pantry for both named SKU objects in public-fictional-v02-approval-2026-09-09.
+    approved_at_utc: "2026-09-09T01:26:15Z"
+    package_identity_snapshot:
+      decision_lock_id: fictional-pantry-decision-lock-v02
+      source_artifact_id: compare-direction-a
+      source_artifact_sha256: a2c1d38551febace8a1bfec48011e7e36528695e244ec892d2c4fa4ad3d4f4fb
+      package_form: stand-up pantry pouch
+      geometry: front-facing gusset pouch with resealable top
+      closure_and_opening: tear notch and resealable zipper concept
+      material_cues: fictional matte paper laminate
+      brand_mark_state: PPV FIXTURE exact-copy item
+      product_name: CITRUS PANTRY MIX
+      variant_identity_by_sku:
+        lemon-ginger: yellow citrus and ginger illustration with LEMON GINGER copy
+        berry-oat: red berry and oat illustration with BERRY OAT copy
+      exact_copy_item_ids: [copy-brand, copy-product-name, copy-lemon-ginger, copy-berry-oat, copy-quantity]
+      palette: [warm paper, yellow, red, dark green, black]
+      defining_graphic_system: restrained flat ingredient illustration on a shared pouch field
+      series_system_id: fictional-pantry-series-system-v02
+      sku_order: [lemon-ginger, berry-oat]
+    package_identity_sha256: 39d1ee7e7ea63ab815eadb9667ece008f3183db388350154d4a9f70ade1ab758
+    package_identity_hash_basis: canonical-package-identity-json
+    locked_fields: [package form, geometry, closure, material cues, brand mark state, product name, variant identity, exact copy, palette, graphic system, SKU order]
+    reopened_fields: []
+  ecommerce_asset_plan:
+    id: fictional-pantry-ecommerce-plan-v02
+    status: passed
+    selection_lock_id: fictional-pantry-selection-lock-v02
+    decision_lock_id: fictional-pantry-decision-lock-v02
+    channel:
+      name: public-fixture-ecommerce-gallery
+      deliverable: role-complete fictional ecommerce gallery plan
+      review_profile_ids: [full-resolution, ecommerce-thumbnail]
+    selected_sku_ids: [lemon-ginger, berry-oat]
+    sequence_logic: Start with catalog, explain with detail and specification, then usage, context, campaign, and channel-variant views.
+    package_identity_sha256: 39d1ee7e7ea63ab815eadb9667ece008f3183db388350154d4a9f70ade1ab758
+    required_roles: [catalog, detail, usage, specification, context, campaign, channel-variant]
+    asset_brief_ids: [gallery-catalog, gallery-detail, gallery-usage, gallery-specification, gallery-context, gallery-campaign, gallery-channel-variant]
+    claim_item_ids: []
+    exact_copy_item_ids: [copy-brand, copy-product-name, copy-lemon-ginger, copy-berry-oat, copy-quantity]
+    cross_set_required_gate_ids: [set-completeness, cross-asset-package-identity, cross-asset-sku-consistency, cross-asset-claims-consistency, sequence-role-coverage, cross-asset-channel-fit]
+    approved_by: current-user
+    approval_basis: Current user approved the seven-role sequence, exact constraints, QA scope, call budget, and non-public output in public-fictional-v02-approval-2026-09-09.
+    output:
+      root: generated/v0.2/2026-09-09
+      overwrite: false
+      retention_policy: preserve
+      publication_authorized: false
+  asset_briefs:
+    - id: gallery-catalog
+      ecommerce_asset_plan_id: fictional-pantry-ecommerce-plan-v02
+      role: catalog
+      status: passed
+      unknown_fields: []
+      parent_asset_brief_id: null
+      job: Show both selected fictional SKU fronts for catalog identification.
+      audience_task: Identify the selected fictional variant at a glance.
+      selected_sku_ids: [lemon-ginger, berry-oat]
+      target_object_count: 2
+      package_state: Two sealed candidate pouches from the draft named-object selection.
+      claim_item_ids: []
+      exact_copy_item_ids: [copy-brand, copy-product-name, copy-lemon-ginger, copy-berry-oat, copy-quantity]
+      composition: {layout: two front-facing pouches at equal scale with clear variant separation}
+      camera: {view: front, perspective: neutral}
+      crop: {aspect_ratio: "4:3", safe_areas: [full pouch margin, readable variant names]}
+      background: {treatment: neutral light ecommerce field}
+      lighting: {treatment: even frontal readability}
+      required_input_asset_ids: [compare-direction-a]
+      permitted_scene_changes: [neutral background, equal spacing, catalog crop]
+      prohibited_identity_changes: [package geometry, closure, brand mark state, product name, variant identity, exact copy, palette, defining graphics]
+      package_identity_sha256: 39d1ee7e7ea63ab815eadb9667ece008f3183db388350154d4a9f70ade1ab758
+      review_profile_ids: [full-resolution, ecommerce-thumbnail]
+      approved_by: current-user
+      approval_basis: Current user approved this catalog brief in public-fictional-v02-approval-2026-09-09.
+      blocking_reason: null
+      permissions: *public_permissions
+    - id: gallery-detail
+      ecommerce_asset_plan_id: fictional-pantry-ecommerce-plan-v02
+      role: detail
+      status: passed
+      unknown_fields: []
+      parent_asset_brief_id: gallery-catalog
+      job: Show the selected pouch closure and ingredient graphic details without inventing specifications.
+      audience_task: Inspect visible package construction and variant graphics.
+      selected_sku_ids: [lemon-ginger]
+      target_object_count: 1
+      package_state: One sealed Lemon Ginger candidate pouch; zipper and front graphics remain visible.
+      claim_item_ids: []
+      exact_copy_item_ids: [copy-brand, copy-product-name, copy-lemon-ginger, copy-quantity]
+      composition: {layout: one pouch with a restrained closure-area detail crop and no added labels}
+      camera: {view: front-close, focus: closure and ingredient illustration}
+      crop: {aspect_ratio: "4:5", safe_areas: [brand, variant name, closure cue]}
+      background: {treatment: warm paper-adjacent neutral field}
+      lighting: {treatment: soft directional light that preserves matte cues}
+      required_input_asset_ids: [gallery-catalog]
+      permitted_scene_changes: [detail crop, closer camera, neutral lighting]
+      prohibited_identity_changes: [package geometry, closure design, brand mark state, product name, exact copy, palette, defining graphics]
+      package_identity_sha256: 39d1ee7e7ea63ab815eadb9667ece008f3183db388350154d4a9f70ade1ab758
+      review_profile_ids: [full-resolution, ecommerce-thumbnail]
+      approved_by: current-user
+      approval_basis: Current user approved this detail brief in public-fictional-v02-approval-2026-09-09.
+      blocking_reason: null
+      permissions: *public_permissions
+    - id: gallery-usage
+      ecommerce_asset_plan_id: fictional-pantry-ecommerce-plan-v02
+      role: usage
+      status: passed
+      unknown_fields: []
+      parent_asset_brief_id: gallery-catalog
+      job: Show the approved fictional pre-opening setup with one sealed Berry Oat pouch and one empty clear glass.
+      audience_task: Recognize the package state before opening without inferring preparation, dosage, serving, consumption, or performance.
+      selected_sku_ids: [berry-oat]
+      target_object_count: 1
+      package_state: One unopened Berry Oat pouch beside one empty clear glass; no opened package, powder, prepared drink, or use instruction.
+      claim_item_ids: []
+      exact_copy_item_ids: [copy-brand, copy-product-name, copy-berry-oat, copy-quantity]
+      composition: {layout: one unopened pouch beside exactly one empty clear glass on a neutral pre-opening surface}
+      camera: {view: three-quarter, focus: package front remains readable}
+      crop: {aspect_ratio: "4:5", safe_areas: [package front, one empty clear glass]}
+      background: {treatment: light kitchen counter with no real brands}
+      lighting: {treatment: soft daylight-style scene light}
+      required_input_asset_ids: [gallery-catalog, gallery-usage-background-plate]
+      permitted_scene_changes: [neutral pre-opening surface, exactly one empty clear glass, three-quarter camera]
+      prohibited_identity_changes: [package geometry, closure, brand mark state, product name, variant identity, exact copy, opened package, powder, prepared drink, preparation or serving implication]
+      package_identity_sha256: 39d1ee7e7ea63ab815eadb9667ece008f3183db388350154d4a9f70ade1ab758
+      review_profile_ids: [full-resolution, ecommerce-thumbnail]
+      approved_by: current-user
+      approval_basis: Current user approved the exact pre-opening usage constraint and this brief in public-fictional-v02-approval-2026-09-09.
+      blocking_reason: null
+      permissions: *public_permissions
+    - id: gallery-specification
+      ecommerce_asset_plan_id: fictional-pantry-ecommerce-plan-v02
+      role: specification
+      status: passed
+      unknown_fields: []
+      parent_asset_brief_id: gallery-detail
+      job: Present the approved 240 g quantity as a deterministic magnified detail alongside the sealed Lemon Ginger pouch.
+      audience_task: Verify the approved quantity copy without inferring dimensions, count, material, legal labeling, or production specification.
+      selected_sku_ids: [lemon-ginger]
+      target_object_count: 1
+      package_state: One sealed Lemon Ginger candidate pouch with approved front exact copy only.
+      claim_item_ids: []
+      exact_copy_item_ids: [copy-brand, copy-product-name, copy-lemon-ginger, copy-quantity]
+      composition: {layout: one complete pouch plus one magnified inset cropped from the existing 240 g source pixels}
+      camera: {view: front, perspective: orthographic-style}
+      crop: {aspect_ratio: "1:1", safe_areas: [complete pouch, approved quantity source-pixel inset]}
+      background: {treatment: plain off-white information field}
+      lighting: {treatment: flat documentation light}
+      required_input_asset_ids: [gallery-detail]
+      permitted_scene_changes: [square crop, one magnified inset derived from existing 240 g source pixels, front documentation camera]
+      prohibited_identity_changes: [new claims, dimensions, counts, materials, new readable labels, legal clearance cues, production specifications, package geometry, exact copy changes]
+      package_identity_sha256: 39d1ee7e7ea63ab815eadb9667ece008f3183db388350154d4a9f70ade1ab758
+      review_profile_ids: [full-resolution, ecommerce-thumbnail]
+      approved_by: current-user
+      approval_basis: Current user approved the source-pixel-only 240 g specification constraint and this brief in public-fictional-v02-approval-2026-09-09.
+      blocking_reason: null
+      permissions: *public_permissions
+    - id: gallery-context
+      ecommerce_asset_plan_id: fictional-pantry-ecommerce-plan-v02
+      role: context
+      status: passed
+      unknown_fields: []
+      parent_asset_brief_id: gallery-catalog
+      job: Show both candidate pouches within a tidy fictional pantry shelf context.
+      audience_task: Understand the intended pantry placement while preserving product comparison.
+      selected_sku_ids: [lemon-ginger, berry-oat]
+      target_object_count: 2
+      package_state: Two sealed candidate pouches standing upright on a fictional pantry shelf.
+      claim_item_ids: []
+      exact_copy_item_ids: [copy-brand, copy-product-name, copy-lemon-ginger, copy-berry-oat, copy-quantity]
+      composition: {layout: both pouches on a sparse shelf with generic jars kept secondary}
+      camera: {view: eye-level three-quarter, focus: both package fronts}
+      crop: {aspect_ratio: "16:9", safe_areas: [both packages, quiet shelf margins]}
+      background: {treatment: warm generic pantry shelf with no third-party material}
+      lighting: {treatment: soft ambient shelf light}
+      required_input_asset_ids: [gallery-catalog, gallery-context-background-plate]
+      permitted_scene_changes: [generic shelf context, wider camera, secondary unbranded props]
+      prohibited_identity_changes: [package geometry, closure, brand mark state, product and variant names, exact copy, palette]
+      package_identity_sha256: 39d1ee7e7ea63ab815eadb9667ece008f3183db388350154d4a9f70ade1ab758
+      review_profile_ids: [full-resolution, ecommerce-thumbnail]
+      approved_by: current-user
+      approval_basis: Current user approved this context brief in public-fictional-v02-approval-2026-09-09.
+      blocking_reason: null
+      permissions: *public_permissions
+    - id: gallery-campaign
+      ecommerce_asset_plan_id: fictional-pantry-ecommerce-plan-v02
+      role: campaign
+      status: passed
+      unknown_fields: []
+      parent_asset_brief_id: gallery-catalog
+      job: Create a fictional campaign key visual with blank supporting space and no benefit messaging.
+      audience_task: Recognize the two fictional variants in a high-level promotional composition.
+      selected_sku_ids: [lemon-ginger, berry-oat]
+      target_object_count: 2
+      package_state: Two sealed candidate pouches remain the only product objects.
+      claim_item_ids: []
+      exact_copy_item_ids: [copy-brand, copy-product-name, copy-lemon-ginger, copy-berry-oat, copy-quantity]
+      composition: {layout: diagonal two-pouch arrangement with blank headline field and restrained color panels}
+      camera: {view: front-elevated, focus: readable package faces}
+      crop: {aspect_ratio: "16:9", safe_areas: [blank headline field, both packages, no overlaid copy]}
+      background: {treatment: abstract yellow and red panels derived from selected variant colors}
+      lighting: {treatment: polished studio light with controlled shadows}
+      required_input_asset_ids: [gallery-catalog]
+      permitted_scene_changes: [campaign spacing, abstract color panels, elevated camera]
+      prohibited_identity_changes: [benefit claims, certifications, new readable copy, package geometry, exact copy, palette changes]
+      package_identity_sha256: 39d1ee7e7ea63ab815eadb9667ece008f3183db388350154d4a9f70ade1ab758
+      review_profile_ids: [full-resolution, ecommerce-thumbnail]
+      approved_by: current-user
+      approval_basis: Current user approved this campaign brief in public-fictional-v02-approval-2026-09-09.
+      blocking_reason: null
+      permissions: *public_permissions
+    - id: gallery-channel-variant
+      ecommerce_asset_plan_id: fictional-pantry-ecommerce-plan-v02
+      role: channel-variant
+      status: passed
+      unknown_fields: []
+      parent_asset_brief_id: gallery-catalog
+      job: Adapt the Lemon Ginger candidate into a mobile-safe catalog crop without redesigning it.
+      audience_task: Identify Lemon Ginger in a small square channel placement.
+      selected_sku_ids: [lemon-ginger]
+      target_object_count: 1
+      package_state: One sealed Lemon Ginger candidate pouch centered for a mobile-safe crop.
+      claim_item_ids: []
+      exact_copy_item_ids: [copy-brand, copy-product-name, copy-lemon-ginger, copy-quantity]
+      composition: {layout: one centered pouch with expanded quiet margin for square channel use}
+      camera: {view: front, perspective: neutral}
+      crop: {aspect_ratio: "1:1", safe_areas: [full pouch, brand, product name, variant name, quantity, mobile edge margin]}
+      background: {treatment: solid warm paper tone matching the selected direction}
+      lighting: {treatment: even thumbnail-oriented frontal light}
+      required_input_asset_ids: [gallery-catalog]
+      permitted_scene_changes: [square crop, centered scale, quiet margin, thumbnail lighting]
+      prohibited_identity_changes: [package geometry, closure, brand mark state, product name, variant identity, exact copy, palette, defining graphics]
+      package_identity_sha256: 39d1ee7e7ea63ab815eadb9667ece008f3183db388350154d4a9f70ade1ab758
+      review_profile_ids: [full-resolution, ecommerce-thumbnail]
+      approved_by: current-user
+      approval_basis: Current user approved this channel-variant brief in public-fictional-v02-approval-2026-09-09.
+      blocking_reason: null
+      permissions: *public_permissions
+  qa_plan:
+    id: fictional-pantry-ecommerce-qa-plan-v02
+    required_gate_ids: [artifact-type, object-count, package-geometry, exact-copy, invented-claims, reference-role, visual-hierarchy-identity, product-anatomy, channel-fit, artifact-integrity, selection-lock, asset-role, package-identity]
+    cross_set_required_gate_ids: [set-completeness, cross-asset-package-identity, cross-asset-sku-consistency, cross-asset-claims-consistency, sequence-role-coverage, cross-asset-channel-fit]
+    review_profiles:
+      - profile_id: full-resolution
+        profile_scope: full-resolution
+        required: true
+        definition: {fit: original}
+      - profile_id: ecommerce-thumbnail
+        profile_scope: named-profile
+        required: true
+        definition: {fit: contain, longest_edge: 320}
+    independent_review_required: true
+    expected_gate_rows: 188
+    sha256: d3c68a236664f4af66a046c278153d9b52138c6e916c7d3468799a35489e9460
+project_state:
+  id: fictional-pantry-project-state-v02
+  current_stage_id: qa-delivery
+  earliest_incomplete_stage_id: null
+  requested_scope_end_stage_id: qa-delivery
+  stages:
+    - stage_id: product-definition
+      status: passed
+      contract_type: ProductBrief
+      contract_id: fictional-pantry-product-brief-v02
+      contract_ids: [fictional-pantry-product-brief-v02]
+      source_locator: examples/fictional-pantry-product/full-workflow.yaml
+      source_sha256: null
+      gate_decision_id: fictional-pantry-concept-decision-v02
+      blocking_reasons: []
+    - stage_id: research-options
+      status: passed
+      contract_type: ResearchBoard
+      contract_id: fictional-pantry-research-board-v02
+      contract_ids: [fictional-pantry-research-board-v02, fictional-pantry-option-matrix-v02]
+      source_locator: examples/fictional-pantry-product/full-workflow.yaml
+      source_sha256: null
+      gate_decision_id: fictional-pantry-decision-lock-v02
+      blocking_reasons: []
+    - stage_id: decision-freeze
+      status: passed
+      contract_type: DecisionLock
+      contract_id: fictional-pantry-decision-lock-v02
+      contract_ids: [fictional-pantry-decision-lock-v02, fictional-pantry-series-system-v02]
+      source_locator: examples/fictional-pantry-product/full-workflow.yaml
+      source_sha256: null
+      gate_decision_id: fictional-pantry-decision-lock-v02
+      blocking_reasons: []
+    - stage_id: packaging-directions
+      status: passed
+      contract_type: PackagingDirectionSet
+      contract_id: fictional-pantry-direction-set-v02
+      contract_ids: [fictional-pantry-direction-set-v02]
+      source_locator: examples/fictional-pantry-product/full-workflow.yaml
+      source_sha256: null
+      gate_decision_id: fictional-pantry-selection-lock-v02
+      blocking_reasons: []
+    - stage_id: selection-refinement
+      status: passed
+      contract_type: SelectionLock
+      contract_id: fictional-pantry-selection-lock-v02
+      contract_ids: [fictional-pantry-selection-lock-v02]
+      source_locator: examples/fictional-pantry-product/full-workflow.yaml
+      source_sha256: null
+      gate_decision_id: public-fictional-v02-approval-2026-09-09
+      blocking_reasons: []
+    - stage_id: ecommerce-planning
+      status: passed
+      contract_type: EcommerceAssetPlan
+      contract_id: fictional-pantry-ecommerce-plan-v02
+      contract_ids: [fictional-pantry-ecommerce-plan-v02, gallery-catalog, gallery-detail, gallery-usage, gallery-specification, gallery-context, gallery-campaign, gallery-channel-variant]
+      source_locator: examples/fictional-pantry-product/full-workflow.yaml
+      source_sha256: null
+      gate_decision_id: public-fictional-v02-approval-2026-09-09
+      blocking_reasons: []
+    - stage_id: ecommerce-generation
+      status: passed
+      contract_type: GenerationReceipt
+      contract_id: fictional-pantry-generation-receipt-v02-2026-09-09
+      contract_ids: [fictional-pantry-generation-receipt-v02-2026-09-09]
+      source_locator: examples/fictional-pantry-product/generation-receipt-v0.2-2026-09-09.yaml
+      source_sha256: 62a6672cd6e0bc3c28805673afbcba26a9a368a5dd55274e3cd9381af9df3942
+      gate_decision_id: public-fictional-v02-final-build-authorization-2026-09-09
+      blocking_reasons: []
+    - stage_id: qa-delivery
+      status: passed
+      contract_type: DeliveryManifest
+      contract_id: fictional-pantry-delivery-manifest-v02
+      contract_ids: [fictional-pantry-delivery-manifest-v02, fictional-pantry-image-qa-result-v02-2026-09-09, fictional-pantry-runtime-receipt-v02-2026-09-09]
+      source_locator: examples/fictional-pantry-product/delivery-manifest.yaml
+      source_sha256: 14c24259f330cb5d501c7c8e95da1b833ff886cf45140669c1379c52f480d7e4
+      gate_decision_id: fictional-pantry-image-qa-result-v02-2026-09-09
+      blocking_reasons: []
+  active_decision_lock_id: fictional-pantry-decision-lock-v02
+  active_selection_lock_id: fictional-pantry-selection-lock-v02
+  open_fields: [publication authorization, production validation]
+  remaining_work: [Keep GitHub publication behind a separate current-user confirmation, and complete print, legal, regulatory, supplier, platform, and physical production validation before production use.]

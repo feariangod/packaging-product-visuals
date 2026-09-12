@@ -179,3 +179,319 @@ assets:
     model_or_version: not exposed by the host
     executed_at_utc: "2026-09-08T11:22:15Z"
     documented_issue: none
+  - id: gallery-usage-background-attempt-01-v02
+    locator: generated/v0.2/2026-09-09/attempts/gallery-usage/background-attempt-01-2026-09-09.png
+    created_by: Codex desktop with image_gen.imagegen
+    source_material: self-authored fictional text-only prompt; no package image or third-party reference asset
+    visible_trademarks: none
+    embedded_private_data: false
+    redistribution: blocked until separate current-user GitHub publication authorization; see ASSET_LICENSES.md
+    attribution_status: not-required
+    attribution_text: null
+    attribution_fulfilled: not-applicable
+    expected_dimensions: [1200, 1500]
+    expected_mode: RGB
+    sha256: 6b6001e6793e03c097ca4e861fc0fbb6000faccbe4f1cbef170df9c8cb63f2b0
+    forward_run_id: public-fictional-v02-2026-09-09
+    attempt_id: gallery-usage-background-attempt-01-2026-09-09
+    attempt_outcome: passed
+    tool_or_provider: OpenAI built-in image generation
+    model_or_version: not exposed by the host
+    executed_at_utc: "2026-09-09T08:49:39Z"
+    documented_issue: generation-time redistribution_allowed and publication_allowed were false
+  - id: gallery-context-background-attempt-01-v02
+    locator: generated/v0.2/2026-09-09/attempts/gallery-context/background-attempt-01-2026-09-09.png
+    created_by: Codex desktop with image_gen.imagegen
+    source_material: self-authored fictional text-only prompt; no package image or third-party reference asset
+    visible_trademarks: none
+    embedded_private_data: false
+    redistribution: blocked until separate current-user GitHub publication authorization; see ASSET_LICENSES.md
+    attribution_status: not-required
+    attribution_text: null
+    attribution_fulfilled: not-applicable
+    expected_dimensions: [1920, 1080]
+    expected_mode: RGB
+    sha256: 4a3007bcd227ffa0095d5553351958a9c0d4f926d375ada0694af4c9c97f29b8
+    forward_run_id: public-fictional-v02-2026-09-09
+    attempt_id: gallery-context-background-attempt-01-2026-09-09
+    attempt_outcome: passed
+    tool_or_provider: OpenAI built-in image generation
+    model_or_version: not exposed by the host
+    executed_at_utc: "2026-09-09T08:50:43Z"
+    documented_issue: generation-time redistribution_allowed and publication_allowed were false
+  - id: lemon-ginger-mask-v02
+    locator: transforms/v0.2/2026-09-09/lemon-ginger-mask-2026-09-09.png
+    created_by: build_v02_gallery.py with Pillow
+    source_material: deterministic binary mask derived from the repository-owned compare-direction-a package pixels
+    source_asset_id: compare-direction-a
+    source_sha256: a2c1d38551febace8a1bfec48011e7e36528695e244ec892d2c4fa4ad3d4f4fb
+    visible_trademarks: none
+    embedded_private_data: false
+    redistribution: blocked until separate current-user GitHub publication authorization; see ASSET_LICENSES.md
+    attribution_status: not-required
+    attribution_text: null
+    attribution_fulfilled: not-applicable
+    expected_dimensions: [1448, 1086]
+    expected_mode: L
+    sha256: 581224206f0e72063380c549620aac36e91414482774e633ee87582ad7bc7c6f
+    forward_run_id: public-fictional-v02-2026-09-09
+    documented_issue: none
+  - id: berry-oat-mask-v02
+    locator: transforms/v0.2/2026-09-09/berry-oat-mask-2026-09-09.png
+    created_by: build_v02_gallery.py with Pillow
+    source_material: deterministic binary mask derived from the repository-owned compare-direction-a package pixels
+    source_asset_id: compare-direction-a
+    source_sha256: a2c1d38551febace8a1bfec48011e7e36528695e244ec892d2c4fa4ad3d4f4fb
+    visible_trademarks: none
+    embedded_private_data: false
+    redistribution: blocked until separate current-user GitHub publication authorization; see ASSET_LICENSES.md
+    attribution_status: not-required
+    attribution_text: null
+    attribution_fulfilled: not-applicable
+    expected_dimensions: [1448, 1086]
+    expected_mode: L
+    sha256: 479946697e7acbca8e5809d286819089c0de138ba2826890328923d14b336606
+    forward_run_id: public-fictional-v02-2026-09-09
+    documented_issue: none
+  - id: gallery-catalog-v02
+    locator: generated/v0.2/2026-09-09/gallery-catalog-2026-09-09.png
+    created_by: build_v02_gallery.py deterministic Pillow compositor
+    source_material: repository-owned compare-direction-a package pixels plus locally created masks and approved layout operations
+    source_asset_id: compare-direction-a
+    source_sha256: a2c1d38551febace8a1bfec48011e7e36528695e244ec892d2c4fa4ad3d4f4fb
+    visible_trademarks: none
+    embedded_private_data: false
+    redistribution: blocked until separate current-user GitHub publication authorization; see ASSET_LICENSES.md
+    attribution_status: not-required
+    attribution_text: null
+    attribution_fulfilled: not-applicable
+    expected_dimensions: [1448, 1086]
+    expected_mode: RGB
+    sha256: d890af034593b43fd1d5c10a51ee9f97f59d8de938ddf311bca5eaef17ab8d38
+    forward_run_id: public-fictional-v02-2026-09-09
+    documented_issue: none
+  - id: gallery-detail-v02
+    locator: generated/v0.2/2026-09-09/gallery-detail-2026-09-09.png
+    created_by: build_v02_gallery.py deterministic Pillow compositor
+    source_material: repository-owned compare-direction-a package pixels plus locally created masks and approved layout operations
+    source_asset_id: compare-direction-a
+    source_sha256: a2c1d38551febace8a1bfec48011e7e36528695e244ec892d2c4fa4ad3d4f4fb
+    visible_trademarks: none
+    embedded_private_data: false
+    redistribution: blocked until separate current-user GitHub publication authorization; see ASSET_LICENSES.md
+    attribution_status: not-required
+    attribution_text: null
+    attribution_fulfilled: not-applicable
+    expected_dimensions: [720, 900]
+    expected_mode: RGB
+    sha256: 2e51f7bde4b48de152f03ac0a45eb80152c61f7cdb181c7d3cd9d6e566b14b85
+    forward_run_id: public-fictional-v02-2026-09-09
+    documented_issue: none
+  - id: gallery-usage-v02
+    locator: generated/v0.2/2026-09-09/gallery-usage-2026-09-09.png
+    created_by: build_v02_gallery.py deterministic Pillow compositor
+    source_material: repository-owned compare-direction-a package pixels composited over gallery-usage-background-attempt-01-v02
+    source_asset_id: compare-direction-a
+    source_sha256: a2c1d38551febace8a1bfec48011e7e36528695e244ec892d2c4fa4ad3d4f4fb
+    supporting_asset_id: gallery-usage-background-attempt-01-v02
+    supporting_sha256: 6b6001e6793e03c097ca4e861fc0fbb6000faccbe4f1cbef170df9c8cb63f2b0
+    visible_trademarks: none
+    embedded_private_data: false
+    redistribution: blocked until separate current-user GitHub publication authorization; see ASSET_LICENSES.md
+    attribution_status: not-required
+    attribution_text: null
+    attribution_fulfilled: not-applicable
+    expected_dimensions: [1200, 1500]
+    expected_mode: RGB
+    sha256: 541ee5629533a46101aed0d1f7b50489a3fed154987d38b84870736c0708b35b
+    forward_run_id: public-fictional-v02-2026-09-09
+    documented_issue: none
+  - id: gallery-specification-v02
+    locator: generated/v0.2/2026-09-09/gallery-specification-2026-09-09.png
+    created_by: build_v02_gallery.py deterministic Pillow compositor
+    source_material: repository-owned compare-direction-a package pixels plus locally created masks and approved layout operations
+    source_asset_id: compare-direction-a
+    source_sha256: a2c1d38551febace8a1bfec48011e7e36528695e244ec892d2c4fa4ad3d4f4fb
+    visible_trademarks: none
+    embedded_private_data: false
+    redistribution: blocked until separate current-user GitHub publication authorization; see ASSET_LICENSES.md
+    attribution_status: not-required
+    attribution_text: null
+    attribution_fulfilled: not-applicable
+    expected_dimensions: [1200, 1200]
+    expected_mode: RGB
+    sha256: 786fc55979c1edadcd64c951aecf7c0aae952aa8fe6ecfbea6882981676bbba0
+    forward_run_id: public-fictional-v02-2026-09-09
+    documented_issue: none
+  - id: gallery-context-v02
+    locator: generated/v0.2/2026-09-09/gallery-context-2026-09-09.png
+    created_by: build_v02_gallery.py deterministic Pillow compositor
+    source_material: repository-owned compare-direction-a package pixels composited over gallery-context-background-attempt-01-v02
+    source_asset_id: compare-direction-a
+    source_sha256: a2c1d38551febace8a1bfec48011e7e36528695e244ec892d2c4fa4ad3d4f4fb
+    supporting_asset_id: gallery-context-background-attempt-01-v02
+    supporting_sha256: 4a3007bcd227ffa0095d5553351958a9c0d4f926d375ada0694af4c9c97f29b8
+    visible_trademarks: none
+    embedded_private_data: false
+    redistribution: blocked until separate current-user GitHub publication authorization; see ASSET_LICENSES.md
+    attribution_status: not-required
+    attribution_text: null
+    attribution_fulfilled: not-applicable
+    expected_dimensions: [1920, 1080]
+    expected_mode: RGB
+    sha256: 3e266572cbd975e07179ca4c0de06a40009ea84628e5cccc8e1a3dc345919058
+    forward_run_id: public-fictional-v02-2026-09-09
+    documented_issue: none
+  - id: gallery-campaign-v02
+    locator: generated/v0.2/2026-09-09/gallery-campaign-2026-09-09.png
+    created_by: build_v02_gallery.py deterministic Pillow compositor
+    source_material: repository-owned compare-direction-a package pixels plus locally created masks and approved layout operations
+    source_asset_id: compare-direction-a
+    source_sha256: a2c1d38551febace8a1bfec48011e7e36528695e244ec892d2c4fa4ad3d4f4fb
+    visible_trademarks: none
+    embedded_private_data: false
+    redistribution: blocked until separate current-user GitHub publication authorization; see ASSET_LICENSES.md
+    attribution_status: not-required
+    attribution_text: null
+    attribution_fulfilled: not-applicable
+    expected_dimensions: [1920, 1080]
+    expected_mode: RGB
+    sha256: 6786a09bf0d245f64015299f07a4f0dbd0e011d2cb1cc2c61172dacdc42ba9f7
+    forward_run_id: public-fictional-v02-2026-09-09
+    documented_issue: none
+  - id: gallery-channel-variant-v02
+    locator: generated/v0.2/2026-09-09/gallery-channel-variant-2026-09-09.png
+    created_by: build_v02_gallery.py deterministic Pillow compositor
+    source_material: repository-owned compare-direction-a package pixels plus locally created masks and approved layout operations
+    source_asset_id: compare-direction-a
+    source_sha256: a2c1d38551febace8a1bfec48011e7e36528695e244ec892d2c4fa4ad3d4f4fb
+    visible_trademarks: none
+    embedded_private_data: false
+    redistribution: blocked until separate current-user GitHub publication authorization; see ASSET_LICENSES.md
+    attribution_status: not-required
+    attribution_text: null
+    attribution_fulfilled: not-applicable
+    expected_dimensions: [1200, 1200]
+    expected_mode: RGB
+    sha256: 209a65915981963de95f68e077dffc36f198a9910be605c8d88e4ed411eba6bc
+    forward_run_id: public-fictional-v02-2026-09-09
+    documented_issue: none
+  - id: gallery-catalog-thumbnail-v02
+    locator: review/v0.2/2026-09-09/thumbnails/gallery-catalog-2026-09-09.png
+    created_by: prepare_review_pack.py deterministic contain resize
+    source_material: gallery-catalog-v02 without crop or generative processing
+    source_asset_id: gallery-catalog-v02
+    source_sha256: d890af034593b43fd1d5c10a51ee9f97f59d8de938ddf311bca5eaef17ab8d38
+    visible_trademarks: none
+    embedded_private_data: false
+    redistribution: inherits the separate current-user GitHub publication gate from gallery-catalog-v02
+    attribution_status: not-required
+    attribution_text: null
+    attribution_fulfilled: not-applicable
+    expected_dimensions: [320, 240]
+    expected_mode: RGB
+    sha256: 374f6dd2658cd326a3f2a913c03ba21934a0d933119b0b4d155e36b19364e346
+    forward_run_id: public-fictional-v02-2026-09-09
+    documented_issue: none
+  - id: gallery-detail-thumbnail-v02
+    locator: review/v0.2/2026-09-09/thumbnails/gallery-detail-2026-09-09.png
+    created_by: prepare_review_pack.py deterministic contain resize
+    source_material: gallery-detail-v02 without crop or generative processing
+    source_asset_id: gallery-detail-v02
+    source_sha256: 2e51f7bde4b48de152f03ac0a45eb80152c61f7cdb181c7d3cd9d6e566b14b85
+    visible_trademarks: none
+    embedded_private_data: false
+    redistribution: inherits the separate current-user GitHub publication gate from gallery-detail-v02
+    attribution_status: not-required
+    attribution_text: null
+    attribution_fulfilled: not-applicable
+    expected_dimensions: [256, 320]
+    expected_mode: RGB
+    sha256: 841a0b78fc1aed4aca76f64a486d1b41777da9bfe99d6cd8f32241f0e6e8f961
+    forward_run_id: public-fictional-v02-2026-09-09
+    documented_issue: none
+  - id: gallery-usage-thumbnail-v02
+    locator: review/v0.2/2026-09-09/thumbnails/gallery-usage-2026-09-09.png
+    created_by: prepare_review_pack.py deterministic contain resize
+    source_material: gallery-usage-v02 without crop or generative processing
+    source_asset_id: gallery-usage-v02
+    source_sha256: 541ee5629533a46101aed0d1f7b50489a3fed154987d38b84870736c0708b35b
+    visible_trademarks: none
+    embedded_private_data: false
+    redistribution: inherits the separate current-user GitHub publication gate from gallery-usage-v02
+    attribution_status: not-required
+    attribution_text: null
+    attribution_fulfilled: not-applicable
+    expected_dimensions: [256, 320]
+    expected_mode: RGB
+    sha256: 7dc9a31a1fcea92afa4b2a628da44b4df4856a4f6adbce554c2deb84b779ba1b
+    forward_run_id: public-fictional-v02-2026-09-09
+    documented_issue: none
+  - id: gallery-specification-thumbnail-v02
+    locator: review/v0.2/2026-09-09/thumbnails/gallery-specification-2026-09-09.png
+    created_by: prepare_review_pack.py deterministic contain resize
+    source_material: gallery-specification-v02 without crop or generative processing
+    source_asset_id: gallery-specification-v02
+    source_sha256: 786fc55979c1edadcd64c951aecf7c0aae952aa8fe6ecfbea6882981676bbba0
+    visible_trademarks: none
+    embedded_private_data: false
+    redistribution: inherits the separate current-user GitHub publication gate from gallery-specification-v02
+    attribution_status: not-required
+    attribution_text: null
+    attribution_fulfilled: not-applicable
+    expected_dimensions: [320, 320]
+    expected_mode: RGB
+    sha256: c0002a9a264f49b1936e598a60a82ce77954e934133b9c8ce193f664bb33e30c
+    forward_run_id: public-fictional-v02-2026-09-09
+    documented_issue: none
+  - id: gallery-context-thumbnail-v02
+    locator: review/v0.2/2026-09-09/thumbnails/gallery-context-2026-09-09.png
+    created_by: prepare_review_pack.py deterministic contain resize
+    source_material: gallery-context-v02 without crop or generative processing
+    source_asset_id: gallery-context-v02
+    source_sha256: 3e266572cbd975e07179ca4c0de06a40009ea84628e5cccc8e1a3dc345919058
+    visible_trademarks: none
+    embedded_private_data: false
+    redistribution: inherits the separate current-user GitHub publication gate from gallery-context-v02
+    attribution_status: not-required
+    attribution_text: null
+    attribution_fulfilled: not-applicable
+    expected_dimensions: [320, 180]
+    expected_mode: RGB
+    sha256: 07828ecb411a3d509b34704d93d0aac9ae373d9a6766287b33c6cc40780af309
+    forward_run_id: public-fictional-v02-2026-09-09
+    documented_issue: none
+  - id: gallery-campaign-thumbnail-v02
+    locator: review/v0.2/2026-09-09/thumbnails/gallery-campaign-2026-09-09.png
+    created_by: prepare_review_pack.py deterministic contain resize
+    source_material: gallery-campaign-v02 without crop or generative processing
+    source_asset_id: gallery-campaign-v02
+    source_sha256: 6786a09bf0d245f64015299f07a4f0dbd0e011d2cb1cc2c61172dacdc42ba9f7
+    visible_trademarks: none
+    embedded_private_data: false
+    redistribution: inherits the separate current-user GitHub publication gate from gallery-campaign-v02
+    attribution_status: not-required
+    attribution_text: null
+    attribution_fulfilled: not-applicable
+    expected_dimensions: [320, 180]
+    expected_mode: RGB
+    sha256: 5fdaf69aef15a59f4f3532123df39d5f4c55a1308e7e727be41afb81ff0f972f
+    forward_run_id: public-fictional-v02-2026-09-09
+    documented_issue: none
+  - id: gallery-channel-variant-thumbnail-v02
+    locator: review/v0.2/2026-09-09/thumbnails/gallery-channel-variant-2026-09-09.png
+    created_by: prepare_review_pack.py deterministic contain resize
+    source_material: gallery-channel-variant-v02 without crop or generative processing
+    source_asset_id: gallery-channel-variant-v02
+    source_sha256: 209a65915981963de95f68e077dffc36f198a9910be605c8d88e4ed411eba6bc
+    visible_trademarks: none
+    embedded_private_data: false
+    redistribution: inherits the separate current-user GitHub publication gate from gallery-channel-variant-v02
+    attribution_status: not-required
+    attribution_text: null
+    attribution_fulfilled: not-applicable
+    expected_dimensions: [320, 320]
+    expected_mode: RGB
+    sha256: 77cacd02413e78a4809b72aa648ab140db76734c19b364dd9805cc8868a9efb4
+    forward_run_id: public-fictional-v02-2026-09-09
+    documented_issue: none

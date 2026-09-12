@@ -1,0 +1,91 @@
+{
+  "authorization": {
+    "confirmed_at_utc": "2026-09-09T08:47:30Z",
+    "id": "public-fictional-v02-final-build-authorization-2026-09-09",
+    "record_created_at_utc": "2026-09-09T08:55:19Z",
+    "timeline_evidence_sha256": "7df80ba51b81cf59681ed048d45247de6c60a698b587165760b8aa0c031791fa",
+    "sha256": "a30e4a586b84afc0425f2d826f4acb9d631be6e6b1c1aa433309151f136f9da3"
+  },
+  "plates": [
+    {
+      "clean_attempt": {
+        "attempt_id": "gallery-usage-background-attempt-01-2026-09-09",
+        "call_count": 1,
+        "checks": {
+          "artifact_type": "passed",
+          "dimensions": "passed",
+          "no_packaging": "passed",
+          "no_text": "passed",
+          "placement_zone": "passed"
+        },
+        "executed_at_utc": "2026-09-09T08:49:39Z",
+        "failure_class": null,
+        "model": "built-in-imagegen-unspecified",
+        "outcome": "passed",
+        "prompt_sha256": "f0b517532b7a921f32f0bd7d269c82ff7849de37f7e172f0816e546b7f4f6bfa",
+        "provider": "openai-built-in-imagegen"
+      },
+      "dimensions": [
+        1200,
+        1500
+      ],
+      "icc_profile_present": false,
+      "mode": "RGB",
+      "provenance": {
+        "created_by": "external-image-generation",
+        "documented_issue": "none",
+        "embedded_private_data": false,
+        "publication_allowed": false,
+        "redistribution_allowed": false,
+        "source_material": "fictional text-only background prompt",
+        "visible_trademarks": "none"
+      },
+      "retained_locator": "attempts/gallery-usage/background-attempt-01-2026-09-09.png",
+      "role": "usage",
+      "sha256": "6b6001e6793e03c097ca4e861fc0fbb6000faccbe4f1cbef170df9c8cb63f2b0",
+      "supporting_asset_id": "gallery-usage-background-plate"
+    },
+    {
+      "clean_attempt": {
+        "attempt_id": "gallery-context-background-attempt-01-2026-09-09",
+        "call_count": 1,
+        "checks": {
+          "artifact_type": "passed",
+          "dimensions": "passed",
+          "no_packaging": "passed",
+          "no_text": "passed",
+          "placement_zone": "passed"
+        },
+        "executed_at_utc": "2026-09-09T08:50:43Z",
+        "failure_class": null,
+        "model": "built-in-imagegen-unspecified",
+        "outcome": "passed",
+        "prompt_sha256": "b60c664b77143248b2c5611eb384280891b4fe394d8b359f6a87f85e606c604a",
+        "provider": "openai-built-in-imagegen"
+      },
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "icc_profile_present": false,
+      "mode": "RGB",
+      "provenance": {
+        "created_by": "external-image-generation",
+        "documented_issue": "none",
+        "embedded_private_data": false,
+        "publication_allowed": false,
+        "redistribution_allowed": false,
+        "source_material": "fictional text-only background prompt",
+        "visible_trademarks": "none"
+      },
+      "retained_locator": "attempts/gallery-context/background-attempt-01-2026-09-09.png",
+      "role": "context",
+      "sha256": "4a3007bcd227ffa0095d5553351958a9c0d4f926d375ada0694af4c9c97f29b8",
+      "supporting_asset_id": "gallery-context-background-plate"
+    }
+  ],
+  "publication_authorized": false,
+  "run_date": "2026-09-09",
+  "schema_version": 1,
+  "status": "draft"
+}

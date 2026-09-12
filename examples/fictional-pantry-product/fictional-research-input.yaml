@@ -1,0 +1,61 @@
+schema_version: 1
+id: fictional-pantry-research-input-v02
+record_type: authored-public-fixture-input
+fixture_notice: This record exists to exercise the workflow. It is not market research, consumer validation, supplier advice, or a claim about a real category.
+product_input:
+  category: fictional pantry drink mix
+  form: dry pantry mix
+  usage_occasions:
+    - at-home pantry preparation
+    - online flavor comparison before purchase
+  audience:
+    description: Adults shopping online for compact pantry drink mixes who need to distinguish flavor variants quickly from a thumbnail.
+    evidence_limit: Authored fixture audience and task only; no preference or conversion study was performed.
+  variants:
+    - {id: lemon-ginger, name: Lemon Ginger, sku_order: 1}
+    - {id: berry-oat, name: Berry Oat, sku_order: 2}
+  verified_facts:
+    - Fictional dry pantry mix for workflow testing only.
+  exact_copy:
+    brand: PPV FIXTURE
+    product_name: CITRUS PANTRY MIX
+    variant_names: [LEMON GINGER, BERRY OAT]
+    quantity: 240 g
+  package_starting_point:
+    construction: resealable stand-up pouch
+    target_specification: 240 g nominal concept pack
+    status: working
+    constraints:
+      - both variants must use one comparable front-facing package format
+      - the pack must support pantry storage and ecommerce thumbnail recognition
+    open_questions:
+      - whether a carton or canister offers a stronger product and audience fit
+      - which nominal capacity range should be carried into concept generation
+research_cards:
+  - id: category-front-hierarchy-card
+    dimension: same-category-packaging
+    evidence_kind: authored-fixture-input
+    statement: Compare a stable brand, product, variant, and quantity hierarchy across every package direction.
+  - id: audience-aesthetic-card
+    dimension: audience-aesthetics
+    evidence_kind: authored-fixture-input
+    statement: Test one calm pantry-led system and one brighter recognition-led system without claiming either is preferred by consumers.
+  - id: pouch-option-card
+    dimension: package-construction
+    evidence_kind: authored-fixture-input
+    statement: A resealable stand-up pouch is the initial route because it supports a compact front panel and pantry storage cue.
+  - id: carton-option-card
+    dimension: package-construction
+    evidence_kind: authored-fixture-input
+    statement: A paperboard carton with inner sachets remains a concept alternative for portion organization and panel area.
+  - id: canister-option-card
+    dimension: package-construction
+    evidence_kind: authored-fixture-input
+    statement: A rigid canister remains a concept alternative for repeated pantry use and strong silhouette recognition.
+  - id: specification-card
+    dimension: package-specification
+    evidence_kind: authored-fixture-input
+    statement: Compare a 200 to 300 g pouch range, an 8 to 12 sachet carton, and a 250 to 400 g canister before selecting a concept target.
+limitations:
+  - no real competitor, consumer, platform, legal, material, supplier, or manufacturing research
+  - every structure and specification statement remains concept-stage until separately validated

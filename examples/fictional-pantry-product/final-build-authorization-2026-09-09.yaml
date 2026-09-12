@@ -1,0 +1,123 @@
+schema_version: 1
+id: public-fictional-v02-final-build-authorization-2026-09-09
+evidence_kind: current-user-generation-authorization-public-record
+status: passed
+source_record:
+  snapshot_level: redacted
+  sha256: a30e4a586b84afc0425f2d826f4acb9d631be6e6b1c1aa433309151f136f9da3
+  record_created_at_utc: "2026-09-09T08:55:19Z"
+  timestamp_correction: The source snapshot used confirmed_at_utc for its write time. Live task readback establishes the user confirmation at 2026-09-09T08:47:30Z; the immutable source hash is retained as historical evidence.
+  omissions:
+    - External local background-plate input locators were replaced with repository-relative retained artifact locators.
+  additions:
+    - post_run_scope_status was added from the bound generation receipt and independent QA result; current_scope_status preserves the authorization-time values.
+authorization:
+  authority: current-user
+  basis: 同意
+  confirmed_at_utc: "2026-09-09T08:47:30Z"
+  record_created_at_utc: "2026-09-09T08:55:19Z"
+  approval_message_sha256: 905819e2e3a059a02087855e9f326d05c877c1767ec31dc012c5c44652840230
+  confirmation_evidence_sha256: 7df80ba51b81cf59681ed048d45247de6c60a698b587165760b8aa0c031791fa
+approved_scope:
+  selection_lock_id: fictional-pantry-selection-lock-v02
+  ecommerce_asset_plan_id: fictional-pantry-ecommerce-plan-v02
+  selected_direction_id: quiet-pantry
+  selected_sku_ids: [lemon-ginger, berry-oat]
+  required_roles: [catalog, detail, usage, specification, context, campaign, channel-variant]
+  source_artifact_id: compare-direction-a
+  source_artifact_sha256: a2c1d38551febace8a1bfec48011e7e36528695e244ec892d2c4fa4ad3d4f4fb
+  package_identity_sha256: 39d1ee7e7ea63ab815eadb9667ece008f3183db388350154d4a9f70ade1ab758
+transform_binding:
+  locator: transforms/v0.2/2026-09-09/transform-spec-2026-09-09.json
+  sha256: 7c5d0f172780cb9b6479e936385f32868f3a4a2d2f8f33c5450c2c202c1883cc
+current_transform_check:
+  checked_on: "2026-09-09"
+  observed_sha256: 7c5d0f172780cb9b6479e936385f32868f3a4a2d2f8f33c5450c2c202c1883cc
+  status: match
+  generation_authorized: true
+  requires_new_current_user_confirmation: false
+current_scope_status:
+  selection_lock: passed
+  ecommerce_asset_plan: passed
+  asset_briefs: passed
+  ecommerce_generation: authorized
+  qa_delivery: not-run
+post_run_scope_status:
+  ecommerce_generation: passed
+  qa_delivery: passed
+  evidence:
+    generation_receipt:
+      locator: examples/fictional-pantry-product/generation-receipt-v0.2-2026-09-09.yaml
+      sha256: 62a6672cd6e0bc3c28805673afbcba26a9a368a5dd55274e3cd9381af9df3942
+    qa_result:
+      locator: examples/fictional-pantry-product/qa-result-v0.2-2026-09-09.yaml
+      sha256: 752c9529a563b70788c5c3ef4b844f10528794e0a48b21c600116d5ca56761e2
+usage_scene_constraint: For this fictional concept, the unopened Berry Oat pouch may be shown beside one empty clear glass as a pre-opening setup. No preparation, dosage, serving, consumption, or performance instruction is defined.
+specification_constraint: Show only the approved 240 g quantity as source-derived package pixels; do not invent dimensions, counts, callout labels, legal clearance, or production specifications.
+qa_plan:
+  required_gate_ids: [artifact-type, object-count, package-geometry, exact-copy, invented-claims, reference-role, visual-hierarchy-identity, product-anatomy, channel-fit, artifact-integrity, selection-lock, asset-role, package-identity]
+  cross_set_required_gate_ids: [set-completeness, cross-asset-package-identity, cross-asset-sku-consistency, cross-asset-claims-consistency, sequence-role-coverage, cross-asset-channel-fit]
+  required_profile_ids: [full-resolution, ecommerce-thumbnail]
+  independent_review_required: true
+  expected_gate_rows: 188
+generation_budget:
+  paid_calls_allowed: true
+  maximum_total_calls: 4
+  maximum_calls_per_background_plate: 2
+  deterministic_roles: [catalog, detail, specification, campaign, channel-variant]
+  external_background_plate_roles: [usage, context]
+background_plates:
+  - supporting_asset_id: gallery-usage-background-plate
+    role: usage
+    locator_type: relative_path
+    locator: examples/fictional-pantry-product/generated/v0.2/2026-09-09/attempts/gallery-usage/background-attempt-01-2026-09-09.png
+    sha256: 6b6001e6793e03c097ca4e861fc0fbb6000faccbe4f1cbef170df9c8cb63f2b0
+    dimensions: [1200, 1500]
+    mode: RGB
+    icc_profile_present: false
+    clean_attempt:
+      attempt_id: gallery-usage-background-attempt-01-2026-09-09
+      outcome: passed
+      call_count: 1
+      failure_class: null
+      provider: openai-built-in-imagegen
+      model: built-in-imagegen-unspecified
+      executed_at_utc: "2026-09-09T08:49:39Z"
+      prompt_sha256: f0b517532b7a921f32f0bd7d269c82ff7849de37f7e172f0816e546b7f4f6bfa
+      checks: {artifact_type: passed, dimensions: passed, no_packaging: passed, no_text: passed, placement_zone: passed}
+    provenance: &plate_provenance
+      created_by: external-image-generation
+      source_material: fictional text-only background prompt
+      visible_trademarks: none
+      embedded_private_data: false
+      redistribution_allowed: false
+      publication_allowed: false
+      documented_issue: none
+  - supporting_asset_id: gallery-context-background-plate
+    role: context
+    locator_type: relative_path
+    locator: examples/fictional-pantry-product/generated/v0.2/2026-09-09/attempts/gallery-context/background-attempt-01-2026-09-09.png
+    sha256: 4a3007bcd227ffa0095d5553351958a9c0d4f926d375ada0694af4c9c97f29b8
+    dimensions: [1920, 1080]
+    mode: RGB
+    icc_profile_present: false
+    clean_attempt:
+      attempt_id: gallery-context-background-attempt-01-2026-09-09
+      outcome: passed
+      call_count: 1
+      failure_class: null
+      provider: openai-built-in-imagegen
+      model: built-in-imagegen-unspecified
+      executed_at_utc: "2026-09-09T08:50:43Z"
+      prompt_sha256: b60c664b77143248b2c5611eb384280891b4fe394d8b359f6a87f85e606c604a
+      checks: {artifact_type: passed, dimensions: passed, no_packaging: passed, no_text: passed, placement_zone: passed}
+    provenance: *plate_provenance
+output:
+  root: generated/v0.2/2026-09-09
+  overwrite: false
+  retention_policy: preserve
+  publication_authorized: false
+publication:
+  authorized: false
+  performed: false
+  requires_new_current_user_confirmation: true

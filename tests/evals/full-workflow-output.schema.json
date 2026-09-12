@@ -1,0 +1,124 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Packaging Product Visuals Fresh-Agent Probe Output",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "scenario_id",
+    "skill_invoked",
+    "observed_start_stage",
+    "requested_scope_end_stage",
+    "current_stage_status",
+    "active_stage_outputs",
+    "ecommerce_roles",
+    "claims_made",
+    "publication_authorized",
+    "image_generation_invoked",
+    "artifacts_invented",
+    "files_written",
+    "capability_limits"
+  ],
+  "properties": {
+    "scenario_id": {
+      "type": "string",
+      "enum": [
+        "uncertain-product-start",
+        "approved-package-gallery",
+        "three-sku-full-chain"
+      ]
+    },
+    "skill_invoked": {
+      "type": "boolean"
+    },
+    "observed_start_stage": {
+      "type": "string",
+      "enum": [
+        "product-definition",
+        "ecommerce-planning"
+      ]
+    },
+    "requested_scope_end_stage": {
+      "type": "string",
+      "enum": [
+        "product-definition",
+        "research-options",
+        "decision-freeze",
+        "packaging-directions",
+        "selection-refinement",
+        "ecommerce-planning",
+        "ecommerce-generation",
+        "qa-delivery"
+      ]
+    },
+    "current_stage_status": {
+      "type": "string",
+      "enum": [
+        "draft",
+        "blocked"
+      ]
+    },
+    "active_stage_outputs": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "enum": [
+          "ProductBrief",
+          "ResearchBoard",
+          "PackagingOptionMatrix",
+          "DecisionLock",
+          "SeriesSystem",
+          "PackagingDirectionSet",
+          "SelectionLock",
+          "EcommerceAssetPlan",
+          "AssetBrief",
+          "role-specific ecommerce artifacts",
+          "DeliveryManifest",
+          "RuntimeReceipt"
+        ]
+      }
+    },
+    "ecommerce_roles": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "catalog",
+          "detail",
+          "usage",
+          "specification",
+          "context",
+          "campaign",
+          "channel-variant"
+        ]
+      }
+    },
+    "claims_made": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "publication_authorized": {
+      "type": "boolean"
+    },
+    "image_generation_invoked": {
+      "type": "boolean"
+    },
+    "artifacts_invented": {
+      "type": "boolean"
+    },
+    "files_written": {
+      "type": "boolean"
+    },
+    "capability_limits": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    }
+  }
+}

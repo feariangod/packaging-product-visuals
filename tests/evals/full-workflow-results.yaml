@@ -1,0 +1,428 @@
+schema_version: 1
+executed_on: '2026-09-09'
+runtime:
+  client: codex-cli
+  client_version: 0.153.4
+  client_executable_sha256: 8d7610e87f68c6ebd69e4ca2442ac30f713533b929b5011f43ca0ae6c0a76e8c
+  model: gpt-5.6-luna
+  reasoning_effort: low
+  sandbox: read-only
+  ephemeral: true
+  operating_system:
+    name: macOS
+    version: '26.5'
+    build: 25F71
+    architecture: arm64
+  capture_basis:
+    client_version: codex --version
+    operating_system: uname and sw_vers on macOS
+    invocation_settings: generated codex exec argv
+method:
+  fresh_session_per_scenario: true
+  explicit_skill_invocation: $packaging-product-visuals
+  closed_output_schema: true
+  read_only: true
+  raw_events_retained_outside_repository: true
+  event_hash_basis: canonical JSONL after absolute-path sanitization
+  candidate_file_count: 10
+  candidate_tree_sha256: b3279d2d80b0a06d8e646f36aee705d9aa5484a6b24fc8815ac4a2acdab23edc
+  candidate_file_sha256:
+    SKILL.md: 16479a562ede31261422a92d42d93f44979d08e1561cc3f25d0fb67038525454
+    agents/openai.yaml: 786bb8588fb456c869690aea7e31efa43a247d7deb151e4034933e78547c8399
+    references/contracts.md: 4f509c685a8ada3c2d0aa78d13042779d1fd3299cc35f77936e276eff53222e2
+    references/ecommerce-assets.md: e1c5d7fc0564dec5b3508693483da6bf77c9fb64a34c5e14bb33c8329c2a0d9f
+    references/packaging-directions.md: 86a9b28e1d6eb08401c590d55d14ea934b5c1d92709b5b891405e47bd4102f8e
+    references/packaging-qa.md: f03f8f2feb0e1a5817ffe0434fc672b35c4effb3ac6315de4f9db81f39050e4f
+    references/product-and-research.md: e6d9c8b14e67e9cc3aaf782ee8ee5c489b925154f5b95cb9c4a7cd8db53bb3ad
+    references/rights-and-privacy.md: 568a6a21fafc5e3f3b339606bbc577839dc14c95f98d8168b026d3f4386f6085
+    references/workflow.md: 267da3b7a83701352ddf3e6e7e099f59c227064da8edbdaa286e89acf398c05b
+    scripts/prepare_review_pack.py: 8b40e040d34f76d39cdd11ac063a8258731083ef0d991cdd5c892a14fd3a87ac
+  git_head: 5d5fcaaa289da5bf6fbb09ec051a1d9d74c5adcb
+  git_status: dirty
+  git_status_sha256: 6d4eeff58ad0d67900ce4ff765204089d2a600c0069825f7707d791a771ff26e
+  harness_artifacts:
+    runtime_harness_sha256: 61fbea4eebc4cc21ab94aaef188bf038128cae26cc3d8929ff5204c0c17ecfef
+    install_schema_sha256: ddeaf12a896b22a4fd155cdaedb11ad2a53ad98614ac80f6e74201418a16049b
+    probe_schema_sha256: f0a94a1cd4bc8ffbc5af9c59f1bbe0c54e498a1d96016a78fdfeff481b51a4bc
+    scenario_sha256: 4397874282052b5926b13b44f4edf608bc450e7a7472d1e1d2aac7290f40fd2b
+    plugin_manifest_sha256: 4a976334eef08d4da2152e5f166c03804f82ec141ce24b8e9b40863f5c902349
+results:
+- id: uncertain-product-start
+  exit_code: 0
+  event_stream_sha256: bbf823082c248d6ebfde95f5052e8ee7440718ce5bbeecddf729cf5eaa14bf7e
+  structured_response_sha256: 9bee1f53e68490312392e75c7646028d2627055617f7277a60655b4c8c52e2c3
+  expected_start_stage: product-definition
+  observed_start_stage: product-definition
+  requested_scope_end_stage: decision-freeze
+  current_stage_status: draft
+  active_stage_outputs:
+  - ProductBrief
+  ecommerce_roles: []
+  claims_made: []
+  publication_authorized: false
+  image_generation_invoked: false
+  artifacts_invented: false
+  files_written: false
+  capability_limits:
+  - Audience, package construction, and variant system remain unresolved hypotheses requiring research
+    and decision approval.
+  - No product claims may be invented or treated as verified.
+  - No files, contracts, images, or publication claims are created; image generation is not invoked.
+  - Ecommerce roles remain unselected because the requested scope ends at decision-freeze.
+  command_evidence:
+    completed_command_count: 5
+    successful_command_count: 5
+    commands:
+    - item_id_sha256: 32012c4c32888ee2c4ba4331e3c77ece9acd811a4b3abb708363123591abfea2
+      command: sed -n 1,220p '$PPV_SKILL_ROOT/SKILL.md'
+      command_sha256: b168c0d194658c324158f38857cd7b007ae3a21cf6c6b3a26d1c4f08e21b4279
+      exit_code: 0
+      output_sha256: 16479a562ede31261422a92d42d93f44979d08e1561cc3f25d0fb67038525454
+    - item_id_sha256: 6a9722cdf589a2a068832c955a8253b9df87983501c03dd92e95debae1f409da
+      command: sed -n 1,220p '$PPV_SKILL_ROOT/references/workflow.md'
+      command_sha256: 153ad2a10bf8e7106b02d4061d9921d26cbe1f2de0bac06d0de50763145def2c
+      exit_code: 0
+      output_sha256: 267da3b7a83701352ddf3e6e7e099f59c227064da8edbdaa286e89acf398c05b
+    - item_id_sha256: 4a317b6972e2f1834050485420bd71fe6fc2d87cd25d572cb4b8b327b37bc030
+      command: sed -n 1,220p '$PPV_SKILL_ROOT/references/contracts.md'
+      command_sha256: c59bf3d36b1d5a18495087fda032589ab6ef2ede264253b6972222ccbc79aef2
+      exit_code: 0
+      output_sha256: 64091facdf76ce9a32437eb01318a59f8b09f35ef849497647ac3679be573432
+    - item_id_sha256: 57dbfc296665f072254d15345fb3a2bbf457ae03cbb6ee8f6020e8f11d4b056b
+      command: sed -n 1,220p '$PPV_SKILL_ROOT/references/product-and-research.md'
+      command_sha256: 364947dde0af13fab6f7d587d57d8ec85ac80cc60834a4b9d65d847621428403
+      exit_code: 0
+      output_sha256: e6d9c8b14e67e9cc3aaf782ee8ee5c489b925154f5b95cb9c4a7cd8db53bb3ad
+    - item_id_sha256: 9462965f2002ffb6e5ebf84d633936910b584441932a9dee26f8497eb9d82c75
+      command: sed -n 1,220p '$PPV_SKILL_ROOT/references/packaging-directions.md'
+      command_sha256: aba1eb4d4f1e6bfe58d869396f889d843956d856099878b2a14d63643b176278
+      exit_code: 0
+      output_sha256: 86a9b28e1d6eb08401c590d55d14ea934b5c1d92709b5b891405e47bd4102f8e
+    required_reads:
+    - path: $CODEX_HOME/skills/packaging-product-visuals/SKILL.md
+      target_sha256: 16479a562ede31261422a92d42d93f44979d08e1561cc3f25d0fb67038525454
+      content_marker_sha256: cea0d09d05afdd8799b8caa10bd60dc9fa025621a0f2a4840a08fbf78ec0eb4c
+      path_read_command_observed: true
+      content_marker_observed: true
+      succeeded: true
+    - path: $CODEX_HOME/skills/packaging-product-visuals/references/workflow.md
+      target_sha256: 267da3b7a83701352ddf3e6e7e099f59c227064da8edbdaa286e89acf398c05b
+      content_marker_sha256: ac6c915fdab7629d665880dd723c36175615898f25a360f2791fa8045bc3c136
+      path_read_command_observed: true
+      content_marker_observed: true
+      succeeded: true
+    - path: $CODEX_HOME/skills/packaging-product-visuals/references/contracts.md
+      target_sha256: 4f509c685a8ada3c2d0aa78d13042779d1fd3299cc35f77936e276eff53222e2
+      content_marker_sha256: a0cc23f76e1bf58aea058fafb7ff502484f8368ac3bfe56f990a425f896c9a1a
+      path_read_command_observed: true
+      content_marker_observed: true
+      succeeded: true
+    - path: $CODEX_HOME/skills/packaging-product-visuals/references/product-and-research.md
+      target_sha256: e6d9c8b14e67e9cc3aaf782ee8ee5c489b925154f5b95cb9c4a7cd8db53bb3ad
+      content_marker_sha256: 7a364a6c9a5feca99eaab7df91adaafe64c82e23bf3277c2ad5c0a8f45946363
+      path_read_command_observed: true
+      content_marker_observed: true
+      succeeded: true
+    - path: $CODEX_HOME/skills/packaging-product-visuals/references/packaging-directions.md
+      target_sha256: 86a9b28e1d6eb08401c590d55d14ea934b5c1d92709b5b891405e47bd4102f8e
+      content_marker_sha256: fee46bf33efa3ec80a076df9f154010415265d7dda59cd0f0a4f42f8577532a3
+      path_read_command_observed: true
+      content_marker_observed: true
+      succeeded: true
+    required_reads_succeeded: true
+    all_commands_allowed: true
+    unexpected_command_count: 0
+    duplicate_required_read_count: 0
+    nonzero_command_exit_count: 0
+    write_like_command_detected: false
+  event_evidence:
+    jsonl_line_count: 15
+    event_type_counts:
+      item.completed: 7
+      item.started: 5
+      thread.started: 1
+      turn.completed: 1
+      turn.started: 1
+    item_type_counts:
+      agent_message: 2
+      command_execution: 10
+    single_thread_turn: true
+    event_order_valid: true
+    lifecycle_complete: true
+    failed_event_count: 0
+    incomplete_item_count: 0
+    unmatched_completed_item_count: 0
+    duplicate_item_event_count: 0
+    command_pair_order_valid: true
+    nonzero_command_exit_count: 0
+    disallowed_item_types: []
+  install_tree_sha256_before: b3279d2d80b0a06d8e646f36aee705d9aa5484a6b24fc8815ac4a2acdab23edc
+  install_tree_sha256_after: b3279d2d80b0a06d8e646f36aee705d9aa5484a6b24fc8815ac4a2acdab23edc
+  workspace_tree_sha256_before: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+  workspace_tree_sha256_after: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+  credential_copy_mode: '0600'
+  credential_store: file
+  credential_copy_removed: true
+  credential_leak_detected: false
+  evidence_errors: []
+- id: approved-package-gallery
+  exit_code: 0
+  event_stream_sha256: 66d09f199fb32dfd66314306191830025a792af6df82c1563e8b2a04da8db5db
+  structured_response_sha256: a09c94a754dae4003cf32dddd7aac602a7f2d493f4bf36df0471fb23565a0a9b
+  expected_start_stage: ecommerce-planning
+  observed_start_stage: ecommerce-planning
+  requested_scope_end_stage: qa-delivery
+  current_stage_status: blocked
+  active_stage_outputs:
+  - EcommerceAssetPlan
+  - AssetBrief
+  ecommerce_roles:
+  - catalog
+  - context
+  - channel-variant
+  claims_made: []
+  publication_authorized: false
+  image_generation_invoked: false
+  artifacts_invented: false
+  files_written: false
+  capability_limits:
+  - Read-only probe forbids creating contracts, images, files, or publication claims.
+  - QA delivery requires inspectable generated outputs and delivery records.
+  - Each requested image requires its own approved asset brief.
+  - Approved package identity must remain unchanged; no unrequested roles may be added.
+  command_evidence:
+    completed_command_count: 5
+    successful_command_count: 5
+    commands:
+    - item_id_sha256: 32012c4c32888ee2c4ba4331e3c77ece9acd811a4b3abb708363123591abfea2
+      command: sed -n 1,220p '$PPV_SKILL_ROOT/SKILL.md'
+      command_sha256: b168c0d194658c324158f38857cd7b007ae3a21cf6c6b3a26d1c4f08e21b4279
+      exit_code: 0
+      output_sha256: 16479a562ede31261422a92d42d93f44979d08e1561cc3f25d0fb67038525454
+    - item_id_sha256: 6a9722cdf589a2a068832c955a8253b9df87983501c03dd92e95debae1f409da
+      command: sed -n 1,220p '$PPV_SKILL_ROOT/references/workflow.md'
+      command_sha256: 153ad2a10bf8e7106b02d4061d9921d26cbe1f2de0bac06d0de50763145def2c
+      exit_code: 0
+      output_sha256: 267da3b7a83701352ddf3e6e7e099f59c227064da8edbdaa286e89acf398c05b
+    - item_id_sha256: 4a317b6972e2f1834050485420bd71fe6fc2d87cd25d572cb4b8b327b37bc030
+      command: sed -n 1,220p '$PPV_SKILL_ROOT/references/contracts.md'
+      command_sha256: c59bf3d36b1d5a18495087fda032589ab6ef2ede264253b6972222ccbc79aef2
+      exit_code: 0
+      output_sha256: 64091facdf76ce9a32437eb01318a59f8b09f35ef849497647ac3679be573432
+    - item_id_sha256: 57dbfc296665f072254d15345fb3a2bbf457ae03cbb6ee8f6020e8f11d4b056b
+      command: sed -n 1,220p '$PPV_SKILL_ROOT/references/ecommerce-assets.md'
+      command_sha256: 4ca3bf8018b161dd9d16bc818e42a56901d330c89e0e0f9970a7c7141d9a7e14
+      exit_code: 0
+      output_sha256: e1c5d7fc0564dec5b3508693483da6bf77c9fb64a34c5e14bb33c8329c2a0d9f
+    - item_id_sha256: 9462965f2002ffb6e5ebf84d633936910b584441932a9dee26f8497eb9d82c75
+      command: sed -n 1,220p '$PPV_SKILL_ROOT/references/rights-and-privacy.md'
+      command_sha256: bebcfb791f50489bbae85ef3ad612b7cbc07697dd1026886b8bfb0ba5ba372cd
+      exit_code: 0
+      output_sha256: 568a6a21fafc5e3f3b339606bbc577839dc14c95f98d8168b026d3f4386f6085
+    required_reads:
+    - path: $CODEX_HOME/skills/packaging-product-visuals/SKILL.md
+      target_sha256: 16479a562ede31261422a92d42d93f44979d08e1561cc3f25d0fb67038525454
+      content_marker_sha256: cea0d09d05afdd8799b8caa10bd60dc9fa025621a0f2a4840a08fbf78ec0eb4c
+      path_read_command_observed: true
+      content_marker_observed: true
+      succeeded: true
+    - path: $CODEX_HOME/skills/packaging-product-visuals/references/workflow.md
+      target_sha256: 267da3b7a83701352ddf3e6e7e099f59c227064da8edbdaa286e89acf398c05b
+      content_marker_sha256: ac6c915fdab7629d665880dd723c36175615898f25a360f2791fa8045bc3c136
+      path_read_command_observed: true
+      content_marker_observed: true
+      succeeded: true
+    - path: $CODEX_HOME/skills/packaging-product-visuals/references/contracts.md
+      target_sha256: 4f509c685a8ada3c2d0aa78d13042779d1fd3299cc35f77936e276eff53222e2
+      content_marker_sha256: a0cc23f76e1bf58aea058fafb7ff502484f8368ac3bfe56f990a425f896c9a1a
+      path_read_command_observed: true
+      content_marker_observed: true
+      succeeded: true
+    - path: $CODEX_HOME/skills/packaging-product-visuals/references/ecommerce-assets.md
+      target_sha256: e1c5d7fc0564dec5b3508693483da6bf77c9fb64a34c5e14bb33c8329c2a0d9f
+      content_marker_sha256: 71d6fac2202a0f652935f1c3f71b23399d94833f6fc834e746e96453cd928c72
+      path_read_command_observed: true
+      content_marker_observed: true
+      succeeded: true
+    - path: $CODEX_HOME/skills/packaging-product-visuals/references/rights-and-privacy.md
+      target_sha256: 568a6a21fafc5e3f3b339606bbc577839dc14c95f98d8168b026d3f4386f6085
+      content_marker_sha256: aa2c664836f1605f6ad329e9b6012aac40ab3354bbb9c1751070748591b9d114
+      path_read_command_observed: true
+      content_marker_observed: true
+      succeeded: true
+    required_reads_succeeded: true
+    all_commands_allowed: true
+    unexpected_command_count: 0
+    duplicate_required_read_count: 0
+    nonzero_command_exit_count: 0
+    write_like_command_detected: false
+  event_evidence:
+    jsonl_line_count: 15
+    event_type_counts:
+      item.completed: 7
+      item.started: 5
+      thread.started: 1
+      turn.completed: 1
+      turn.started: 1
+    item_type_counts:
+      agent_message: 2
+      command_execution: 10
+    single_thread_turn: true
+    event_order_valid: true
+    lifecycle_complete: true
+    failed_event_count: 0
+    incomplete_item_count: 0
+    unmatched_completed_item_count: 0
+    duplicate_item_event_count: 0
+    command_pair_order_valid: true
+    nonzero_command_exit_count: 0
+    disallowed_item_types: []
+  install_tree_sha256_before: b3279d2d80b0a06d8e646f36aee705d9aa5484a6b24fc8815ac4a2acdab23edc
+  install_tree_sha256_after: b3279d2d80b0a06d8e646f36aee705d9aa5484a6b24fc8815ac4a2acdab23edc
+  workspace_tree_sha256_before: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+  workspace_tree_sha256_after: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+  credential_copy_mode: '0600'
+  credential_store: file
+  credential_copy_removed: true
+  credential_leak_detected: false
+  evidence_errors: []
+- id: three-sku-full-chain
+  exit_code: 0
+  event_stream_sha256: c7f14e34c5afac4d747187be38071b3b42c2853dfd4a7c6a944d5bbed4ca466e
+  structured_response_sha256: f88dcbd057cb8d0bf09aff6ea1623e4744c5d8f2a3a30858c8a5e5322e214131
+  expected_start_stage: product-definition
+  observed_start_stage: product-definition
+  requested_scope_end_stage: qa-delivery
+  current_stage_status: draft
+  active_stage_outputs:
+  - ProductBrief
+  ecommerce_roles: []
+  claims_made: []
+  publication_authorized: false
+  image_generation_invoked: false
+  artifacts_invented: false
+  files_written: false
+  capability_limits:
+  - Read-only probe; no files, contracts, images, or publication claims may be created.
+  - No channel or image jobs are provided, so ecommerce roles remain unselected until ecommerce-planning.
+  - The scenario spans product definition through QA/delivery, but this probe evaluates routing and contract
+    behavior only.
+  command_evidence:
+    completed_command_count: 6
+    successful_command_count: 6
+    commands:
+    - item_id_sha256: 6a9722cdf589a2a068832c955a8253b9df87983501c03dd92e95debae1f409da
+      command: sed -n 1,220p '$PPV_SKILL_ROOT/SKILL.md'
+      command_sha256: b168c0d194658c324158f38857cd7b007ae3a21cf6c6b3a26d1c4f08e21b4279
+      exit_code: 0
+      output_sha256: 16479a562ede31261422a92d42d93f44979d08e1561cc3f25d0fb67038525454
+    - item_id_sha256: 4a317b6972e2f1834050485420bd71fe6fc2d87cd25d572cb4b8b327b37bc030
+      command: sed -n 1,220p '$PPV_SKILL_ROOT/references/workflow.md'
+      command_sha256: 153ad2a10bf8e7106b02d4061d9921d26cbe1f2de0bac06d0de50763145def2c
+      exit_code: 0
+      output_sha256: 267da3b7a83701352ddf3e6e7e099f59c227064da8edbdaa286e89acf398c05b
+    - item_id_sha256: 57dbfc296665f072254d15345fb3a2bbf457ae03cbb6ee8f6020e8f11d4b056b
+      command: sed -n 1,220p '$PPV_SKILL_ROOT/references/contracts.md'
+      command_sha256: c59bf3d36b1d5a18495087fda032589ab6ef2ede264253b6972222ccbc79aef2
+      exit_code: 0
+      output_sha256: 64091facdf76ce9a32437eb01318a59f8b09f35ef849497647ac3679be573432
+    - item_id_sha256: 9462965f2002ffb6e5ebf84d633936910b584441932a9dee26f8497eb9d82c75
+      command: sed -n 1,220p '$PPV_SKILL_ROOT/references/product-and-research.md'
+      command_sha256: 364947dde0af13fab6f7d587d57d8ec85ac80cc60834a4b9d65d847621428403
+      exit_code: 0
+      output_sha256: e6d9c8b14e67e9cc3aaf782ee8ee5c489b925154f5b95cb9c4a7cd8db53bb3ad
+    - item_id_sha256: 919299b8b8860441036a08b8ce4a6486ee1712366afaec2286c8579387359f27
+      command: sed -n 1,220p '$PPV_SKILL_ROOT/references/packaging-directions.md'
+      command_sha256: aba1eb4d4f1e6bfe58d869396f889d843956d856099878b2a14d63643b176278
+      exit_code: 0
+      output_sha256: 86a9b28e1d6eb08401c590d55d14ea934b5c1d92709b5b891405e47bd4102f8e
+    - item_id_sha256: 3f21b4ea2fbe67cd553dbcfae108e6632bdb6c655218a1e4ad5a543cc24800f4
+      command: sed -n 1,220p '$PPV_SKILL_ROOT/references/ecommerce-assets.md'
+      command_sha256: 4ca3bf8018b161dd9d16bc818e42a56901d330c89e0e0f9970a7c7141d9a7e14
+      exit_code: 0
+      output_sha256: e1c5d7fc0564dec5b3508693483da6bf77c9fb64a34c5e14bb33c8329c2a0d9f
+    required_reads:
+    - path: $CODEX_HOME/skills/packaging-product-visuals/SKILL.md
+      target_sha256: 16479a562ede31261422a92d42d93f44979d08e1561cc3f25d0fb67038525454
+      content_marker_sha256: cea0d09d05afdd8799b8caa10bd60dc9fa025621a0f2a4840a08fbf78ec0eb4c
+      path_read_command_observed: true
+      content_marker_observed: true
+      succeeded: true
+    - path: $CODEX_HOME/skills/packaging-product-visuals/references/workflow.md
+      target_sha256: 267da3b7a83701352ddf3e6e7e099f59c227064da8edbdaa286e89acf398c05b
+      content_marker_sha256: ac6c915fdab7629d665880dd723c36175615898f25a360f2791fa8045bc3c136
+      path_read_command_observed: true
+      content_marker_observed: true
+      succeeded: true
+    - path: $CODEX_HOME/skills/packaging-product-visuals/references/contracts.md
+      target_sha256: 4f509c685a8ada3c2d0aa78d13042779d1fd3299cc35f77936e276eff53222e2
+      content_marker_sha256: a0cc23f76e1bf58aea058fafb7ff502484f8368ac3bfe56f990a425f896c9a1a
+      path_read_command_observed: true
+      content_marker_observed: true
+      succeeded: true
+    - path: $CODEX_HOME/skills/packaging-product-visuals/references/product-and-research.md
+      target_sha256: e6d9c8b14e67e9cc3aaf782ee8ee5c489b925154f5b95cb9c4a7cd8db53bb3ad
+      content_marker_sha256: 7a364a6c9a5feca99eaab7df91adaafe64c82e23bf3277c2ad5c0a8f45946363
+      path_read_command_observed: true
+      content_marker_observed: true
+      succeeded: true
+    - path: $CODEX_HOME/skills/packaging-product-visuals/references/packaging-directions.md
+      target_sha256: 86a9b28e1d6eb08401c590d55d14ea934b5c1d92709b5b891405e47bd4102f8e
+      content_marker_sha256: fee46bf33efa3ec80a076df9f154010415265d7dda59cd0f0a4f42f8577532a3
+      path_read_command_observed: true
+      content_marker_observed: true
+      succeeded: true
+    - path: $CODEX_HOME/skills/packaging-product-visuals/references/ecommerce-assets.md
+      target_sha256: e1c5d7fc0564dec5b3508693483da6bf77c9fb64a34c5e14bb33c8329c2a0d9f
+      content_marker_sha256: 71d6fac2202a0f652935f1c3f71b23399d94833f6fc834e746e96453cd928c72
+      path_read_command_observed: true
+      content_marker_observed: true
+      succeeded: true
+    required_reads_succeeded: true
+    all_commands_allowed: true
+    unexpected_command_count: 0
+    duplicate_required_read_count: 0
+    nonzero_command_exit_count: 0
+    write_like_command_detected: false
+  event_evidence:
+    jsonl_line_count: 18
+    event_type_counts:
+      item.completed: 9
+      item.started: 6
+      thread.started: 1
+      turn.completed: 1
+      turn.started: 1
+    item_type_counts:
+      agent_message: 3
+      command_execution: 12
+    single_thread_turn: true
+    event_order_valid: true
+    lifecycle_complete: true
+    failed_event_count: 0
+    incomplete_item_count: 0
+    unmatched_completed_item_count: 0
+    duplicate_item_event_count: 0
+    command_pair_order_valid: true
+    nonzero_command_exit_count: 0
+    disallowed_item_types: []
+  install_tree_sha256_before: b3279d2d80b0a06d8e646f36aee705d9aa5484a6b24fc8815ac4a2acdab23edc
+  install_tree_sha256_after: b3279d2d80b0a06d8e646f36aee705d9aa5484a6b24fc8815ac4a2acdab23edc
+  workspace_tree_sha256_before: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+  workspace_tree_sha256_after: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+  credential_copy_mode: '0600'
+  credential_store: file
+  credential_copy_removed: true
+  credential_leak_detected: false
+  evidence_errors: []
+acceptance:
+  result: passed
+  required_sessions: 3
+  accepted_sessions: 3
+  session_exit_failures: 0
+  evidence_error_count: 0
+  invented_artifacts: 0
+  workspace_tree_mutations: 0
+private_audit_receipt:
+  raw_root: <private-audit-root>
+  run_manifest_sha256: 1b0bbe323fde5c5f64e62fb739aa52efb6d10d9c369bbdf9088119e95eef6a23
+  verification: passed

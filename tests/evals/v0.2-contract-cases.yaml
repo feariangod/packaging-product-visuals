@@ -1,0 +1,465 @@
+schema_version: 1
+
+permission_template: &public_permissions
+  confidentiality: public
+  inspect_allowed: true
+  external_processing_allowed: true
+  derivative_allowed: true
+  redistribution_allowed: false
+  publication_allowed: false
+  attribution_status: not-required
+  attribution_text: null
+  attribution_fulfilled: not-applicable
+
+decision_lock_cases:
+  - id: workflow-valid
+    expected_valid: true
+    lock: &workflow_lock
+      origin: workflow
+      product_brief_id: pb-1
+      research_board_id: rb-1
+      packaging_option_matrix_id: pom-1
+      import_source_id: null
+      import_source_sha256: null
+      category: pantry-mix
+      audience_task: compare variants quickly
+      usage_task: dispense one serving
+      package_construction: stand-up pouch
+      target_specification_range: 250-350 g concept target
+      unknown_fields: []
+      unverified_fields: []
+      frozen_fields:
+        - category
+        - audience_task
+        - usage_task
+        - package_construction
+        - target_specification_range
+      verified_prompt_fact_fields:
+        - category
+        - package_construction
+      claim_items:
+        - id: claim-1
+          value: pantry drink mix
+          source_id: source-brief
+          approval_state: approved
+          approved_by: current-user
+          approval_basis: fictional fixture approval
+          permissions: *public_permissions
+      exact_copy_items:
+        - id: copy-1
+          value: CITRUS PANTRY MIX
+          source_id: source-brief
+          copy_role: product-name
+          approval_state: approved
+          approved_by: current-user
+          approval_basis: fictional fixture approval
+          permissions: *public_permissions
+      claim_item_ids: [claim-1]
+      exact_copy_item_ids: [copy-1]
+      source_contract_hashes:
+        hash_basis: canonical-sorted-compact-utf8-json
+        product_brief_sha256: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+        research_board_sha256: bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+        packaging_option_matrix_sha256: cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
+
+  - id: imported-unknown-valid
+    expected_valid: true
+    lock: &imported_lock
+      origin: imported-approved-package
+      product_brief_id: null
+      research_board_id: null
+      packaging_option_matrix_id: null
+      import_source_id: approved-pack-1
+      import_source_sha256: dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
+      category: unknown
+      audience_task: unknown
+      usage_task: unknown
+      package_construction: stand-up pouch
+      target_specification_range: unknown
+      unknown_fields:
+        - category
+        - audience_task
+        - usage_task
+        - target_specification_range
+      unverified_fields: []
+      frozen_fields:
+        - package_construction
+      verified_prompt_fact_fields:
+        - package_construction
+      claim_items: []
+      exact_copy_items: []
+      claim_item_ids: []
+      exact_copy_item_ids: []
+      source_contract_hashes:
+        hash_basis: canonical-sorted-compact-utf8-json
+        product_brief_sha256: null
+        research_board_sha256: null
+        packaging_option_matrix_sha256: null
+
+  - id: imported-unknown-frozen-invalid
+    expected_valid: false
+    lock:
+      <<: *imported_lock
+      frozen_fields:
+        - package_construction
+        - audience_task
+
+  - id: imported-upstream-links-invalid
+    expected_valid: false
+    lock:
+      <<: *imported_lock
+      product_brief_id: pb-1
+      research_board_id: rb-1
+      packaging_option_matrix_id: pom-1
+      source_contract_hashes:
+        hash_basis: canonical-sorted-compact-utf8-json
+        product_brief_sha256: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+        research_board_sha256: bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+        packaging_option_matrix_sha256: cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
+
+  - id: imported-unverified-valid
+    expected_valid: true
+    lock:
+      <<: *imported_lock
+      target_specification_range: 250-350 g source-stated range
+      unknown_fields:
+        - category
+        - audience_task
+        - usage_task
+      unverified_fields:
+        - target_specification_range
+
+  - id: workflow-missing-hash-invalid
+    expected_valid: false
+    lock:
+      <<: *workflow_lock
+      source_contract_hashes:
+        hash_basis: canonical-sorted-compact-utf8-json
+        product_brief_sha256: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+        research_board_sha256: null
+        packaging_option_matrix_sha256: cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
+
+  - id: workflow-critical-unknown-invalid
+    expected_valid: false
+    lock:
+      <<: *workflow_lock
+      audience_task: unknown
+      unknown_fields: [audience_task]
+      frozen_fields: [category, usage_task, package_construction, target_specification_range]
+
+imported_delivery_chain:
+  decision_lock:
+    id: decision-imported-1
+    origin: imported-approved-package
+  selection_lock:
+    id: selection-imported-1
+    decision_lock_id: decision-imported-1
+  delivery_manifest:
+    id: delivery-imported-1
+    decision_lock_id: decision-imported-1
+    selection_lock_id: selection-imported-1
+
+non_rendering_receipt_cases:
+  - id: product-brief-passed-without-image
+    expected_valid: true
+    receipt:
+      stage_id: product-definition
+      status: passed
+      stage_outputs:
+        - contract_type: ProductBrief
+          contract_id: pb-1
+          status: passed
+      stage_checks:
+        - check_id: product-brief-approved
+          required: true
+          status: pass
+      requested_artifact_ids: []
+      artifacts: []
+      generation_receipt: null
+      qa_plan: null
+      qa: null
+
+  - id: product-brief-unverified-cannot-pass
+    expected_valid: false
+    receipt:
+      stage_id: product-definition
+      status: passed
+      stage_outputs:
+        - contract_type: ProductBrief
+          contract_id: pb-2
+          status: passed
+      stage_checks:
+        - check_id: product-brief-approved
+          required: true
+          status: unverified
+      requested_artifact_ids: []
+      artifacts: []
+      generation_receipt: null
+      qa_plan: null
+      qa: null
+
+package_identity_case:
+  hash_basis: canonical-package-identity-json
+  snapshot:
+    decision_lock_id: decision-imported-1
+    source_artifact_id: approved-pack-1
+    source_artifact_sha256: dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
+    package_form: pouch
+    geometry: stand-up
+    closure_and_opening: top tear notch
+    material_cues: matte film
+    brand_mark_state: approved wordmark
+    product_name: CITRUS PANTRY MIX
+    variant_identity_by_sku:
+      citrus: yellow band
+    exact_copy_item_ids: [copy-1]
+    palette: [ivory, yellow, black]
+    defining_graphic_system: large ingredient silhouette
+    series_system_id: series-1
+    sku_order: [citrus]
+  expected_sha256: 14ee09e1ab501a42b01d0edf394af52795ce1e73fce9630f7020066a95fcd142
+  linked_digests:
+    selection_lock: 14ee09e1ab501a42b01d0edf394af52795ce1e73fce9630f7020066a95fcd142
+    ecommerce_asset_plan: 14ee09e1ab501a42b01d0edf394af52795ce1e73fce9630f7020066a95fcd142
+    asset_brief: 14ee09e1ab501a42b01d0edf394af52795ce1e73fce9630f7020066a95fcd142
+    delivered_artifact_expected: 14ee09e1ab501a42b01d0edf394af52795ce1e73fce9630f7020066a95fcd142
+  mismatched_linked_digests:
+    selection_lock: 14ee09e1ab501a42b01d0edf394af52795ce1e73fce9630f7020066a95fcd142
+    asset_brief: 0000000000000000000000000000000000000000000000000000000000000000
+
+artifact_join_cases:
+  - id: exact-join-with-blocked-record
+    expected_valid: true
+    requested_artifact_ids: [catalog-1, detail-1]
+    artifacts:
+      - requested_artifact_id: catalog-1
+        artifact_id: artifact-catalog-1
+        status: passed
+        locator: generated/catalog-1.png
+        locator_type: relative_path
+        sha256: eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+      - requested_artifact_id: detail-1
+        artifact_id: null
+        status: blocked
+        locator: null
+        locator_type: null
+        sha256: null
+
+  - id: duplicate-request-and-missing-join-invalid
+    expected_valid: false
+    requested_artifact_ids: [catalog-1, catalog-1]
+    artifacts:
+      - requested_artifact_id: catalog-1
+        artifact_id: artifact-catalog-1
+        status: passed
+        locator: generated/catalog-1.png
+        locator_type: relative_path
+        sha256: eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+
+qa_profile_cases:
+  - id: two-named-profiles-exact-once
+    expected_valid: true
+    requested_artifact_ids: [catalog-1]
+    required_gate_ids: [artifact-type, visual-hierarchy-identity]
+    cross_set_required_gate_ids: [set-completeness]
+    review_profiles:
+      - profile_id: full-resolution
+        profile_scope: full-resolution
+        required: true
+      - profile_id: contain-thumbnail
+        profile_scope: named-profile
+        required: true
+      - profile_id: square-crop
+        profile_scope: named-profile
+        required: true
+    gates:
+      - {gate_id: artifact-type, requested_artifact_id: catalog-1, artifact_id: artifact-catalog-1, profile_scope: full-resolution, profile_id: full-resolution, status: pass}
+      - {gate_id: visual-hierarchy-identity, requested_artifact_id: catalog-1, artifact_id: artifact-catalog-1, profile_scope: full-resolution, profile_id: full-resolution, status: pass}
+      - {gate_id: artifact-type, requested_artifact_id: catalog-1, artifact_id: artifact-catalog-1, profile_scope: named-profile, profile_id: contain-thumbnail, status: pass}
+      - {gate_id: visual-hierarchy-identity, requested_artifact_id: catalog-1, artifact_id: artifact-catalog-1, profile_scope: named-profile, profile_id: contain-thumbnail, status: pass}
+      - {gate_id: artifact-type, requested_artifact_id: catalog-1, artifact_id: artifact-catalog-1, profile_scope: named-profile, profile_id: square-crop, status: pass}
+      - {gate_id: visual-hierarchy-identity, requested_artifact_id: catalog-1, artifact_id: artifact-catalog-1, profile_scope: named-profile, profile_id: square-crop, status: pass}
+      - {gate_id: set-completeness, requested_artifact_id: null, artifact_id: null, profile_scope: cross-set, profile_id: cross-set, status: pass}
+
+  - id: duplicate-named-profile-gate-invalid
+    expected_valid: false
+    requested_artifact_ids: [catalog-1]
+    required_gate_ids: [artifact-type]
+    cross_set_required_gate_ids: []
+    review_profiles:
+      - profile_id: full-resolution
+        profile_scope: full-resolution
+        required: true
+      - profile_id: contain-thumbnail
+        profile_scope: named-profile
+        required: true
+    gates:
+      - {gate_id: artifact-type, requested_artifact_id: catalog-1, artifact_id: artifact-catalog-1, profile_scope: full-resolution, profile_id: full-resolution, status: pass}
+      - {gate_id: artifact-type, requested_artifact_id: catalog-1, artifact_id: artifact-catalog-1, profile_scope: named-profile, profile_id: contain-thumbnail, status: pass}
+      - {gate_id: artifact-type, requested_artifact_id: catalog-1, artifact_id: artifact-catalog-1, profile_scope: named-profile, profile_id: contain-thumbnail, status: pass}
+
+item_reference_cases:
+  - id: approved-item-references
+    expected_valid: true
+    claim_items:
+      - id: claim-1
+        value: pantry drink mix
+        source_id: source-brief
+        approval_state: approved
+        approved_by: current-user
+        approval_basis: fictional fixture approval
+        permissions: *public_permissions
+    exact_copy_items:
+      - id: copy-1
+        value: CITRUS PANTRY MIX
+        source_id: source-brief
+        copy_role: product-name
+        approval_state: approved
+        approved_by: current-user
+        approval_basis: fictional fixture approval
+        permissions: *public_permissions
+    claim_item_ids: [claim-1]
+    exact_copy_item_ids: [copy-1]
+
+  - id: unknown-item-reference-invalid
+    expected_valid: false
+    claim_items: []
+    exact_copy_items: []
+    claim_item_ids: [claim-missing]
+    exact_copy_item_ids: [copy-missing]
+
+direction_matrix_cases:
+  - id: complete-passed-matrix
+    expected_selection_eligible: true
+    direction_ids: [direction-a, direction-b]
+    sku_ids: [citrus, berry]
+    requested_artifact_ids: [a-citrus, a-berry, b-citrus, b-berry]
+    rows:
+      - {direction_id: direction-a, sku_id: citrus, requested_artifact_id: a-citrus, artifact_id: artifact-a-citrus, status: passed, locator: generated/a-citrus.png, comparison_gates_passed: true}
+      - {direction_id: direction-a, sku_id: berry, requested_artifact_id: a-berry, artifact_id: artifact-a-berry, status: passed, locator: generated/a-berry.png, comparison_gates_passed: true}
+      - {direction_id: direction-b, sku_id: citrus, requested_artifact_id: b-citrus, artifact_id: artifact-b-citrus, status: passed, locator: generated/b-citrus.png, comparison_gates_passed: true}
+      - {direction_id: direction-b, sku_id: berry, requested_artifact_id: b-berry, artifact_id: artifact-b-berry, status: passed, locator: generated/b-berry.png, comparison_gates_passed: true}
+
+  - id: draft-cell-keeps-stage-incomplete
+    expected_selection_eligible: false
+    direction_ids: [direction-a]
+    sku_ids: [citrus, berry]
+    requested_artifact_ids: [a-citrus, a-berry]
+    rows:
+      - {direction_id: direction-a, sku_id: citrus, requested_artifact_id: a-citrus, artifact_id: artifact-a-citrus, status: passed, locator: generated/a-citrus.png, comparison_gates_passed: true}
+      - {direction_id: direction-a, sku_id: berry, requested_artifact_id: a-berry, artifact_id: artifact-a-berry, status: draft, locator: generated/a-berry.png, comparison_gates_passed: false}
+
+qa_minimum_case:
+  anatomy_applicable: true
+  required_gate_ids:
+    - artifact-type
+    - object-count
+    - package-geometry
+    - exact-copy
+    - invented-claims
+    - reference-role
+    - visual-hierarchy-identity
+    - product-anatomy
+    - channel-fit
+    - artifact-integrity
+  direction_required_gate_ids:
+    - direction-comparability
+  cross_set_required_gate_ids:
+    - cross-asset-sku-consistency
+
+asset_brief_cases:
+  - id: approved-complete-catalog
+    expected_valid: true
+    expected_generation_eligible: true
+    brief:
+      id: asset-brief-approved
+      role: catalog
+      status: passed
+      unknown_fields: []
+      job: show the approved pouch clearly
+      audience_task: identify the SKU
+      selected_sku_ids: [citrus]
+      target_object_count: 1
+      package_state: sealed front view
+      claim_item_ids: []
+      exact_copy_item_ids: [copy-1]
+      composition: {layout: centered}
+      camera: {view: front}
+      crop: {aspect_ratio: '1:1', safe_areas: []}
+      package_identity_sha256: 14ee09e1ab501a42b01d0edf394af52795ce1e73fce9630f7020066a95fcd142
+      review_profile_ids: [full-resolution, square-crop]
+      approved_by: current-user
+      approval_basis: fictional fixture approval
+
+  - id: legacy-catalog-draft
+    expected_valid: true
+    expected_generation_eligible: false
+    brief:
+      id: asset-brief-legacy
+      role: catalog
+      status: draft
+      unknown_fields:
+        - job
+        - audience_task
+        - package_state
+        - crop.aspect_ratio
+        - composition
+        - camera
+        - package_identity_sha256
+        - review_profile_ids
+      job: unknown
+      audience_task: unknown
+      selected_sku_ids: [citrus]
+      target_object_count: 1
+      package_state: unknown
+      claim_item_ids: []
+      exact_copy_item_ids: []
+      composition: {}
+      camera: {}
+      crop: {aspect_ratio: unknown, safe_areas: []}
+      package_identity_sha256: null
+      review_profile_ids: []
+      approved_by: null
+      approval_basis: null
+
+  - id: legacy-draft-hidden-gap-invalid
+    expected_valid: false
+    expected_generation_eligible: false
+    brief:
+      id: asset-brief-hidden-gap
+      role: catalog
+      status: draft
+      unknown_fields: [job]
+      job: unknown
+      audience_task: unknown
+      selected_sku_ids: [citrus]
+      target_object_count: 1
+      package_state: unknown
+      claim_item_ids: []
+      exact_copy_item_ids: []
+      composition: {}
+      camera: {}
+      crop: {aspect_ratio: unknown, safe_areas: []}
+      package_identity_sha256: null
+      review_profile_ids: []
+      approved_by: null
+      approval_basis: null
+
+legacy_present_cases:
+  - id: neutral-present-fail-closed
+    legacy_input: {deliverable: neutral packshot, selected_skus: [citrus], target_object_count: 1}
+    normalized_stage_id: ecommerce-planning
+    normalized_asset_brief_id: asset-brief-legacy
+    expected_role: catalog
+    expected_status: draft
+    expected_generation_eligible: false
+    preserved_legacy_receipt_hash: ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+
+  - id: ambiguous-present-no-role-expansion
+    legacy_input: {deliverable: product image, selected_skus: [citrus], target_object_count: 1}
+    normalized_stage_id: ecommerce-planning
+    normalized_asset_brief_id: null
+    expected_role: null
+    expected_status: draft
+    expected_generation_eligible: false
+    preserved_legacy_receipt_hash: '1111111111111111111111111111111111111111111111111111111111111111'

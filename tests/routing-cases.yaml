@@ -1,61 +1,77 @@
 cases:
-  - id: compare-positive
-    prompt: Compare two visual systems for the same fictional pantry pouch while keeping copy and package geometry fixed.
+  - id: product-definition-start
+    prompt: I have a fictional pantry product idea but its category, audience, and package form are uncertain.
     expected_route: packaging-product-visuals
-    expected_mode: compare
+    expected_start_stage: product-definition
     expected_scope: in-scope
-  - id: refine-positive
-    prompt: Refine one approved pouch image by correcting only its documented spacing defect.
+  - id: research-options-start
+    prompt: Research packaging references, audience expectations, and package options for a defined fictional pantry product.
     expected_route: packaging-product-visuals
-    expected_mode: refine
+    expected_start_stage: research-options
     expected_scope: in-scope
-  - id: present-positive
-    prompt: Present this approved pouch as a neutral ecommerce packshot without changing its identity.
+  - id: decision-freeze-start
+    prompt: The research and package option comparison are complete; freeze the chosen package route before direction generation.
     expected_route: packaging-product-visuals
-    expected_mode: present
+    expected_start_stage: decision-freeze
     expected_scope: in-scope
-  - id: reference-research-negative
-    prompt: Research current packaging references and summarize the source evidence without creating a product visual.
-    expected_route: outside-packaging-product-visuals
-    expected_mode: null
-    expected_scope: out-of-scope
+  - id: packaging-directions-start
+    prompt: The product and package decisions are approved; compare packaging directions across all three fictional SKUs.
+    expected_route: packaging-product-visuals
+    expected_start_stage: packaging-directions
+    expected_scope: in-scope
+  - id: selection-refinement-start
+    prompt: Correct one documented spacing defect in an approved fictional pouch without reopening its identity.
+    expected_route: packaging-product-visuals
+    expected_start_stage: selection-refinement
+    expected_scope: in-scope
+  - id: ecommerce-planning-start
+    prompt: Plan catalog, detail, usage, specification, context, and campaign assets for an approved fictional package identity.
+    expected_route: packaging-product-visuals
+    expected_start_stage: ecommerce-planning
+    expected_scope: in-scope
+  - id: ecommerce-generation-start
+    prompt: The ecommerce asset plan is approved; generate its authorized fictional asset set while preserving package identity.
+    expected_route: packaging-product-visuals
+    expected_start_stage: ecommerce-generation
+    expected_scope: in-scope
+  - id: qa-delivery-start
+    prompt: Inspect the complete fictional ecommerce asset set and prepare its delivery manifest and runtime receipt.
+    expected_route: packaging-product-visuals
+    expected_start_stage: qa-delivery
+    expected_scope: in-scope
   - id: prompt-only-negative
     prompt: Write one image-generation prompt for a pouch without running or reviewing an image workflow.
     expected_route: outside-packaging-product-visuals
-    expected_mode: null
     expected_scope: out-of-scope
   - id: generic-photography-negative
     prompt: Photograph an unpackaged ceramic mug on a lifestyle table.
     expected_route: outside-packaging-product-visuals
-    expected_mode: null
     expected_scope: out-of-scope
   - id: logo-negative
     prompt: Design a new logo and full identity system for my company.
     expected_route: outside-packaging-product-visuals
-    expected_mode: null
     expected_scope: out-of-scope
   - id: print-ready-negative
     prompt: Create a print-ready dieline with production bleed and manufacturing tolerances.
     expected_route: outside-packaging-product-visuals
-    expected_mode: null
     expected_scope: out-of-scope
-  - id: campaign-negative
-    prompt: Build a paid social campaign with lifestyle photography and influencer copy.
+  - id: media-buying-negative
+    prompt: Buy media and optimize paid placement for a social campaign.
     expected_route: outside-packaging-product-visuals
-    expected_mode: null
+    expected_scope: out-of-scope
+  - id: influencer-operations-negative
+    prompt: Recruit influencers, negotiate rates, and manage campaign posting operations.
+    expected_route: outside-packaging-product-visuals
     expected_scope: out-of-scope
   - id: manufacturing-negative
     prompt: Validate barrier film, filling temperature, zipper sealing, and transport performance for this pouch.
     expected_route: outside-packaging-product-visuals
-    expected_mode: null
     expected_scope: out-of-scope
   - id: competitor-copy-negative
     prompt: Copy a competitor's distinctive packaging exactly, including its logo, layout, colors, and trade dress.
     expected_route: outside-packaging-product-visuals
-    expected_mode: null
     expected_scope: out-of-scope
   - id: ambiguous-negative
     prompt: Make a product image.
     expected_route: outside-packaging-product-visuals
-    expected_mode: null
     expected_scope: out-of-scope

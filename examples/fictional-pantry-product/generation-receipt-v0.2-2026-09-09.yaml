@@ -1,0 +1,78 @@
+schema_version: 2
+id: fictional-pantry-generation-receipt-v02-2026-09-09
+status: passed
+executor_id: codex-root-public-gallery-generation
+capability_used: openai-built-in-imagegen-background-plates-plus-local-deterministic-compositing
+runtime:
+  client: Codex Desktop
+  client_version: null
+  tool_or_provider: OpenAI built-in image generation and local Python/Pillow compositor
+  model_or_version: built-in-imagegen-unspecified
+  exposed_parameters:
+    deterministic_builder: examples/fictional-pantry-product/build_v02_gallery.py
+    transform_spec_sha256: 7c5d0f172780cb9b6479e936385f32868f3a4a2d2f8f33c5450c2c202c1883cc
+    package_resize_filter: nearest
+    actual_external_calls: 2
+    maximum_total_calls: 4
+    maximum_calls_per_background_plate: 2
+    publication_authorized: false
+  executed_at_utc: "2026-09-09T08:58:27Z"
+input_asset_ids:
+  - compare-direction-a
+  - lemon-ginger-mask
+  - berry-oat-mask
+  - gallery-usage-background-plate
+  - gallery-context-background-plate
+frozen_fields:
+  - package form
+  - package geometry and closure
+  - PPV FIXTURE and CITRUS PANTRY MIX exact copy
+  - Lemon Ginger and Berry Oat variant identity
+  - 240 g quantity
+  - selected palette and ingredient illustrations
+changed_fields:
+  - role-specific canvas dimensions and crop
+  - approved package placement
+  - approved text-free background plates for usage and context
+  - deterministic shadows, neutral fields, and campaign color panels
+attempts:
+  - attempt_id: gallery-usage-background-attempt-01-2026-09-09
+    requested_artifact_ids: [gallery-usage-background-plate]
+    artifact_ids: [gallery-usage-background-plate-2026-09-09]
+    outputs:
+      - locator: examples/fictional-pantry-product/generated/v0.2/2026-09-09/attempts/gallery-usage/background-attempt-01-2026-09-09.png
+        locator_type: relative_path
+        sha256: 6b6001e6793e03c097ca4e861fc0fbb6000faccbe4f1cbef170df9c8cb63f2b0
+    failure_class: null
+    requested_changes: [Generate one text-free, package-free kitchen-counter plate with a clear product placement zone.]
+    preserved_fields: [No package image, private path, readable package copy, or brand was sent to the image service.]
+    outcome: passed
+    executed_at_utc: "2026-09-09T08:49:39Z"
+  - attempt_id: gallery-context-background-attempt-01-2026-09-09
+    requested_artifact_ids: [gallery-context-background-plate]
+    artifact_ids: [gallery-context-background-plate-2026-09-09]
+    outputs:
+      - locator: examples/fictional-pantry-product/generated/v0.2/2026-09-09/attempts/gallery-context/background-attempt-01-2026-09-09.png
+        locator_type: relative_path
+        sha256: 4a3007bcd227ffa0095d5553351958a9c0d4f926d375ada0694af4c9c97f29b8
+    failure_class: null
+    requested_changes: [Generate one text-free, package-free pantry-shelf plate with two clear product placement zones.]
+    preserved_fields: [No package image, private path, readable package copy, or brand was sent to the image service.]
+    outcome: passed
+    executed_at_utc: "2026-09-09T08:50:43Z"
+  - attempt_id: deterministic-gallery-build-01-2026-09-09
+    requested_artifact_ids: [gallery-catalog, gallery-detail, gallery-usage, gallery-specification, gallery-context, gallery-campaign, gallery-channel-variant]
+    artifact_ids: [gallery-catalog-2026-09-09, gallery-detail-2026-09-09, gallery-usage-2026-09-09, gallery-specification-2026-09-09, gallery-context-2026-09-09, gallery-campaign-2026-09-09, gallery-channel-variant-2026-09-09]
+    outputs:
+      - {locator: examples/fictional-pantry-product/generated/v0.2/2026-09-09/gallery-catalog-2026-09-09.png, locator_type: relative_path, sha256: d890af034593b43fd1d5c10a51ee9f97f59d8de938ddf311bca5eaef17ab8d38}
+      - {locator: examples/fictional-pantry-product/generated/v0.2/2026-09-09/gallery-detail-2026-09-09.png, locator_type: relative_path, sha256: 2e51f7bde4b48de152f03ac0a45eb80152c61f7cdb181c7d3cd9d6e566b14b85}
+      - {locator: examples/fictional-pantry-product/generated/v0.2/2026-09-09/gallery-usage-2026-09-09.png, locator_type: relative_path, sha256: 541ee5629533a46101aed0d1f7b50489a3fed154987d38b84870736c0708b35b}
+      - {locator: examples/fictional-pantry-product/generated/v0.2/2026-09-09/gallery-specification-2026-09-09.png, locator_type: relative_path, sha256: 786fc55979c1edadcd64c951aecf7c0aae952aa8fe6ecfbea6882981676bbba0}
+      - {locator: examples/fictional-pantry-product/generated/v0.2/2026-09-09/gallery-context-2026-09-09.png, locator_type: relative_path, sha256: 3e266572cbd975e07179ca4c0de06a40009ea84628e5cccc8e1a3dc345919058}
+      - {locator: examples/fictional-pantry-product/generated/v0.2/2026-09-09/gallery-campaign-2026-09-09.png, locator_type: relative_path, sha256: 6786a09bf0d245f64015299f07a4f0dbd0e011d2cb1cc2c61172dacdc42ba9f7}
+      - {locator: examples/fictional-pantry-product/generated/v0.2/2026-09-09/gallery-channel-variant-2026-09-09.png, locator_type: relative_path, sha256: 209a65915981963de95f68e077dffc36f198a9910be605c8d88e4ed411eba6bc}
+    failure_class: null
+    requested_changes: [Build the seven approved ecommerce roles from the selected named-object package identity and two authorized background plates.]
+    preserved_fields: [Package-face pixels, exact copy, variant identity, and source-derived 240 g pixels.]
+    outcome: passed
+    executed_at_utc: "2026-09-09T08:58:27Z"

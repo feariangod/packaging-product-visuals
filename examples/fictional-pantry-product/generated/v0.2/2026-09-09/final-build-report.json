@@ -1,0 +1,2720 @@
+{
+  "artifacts": [
+    {
+      "dimensions": [
+        1448,
+        1086
+      ],
+      "icc_profile_present": false,
+      "input_bindings": [
+        {
+          "asset_id": "compare-direction-a",
+          "sha256": "a2c1d38551febace8a1bfec48011e7e36528695e244ec892d2c4fa4ad3d4f4fb",
+          "status": "bound"
+        }
+      ],
+      "locator": "gallery-catalog-2026-09-09.png",
+      "mode": "RGB",
+      "package_face_checks": [
+        {
+          "mask_id": "lemon-ginger-mask",
+          "opaque_pixel_count": 470885,
+          "output_opaque_sha256": "9f7323766d5983507d9ddcb40ee5d012bf94f4a85cd07d74699118bcc57d1fb4",
+          "output_rect": [
+            0,
+            0,
+            1448,
+            1086
+          ],
+          "sample_output_point": [
+            119,
+            121
+          ],
+          "source_asset_id": "compare-direction-a",
+          "source_opaque_sha256": "9f7323766d5983507d9ddcb40ee5d012bf94f4a85cd07d74699118bcc57d1fb4",
+          "source_rect": [
+            0,
+            0,
+            1448,
+            1086
+          ]
+        },
+        {
+          "mask_id": "berry-oat-mask",
+          "opaque_pixel_count": 475296,
+          "output_opaque_sha256": "139f4f0b8d8608d6a49494c5cd75b0fd745edf9fb1bca8e69d92b8372a9e59e7",
+          "output_rect": [
+            0,
+            0,
+            1448,
+            1086
+          ],
+          "sample_output_point": [
+            756,
+            121
+          ],
+          "source_asset_id": "compare-direction-a",
+          "source_opaque_sha256": "139f4f0b8d8608d6a49494c5cd75b0fd745edf9fb1bca8e69d92b8372a9e59e7",
+          "source_rect": [
+            0,
+            0,
+            1448,
+            1086
+          ]
+        }
+      ],
+      "requested_artifact_id": "gallery-catalog",
+      "review_status": "pending-independent-qa",
+      "role": "catalog",
+      "sha256": "d890af034593b43fd1d5c10a51ee9f97f59d8de938ddf311bca5eaef17ab8d38",
+      "status": "draft"
+    },
+    {
+      "dimensions": [
+        720,
+        900
+      ],
+      "icc_profile_present": false,
+      "input_bindings": [
+        {
+          "asset_id": "gallery-catalog",
+          "sha256": "d890af034593b43fd1d5c10a51ee9f97f59d8de938ddf311bca5eaef17ab8d38",
+          "status": "bound"
+        }
+      ],
+      "locator": "gallery-detail-2026-09-09.png",
+      "mode": "RGB",
+      "package_face_checks": [
+        {
+          "mask_id": "lemon-ginger-mask",
+          "opaque_pixel_count": 470885,
+          "output_opaque_sha256": "9f7323766d5983507d9ddcb40ee5d012bf94f4a85cd07d74699118bcc57d1fb4",
+          "output_rect": [
+            0,
+            0,
+            720,
+            900
+          ],
+          "sample_output_point": [
+            119,
+            35
+          ],
+          "source_asset_id": "gallery-catalog",
+          "source_opaque_sha256": "9f7323766d5983507d9ddcb40ee5d012bf94f4a85cd07d74699118bcc57d1fb4",
+          "source_rect": [
+            0,
+            86,
+            720,
+            986
+          ]
+        }
+      ],
+      "requested_artifact_id": "gallery-detail",
+      "review_status": "pending-independent-qa",
+      "role": "detail",
+      "sha256": "2e51f7bde4b48de152f03ac0a45eb80152c61f7cdb181c7d3cd9d6e566b14b85",
+      "status": "draft"
+    },
+    {
+      "dimensions": [
+        1200,
+        1500
+      ],
+      "icc_profile_present": false,
+      "input_bindings": [
+        {
+          "asset_id": "gallery-catalog",
+          "sha256": "d890af034593b43fd1d5c10a51ee9f97f59d8de938ddf311bca5eaef17ab8d38",
+          "status": "bound"
+        },
+        {
+          "asset_id": "gallery-usage-background-plate",
+          "sha256": "6b6001e6793e03c097ca4e861fc0fbb6000faccbe4f1cbef170df9c8cb63f2b0",
+          "status": "bound"
+        }
+      ],
+      "locator": "gallery-usage-2026-09-09.png",
+      "mode": "RGB",
+      "package_face_checks": [
+        {
+          "mask_id": "berry-oat-mask",
+          "opaque_pixel_count": 475296,
+          "output_opaque_sha256": "139f4f0b8d8608d6a49494c5cd75b0fd745edf9fb1bca8e69d92b8372a9e59e7",
+          "output_rect": [
+            304,
+            510,
+            896,
+            1377
+          ],
+          "sample_output_point": [
+            315,
+            517
+          ],
+          "source_asset_id": "gallery-catalog",
+          "source_opaque_sha256": "139f4f0b8d8608d6a49494c5cd75b0fd745edf9fb1bca8e69d92b8372a9e59e7",
+          "source_rect": [
+            745,
+            114,
+            1337,
+            981
+          ]
+        }
+      ],
+      "requested_artifact_id": "gallery-usage",
+      "review_status": "pending-independent-qa",
+      "role": "usage",
+      "sha256": "541ee5629533a46101aed0d1f7b50489a3fed154987d38b84870736c0708b35b",
+      "status": "draft"
+    },
+    {
+      "dimensions": [
+        1200,
+        1200
+      ],
+      "icc_profile_present": false,
+      "input_bindings": [
+        {
+          "asset_id": "gallery-detail",
+          "sha256": "2e51f7bde4b48de152f03ac0a45eb80152c61f7cdb181c7d3cd9d6e566b14b85",
+          "status": "bound"
+        }
+      ],
+      "locator": "gallery-specification-2026-09-09.png",
+      "mode": "RGB",
+      "package_face_checks": [
+        {
+          "mask_id": "lemon-ginger-mask",
+          "opaque_pixel_count": 470885,
+          "output_opaque_sha256": "9f7323766d5983507d9ddcb40ee5d012bf94f4a85cd07d74699118bcc57d1fb4",
+          "output_rect": [
+            64,
+            150,
+            784,
+            1050
+          ],
+          "sample_output_point": [
+            183,
+            185
+          ],
+          "source_asset_id": "gallery-detail",
+          "source_opaque_sha256": "9f7323766d5983507d9ddcb40ee5d012bf94f4a85cd07d74699118bcc57d1fb4",
+          "source_rect": [
+            0,
+            0,
+            720,
+            900
+          ]
+        }
+      ],
+      "requested_artifact_id": "gallery-specification",
+      "review_status": "pending-independent-qa",
+      "role": "specification",
+      "sha256": "786fc55979c1edadcd64c951aecf7c0aae952aa8fe6ecfbea6882981676bbba0",
+      "status": "draft"
+    },
+    {
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "icc_profile_present": false,
+      "input_bindings": [
+        {
+          "asset_id": "gallery-catalog",
+          "sha256": "d890af034593b43fd1d5c10a51ee9f97f59d8de938ddf311bca5eaef17ab8d38",
+          "status": "bound"
+        },
+        {
+          "asset_id": "gallery-context-background-plate",
+          "sha256": "4a3007bcd227ffa0095d5553351958a9c0d4f926d375ada0694af4c9c97f29b8",
+          "status": "bound"
+        }
+      ],
+      "locator": "gallery-context-2026-09-09.png",
+      "mode": "RGB",
+      "package_face_checks": [
+        {
+          "mask_id": "lemon-ginger-mask",
+          "opaque_pixel_count": 470885,
+          "output_opaque_sha256": "9f7323766d5983507d9ddcb40ee5d012bf94f4a85cd07d74699118bcc57d1fb4",
+          "output_rect": [
+            290,
+            125,
+            885,
+            987
+          ],
+          "sample_output_point": [
+            299,
+            132
+          ],
+          "source_asset_id": "gallery-catalog",
+          "source_opaque_sha256": "9f7323766d5983507d9ddcb40ee5d012bf94f4a85cd07d74699118bcc57d1fb4",
+          "source_rect": [
+            110,
+            114,
+            705,
+            976
+          ]
+        },
+        {
+          "mask_id": "berry-oat-mask",
+          "opaque_pixel_count": 475296,
+          "output_opaque_sha256": "139f4f0b8d8608d6a49494c5cd75b0fd745edf9fb1bca8e69d92b8372a9e59e7",
+          "output_rect": [
+            1038,
+            115,
+            1630,
+            982
+          ],
+          "sample_output_point": [
+            1049,
+            122
+          ],
+          "source_asset_id": "gallery-catalog",
+          "source_opaque_sha256": "139f4f0b8d8608d6a49494c5cd75b0fd745edf9fb1bca8e69d92b8372a9e59e7",
+          "source_rect": [
+            745,
+            114,
+            1337,
+            981
+          ]
+        }
+      ],
+      "requested_artifact_id": "gallery-context",
+      "review_status": "pending-independent-qa",
+      "role": "context",
+      "sha256": "3e266572cbd975e07179ca4c0de06a40009ea84628e5cccc8e1a3dc345919058",
+      "status": "draft"
+    },
+    {
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "icc_profile_present": false,
+      "input_bindings": [
+        {
+          "asset_id": "gallery-catalog",
+          "sha256": "d890af034593b43fd1d5c10a51ee9f97f59d8de938ddf311bca5eaef17ab8d38",
+          "status": "bound"
+        }
+      ],
+      "locator": "gallery-campaign-2026-09-09.png",
+      "mode": "RGB",
+      "package_face_checks": [
+        {
+          "mask_id": "lemon-ginger-mask",
+          "opaque_pixel_count": 470885,
+          "output_opaque_sha256": "9f7323766d5983507d9ddcb40ee5d012bf94f4a85cd07d74699118bcc57d1fb4",
+          "output_rect": [
+            610,
+            175,
+            1205,
+            1037
+          ],
+          "sample_output_point": [
+            619,
+            182
+          ],
+          "source_asset_id": "gallery-catalog",
+          "source_opaque_sha256": "9f7323766d5983507d9ddcb40ee5d012bf94f4a85cd07d74699118bcc57d1fb4",
+          "source_rect": [
+            110,
+            114,
+            705,
+            976
+          ]
+        },
+        {
+          "mask_id": "berry-oat-mask",
+          "opaque_pixel_count": 475296,
+          "output_opaque_sha256": "139f4f0b8d8608d6a49494c5cd75b0fd745edf9fb1bca8e69d92b8372a9e59e7",
+          "output_rect": [
+            1240,
+            45,
+            1832,
+            912
+          ],
+          "sample_output_point": [
+            1251,
+            52
+          ],
+          "source_asset_id": "gallery-catalog",
+          "source_opaque_sha256": "139f4f0b8d8608d6a49494c5cd75b0fd745edf9fb1bca8e69d92b8372a9e59e7",
+          "source_rect": [
+            745,
+            114,
+            1337,
+            981
+          ]
+        }
+      ],
+      "requested_artifact_id": "gallery-campaign",
+      "review_status": "pending-independent-qa",
+      "role": "campaign",
+      "sha256": "6786a09bf0d245f64015299f07a4f0dbd0e011d2cb1cc2c61172dacdc42ba9f7",
+      "status": "draft"
+    },
+    {
+      "dimensions": [
+        1200,
+        1200
+      ],
+      "icc_profile_present": false,
+      "input_bindings": [
+        {
+          "asset_id": "gallery-catalog",
+          "sha256": "d890af034593b43fd1d5c10a51ee9f97f59d8de938ddf311bca5eaef17ab8d38",
+          "status": "bound"
+        }
+      ],
+      "locator": "gallery-channel-variant-2026-09-09.png",
+      "mode": "RGB",
+      "package_face_checks": [
+        {
+          "mask_id": "lemon-ginger-mask",
+          "opaque_pixel_count": 470885,
+          "output_opaque_sha256": "9f7323766d5983507d9ddcb40ee5d012bf94f4a85cd07d74699118bcc57d1fb4",
+          "output_rect": [
+            303,
+            166,
+            898,
+            1028
+          ],
+          "sample_output_point": [
+            312,
+            173
+          ],
+          "source_asset_id": "gallery-catalog",
+          "source_opaque_sha256": "9f7323766d5983507d9ddcb40ee5d012bf94f4a85cd07d74699118bcc57d1fb4",
+          "source_rect": [
+            110,
+            114,
+            705,
+            976
+          ]
+        }
+      ],
+      "requested_artifact_id": "gallery-channel-variant",
+      "review_status": "pending-independent-qa",
+      "role": "channel-variant",
+      "sha256": "209a65915981963de95f68e077dffc36f198a9910be605c8d88e4ed411eba6bc",
+      "status": "draft"
+    }
+  ],
+  "authorization": {
+    "approval_message_sha256": "905819e2e3a059a02087855e9f326d05c877c1767ec31dc012c5c44652840230",
+    "authority": "current-user",
+    "confirmed_at_utc": "2026-09-09T08:47:30Z",
+    "id": "public-fictional-v02-final-build-authorization-2026-09-09",
+    "record_created_at_utc": "2026-09-09T08:55:19Z",
+    "timeline_evidence_sha256": "7df80ba51b81cf59681ed048d45247de6c60a698b587165760b8aa0c031791fa",
+    "sha256": "a30e4a586b84afc0425f2d826f4acb9d631be6e6b1c1aa433309151f136f9da3"
+  },
+  "call_budget": {
+    "actual_total_calls": 2,
+    "maximum_calls_per_background_plate": 2,
+    "maximum_total_calls": 4
+  },
+  "final_output_root": "generated/v0.2/2026-09-09",
+  "final_output_root_written": true,
+  "masks": [
+    {
+      "id": "lemon-ginger-mask",
+      "locator": "transforms/v0.2/2026-09-09/lemon-ginger-mask-2026-09-09.png",
+      "sha256": "581224206f0e72063380c549620aac36e91414482774e633ee87582ad7bc7c6f"
+    },
+    {
+      "id": "berry-oat-mask",
+      "locator": "transforms/v0.2/2026-09-09/berry-oat-mask-2026-09-09.png",
+      "sha256": "479946697e7acbca8e5809d286819089c0de138ba2826890328923d14b336606"
+    }
+  ],
+  "mode": "authorized-final-build",
+  "package_identity_sha256": "39d1ee7e7ea63ab815eadb9667ece008f3183db388350154d4a9f70ade1ab758",
+  "plate_provenance": {
+    "locator": "plate-provenance.json",
+    "sha256": "5a9873e3296b6c832f4cc7965c233a7e80c883e333e05aa12625afc8350e33df"
+  },
+  "publication_authorized": false,
+  "qa": {
+    "actual_gate_rows": 188,
+    "expected_gate_rows": 188,
+    "independent_review_required": true,
+    "rows": [
+      {
+        "artifact_id": "gallery-catalog",
+        "evidence": null,
+        "gate_id": "artifact-type",
+        "profile_id": "full-resolution",
+        "requested_artifact_id": "gallery-catalog",
+        "reviewer_id": null,
+        "role": "catalog",
+        "row_id": "gallery-catalog:artifact-type:full-resolution",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-catalog",
+        "evidence": null,
+        "gate_id": "artifact-type",
+        "profile_id": "ecommerce-thumbnail",
+        "requested_artifact_id": "gallery-catalog",
+        "reviewer_id": null,
+        "role": "catalog",
+        "row_id": "gallery-catalog:artifact-type:ecommerce-thumbnail",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-catalog",
+        "evidence": null,
+        "gate_id": "object-count",
+        "profile_id": "full-resolution",
+        "requested_artifact_id": "gallery-catalog",
+        "reviewer_id": null,
+        "role": "catalog",
+        "row_id": "gallery-catalog:object-count:full-resolution",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-catalog",
+        "evidence": null,
+        "gate_id": "object-count",
+        "profile_id": "ecommerce-thumbnail",
+        "requested_artifact_id": "gallery-catalog",
+        "reviewer_id": null,
+        "role": "catalog",
+        "row_id": "gallery-catalog:object-count:ecommerce-thumbnail",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-catalog",
+        "evidence": null,
+        "gate_id": "package-geometry",
+        "profile_id": "full-resolution",
+        "requested_artifact_id": "gallery-catalog",
+        "reviewer_id": null,
+        "role": "catalog",
+        "row_id": "gallery-catalog:package-geometry:full-resolution",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-catalog",
+        "evidence": null,
+        "gate_id": "package-geometry",
+        "profile_id": "ecommerce-thumbnail",
+        "requested_artifact_id": "gallery-catalog",
+        "reviewer_id": null,
+        "role": "catalog",
+        "row_id": "gallery-catalog:package-geometry:ecommerce-thumbnail",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-catalog",
+        "evidence": null,
+        "gate_id": "exact-copy",
+        "profile_id": "full-resolution",
+        "requested_artifact_id": "gallery-catalog",
+        "reviewer_id": null,
+        "role": "catalog",
+        "row_id": "gallery-catalog:exact-copy:full-resolution",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-catalog",
+        "evidence": null,
+        "gate_id": "exact-copy",
+        "profile_id": "ecommerce-thumbnail",
+        "requested_artifact_id": "gallery-catalog",
+        "reviewer_id": null,
+        "role": "catalog",
+        "row_id": "gallery-catalog:exact-copy:ecommerce-thumbnail",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-catalog",
+        "evidence": null,
+        "gate_id": "invented-claims",
+        "profile_id": "full-resolution",
+        "requested_artifact_id": "gallery-catalog",
+        "reviewer_id": null,
+        "role": "catalog",
+        "row_id": "gallery-catalog:invented-claims:full-resolution",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-catalog",
+        "evidence": null,
+        "gate_id": "invented-claims",
+        "profile_id": "ecommerce-thumbnail",
+        "requested_artifact_id": "gallery-catalog",
+        "reviewer_id": null,
+        "role": "catalog",
+        "row_id": "gallery-catalog:invented-claims:ecommerce-thumbnail",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-catalog",
+        "evidence": null,
+        "gate_id": "reference-role",
+        "profile_id": "full-resolution",
+        "requested_artifact_id": "gallery-catalog",
+        "reviewer_id": null,
+        "role": "catalog",
+        "row_id": "gallery-catalog:reference-role:full-resolution",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-catalog",
+        "evidence": null,
+        "gate_id": "reference-role",
+        "profile_id": "ecommerce-thumbnail",
+        "requested_artifact_id": "gallery-catalog",
+        "reviewer_id": null,
+        "role": "catalog",
+        "row_id": "gallery-catalog:reference-role:ecommerce-thumbnail",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-catalog",
+        "evidence": null,
+        "gate_id": "visual-hierarchy-identity",
+        "profile_id": "full-resolution",
+        "requested_artifact_id": "gallery-catalog",
+        "reviewer_id": null,
+        "role": "catalog",
+        "row_id": "gallery-catalog:visual-hierarchy-identity:full-resolution",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-catalog",
+        "evidence": null,
+        "gate_id": "visual-hierarchy-identity",
+        "profile_id": "ecommerce-thumbnail",
+        "requested_artifact_id": "gallery-catalog",
+        "reviewer_id": null,
+        "role": "catalog",
+        "row_id": "gallery-catalog:visual-hierarchy-identity:ecommerce-thumbnail",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-catalog",
+        "evidence": null,
+        "gate_id": "product-anatomy",
+        "profile_id": "full-resolution",
+        "requested_artifact_id": "gallery-catalog",
+        "reviewer_id": null,
+        "role": "catalog",
+        "row_id": "gallery-catalog:product-anatomy:full-resolution",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-catalog",
+        "evidence": null,
+        "gate_id": "product-anatomy",
+        "profile_id": "ecommerce-thumbnail",
+        "requested_artifact_id": "gallery-catalog",
+        "reviewer_id": null,
+        "role": "catalog",
+        "row_id": "gallery-catalog:product-anatomy:ecommerce-thumbnail",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-catalog",
+        "evidence": null,
+        "gate_id": "channel-fit",
+        "profile_id": "full-resolution",
+        "requested_artifact_id": "gallery-catalog",
+        "reviewer_id": null,
+        "role": "catalog",
+        "row_id": "gallery-catalog:channel-fit:full-resolution",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-catalog",
+        "evidence": null,
+        "gate_id": "channel-fit",
+        "profile_id": "ecommerce-thumbnail",
+        "requested_artifact_id": "gallery-catalog",
+        "reviewer_id": null,
+        "role": "catalog",
+        "row_id": "gallery-catalog:channel-fit:ecommerce-thumbnail",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-catalog",
+        "evidence": null,
+        "gate_id": "artifact-integrity",
+        "profile_id": "full-resolution",
+        "requested_artifact_id": "gallery-catalog",
+        "reviewer_id": null,
+        "role": "catalog",
+        "row_id": "gallery-catalog:artifact-integrity:full-resolution",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-catalog",
+        "evidence": null,
+        "gate_id": "artifact-integrity",
+        "profile_id": "ecommerce-thumbnail",
+        "requested_artifact_id": "gallery-catalog",
+        "reviewer_id": null,
+        "role": "catalog",
+        "row_id": "gallery-catalog:artifact-integrity:ecommerce-thumbnail",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-catalog",
+        "evidence": null,
+        "gate_id": "selection-lock",
+        "profile_id": "full-resolution",
+        "requested_artifact_id": "gallery-catalog",
+        "reviewer_id": null,
+        "role": "catalog",
+        "row_id": "gallery-catalog:selection-lock:full-resolution",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-catalog",
+        "evidence": null,
+        "gate_id": "selection-lock",
+        "profile_id": "ecommerce-thumbnail",
+        "requested_artifact_id": "gallery-catalog",
+        "reviewer_id": null,
+        "role": "catalog",
+        "row_id": "gallery-catalog:selection-lock:ecommerce-thumbnail",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-catalog",
+        "evidence": null,
+        "gate_id": "asset-role",
+        "profile_id": "full-resolution",
+        "requested_artifact_id": "gallery-catalog",
+        "reviewer_id": null,
+        "role": "catalog",
+        "row_id": "gallery-catalog:asset-role:full-resolution",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-catalog",
+        "evidence": null,
+        "gate_id": "asset-role",
+        "profile_id": "ecommerce-thumbnail",
+        "requested_artifact_id": "gallery-catalog",
+        "reviewer_id": null,
+        "role": "catalog",
+        "row_id": "gallery-catalog:asset-role:ecommerce-thumbnail",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-catalog",
+        "evidence": null,
+        "gate_id": "package-identity",
+        "profile_id": "full-resolution",
+        "requested_artifact_id": "gallery-catalog",
+        "reviewer_id": null,
+        "role": "catalog",
+        "row_id": "gallery-catalog:package-identity:full-resolution",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-catalog",
+        "evidence": null,
+        "gate_id": "package-identity",
+        "profile_id": "ecommerce-thumbnail",
+        "requested_artifact_id": "gallery-catalog",
+        "reviewer_id": null,
+        "role": "catalog",
+        "row_id": "gallery-catalog:package-identity:ecommerce-thumbnail",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-detail",
+        "evidence": null,
+        "gate_id": "artifact-type",
+        "profile_id": "full-resolution",
+        "requested_artifact_id": "gallery-detail",
+        "reviewer_id": null,
+        "role": "detail",
+        "row_id": "gallery-detail:artifact-type:full-resolution",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-detail",
+        "evidence": null,
+        "gate_id": "artifact-type",
+        "profile_id": "ecommerce-thumbnail",
+        "requested_artifact_id": "gallery-detail",
+        "reviewer_id": null,
+        "role": "detail",
+        "row_id": "gallery-detail:artifact-type:ecommerce-thumbnail",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-detail",
+        "evidence": null,
+        "gate_id": "object-count",
+        "profile_id": "full-resolution",
+        "requested_artifact_id": "gallery-detail",
+        "reviewer_id": null,
+        "role": "detail",
+        "row_id": "gallery-detail:object-count:full-resolution",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-detail",
+        "evidence": null,
+        "gate_id": "object-count",
+        "profile_id": "ecommerce-thumbnail",
+        "requested_artifact_id": "gallery-detail",
+        "reviewer_id": null,
+        "role": "detail",
+        "row_id": "gallery-detail:object-count:ecommerce-thumbnail",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-detail",
+        "evidence": null,
+        "gate_id": "package-geometry",
+        "profile_id": "full-resolution",
+        "requested_artifact_id": "gallery-detail",
+        "reviewer_id": null,
+        "role": "detail",
+        "row_id": "gallery-detail:package-geometry:full-resolution",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-detail",
+        "evidence": null,
+        "gate_id": "package-geometry",
+        "profile_id": "ecommerce-thumbnail",
+        "requested_artifact_id": "gallery-detail",
+        "reviewer_id": null,
+        "role": "detail",
+        "row_id": "gallery-detail:package-geometry:ecommerce-thumbnail",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-detail",
+        "evidence": null,
+        "gate_id": "exact-copy",
+        "profile_id": "full-resolution",
+        "requested_artifact_id": "gallery-detail",
+        "reviewer_id": null,
+        "role": "detail",
+        "row_id": "gallery-detail:exact-copy:full-resolution",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-detail",
+        "evidence": null,
+        "gate_id": "exact-copy",
+        "profile_id": "ecommerce-thumbnail",
+        "requested_artifact_id": "gallery-detail",
+        "reviewer_id": null,
+        "role": "detail",
+        "row_id": "gallery-detail:exact-copy:ecommerce-thumbnail",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-detail",
+        "evidence": null,
+        "gate_id": "invented-claims",
+        "profile_id": "full-resolution",
+        "requested_artifact_id": "gallery-detail",
+        "reviewer_id": null,
+        "role": "detail",
+        "row_id": "gallery-detail:invented-claims:full-resolution",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-detail",
+        "evidence": null,
+        "gate_id": "invented-claims",
+        "profile_id": "ecommerce-thumbnail",
+        "requested_artifact_id": "gallery-detail",
+        "reviewer_id": null,
+        "role": "detail",
+        "row_id": "gallery-detail:invented-claims:ecommerce-thumbnail",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-detail",
+        "evidence": null,
+        "gate_id": "reference-role",
+        "profile_id": "full-resolution",
+        "requested_artifact_id": "gallery-detail",
+        "reviewer_id": null,
+        "role": "detail",
+        "row_id": "gallery-detail:reference-role:full-resolution",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-detail",
+        "evidence": null,
+        "gate_id": "reference-role",
+        "profile_id": "ecommerce-thumbnail",
+        "requested_artifact_id": "gallery-detail",
+        "reviewer_id": null,
+        "role": "detail",
+        "row_id": "gallery-detail:reference-role:ecommerce-thumbnail",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-detail",
+        "evidence": null,
+        "gate_id": "visual-hierarchy-identity",
+        "profile_id": "full-resolution",
+        "requested_artifact_id": "gallery-detail",
+        "reviewer_id": null,
+        "role": "detail",
+        "row_id": "gallery-detail:visual-hierarchy-identity:full-resolution",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-detail",
+        "evidence": null,
+        "gate_id": "visual-hierarchy-identity",
+        "profile_id": "ecommerce-thumbnail",
+        "requested_artifact_id": "gallery-detail",
+        "reviewer_id": null,
+        "role": "detail",
+        "row_id": "gallery-detail:visual-hierarchy-identity:ecommerce-thumbnail",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-detail",
+        "evidence": null,
+        "gate_id": "product-anatomy",
+        "profile_id": "full-resolution",
+        "requested_artifact_id": "gallery-detail",
+        "reviewer_id": null,
+        "role": "detail",
+        "row_id": "gallery-detail:product-anatomy:full-resolution",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-detail",
+        "evidence": null,
+        "gate_id": "product-anatomy",
+        "profile_id": "ecommerce-thumbnail",
+        "requested_artifact_id": "gallery-detail",
+        "reviewer_id": null,
+        "role": "detail",
+        "row_id": "gallery-detail:product-anatomy:ecommerce-thumbnail",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-detail",
+        "evidence": null,
+        "gate_id": "channel-fit",
+        "profile_id": "full-resolution",
+        "requested_artifact_id": "gallery-detail",
+        "reviewer_id": null,
+        "role": "detail",
+        "row_id": "gallery-detail:channel-fit:full-resolution",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-detail",
+        "evidence": null,
+        "gate_id": "channel-fit",
+        "profile_id": "ecommerce-thumbnail",
+        "requested_artifact_id": "gallery-detail",
+        "reviewer_id": null,
+        "role": "detail",
+        "row_id": "gallery-detail:channel-fit:ecommerce-thumbnail",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-detail",
+        "evidence": null,
+        "gate_id": "artifact-integrity",
+        "profile_id": "full-resolution",
+        "requested_artifact_id": "gallery-detail",
+        "reviewer_id": null,
+        "role": "detail",
+        "row_id": "gallery-detail:artifact-integrity:full-resolution",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-detail",
+        "evidence": null,
+        "gate_id": "artifact-integrity",
+        "profile_id": "ecommerce-thumbnail",
+        "requested_artifact_id": "gallery-detail",
+        "reviewer_id": null,
+        "role": "detail",
+        "row_id": "gallery-detail:artifact-integrity:ecommerce-thumbnail",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-detail",
+        "evidence": null,
+        "gate_id": "selection-lock",
+        "profile_id": "full-resolution",
+        "requested_artifact_id": "gallery-detail",
+        "reviewer_id": null,
+        "role": "detail",
+        "row_id": "gallery-detail:selection-lock:full-resolution",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-detail",
+        "evidence": null,
+        "gate_id": "selection-lock",
+        "profile_id": "ecommerce-thumbnail",
+        "requested_artifact_id": "gallery-detail",
+        "reviewer_id": null,
+        "role": "detail",
+        "row_id": "gallery-detail:selection-lock:ecommerce-thumbnail",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-detail",
+        "evidence": null,
+        "gate_id": "asset-role",
+        "profile_id": "full-resolution",
+        "requested_artifact_id": "gallery-detail",
+        "reviewer_id": null,
+        "role": "detail",
+        "row_id": "gallery-detail:asset-role:full-resolution",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-detail",
+        "evidence": null,
+        "gate_id": "asset-role",
+        "profile_id": "ecommerce-thumbnail",
+        "requested_artifact_id": "gallery-detail",
+        "reviewer_id": null,
+        "role": "detail",
+        "row_id": "gallery-detail:asset-role:ecommerce-thumbnail",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-detail",
+        "evidence": null,
+        "gate_id": "package-identity",
+        "profile_id": "full-resolution",
+        "requested_artifact_id": "gallery-detail",
+        "reviewer_id": null,
+        "role": "detail",
+        "row_id": "gallery-detail:package-identity:full-resolution",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-detail",
+        "evidence": null,
+        "gate_id": "package-identity",
+        "profile_id": "ecommerce-thumbnail",
+        "requested_artifact_id": "gallery-detail",
+        "reviewer_id": null,
+        "role": "detail",
+        "row_id": "gallery-detail:package-identity:ecommerce-thumbnail",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-usage",
+        "evidence": null,
+        "gate_id": "artifact-type",
+        "profile_id": "full-resolution",
+        "requested_artifact_id": "gallery-usage",
+        "reviewer_id": null,
+        "role": "usage",
+        "row_id": "gallery-usage:artifact-type:full-resolution",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-usage",
+        "evidence": null,
+        "gate_id": "artifact-type",
+        "profile_id": "ecommerce-thumbnail",
+        "requested_artifact_id": "gallery-usage",
+        "reviewer_id": null,
+        "role": "usage",
+        "row_id": "gallery-usage:artifact-type:ecommerce-thumbnail",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-usage",
+        "evidence": null,
+        "gate_id": "object-count",
+        "profile_id": "full-resolution",
+        "requested_artifact_id": "gallery-usage",
+        "reviewer_id": null,
+        "role": "usage",
+        "row_id": "gallery-usage:object-count:full-resolution",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-usage",
+        "evidence": null,
+        "gate_id": "object-count",
+        "profile_id": "ecommerce-thumbnail",
+        "requested_artifact_id": "gallery-usage",
+        "reviewer_id": null,
+        "role": "usage",
+        "row_id": "gallery-usage:object-count:ecommerce-thumbnail",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-usage",
+        "evidence": null,
+        "gate_id": "package-geometry",
+        "profile_id": "full-resolution",
+        "requested_artifact_id": "gallery-usage",
+        "reviewer_id": null,
+        "role": "usage",
+        "row_id": "gallery-usage:package-geometry:full-resolution",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-usage",
+        "evidence": null,
+        "gate_id": "package-geometry",
+        "profile_id": "ecommerce-thumbnail",
+        "requested_artifact_id": "gallery-usage",
+        "reviewer_id": null,
+        "role": "usage",
+        "row_id": "gallery-usage:package-geometry:ecommerce-thumbnail",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-usage",
+        "evidence": null,
+        "gate_id": "exact-copy",
+        "profile_id": "full-resolution",
+        "requested_artifact_id": "gallery-usage",
+        "reviewer_id": null,
+        "role": "usage",
+        "row_id": "gallery-usage:exact-copy:full-resolution",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-usage",
+        "evidence": null,
+        "gate_id": "exact-copy",
+        "profile_id": "ecommerce-thumbnail",
+        "requested_artifact_id": "gallery-usage",
+        "reviewer_id": null,
+        "role": "usage",
+        "row_id": "gallery-usage:exact-copy:ecommerce-thumbnail",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-usage",
+        "evidence": null,
+        "gate_id": "invented-claims",
+        "profile_id": "full-resolution",
+        "requested_artifact_id": "gallery-usage",
+        "reviewer_id": null,
+        "role": "usage",
+        "row_id": "gallery-usage:invented-claims:full-resolution",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-usage",
+        "evidence": null,
+        "gate_id": "invented-claims",
+        "profile_id": "ecommerce-thumbnail",
+        "requested_artifact_id": "gallery-usage",
+        "reviewer_id": null,
+        "role": "usage",
+        "row_id": "gallery-usage:invented-claims:ecommerce-thumbnail",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-usage",
+        "evidence": null,
+        "gate_id": "reference-role",
+        "profile_id": "full-resolution",
+        "requested_artifact_id": "gallery-usage",
+        "reviewer_id": null,
+        "role": "usage",
+        "row_id": "gallery-usage:reference-role:full-resolution",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-usage",
+        "evidence": null,
+        "gate_id": "reference-role",
+        "profile_id": "ecommerce-thumbnail",
+        "requested_artifact_id": "gallery-usage",
+        "reviewer_id": null,
+        "role": "usage",
+        "row_id": "gallery-usage:reference-role:ecommerce-thumbnail",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-usage",
+        "evidence": null,
+        "gate_id": "visual-hierarchy-identity",
+        "profile_id": "full-resolution",
+        "requested_artifact_id": "gallery-usage",
+        "reviewer_id": null,
+        "role": "usage",
+        "row_id": "gallery-usage:visual-hierarchy-identity:full-resolution",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-usage",
+        "evidence": null,
+        "gate_id": "visual-hierarchy-identity",
+        "profile_id": "ecommerce-thumbnail",
+        "requested_artifact_id": "gallery-usage",
+        "reviewer_id": null,
+        "role": "usage",
+        "row_id": "gallery-usage:visual-hierarchy-identity:ecommerce-thumbnail",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-usage",
+        "evidence": null,
+        "gate_id": "product-anatomy",
+        "profile_id": "full-resolution",
+        "requested_artifact_id": "gallery-usage",
+        "reviewer_id": null,
+        "role": "usage",
+        "row_id": "gallery-usage:product-anatomy:full-resolution",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-usage",
+        "evidence": null,
+        "gate_id": "product-anatomy",
+        "profile_id": "ecommerce-thumbnail",
+        "requested_artifact_id": "gallery-usage",
+        "reviewer_id": null,
+        "role": "usage",
+        "row_id": "gallery-usage:product-anatomy:ecommerce-thumbnail",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-usage",
+        "evidence": null,
+        "gate_id": "channel-fit",
+        "profile_id": "full-resolution",
+        "requested_artifact_id": "gallery-usage",
+        "reviewer_id": null,
+        "role": "usage",
+        "row_id": "gallery-usage:channel-fit:full-resolution",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-usage",
+        "evidence": null,
+        "gate_id": "channel-fit",
+        "profile_id": "ecommerce-thumbnail",
+        "requested_artifact_id": "gallery-usage",
+        "reviewer_id": null,
+        "role": "usage",
+        "row_id": "gallery-usage:channel-fit:ecommerce-thumbnail",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-usage",
+        "evidence": null,
+        "gate_id": "artifact-integrity",
+        "profile_id": "full-resolution",
+        "requested_artifact_id": "gallery-usage",
+        "reviewer_id": null,
+        "role": "usage",
+        "row_id": "gallery-usage:artifact-integrity:full-resolution",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-usage",
+        "evidence": null,
+        "gate_id": "artifact-integrity",
+        "profile_id": "ecommerce-thumbnail",
+        "requested_artifact_id": "gallery-usage",
+        "reviewer_id": null,
+        "role": "usage",
+        "row_id": "gallery-usage:artifact-integrity:ecommerce-thumbnail",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-usage",
+        "evidence": null,
+        "gate_id": "selection-lock",
+        "profile_id": "full-resolution",
+        "requested_artifact_id": "gallery-usage",
+        "reviewer_id": null,
+        "role": "usage",
+        "row_id": "gallery-usage:selection-lock:full-resolution",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-usage",
+        "evidence": null,
+        "gate_id": "selection-lock",
+        "profile_id": "ecommerce-thumbnail",
+        "requested_artifact_id": "gallery-usage",
+        "reviewer_id": null,
+        "role": "usage",
+        "row_id": "gallery-usage:selection-lock:ecommerce-thumbnail",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-usage",
+        "evidence": null,
+        "gate_id": "asset-role",
+        "profile_id": "full-resolution",
+        "requested_artifact_id": "gallery-usage",
+        "reviewer_id": null,
+        "role": "usage",
+        "row_id": "gallery-usage:asset-role:full-resolution",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-usage",
+        "evidence": null,
+        "gate_id": "asset-role",
+        "profile_id": "ecommerce-thumbnail",
+        "requested_artifact_id": "gallery-usage",
+        "reviewer_id": null,
+        "role": "usage",
+        "row_id": "gallery-usage:asset-role:ecommerce-thumbnail",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-usage",
+        "evidence": null,
+        "gate_id": "package-identity",
+        "profile_id": "full-resolution",
+        "requested_artifact_id": "gallery-usage",
+        "reviewer_id": null,
+        "role": "usage",
+        "row_id": "gallery-usage:package-identity:full-resolution",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-usage",
+        "evidence": null,
+        "gate_id": "package-identity",
+        "profile_id": "ecommerce-thumbnail",
+        "requested_artifact_id": "gallery-usage",
+        "reviewer_id": null,
+        "role": "usage",
+        "row_id": "gallery-usage:package-identity:ecommerce-thumbnail",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-specification",
+        "evidence": null,
+        "gate_id": "artifact-type",
+        "profile_id": "full-resolution",
+        "requested_artifact_id": "gallery-specification",
+        "reviewer_id": null,
+        "role": "specification",
+        "row_id": "gallery-specification:artifact-type:full-resolution",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-specification",
+        "evidence": null,
+        "gate_id": "artifact-type",
+        "profile_id": "ecommerce-thumbnail",
+        "requested_artifact_id": "gallery-specification",
+        "reviewer_id": null,
+        "role": "specification",
+        "row_id": "gallery-specification:artifact-type:ecommerce-thumbnail",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-specification",
+        "evidence": null,
+        "gate_id": "object-count",
+        "profile_id": "full-resolution",
+        "requested_artifact_id": "gallery-specification",
+        "reviewer_id": null,
+        "role": "specification",
+        "row_id": "gallery-specification:object-count:full-resolution",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-specification",
+        "evidence": null,
+        "gate_id": "object-count",
+        "profile_id": "ecommerce-thumbnail",
+        "requested_artifact_id": "gallery-specification",
+        "reviewer_id": null,
+        "role": "specification",
+        "row_id": "gallery-specification:object-count:ecommerce-thumbnail",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-specification",
+        "evidence": null,
+        "gate_id": "package-geometry",
+        "profile_id": "full-resolution",
+        "requested_artifact_id": "gallery-specification",
+        "reviewer_id": null,
+        "role": "specification",
+        "row_id": "gallery-specification:package-geometry:full-resolution",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-specification",
+        "evidence": null,
+        "gate_id": "package-geometry",
+        "profile_id": "ecommerce-thumbnail",
+        "requested_artifact_id": "gallery-specification",
+        "reviewer_id": null,
+        "role": "specification",
+        "row_id": "gallery-specification:package-geometry:ecommerce-thumbnail",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-specification",
+        "evidence": null,
+        "gate_id": "exact-copy",
+        "profile_id": "full-resolution",
+        "requested_artifact_id": "gallery-specification",
+        "reviewer_id": null,
+        "role": "specification",
+        "row_id": "gallery-specification:exact-copy:full-resolution",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-specification",
+        "evidence": null,
+        "gate_id": "exact-copy",
+        "profile_id": "ecommerce-thumbnail",
+        "requested_artifact_id": "gallery-specification",
+        "reviewer_id": null,
+        "role": "specification",
+        "row_id": "gallery-specification:exact-copy:ecommerce-thumbnail",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-specification",
+        "evidence": null,
+        "gate_id": "invented-claims",
+        "profile_id": "full-resolution",
+        "requested_artifact_id": "gallery-specification",
+        "reviewer_id": null,
+        "role": "specification",
+        "row_id": "gallery-specification:invented-claims:full-resolution",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-specification",
+        "evidence": null,
+        "gate_id": "invented-claims",
+        "profile_id": "ecommerce-thumbnail",
+        "requested_artifact_id": "gallery-specification",
+        "reviewer_id": null,
+        "role": "specification",
+        "row_id": "gallery-specification:invented-claims:ecommerce-thumbnail",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-specification",
+        "evidence": null,
+        "gate_id": "reference-role",
+        "profile_id": "full-resolution",
+        "requested_artifact_id": "gallery-specification",
+        "reviewer_id": null,
+        "role": "specification",
+        "row_id": "gallery-specification:reference-role:full-resolution",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-specification",
+        "evidence": null,
+        "gate_id": "reference-role",
+        "profile_id": "ecommerce-thumbnail",
+        "requested_artifact_id": "gallery-specification",
+        "reviewer_id": null,
+        "role": "specification",
+        "row_id": "gallery-specification:reference-role:ecommerce-thumbnail",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-specification",
+        "evidence": null,
+        "gate_id": "visual-hierarchy-identity",
+        "profile_id": "full-resolution",
+        "requested_artifact_id": "gallery-specification",
+        "reviewer_id": null,
+        "role": "specification",
+        "row_id": "gallery-specification:visual-hierarchy-identity:full-resolution",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-specification",
+        "evidence": null,
+        "gate_id": "visual-hierarchy-identity",
+        "profile_id": "ecommerce-thumbnail",
+        "requested_artifact_id": "gallery-specification",
+        "reviewer_id": null,
+        "role": "specification",
+        "row_id": "gallery-specification:visual-hierarchy-identity:ecommerce-thumbnail",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-specification",
+        "evidence": null,
+        "gate_id": "product-anatomy",
+        "profile_id": "full-resolution",
+        "requested_artifact_id": "gallery-specification",
+        "reviewer_id": null,
+        "role": "specification",
+        "row_id": "gallery-specification:product-anatomy:full-resolution",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-specification",
+        "evidence": null,
+        "gate_id": "product-anatomy",
+        "profile_id": "ecommerce-thumbnail",
+        "requested_artifact_id": "gallery-specification",
+        "reviewer_id": null,
+        "role": "specification",
+        "row_id": "gallery-specification:product-anatomy:ecommerce-thumbnail",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-specification",
+        "evidence": null,
+        "gate_id": "channel-fit",
+        "profile_id": "full-resolution",
+        "requested_artifact_id": "gallery-specification",
+        "reviewer_id": null,
+        "role": "specification",
+        "row_id": "gallery-specification:channel-fit:full-resolution",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-specification",
+        "evidence": null,
+        "gate_id": "channel-fit",
+        "profile_id": "ecommerce-thumbnail",
+        "requested_artifact_id": "gallery-specification",
+        "reviewer_id": null,
+        "role": "specification",
+        "row_id": "gallery-specification:channel-fit:ecommerce-thumbnail",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-specification",
+        "evidence": null,
+        "gate_id": "artifact-integrity",
+        "profile_id": "full-resolution",
+        "requested_artifact_id": "gallery-specification",
+        "reviewer_id": null,
+        "role": "specification",
+        "row_id": "gallery-specification:artifact-integrity:full-resolution",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-specification",
+        "evidence": null,
+        "gate_id": "artifact-integrity",
+        "profile_id": "ecommerce-thumbnail",
+        "requested_artifact_id": "gallery-specification",
+        "reviewer_id": null,
+        "role": "specification",
+        "row_id": "gallery-specification:artifact-integrity:ecommerce-thumbnail",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-specification",
+        "evidence": null,
+        "gate_id": "selection-lock",
+        "profile_id": "full-resolution",
+        "requested_artifact_id": "gallery-specification",
+        "reviewer_id": null,
+        "role": "specification",
+        "row_id": "gallery-specification:selection-lock:full-resolution",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-specification",
+        "evidence": null,
+        "gate_id": "selection-lock",
+        "profile_id": "ecommerce-thumbnail",
+        "requested_artifact_id": "gallery-specification",
+        "reviewer_id": null,
+        "role": "specification",
+        "row_id": "gallery-specification:selection-lock:ecommerce-thumbnail",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-specification",
+        "evidence": null,
+        "gate_id": "asset-role",
+        "profile_id": "full-resolution",
+        "requested_artifact_id": "gallery-specification",
+        "reviewer_id": null,
+        "role": "specification",
+        "row_id": "gallery-specification:asset-role:full-resolution",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-specification",
+        "evidence": null,
+        "gate_id": "asset-role",
+        "profile_id": "ecommerce-thumbnail",
+        "requested_artifact_id": "gallery-specification",
+        "reviewer_id": null,
+        "role": "specification",
+        "row_id": "gallery-specification:asset-role:ecommerce-thumbnail",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-specification",
+        "evidence": null,
+        "gate_id": "package-identity",
+        "profile_id": "full-resolution",
+        "requested_artifact_id": "gallery-specification",
+        "reviewer_id": null,
+        "role": "specification",
+        "row_id": "gallery-specification:package-identity:full-resolution",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-specification",
+        "evidence": null,
+        "gate_id": "package-identity",
+        "profile_id": "ecommerce-thumbnail",
+        "requested_artifact_id": "gallery-specification",
+        "reviewer_id": null,
+        "role": "specification",
+        "row_id": "gallery-specification:package-identity:ecommerce-thumbnail",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-context",
+        "evidence": null,
+        "gate_id": "artifact-type",
+        "profile_id": "full-resolution",
+        "requested_artifact_id": "gallery-context",
+        "reviewer_id": null,
+        "role": "context",
+        "row_id": "gallery-context:artifact-type:full-resolution",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-context",
+        "evidence": null,
+        "gate_id": "artifact-type",
+        "profile_id": "ecommerce-thumbnail",
+        "requested_artifact_id": "gallery-context",
+        "reviewer_id": null,
+        "role": "context",
+        "row_id": "gallery-context:artifact-type:ecommerce-thumbnail",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-context",
+        "evidence": null,
+        "gate_id": "object-count",
+        "profile_id": "full-resolution",
+        "requested_artifact_id": "gallery-context",
+        "reviewer_id": null,
+        "role": "context",
+        "row_id": "gallery-context:object-count:full-resolution",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-context",
+        "evidence": null,
+        "gate_id": "object-count",
+        "profile_id": "ecommerce-thumbnail",
+        "requested_artifact_id": "gallery-context",
+        "reviewer_id": null,
+        "role": "context",
+        "row_id": "gallery-context:object-count:ecommerce-thumbnail",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-context",
+        "evidence": null,
+        "gate_id": "package-geometry",
+        "profile_id": "full-resolution",
+        "requested_artifact_id": "gallery-context",
+        "reviewer_id": null,
+        "role": "context",
+        "row_id": "gallery-context:package-geometry:full-resolution",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-context",
+        "evidence": null,
+        "gate_id": "package-geometry",
+        "profile_id": "ecommerce-thumbnail",
+        "requested_artifact_id": "gallery-context",
+        "reviewer_id": null,
+        "role": "context",
+        "row_id": "gallery-context:package-geometry:ecommerce-thumbnail",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-context",
+        "evidence": null,
+        "gate_id": "exact-copy",
+        "profile_id": "full-resolution",
+        "requested_artifact_id": "gallery-context",
+        "reviewer_id": null,
+        "role": "context",
+        "row_id": "gallery-context:exact-copy:full-resolution",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-context",
+        "evidence": null,
+        "gate_id": "exact-copy",
+        "profile_id": "ecommerce-thumbnail",
+        "requested_artifact_id": "gallery-context",
+        "reviewer_id": null,
+        "role": "context",
+        "row_id": "gallery-context:exact-copy:ecommerce-thumbnail",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-context",
+        "evidence": null,
+        "gate_id": "invented-claims",
+        "profile_id": "full-resolution",
+        "requested_artifact_id": "gallery-context",
+        "reviewer_id": null,
+        "role": "context",
+        "row_id": "gallery-context:invented-claims:full-resolution",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-context",
+        "evidence": null,
+        "gate_id": "invented-claims",
+        "profile_id": "ecommerce-thumbnail",
+        "requested_artifact_id": "gallery-context",
+        "reviewer_id": null,
+        "role": "context",
+        "row_id": "gallery-context:invented-claims:ecommerce-thumbnail",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-context",
+        "evidence": null,
+        "gate_id": "reference-role",
+        "profile_id": "full-resolution",
+        "requested_artifact_id": "gallery-context",
+        "reviewer_id": null,
+        "role": "context",
+        "row_id": "gallery-context:reference-role:full-resolution",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-context",
+        "evidence": null,
+        "gate_id": "reference-role",
+        "profile_id": "ecommerce-thumbnail",
+        "requested_artifact_id": "gallery-context",
+        "reviewer_id": null,
+        "role": "context",
+        "row_id": "gallery-context:reference-role:ecommerce-thumbnail",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-context",
+        "evidence": null,
+        "gate_id": "visual-hierarchy-identity",
+        "profile_id": "full-resolution",
+        "requested_artifact_id": "gallery-context",
+        "reviewer_id": null,
+        "role": "context",
+        "row_id": "gallery-context:visual-hierarchy-identity:full-resolution",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-context",
+        "evidence": null,
+        "gate_id": "visual-hierarchy-identity",
+        "profile_id": "ecommerce-thumbnail",
+        "requested_artifact_id": "gallery-context",
+        "reviewer_id": null,
+        "role": "context",
+        "row_id": "gallery-context:visual-hierarchy-identity:ecommerce-thumbnail",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-context",
+        "evidence": null,
+        "gate_id": "product-anatomy",
+        "profile_id": "full-resolution",
+        "requested_artifact_id": "gallery-context",
+        "reviewer_id": null,
+        "role": "context",
+        "row_id": "gallery-context:product-anatomy:full-resolution",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-context",
+        "evidence": null,
+        "gate_id": "product-anatomy",
+        "profile_id": "ecommerce-thumbnail",
+        "requested_artifact_id": "gallery-context",
+        "reviewer_id": null,
+        "role": "context",
+        "row_id": "gallery-context:product-anatomy:ecommerce-thumbnail",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-context",
+        "evidence": null,
+        "gate_id": "channel-fit",
+        "profile_id": "full-resolution",
+        "requested_artifact_id": "gallery-context",
+        "reviewer_id": null,
+        "role": "context",
+        "row_id": "gallery-context:channel-fit:full-resolution",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-context",
+        "evidence": null,
+        "gate_id": "channel-fit",
+        "profile_id": "ecommerce-thumbnail",
+        "requested_artifact_id": "gallery-context",
+        "reviewer_id": null,
+        "role": "context",
+        "row_id": "gallery-context:channel-fit:ecommerce-thumbnail",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-context",
+        "evidence": null,
+        "gate_id": "artifact-integrity",
+        "profile_id": "full-resolution",
+        "requested_artifact_id": "gallery-context",
+        "reviewer_id": null,
+        "role": "context",
+        "row_id": "gallery-context:artifact-integrity:full-resolution",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-context",
+        "evidence": null,
+        "gate_id": "artifact-integrity",
+        "profile_id": "ecommerce-thumbnail",
+        "requested_artifact_id": "gallery-context",
+        "reviewer_id": null,
+        "role": "context",
+        "row_id": "gallery-context:artifact-integrity:ecommerce-thumbnail",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-context",
+        "evidence": null,
+        "gate_id": "selection-lock",
+        "profile_id": "full-resolution",
+        "requested_artifact_id": "gallery-context",
+        "reviewer_id": null,
+        "role": "context",
+        "row_id": "gallery-context:selection-lock:full-resolution",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-context",
+        "evidence": null,
+        "gate_id": "selection-lock",
+        "profile_id": "ecommerce-thumbnail",
+        "requested_artifact_id": "gallery-context",
+        "reviewer_id": null,
+        "role": "context",
+        "row_id": "gallery-context:selection-lock:ecommerce-thumbnail",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-context",
+        "evidence": null,
+        "gate_id": "asset-role",
+        "profile_id": "full-resolution",
+        "requested_artifact_id": "gallery-context",
+        "reviewer_id": null,
+        "role": "context",
+        "row_id": "gallery-context:asset-role:full-resolution",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-context",
+        "evidence": null,
+        "gate_id": "asset-role",
+        "profile_id": "ecommerce-thumbnail",
+        "requested_artifact_id": "gallery-context",
+        "reviewer_id": null,
+        "role": "context",
+        "row_id": "gallery-context:asset-role:ecommerce-thumbnail",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-context",
+        "evidence": null,
+        "gate_id": "package-identity",
+        "profile_id": "full-resolution",
+        "requested_artifact_id": "gallery-context",
+        "reviewer_id": null,
+        "role": "context",
+        "row_id": "gallery-context:package-identity:full-resolution",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-context",
+        "evidence": null,
+        "gate_id": "package-identity",
+        "profile_id": "ecommerce-thumbnail",
+        "requested_artifact_id": "gallery-context",
+        "reviewer_id": null,
+        "role": "context",
+        "row_id": "gallery-context:package-identity:ecommerce-thumbnail",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-campaign",
+        "evidence": null,
+        "gate_id": "artifact-type",
+        "profile_id": "full-resolution",
+        "requested_artifact_id": "gallery-campaign",
+        "reviewer_id": null,
+        "role": "campaign",
+        "row_id": "gallery-campaign:artifact-type:full-resolution",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-campaign",
+        "evidence": null,
+        "gate_id": "artifact-type",
+        "profile_id": "ecommerce-thumbnail",
+        "requested_artifact_id": "gallery-campaign",
+        "reviewer_id": null,
+        "role": "campaign",
+        "row_id": "gallery-campaign:artifact-type:ecommerce-thumbnail",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-campaign",
+        "evidence": null,
+        "gate_id": "object-count",
+        "profile_id": "full-resolution",
+        "requested_artifact_id": "gallery-campaign",
+        "reviewer_id": null,
+        "role": "campaign",
+        "row_id": "gallery-campaign:object-count:full-resolution",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-campaign",
+        "evidence": null,
+        "gate_id": "object-count",
+        "profile_id": "ecommerce-thumbnail",
+        "requested_artifact_id": "gallery-campaign",
+        "reviewer_id": null,
+        "role": "campaign",
+        "row_id": "gallery-campaign:object-count:ecommerce-thumbnail",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-campaign",
+        "evidence": null,
+        "gate_id": "package-geometry",
+        "profile_id": "full-resolution",
+        "requested_artifact_id": "gallery-campaign",
+        "reviewer_id": null,
+        "role": "campaign",
+        "row_id": "gallery-campaign:package-geometry:full-resolution",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-campaign",
+        "evidence": null,
+        "gate_id": "package-geometry",
+        "profile_id": "ecommerce-thumbnail",
+        "requested_artifact_id": "gallery-campaign",
+        "reviewer_id": null,
+        "role": "campaign",
+        "row_id": "gallery-campaign:package-geometry:ecommerce-thumbnail",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-campaign",
+        "evidence": null,
+        "gate_id": "exact-copy",
+        "profile_id": "full-resolution",
+        "requested_artifact_id": "gallery-campaign",
+        "reviewer_id": null,
+        "role": "campaign",
+        "row_id": "gallery-campaign:exact-copy:full-resolution",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-campaign",
+        "evidence": null,
+        "gate_id": "exact-copy",
+        "profile_id": "ecommerce-thumbnail",
+        "requested_artifact_id": "gallery-campaign",
+        "reviewer_id": null,
+        "role": "campaign",
+        "row_id": "gallery-campaign:exact-copy:ecommerce-thumbnail",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-campaign",
+        "evidence": null,
+        "gate_id": "invented-claims",
+        "profile_id": "full-resolution",
+        "requested_artifact_id": "gallery-campaign",
+        "reviewer_id": null,
+        "role": "campaign",
+        "row_id": "gallery-campaign:invented-claims:full-resolution",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-campaign",
+        "evidence": null,
+        "gate_id": "invented-claims",
+        "profile_id": "ecommerce-thumbnail",
+        "requested_artifact_id": "gallery-campaign",
+        "reviewer_id": null,
+        "role": "campaign",
+        "row_id": "gallery-campaign:invented-claims:ecommerce-thumbnail",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-campaign",
+        "evidence": null,
+        "gate_id": "reference-role",
+        "profile_id": "full-resolution",
+        "requested_artifact_id": "gallery-campaign",
+        "reviewer_id": null,
+        "role": "campaign",
+        "row_id": "gallery-campaign:reference-role:full-resolution",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-campaign",
+        "evidence": null,
+        "gate_id": "reference-role",
+        "profile_id": "ecommerce-thumbnail",
+        "requested_artifact_id": "gallery-campaign",
+        "reviewer_id": null,
+        "role": "campaign",
+        "row_id": "gallery-campaign:reference-role:ecommerce-thumbnail",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-campaign",
+        "evidence": null,
+        "gate_id": "visual-hierarchy-identity",
+        "profile_id": "full-resolution",
+        "requested_artifact_id": "gallery-campaign",
+        "reviewer_id": null,
+        "role": "campaign",
+        "row_id": "gallery-campaign:visual-hierarchy-identity:full-resolution",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-campaign",
+        "evidence": null,
+        "gate_id": "visual-hierarchy-identity",
+        "profile_id": "ecommerce-thumbnail",
+        "requested_artifact_id": "gallery-campaign",
+        "reviewer_id": null,
+        "role": "campaign",
+        "row_id": "gallery-campaign:visual-hierarchy-identity:ecommerce-thumbnail",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-campaign",
+        "evidence": null,
+        "gate_id": "product-anatomy",
+        "profile_id": "full-resolution",
+        "requested_artifact_id": "gallery-campaign",
+        "reviewer_id": null,
+        "role": "campaign",
+        "row_id": "gallery-campaign:product-anatomy:full-resolution",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-campaign",
+        "evidence": null,
+        "gate_id": "product-anatomy",
+        "profile_id": "ecommerce-thumbnail",
+        "requested_artifact_id": "gallery-campaign",
+        "reviewer_id": null,
+        "role": "campaign",
+        "row_id": "gallery-campaign:product-anatomy:ecommerce-thumbnail",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-campaign",
+        "evidence": null,
+        "gate_id": "channel-fit",
+        "profile_id": "full-resolution",
+        "requested_artifact_id": "gallery-campaign",
+        "reviewer_id": null,
+        "role": "campaign",
+        "row_id": "gallery-campaign:channel-fit:full-resolution",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-campaign",
+        "evidence": null,
+        "gate_id": "channel-fit",
+        "profile_id": "ecommerce-thumbnail",
+        "requested_artifact_id": "gallery-campaign",
+        "reviewer_id": null,
+        "role": "campaign",
+        "row_id": "gallery-campaign:channel-fit:ecommerce-thumbnail",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-campaign",
+        "evidence": null,
+        "gate_id": "artifact-integrity",
+        "profile_id": "full-resolution",
+        "requested_artifact_id": "gallery-campaign",
+        "reviewer_id": null,
+        "role": "campaign",
+        "row_id": "gallery-campaign:artifact-integrity:full-resolution",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-campaign",
+        "evidence": null,
+        "gate_id": "artifact-integrity",
+        "profile_id": "ecommerce-thumbnail",
+        "requested_artifact_id": "gallery-campaign",
+        "reviewer_id": null,
+        "role": "campaign",
+        "row_id": "gallery-campaign:artifact-integrity:ecommerce-thumbnail",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-campaign",
+        "evidence": null,
+        "gate_id": "selection-lock",
+        "profile_id": "full-resolution",
+        "requested_artifact_id": "gallery-campaign",
+        "reviewer_id": null,
+        "role": "campaign",
+        "row_id": "gallery-campaign:selection-lock:full-resolution",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-campaign",
+        "evidence": null,
+        "gate_id": "selection-lock",
+        "profile_id": "ecommerce-thumbnail",
+        "requested_artifact_id": "gallery-campaign",
+        "reviewer_id": null,
+        "role": "campaign",
+        "row_id": "gallery-campaign:selection-lock:ecommerce-thumbnail",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-campaign",
+        "evidence": null,
+        "gate_id": "asset-role",
+        "profile_id": "full-resolution",
+        "requested_artifact_id": "gallery-campaign",
+        "reviewer_id": null,
+        "role": "campaign",
+        "row_id": "gallery-campaign:asset-role:full-resolution",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-campaign",
+        "evidence": null,
+        "gate_id": "asset-role",
+        "profile_id": "ecommerce-thumbnail",
+        "requested_artifact_id": "gallery-campaign",
+        "reviewer_id": null,
+        "role": "campaign",
+        "row_id": "gallery-campaign:asset-role:ecommerce-thumbnail",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-campaign",
+        "evidence": null,
+        "gate_id": "package-identity",
+        "profile_id": "full-resolution",
+        "requested_artifact_id": "gallery-campaign",
+        "reviewer_id": null,
+        "role": "campaign",
+        "row_id": "gallery-campaign:package-identity:full-resolution",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-campaign",
+        "evidence": null,
+        "gate_id": "package-identity",
+        "profile_id": "ecommerce-thumbnail",
+        "requested_artifact_id": "gallery-campaign",
+        "reviewer_id": null,
+        "role": "campaign",
+        "row_id": "gallery-campaign:package-identity:ecommerce-thumbnail",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-channel-variant",
+        "evidence": null,
+        "gate_id": "artifact-type",
+        "profile_id": "full-resolution",
+        "requested_artifact_id": "gallery-channel-variant",
+        "reviewer_id": null,
+        "role": "channel-variant",
+        "row_id": "gallery-channel-variant:artifact-type:full-resolution",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-channel-variant",
+        "evidence": null,
+        "gate_id": "artifact-type",
+        "profile_id": "ecommerce-thumbnail",
+        "requested_artifact_id": "gallery-channel-variant",
+        "reviewer_id": null,
+        "role": "channel-variant",
+        "row_id": "gallery-channel-variant:artifact-type:ecommerce-thumbnail",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-channel-variant",
+        "evidence": null,
+        "gate_id": "object-count",
+        "profile_id": "full-resolution",
+        "requested_artifact_id": "gallery-channel-variant",
+        "reviewer_id": null,
+        "role": "channel-variant",
+        "row_id": "gallery-channel-variant:object-count:full-resolution",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-channel-variant",
+        "evidence": null,
+        "gate_id": "object-count",
+        "profile_id": "ecommerce-thumbnail",
+        "requested_artifact_id": "gallery-channel-variant",
+        "reviewer_id": null,
+        "role": "channel-variant",
+        "row_id": "gallery-channel-variant:object-count:ecommerce-thumbnail",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-channel-variant",
+        "evidence": null,
+        "gate_id": "package-geometry",
+        "profile_id": "full-resolution",
+        "requested_artifact_id": "gallery-channel-variant",
+        "reviewer_id": null,
+        "role": "channel-variant",
+        "row_id": "gallery-channel-variant:package-geometry:full-resolution",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-channel-variant",
+        "evidence": null,
+        "gate_id": "package-geometry",
+        "profile_id": "ecommerce-thumbnail",
+        "requested_artifact_id": "gallery-channel-variant",
+        "reviewer_id": null,
+        "role": "channel-variant",
+        "row_id": "gallery-channel-variant:package-geometry:ecommerce-thumbnail",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-channel-variant",
+        "evidence": null,
+        "gate_id": "exact-copy",
+        "profile_id": "full-resolution",
+        "requested_artifact_id": "gallery-channel-variant",
+        "reviewer_id": null,
+        "role": "channel-variant",
+        "row_id": "gallery-channel-variant:exact-copy:full-resolution",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-channel-variant",
+        "evidence": null,
+        "gate_id": "exact-copy",
+        "profile_id": "ecommerce-thumbnail",
+        "requested_artifact_id": "gallery-channel-variant",
+        "reviewer_id": null,
+        "role": "channel-variant",
+        "row_id": "gallery-channel-variant:exact-copy:ecommerce-thumbnail",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-channel-variant",
+        "evidence": null,
+        "gate_id": "invented-claims",
+        "profile_id": "full-resolution",
+        "requested_artifact_id": "gallery-channel-variant",
+        "reviewer_id": null,
+        "role": "channel-variant",
+        "row_id": "gallery-channel-variant:invented-claims:full-resolution",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-channel-variant",
+        "evidence": null,
+        "gate_id": "invented-claims",
+        "profile_id": "ecommerce-thumbnail",
+        "requested_artifact_id": "gallery-channel-variant",
+        "reviewer_id": null,
+        "role": "channel-variant",
+        "row_id": "gallery-channel-variant:invented-claims:ecommerce-thumbnail",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-channel-variant",
+        "evidence": null,
+        "gate_id": "reference-role",
+        "profile_id": "full-resolution",
+        "requested_artifact_id": "gallery-channel-variant",
+        "reviewer_id": null,
+        "role": "channel-variant",
+        "row_id": "gallery-channel-variant:reference-role:full-resolution",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-channel-variant",
+        "evidence": null,
+        "gate_id": "reference-role",
+        "profile_id": "ecommerce-thumbnail",
+        "requested_artifact_id": "gallery-channel-variant",
+        "reviewer_id": null,
+        "role": "channel-variant",
+        "row_id": "gallery-channel-variant:reference-role:ecommerce-thumbnail",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-channel-variant",
+        "evidence": null,
+        "gate_id": "visual-hierarchy-identity",
+        "profile_id": "full-resolution",
+        "requested_artifact_id": "gallery-channel-variant",
+        "reviewer_id": null,
+        "role": "channel-variant",
+        "row_id": "gallery-channel-variant:visual-hierarchy-identity:full-resolution",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-channel-variant",
+        "evidence": null,
+        "gate_id": "visual-hierarchy-identity",
+        "profile_id": "ecommerce-thumbnail",
+        "requested_artifact_id": "gallery-channel-variant",
+        "reviewer_id": null,
+        "role": "channel-variant",
+        "row_id": "gallery-channel-variant:visual-hierarchy-identity:ecommerce-thumbnail",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-channel-variant",
+        "evidence": null,
+        "gate_id": "product-anatomy",
+        "profile_id": "full-resolution",
+        "requested_artifact_id": "gallery-channel-variant",
+        "reviewer_id": null,
+        "role": "channel-variant",
+        "row_id": "gallery-channel-variant:product-anatomy:full-resolution",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-channel-variant",
+        "evidence": null,
+        "gate_id": "product-anatomy",
+        "profile_id": "ecommerce-thumbnail",
+        "requested_artifact_id": "gallery-channel-variant",
+        "reviewer_id": null,
+        "role": "channel-variant",
+        "row_id": "gallery-channel-variant:product-anatomy:ecommerce-thumbnail",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-channel-variant",
+        "evidence": null,
+        "gate_id": "channel-fit",
+        "profile_id": "full-resolution",
+        "requested_artifact_id": "gallery-channel-variant",
+        "reviewer_id": null,
+        "role": "channel-variant",
+        "row_id": "gallery-channel-variant:channel-fit:full-resolution",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-channel-variant",
+        "evidence": null,
+        "gate_id": "channel-fit",
+        "profile_id": "ecommerce-thumbnail",
+        "requested_artifact_id": "gallery-channel-variant",
+        "reviewer_id": null,
+        "role": "channel-variant",
+        "row_id": "gallery-channel-variant:channel-fit:ecommerce-thumbnail",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-channel-variant",
+        "evidence": null,
+        "gate_id": "artifact-integrity",
+        "profile_id": "full-resolution",
+        "requested_artifact_id": "gallery-channel-variant",
+        "reviewer_id": null,
+        "role": "channel-variant",
+        "row_id": "gallery-channel-variant:artifact-integrity:full-resolution",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-channel-variant",
+        "evidence": null,
+        "gate_id": "artifact-integrity",
+        "profile_id": "ecommerce-thumbnail",
+        "requested_artifact_id": "gallery-channel-variant",
+        "reviewer_id": null,
+        "role": "channel-variant",
+        "row_id": "gallery-channel-variant:artifact-integrity:ecommerce-thumbnail",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-channel-variant",
+        "evidence": null,
+        "gate_id": "selection-lock",
+        "profile_id": "full-resolution",
+        "requested_artifact_id": "gallery-channel-variant",
+        "reviewer_id": null,
+        "role": "channel-variant",
+        "row_id": "gallery-channel-variant:selection-lock:full-resolution",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-channel-variant",
+        "evidence": null,
+        "gate_id": "selection-lock",
+        "profile_id": "ecommerce-thumbnail",
+        "requested_artifact_id": "gallery-channel-variant",
+        "reviewer_id": null,
+        "role": "channel-variant",
+        "row_id": "gallery-channel-variant:selection-lock:ecommerce-thumbnail",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-channel-variant",
+        "evidence": null,
+        "gate_id": "asset-role",
+        "profile_id": "full-resolution",
+        "requested_artifact_id": "gallery-channel-variant",
+        "reviewer_id": null,
+        "role": "channel-variant",
+        "row_id": "gallery-channel-variant:asset-role:full-resolution",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-channel-variant",
+        "evidence": null,
+        "gate_id": "asset-role",
+        "profile_id": "ecommerce-thumbnail",
+        "requested_artifact_id": "gallery-channel-variant",
+        "reviewer_id": null,
+        "role": "channel-variant",
+        "row_id": "gallery-channel-variant:asset-role:ecommerce-thumbnail",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-channel-variant",
+        "evidence": null,
+        "gate_id": "package-identity",
+        "profile_id": "full-resolution",
+        "requested_artifact_id": "gallery-channel-variant",
+        "reviewer_id": null,
+        "role": "channel-variant",
+        "row_id": "gallery-channel-variant:package-identity:full-resolution",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": "gallery-channel-variant",
+        "evidence": null,
+        "gate_id": "package-identity",
+        "profile_id": "ecommerce-thumbnail",
+        "requested_artifact_id": "gallery-channel-variant",
+        "reviewer_id": null,
+        "role": "channel-variant",
+        "row_id": "gallery-channel-variant:package-identity:ecommerce-thumbnail",
+        "scope": "artifact-profile",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": null,
+        "evidence": null,
+        "gate_id": "set-completeness",
+        "profile_id": null,
+        "requested_artifact_id": null,
+        "reviewer_id": null,
+        "role": null,
+        "row_id": "cross-set:set-completeness",
+        "scope": "cross-set",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": null,
+        "evidence": null,
+        "gate_id": "cross-asset-package-identity",
+        "profile_id": null,
+        "requested_artifact_id": null,
+        "reviewer_id": null,
+        "role": null,
+        "row_id": "cross-set:cross-asset-package-identity",
+        "scope": "cross-set",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": null,
+        "evidence": null,
+        "gate_id": "cross-asset-sku-consistency",
+        "profile_id": null,
+        "requested_artifact_id": null,
+        "reviewer_id": null,
+        "role": null,
+        "row_id": "cross-set:cross-asset-sku-consistency",
+        "scope": "cross-set",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": null,
+        "evidence": null,
+        "gate_id": "cross-asset-claims-consistency",
+        "profile_id": null,
+        "requested_artifact_id": null,
+        "reviewer_id": null,
+        "role": null,
+        "row_id": "cross-set:cross-asset-claims-consistency",
+        "scope": "cross-set",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": null,
+        "evidence": null,
+        "gate_id": "sequence-role-coverage",
+        "profile_id": null,
+        "requested_artifact_id": null,
+        "reviewer_id": null,
+        "role": null,
+        "row_id": "cross-set:sequence-role-coverage",
+        "scope": "cross-set",
+        "status": "unverified"
+      },
+      {
+        "artifact_id": null,
+        "evidence": null,
+        "gate_id": "cross-asset-channel-fit",
+        "profile_id": null,
+        "requested_artifact_id": null,
+        "reviewer_id": null,
+        "role": null,
+        "row_id": "cross-set:cross-asset-channel-fit",
+        "scope": "cross-set",
+        "status": "unverified"
+      }
+    ],
+    "status": "pending-independent-review"
+  },
+  "run_date": "2026-09-09",
+  "schema_version": 1,
+  "selected_direction_id": "quiet-pantry",
+  "selected_sku_ids": [
+    "lemon-ginger",
+    "berry-oat"
+  ],
+  "source": {
+    "locator": "generated/compare-direction-a.png",
+    "sha256": "a2c1d38551febace8a1bfec48011e7e36528695e244ec892d2c4fa4ad3d4f4fb"
+  },
+  "status": "draft",
+  "transform_spec": {
+    "locator": "transforms/v0.2/2026-09-09/transform-spec-2026-09-09.json",
+    "sha256": "7c5d0f172780cb9b6479e936385f32868f3a4a2d2f8f33c5450c2c202c1883cc"
+  }
+}

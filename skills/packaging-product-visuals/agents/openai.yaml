@@ -1,6 +1,6 @@
 interface:
   display_name: "Packaging Product Visuals"
-  short_description: "Controlled packaging concept visuals and QA"
-  default_prompt: "Use $packaging-product-visuals to compare packaging directions under one frozen baseline."
+  short_description: "Packaging workflow from product decisions to ecommerce assets"
+  default_prompt: "Use $packaging-product-visuals to continue from the earliest incomplete step: define the product and package, research options including typography, confirm the route, generate comparable packaging systems, then plan and deliver the required ecommerce images while preserving evidence, permissions, decision locks, package and typography identity, and QA."
 policy:
   allow_implicit_invocation: true
